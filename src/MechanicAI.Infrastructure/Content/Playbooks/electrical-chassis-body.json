@@ -10152,6 +10152,1076 @@
         "Heat cycle the engine, then recheck the level after a full cool-down and again after several days of driving.",
         "If an internal leak was repaired, confirm clean oil and coolant and no combustion gases in the coolant."
       ]
+    },
+    {
+      "key": "hybrid-ev-warning",
+      "title": "Hybrid / EV system warning or reduced power",
+      "summary": "HIGH-VOLTAGE WARNING: hybrid and EV systems carry lethal DC voltage in the orange cables, HV battery, inverter, and converter, and some circuits stay energized after the vehicle is shut off. Do not open, unplug, or probe any HV component unless you are HV-certified, wearing inspected Class 0 insulated gloves, and have completed the OEM HV disable procedure and verified zero voltage. Most hybrid warnings can be narrowed down without touching HV parts. Start with the 12 V auxiliary battery, because a weak 12 V battery is a very common cause of no-READY, multiple warnings, and hybrid system messages. Then scan every module, review hybrid battery data (block voltage deltas, temperatures), inspect the HV battery cooling intake and fan, check inverter coolant with the system off, confirm the DC-DC converter is charging the 12 V system, and check for TSBs and software updates. Condemn the HV battery, inverter, or converter only after the 12 V system, cooling, software, and data all support that conclusion. Insulation and isolation testing is for HV-certified technicians only.",
+      "triggers": {
+        "dtcPatterns": [
+          "^P0A[0-9A-F]{2}$",
+          "^P0B[0-9A-F]{2}$",
+          "^P0C[0-9A-F]{2}$"
+        ],
+        "symptomKeywords": [
+          "hybrid system",
+          "check hybrid",
+          "hybrid warning",
+          "ev warning",
+          "ev system",
+          "reduced power",
+          "ready light",
+          "will not go into ready",
+          "won't go into ready",
+          "hv battery",
+          "high voltage",
+          "turtle"
+        ]
+      },
+      "clarifyingQuestions": [
+        "Does the vehicle reach READY, and did the warning appear at startup or while driving?",
+        "Has the vehicle sat unused, been jump-started, or had the 12 V battery replaced recently?",
+        "Are several unrelated warning lights on at the same time?",
+        "Is power reduced all the time or only under hard acceleration, on hills, or in hot weather?",
+        "Is anything stored near the rear seat or cargo area that could block the HV battery cooling intake?",
+        "Has the vehicle had collision repair, flood exposure, or any recent HV or cooling system work?"
+      ],
+      "causes": [
+        {
+          "key": "battery-failed",
+          "title": "Weak or failed 12 V auxiliary battery",
+          "category": "Electrical",
+          "prior": 0.22,
+          "description": "The small 12 V auxiliary battery powers the hybrid control modules and the HV contactors. When it is weak, the system may not reach READY or may log multiple warnings and communication codes, even though the HV battery is fine.",
+          "modifiers": [
+            {
+              "when": "symptom",
+              "match": "(will not|won'?t|doesn'?t|does not)( go into| enter)? ready|no ready|jump|sat |parked|dead|several warning|multiple warning|all warning",
+              "factor": 2.0,
+              "reason": "No-READY, sitting, jump-start, or multiple-warning complaint suggests 12 V supply"
+            },
+            {
+              "when": "dtc",
+              "match": "^P056[23]$|^U0[0-4][0-9A-F]{2}$",
+              "factor": 1.5,
+              "reason": "System voltage or communication codes present"
+            },
+            {
+              "when": "mileage-over",
+              "value": 60000,
+              "factor": 1.2,
+              "reason": "Auxiliary battery age"
+            }
+          ],
+          "safety": [
+            "high-current"
+          ]
+        },
+        {
+          "key": "poor-ground",
+          "title": "Poor 12 V connection or ground",
+          "category": "Electrical",
+          "prior": 0.06,
+          "description": "A loose or corroded 12 V battery terminal, fusible link, or body/module ground causes low or unstable control voltage, which can set hybrid warnings and prevent READY.",
+          "modifiers": [
+            {
+              "when": "symptom",
+              "match": "corros|loose|intermittent|flicker|after (a |an )?(repair|accident|collision)",
+              "factor": 1.7,
+              "reason": "Intermittent symptoms, corrosion, or recent repair reported"
+            }
+          ],
+          "safety": [
+            "high-current"
+          ]
+        },
+        {
+          "key": "hybrid-battery-cooling-restricted",
+          "title": "HV battery cooling fan failed or air intake blocked",
+          "category": "Cooling",
+          "prior": 0.1,
+          "description": "An air-cooled HV battery depends on a cabin-air intake, duct, filter (where equipped), and fan. Blocked intakes, lint and pet hair, or a failed fan let the battery overheat, which leads to power limiting and battery warnings.",
+          "modifiers": [
+            {
+              "when": "dtc",
+              "match": "^P0A7E$|^P0A8[1-5]$",
+              "factor": 3.0,
+              "reason": "HV battery over-temperature or cooling fan code present"
+            },
+            {
+              "when": "symptom",
+              "match": "hot weather|summer|pet|dog|hair|fan noise|cargo|rear seat|after (a )?long drive",
+              "factor": 1.6,
+              "reason": "Heat-related or intake-obstruction complaint"
+            }
+          ],
+          "safety": [
+            "high-voltage",
+            "rotating"
+          ]
+        },
+        {
+          "key": "hybrid-battery-module-degradation",
+          "title": "HV battery module degradation or imbalance",
+          "category": "HighVoltage",
+          "prior": 0.16,
+          "description": "Aged or weak modules in the HV battery lose capacity or develop high internal resistance. The block voltages drift apart under load, so the control module limits power and sets a battery deterioration code.",
+          "modifiers": [
+            {
+              "when": "dtc",
+              "match": "^P0A7F$|^P0A80$",
+              "factor": 3.0,
+              "reason": "HV battery deterioration or replace-pack code present"
+            },
+            {
+              "when": "mileage-over",
+              "value": 150000,
+              "factor": 1.5,
+              "reason": "HV battery aging"
+            },
+            {
+              "when": "symptom",
+              "match": "fuel economy|mpg|engine runs (all the time|constantly)|charge (drops|fluctuat)",
+              "factor": 1.4,
+              "reason": "Reduced economy or unstable state of charge reported"
+            }
+          ],
+          "safety": [
+            "high-voltage"
+          ]
+        },
+        {
+          "key": "hybrid-insulation-fault",
+          "title": "HV insulation or isolation fault",
+          "category": "HighVoltage",
+          "prior": 0.08,
+          "description": "Degraded insulation, moisture or coolant intrusion, or a damaged HV cable or component lets the HV circuit leak to chassis ground. The isolation monitor detects this and shuts down or restricts the system.",
+          "modifiers": [
+            {
+              "when": "dtc",
+              "match": "^P0AA6$",
+              "factor": 4.0,
+              "reason": "HV isolation fault code present"
+            },
+            {
+              "when": "symptom",
+              "match": "flood|water|rain|wash|coolant leak|collision|accident|rodent",
+              "factor": 1.8,
+              "reason": "Water exposure, collision, or cable damage reported"
+            }
+          ],
+          "safety": [
+            "high-voltage"
+          ]
+        },
+        {
+          "key": "hybrid-inverter-cooling-fault",
+          "title": "Inverter/converter cooling fault (low coolant or pump failure)",
+          "category": "Cooling",
+          "prior": 0.09,
+          "description": "The inverter and converter usually have a dedicated coolant loop and electric pump. Low coolant, air in the loop, or a failed pump lets the power electronics overheat, which leads to power limiting or shutdown.",
+          "modifiers": [
+            {
+              "when": "dtc",
+              "match": "^P0A93$",
+              "factor": 3.5,
+              "reason": "Inverter cooling system performance code present"
+            },
+            {
+              "when": "symptom",
+              "match": "coolant|leak|overheat|hot|puddle",
+              "factor": 1.5,
+              "reason": "Coolant loss or overheating reported"
+            }
+          ],
+          "safety": [
+            "high-voltage",
+            "hot-surfaces"
+          ]
+        },
+        {
+          "key": "hybrid-dc-dc-converter",
+          "title": "DC-DC converter not charging the 12 V system",
+          "category": "Charging",
+          "prior": 0.07,
+          "description": "In READY, the DC-DC converter replaces the alternator and keeps the 12 V system charged. If it fails, the 12 V battery runs down while driving, causing low-voltage warnings, dim lights, and eventually shutdown or no-READY.",
+          "modifiers": [
+            {
+              "when": "dtc",
+              "match": "^P0A0[89]$|^P0A94$|^P056[23]$",
+              "factor": 2.5,
+              "reason": "DC-DC converter or system voltage code present"
+            },
+            {
+              "when": "symptom",
+              "match": "dim|battery (light|warning)|dies while driving|shut( ?down| off) while driving|12 ?v",
+              "factor": 1.6,
+              "reason": "Low 12 V symptoms while driving"
+            }
+          ],
+          "safety": [
+            "high-voltage",
+            "high-current"
+          ]
+        },
+        {
+          "key": "hybrid-interlock-open",
+          "title": "HV interlock circuit open",
+          "category": "HighVoltage",
+          "prior": 0.05,
+          "description": "The interlock loop passes through the service disconnect and HV connector covers. If a plug is not fully seated, a cover or latch is missing, or the loop wiring is open, the contactors stay open and the vehicle will not reach READY.",
+          "modifiers": [
+            {
+              "when": "dtc",
+              "match": "^P0A0[A-E]$",
+              "factor": 4.0,
+              "reason": "HV interlock circuit code present"
+            },
+            {
+              "when": "symptom",
+              "match": "after (a |an )?(repair|service|battery replace|collision|accident)|service plug|disconnect",
+              "factor": 2.0,
+              "reason": "Recent work that may have disturbed HV connectors or covers"
+            }
+          ],
+          "safety": [
+            "high-voltage"
+          ]
+        },
+        {
+          "key": "pcm-software",
+          "title": "Hybrid control module software requires update",
+          "category": "Software",
+          "prior": 0.07,
+          "description": "Manufacturers release calibration updates for hybrid control, battery management, and inverter modules to fix false warnings, power-limit logic, and cooling strategy. An outdated calibration can cause warnings with no hardware fault.",
+          "modifiers": [
+            {
+              "when": "symptom",
+              "match": "tsb|bulletin|recall|intermittent|no codes|after (an )?update",
+              "factor": 1.5,
+              "reason": "Intermittent or bulletin-related complaint"
+            }
+          ],
+          "safety": []
+        },
+        {
+          "key": "can-bus-wiring",
+          "title": "Network communication fault involving hybrid modules",
+          "category": "Network",
+          "prior": 0.05,
+          "description": "A CAN wiring, connector, or termination fault interrupts messages between the hybrid control, battery management, inverter, and engine modules. The system then falls back to a limited mode and sets U-codes.",
+          "modifiers": [
+            {
+              "when": "dtc",
+              "match": "^U0[0-4][0-9A-F]{2}$",
+              "factor": 2.5,
+              "reason": "Communication codes present"
+            },
+            {
+              "when": "symptom",
+              "match": "several warning|multiple warning|all warning|after (a |an )?(repair|collision|accident)",
+              "factor": 1.3,
+              "reason": "Multiple systems affected or recent repair"
+            }
+          ],
+          "safety": []
+        }
+      ],
+      "tests": [
+        {
+          "key": "hybrid-12v-battery-test",
+          "title": "Charge and test the 12 V auxiliary battery",
+          "purpose": "Rule out the most common root cause of hybrid warnings and no-READY before diagnosing HV systems.",
+          "procedure": [
+            "Switch the vehicle fully off (not READY) and take the smart key away from the vehicle. Do not disturb orange HV cables or covers.",
+            "Locate the 12 V auxiliary battery and its jump terminals from OEM information. It may be under the hood, in the cargo area, or under a seat.",
+            "Wear eye protection. Charge the battery fully using the charger mode for its type (often AGM), then measure open-circuit voltage after removing surface charge.",
+            "Perform a conductance or load test using the battery's rating, and inspect the case, terminals, and vent tube."
+          ],
+          "tools": [
+            "Battery charger with AGM mode",
+            "Conductance tester",
+            "Digital multimeter",
+            "Safety glasses",
+            "OEM service information"
+          ],
+          "expected": "The battery charges fully and passes the conductance or load test per the battery manufacturer's criteria.",
+          "specNote": "Battery rating and test criteria; OEM 12 V battery location and jump-start instructions.",
+          "minutes": 30,
+          "difficulty": 1,
+          "invasiveness": 1,
+          "safety": [
+            "high-current",
+            "high-voltage"
+          ],
+          "requiresAnyCause": [
+            "battery-failed",
+            "poor-ground",
+            "hybrid-dc-dc-converter"
+          ],
+          "outcomes": [
+            {
+              "key": "battery-good",
+              "label": "12 V battery passes",
+              "normal": true,
+              "likelihoods": {
+                "battery-failed": 0.08,
+                "hybrid-dc-dc-converter": 0.6,
+                "*": 0.9
+              },
+              "interpretation": "The 12 V battery is serviceable. Continue with the module scan and hybrid data."
+            },
+            {
+              "key": "battery-fails",
+              "label": "12 V battery fails or will not hold a charge",
+              "normal": false,
+              "likelihoods": {
+                "battery-failed": 0.92,
+                "hybrid-dc-dc-converter": 0.4,
+                "*": 0.1
+              },
+              "interpretation": "Replace the 12 V battery, clear codes, and retest. Also confirm DC-DC converter output, because a converter that is not charging can ruin a good battery."
+            },
+            {
+              "key": "tester-recharge",
+              "label": "Tester requests charge and retest",
+              "inconclusive": true,
+              "interpretation": "Finish charging and retest before drawing conclusions."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-scan-all-modules-codes",
+          "title": "Full-vehicle scan of hybrid codes and freeze frame",
+          "purpose": "Identify which hybrid subsystem is reporting the fault and whether low-voltage or network events came first.",
+          "procedure": [
+            "Connect a scan tool with hybrid system coverage and run a full scan of all modules with the ignition on.",
+            "Record every DTC with its status, freeze frame, and any manufacturer information or sub-codes that the hybrid control module provides.",
+            "Note the order and timing of codes. Low-voltage and communication codes that come before the hybrid codes point to the 12 V supply or network.",
+            "Save the report before clearing anything."
+          ],
+          "tools": [
+            "Scan tool with hybrid/EV coverage",
+            "OEM service information"
+          ],
+          "expected": "All modules respond and no current hybrid, voltage, or communication DTCs are stored.",
+          "specNote": "OEM DTC and information-code definitions for the hybrid system.",
+          "minutes": 15,
+          "difficulty": 1,
+          "invasiveness": 1,
+          "safety": [],
+          "outcomes": [
+            {
+              "key": "low-voltage-comm",
+              "label": "Low-voltage codes or U-codes across several modules",
+              "normal": false,
+              "likelihoods": {
+                "battery-failed": 0.45,
+                "poor-ground": 0.35,
+                "hybrid-dc-dc-converter": 0.4,
+                "can-bus-wiring": 0.3,
+                "pcm-software": 0.08,
+                "*": 0.04
+              },
+              "interpretation": "Look at the 12 V supply first: test the battery, the connections, and the DC-DC output."
+            },
+            {
+              "key": "hv-battery-codes",
+              "label": "HV battery voltage, block, or deterioration codes",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-battery-module-degradation": 0.6,
+                "hybrid-battery-cooling-restricted": 0.2,
+                "pcm-software": 0.12,
+                "*": 0.04
+              },
+              "interpretation": "Review the block voltage deltas and battery temperatures, and inspect battery cooling before condemning the pack."
+            },
+            {
+              "key": "temperature-cooling-codes",
+              "label": "HV battery or inverter temperature/cooling codes",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-battery-cooling-restricted": 0.55,
+                "hybrid-inverter-cooling-fault": 0.6,
+                "hybrid-battery-module-degradation": 0.1,
+                "pcm-software": 0.1,
+                "*": 0.04
+              },
+              "interpretation": "Inspect the HV battery air intake and fan, and check the inverter coolant level and pump operation."
+            },
+            {
+              "key": "isolation-code",
+              "label": "HV isolation/insulation fault code",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-insulation-fault": 0.75,
+                "hybrid-inverter-cooling-fault": 0.08,
+                "*": 0.02
+              },
+              "interpretation": "An insulation fault is indicated. Refer further testing to an HV-certified technician. Do not open HV components."
+            },
+            {
+              "key": "interlock-code",
+              "label": "HV interlock circuit code",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-interlock-open": 0.75,
+                "poor-ground": 0.04,
+                "*": 0.02
+              },
+              "interpretation": "Visually confirm that the service disconnect and HV covers are seated, without opening HV components."
+            },
+            {
+              "key": "hybrid-module-no-comm",
+              "label": "Hybrid control or battery module does not respond",
+              "normal": false,
+              "likelihoods": {
+                "can-bus-wiring": 0.5,
+                "battery-failed": 0.3,
+                "poor-ground": 0.35,
+                "hybrid-dc-dc-converter": 0.1,
+                "*": 0.02
+              },
+              "interpretation": "Check 12 V power and ground to the module and its network connection."
+            },
+            {
+              "key": "no-hybrid-codes",
+              "label": "All modules respond; no current hybrid codes",
+              "normal": true,
+              "likelihoods": {
+                "battery-failed": 0.17,
+                "poor-ground": 0.26,
+                "hybrid-battery-cooling-restricted": 0.15,
+                "hybrid-battery-module-degradation": 0.15,
+                "hybrid-insulation-fault": 0.07,
+                "hybrid-inverter-cooling-fault": 0.14,
+                "hybrid-dc-dc-converter": 0.1,
+                "hybrid-interlock-open": 0.07,
+                "pcm-software": 0.5,
+                "can-bus-wiring": 0.16,
+                "*": 0.3
+              },
+              "interpretation": "Look for history codes, TSBs, and conditions that reproduce the warning. Review hybrid data while driving."
+            },
+            {
+              "key": "no-coverage",
+              "label": "Scan tool lacks hybrid system coverage",
+              "inconclusive": true,
+              "interpretation": "Use a scan tool with OEM-level hybrid coverage."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-battery-data-pids",
+          "title": "Review HV battery block voltages, temperatures, and state of charge",
+          "purpose": "Separate HV battery module imbalance from an overheating or cooling problem by using scan data only.",
+          "procedure": [
+            "With the vehicle in READY and parked, or during a road test with an assistant, record HV battery data: block or module voltages, maximum-to-minimum voltage delta, battery temperature sensors, intake air temperature, cooling fan command, and state of charge.",
+            "Where the OEM provides one, run the scan tool's battery check or internal resistance function.",
+            "Load the system under safe, legal conditions (such as moderate acceleration) and watch how the block voltages spread under load and during regeneration.",
+            "Compare block deltas and temperature spread with OEM limits. The engine may start automatically in READY, so keep hands and tools clear of the engine bay."
+          ],
+          "tools": [
+            "Scan tool with hybrid battery data",
+            "OEM service information",
+            "Assistant for road test"
+          ],
+          "expected": "Block voltages and temperatures stay within the OEM delta limits under load, and the cooling fan command follows battery temperature.",
+          "specNote": "OEM maximum block voltage delta, temperature limits, and data definitions.",
+          "minutes": 30,
+          "difficulty": 2,
+          "invasiveness": 1,
+          "safety": [
+            "high-voltage",
+            "rotating"
+          ],
+          "requiresAnyCause": [
+            "hybrid-battery-module-degradation",
+            "hybrid-battery-cooling-restricted"
+          ],
+          "outcomes": [
+            {
+              "key": "data-balanced",
+              "label": "Blocks balanced and temperatures normal",
+              "normal": true,
+              "likelihoods": {
+                "hybrid-battery-module-degradation": 0.1,
+                "hybrid-battery-cooling-restricted": 0.25,
+                "*": 0.85
+              },
+              "interpretation": "HV battery degradation and overheating are unlikely under the tested conditions."
+            },
+            {
+              "key": "block-imbalance",
+              "label": "One or more blocks drift outside the OEM delta under load",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-battery-module-degradation": 0.8,
+                "hybrid-battery-cooling-restricted": 0.15,
+                "pcm-software": 0.05,
+                "*": 0.08
+              },
+              "interpretation": "HV battery module degradation is likely. Rule out a cooling problem first, then refer pack repair to an HV-certified technician."
+            },
+            {
+              "key": "temps-high-uneven",
+              "label": "Battery temperatures high or widely uneven",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-battery-cooling-restricted": 0.6,
+                "hybrid-battery-module-degradation": 0.1,
+                "hybrid-inverter-cooling-fault": 0.15,
+                "*": 0.07
+              },
+              "interpretation": "Inspect the HV battery intake, duct, filter, and fan before condemning the battery."
+            },
+            {
+              "key": "data-unavailable",
+              "label": "Data not supported or could not be loaded safely",
+              "inconclusive": true,
+              "interpretation": "Use OEM-level software or repeat the test under the conditions that set the warning."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-battery-cooling-inspection",
+          "title": "Inspect the HV battery cooling intake, filter, and fan",
+          "purpose": "Find airflow restrictions or a failed fan that make the HV battery overheat.",
+          "procedure": [
+            "Locate the HV battery cooling intake and any serviceable filter from OEM information. Access them only through trim that the OEM identifies as non-HV service access.",
+            "Check the intake grille and filter for blockage from cargo, floor mats, lint, pet hair, or debris. Clean or replace the filter per OEM procedure.",
+            "Using the scan tool active test where supported, command the battery cooling fan through its speeds, and confirm airflow and fan speed feedback.",
+            "Do not remove the HV battery cover or disturb orange cables or the service disconnect."
+          ],
+          "tools": [
+            "Flashlight",
+            "Scan tool with active tests",
+            "Vacuum or soft brush",
+            "OEM service information"
+          ],
+          "expected": "The intake and filter are clear, and the fan runs and changes speed on command with strong airflow.",
+          "specNote": "OEM intake/filter location and cooling fan active test procedure.",
+          "minutes": 20,
+          "difficulty": 1,
+          "invasiveness": 1,
+          "safety": [
+            "high-voltage",
+            "rotating"
+          ],
+          "requiresAnyCause": [
+            "hybrid-battery-cooling-restricted"
+          ],
+          "outcomes": [
+            {
+              "key": "cooling-clear",
+              "label": "Intake clear and fan operates normally",
+              "normal": true,
+              "likelihoods": {
+                "hybrid-battery-cooling-restricted": 0.1,
+                "*": 0.93
+              },
+              "interpretation": "The battery air cooling path is working."
+            },
+            {
+              "key": "intake-blocked",
+              "label": "Intake, duct, or filter blocked or dirty",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-battery-cooling-restricted": 0.5,
+                "hybrid-battery-module-degradation": 0.05,
+                "*": 0.04
+              },
+              "interpretation": "Clean the intake or filter, clear codes, and recheck battery temperatures under load."
+            },
+            {
+              "key": "fan-not-operating",
+              "label": "Fan does not run or respond to command",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-battery-cooling-restricted": 0.4,
+                "battery-failed": 0.05,
+                "can-bus-wiring": 0.06,
+                "*": 0.03
+              },
+              "interpretation": "Diagnose the fan power, ground, and control circuit per OEM procedure (12 V side)."
+            },
+            {
+              "key": "not-accessible",
+              "label": "Intake or fan not accessible without HV-area disassembly",
+              "inconclusive": true,
+              "interpretation": "Refer to an HV-certified technician if access requires removing HV covers."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-inverter-coolant-check",
+          "title": "Check inverter coolant level and pump operation (system off)",
+          "purpose": "Confirm that the inverter/converter cooling loop is full and the pump is circulating.",
+          "procedure": [
+            "Switch the vehicle off (not READY), remove the key, and let the system cool fully. Never open a hot cooling system.",
+            "Identify the inverter coolant reservoir from OEM information; it is often separate from the engine coolant reservoir. Check the level and coolant condition visually against the marks.",
+            "Visually inspect the inverter loop hoses and pump area for leaks without removing HV covers or disturbing orange cables.",
+            "Where supported, use the scan tool active test or pump status data to confirm pump operation, and watch the inverter temperature data in READY."
+          ],
+          "tools": [
+            "Flashlight",
+            "Scan tool with active tests",
+            "OEM service information"
+          ],
+          "expected": "The coolant is at the correct level, there are no leaks, the pump runs on command, and inverter temperatures stay within the OEM range.",
+          "specNote": "OEM inverter coolant type, level marks, and air-bleed procedure.",
+          "minutes": 20,
+          "difficulty": 1,
+          "invasiveness": 1,
+          "safety": [
+            "high-voltage",
+            "hot-surfaces"
+          ],
+          "requiresAnyCause": [
+            "hybrid-inverter-cooling-fault"
+          ],
+          "outcomes": [
+            {
+              "key": "coolant-ok",
+              "label": "Level correct and pump operates",
+              "normal": true,
+              "likelihoods": {
+                "hybrid-inverter-cooling-fault": 0.1,
+                "*": 0.92
+              },
+              "interpretation": "Inverter cooling is unlikely to be the cause."
+            },
+            {
+              "key": "coolant-low",
+              "label": "Coolant low or leaking",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-inverter-cooling-fault": 0.55,
+                "hybrid-insulation-fault": 0.08,
+                "*": 0.04
+              },
+              "interpretation": "Find and repair the leak, then fill and bleed the loop per OEM procedure. Coolant near HV components can also cause isolation faults."
+            },
+            {
+              "key": "pump-inoperative",
+              "label": "Pump does not run or inverter temperature rises abnormally",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-inverter-cooling-fault": 0.35,
+                "pcm-software": 0.05,
+                "can-bus-wiring": 0.05,
+                "*": 0.03
+              },
+              "interpretation": "Diagnose the pump's 12 V power, ground, and control per OEM procedure, and check for air in the loop."
+            },
+            {
+              "key": "cannot-verify",
+              "label": "Pump operation cannot be verified",
+              "inconclusive": true,
+              "interpretation": "Use OEM-level scan data or refer to OEM diagnostic procedure."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-dc-dc-output-check",
+          "title": "Verify DC-DC converter output to the 12 V system in READY",
+          "purpose": "Confirm the DC-DC converter is maintaining the 12 V system, as an alternator would on a conventional vehicle.",
+          "procedure": [
+            "Measure and record 12 V battery voltage at the battery posts with the vehicle off.",
+            "Place the vehicle in READY with the parking brake set, then measure voltage at the 12 V battery posts again. Measure only on the 12 V side; never probe HV terminals.",
+            "Turn on high 12 V loads (headlights, blower, rear defroster) and watch battery voltage and DC-DC status or output data on the scan tool.",
+            "Compare the readings with the OEM specification. The engine may start automatically in READY, so keep clear of moving parts."
+          ],
+          "tools": [
+            "Digital multimeter",
+            "Scan tool",
+            "OEM service information"
+          ],
+          "expected": "In READY, 12 V system voltage rises to and holds within the OEM range under load.",
+          "specNote": "OEM DC-DC output voltage range.",
+          "minutes": 15,
+          "difficulty": 1,
+          "invasiveness": 1,
+          "safety": [
+            "high-voltage",
+            "high-current",
+            "rotating"
+          ],
+          "requiresAnyCause": [
+            "hybrid-dc-dc-converter",
+            "battery-failed",
+            "poor-ground"
+          ],
+          "outcomes": [
+            {
+              "key": "output-in-spec",
+              "label": "12 V voltage within specification in READY",
+              "normal": true,
+              "likelihoods": {
+                "hybrid-dc-dc-converter": 0.1,
+                "battery-failed": 0.65,
+                "poor-ground": 0.35,
+                "*": 0.9
+              },
+              "interpretation": "The DC-DC converter is charging. Focus on the 12 V battery condition and the hybrid system codes."
+            },
+            {
+              "key": "output-low",
+              "label": "Voltage does not rise in READY",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-dc-dc-converter": 0.75,
+                "battery-failed": 0.15,
+                "poor-ground": 0.25,
+                "*": 0.06
+              },
+              "interpretation": "Check the DC-DC output fuse and 12 V output connection. If those are good, refer converter diagnosis per OEM procedure."
+            },
+            {
+              "key": "output-unstable",
+              "label": "Voltage unstable or drops sharply with loads",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-dc-dc-converter": 0.15,
+                "battery-failed": 0.2,
+                "poor-ground": 0.4,
+                "*": 0.04
+              },
+              "interpretation": "Voltage-drop test the 12 V connections and grounds, and retest the battery."
+            },
+            {
+              "key": "cannot-ready",
+              "label": "Vehicle will not enter READY",
+              "inconclusive": true,
+              "interpretation": "Charge or support the 12 V battery and scan for interlock and isolation codes first."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-12v-connection-voltage-drop",
+          "title": "Voltage-drop test the 12 V battery connections and grounds",
+          "purpose": "Find high-resistance 12 V connections that starve the hybrid control modules.",
+          "procedure": [
+            "With the vehicle in READY and high 12 V loads on, measure voltage drop from the 12 V battery positive post to the DC-DC output/main fuse connection. Measure on the 12 V side only.",
+            "Measure voltage drop from the battery negative post to the body ground and to the module ground points identified in the OEM wiring diagram.",
+            "Wiggle the terminals and harness while watching the meter for intermittent changes.",
+            "If a reading is high, move the probe point by point to isolate the faulty connection."
+          ],
+          "tools": [
+            "Digital multimeter",
+            "Long test leads",
+            "OEM wiring diagram"
+          ],
+          "expected": "Voltage drop on each circuit is within OEM specification (general guideline: a few tenths of a volt or less under load — verify against OEM specification).",
+          "specNote": "OEM ground locations and voltage-drop limits.",
+          "minutes": 20,
+          "difficulty": 2,
+          "invasiveness": 1,
+          "safety": [
+            "high-current",
+            "high-voltage",
+            "rotating"
+          ],
+          "requiresAnyCause": [
+            "poor-ground"
+          ],
+          "outcomes": [
+            {
+              "key": "drop-ok",
+              "label": "All drops within specification",
+              "normal": true,
+              "likelihoods": {
+                "poor-ground": 0.1,
+                "hybrid-dc-dc-converter": 0.85,
+                "*": 0.92
+              },
+              "interpretation": "The 12 V connections and grounds are good."
+            },
+            {
+              "key": "positive-high",
+              "label": "Excessive drop on the positive side",
+              "normal": false,
+              "likelihoods": {
+                "poor-ground": 0.3,
+                "hybrid-dc-dc-converter": 0.15,
+                "*": 0.04
+              },
+              "interpretation": "Repair the terminal, fuse, or cable connection and retest."
+            },
+            {
+              "key": "ground-high",
+              "label": "Excessive drop on a ground path",
+              "normal": false,
+              "likelihoods": {
+                "poor-ground": 0.6,
+                "*": 0.04
+              },
+              "interpretation": "Clean or repair the ground and retest."
+            },
+            {
+              "key": "not-reproduced",
+              "label": "Could not load the circuit or reproduce the fault",
+              "inconclusive": true,
+              "interpretation": "Repeat the test under the conditions that set the warning."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-interlock-visual-check",
+          "title": "Visually verify service disconnect and HV cover seating (no disassembly)",
+          "purpose": "Detect an open interlock loop caused by an unseated service plug or connector cover, without opening HV components.",
+          "procedure": [
+            "Switch the vehicle off (not READY) and keep the smart key away from the vehicle.",
+            "Using OEM information, visually confirm that the service disconnect (service plug) is fully seated and locked, and that the HV connector covers and latches you can see are in place. Do not remove, unplug, or reseat HV components unless you are HV-certified and following the OEM disable procedure.",
+            "Read the interlock status data with the scan tool, if available.",
+            "If the interlock reads open and everything looks correctly seated, stop and refer to an HV-certified technician."
+          ],
+          "tools": [
+            "Flashlight",
+            "Scan tool",
+            "OEM service information"
+          ],
+          "expected": "The service disconnect and covers are seated and latched, and interlock status reads closed/normal.",
+          "specNote": "OEM service disconnect location and interlock data definitions.",
+          "minutes": 10,
+          "difficulty": 1,
+          "invasiveness": 1,
+          "safety": [
+            "high-voltage"
+          ],
+          "requiresAnyCause": [
+            "hybrid-interlock-open"
+          ],
+          "outcomes": [
+            {
+              "key": "interlock-ok",
+              "label": "Seated and interlock status normal",
+              "normal": true,
+              "likelihoods": {
+                "hybrid-interlock-open": 0.1,
+                "*": 0.95
+              },
+              "interpretation": "An open interlock is unlikely."
+            },
+            {
+              "key": "visibly-unseated",
+              "label": "Service plug or cover visibly unseated or missing",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-interlock-open": 0.45,
+                "*": 0.02
+              },
+              "interpretation": "An HV-certified technician must correct the seating per OEM procedure. Then clear codes and retest."
+            },
+            {
+              "key": "status-open",
+              "label": "Interlock reads open though components appear seated",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-interlock-open": 0.45,
+                "poor-ground": 0.05,
+                "can-bus-wiring": 0.05,
+                "*": 0.03
+              },
+              "interpretation": "Refer interlock circuit diagnosis to an HV-certified technician."
+            },
+            {
+              "key": "not-visible",
+              "label": "Components not visible without disassembly",
+              "inconclusive": true,
+              "interpretation": "Rely on scan data and refer to an HV-certified technician."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-tsb-software-check",
+          "title": "Check TSBs, recalls, and hybrid module software levels",
+          "purpose": "Find known issues and software updates for the hybrid control, battery management, and inverter modules.",
+          "procedure": [
+            "Search OEM TSBs, recalls, and campaigns using the vehicle VIN, the DTCs, and the symptom.",
+            "Read the calibration/software IDs of the hybrid-related modules and compare them with the latest available.",
+            "If an update applies, connect a stable 12 V power supply and reprogram per OEM procedure."
+          ],
+          "tools": [
+            "OEM service information",
+            "Scan tool or J2534 programming device",
+            "12 V programming power supply"
+          ],
+          "expected": "Software is current and no applicable bulletin addresses the complaint.",
+          "specNote": "OEM TSB and calibration database.",
+          "minutes": 15,
+          "difficulty": 1,
+          "invasiveness": 1,
+          "safety": [],
+          "requiresAnyCause": [
+            "pcm-software"
+          ],
+          "outcomes": [
+            {
+              "key": "software-current",
+              "label": "Software current; no applicable bulletin",
+              "normal": true,
+              "likelihoods": {
+                "pcm-software": 0.1,
+                "*": 0.85
+              },
+              "interpretation": "A software cause is unlikely."
+            },
+            {
+              "key": "update-available",
+              "label": "Applicable update or bulletin found",
+              "normal": false,
+              "likelihoods": {
+                "pcm-software": 0.9,
+                "*": 0.15
+              },
+              "interpretation": "Perform the update or bulletin repair, then verify the fix."
+            }
+          ]
+        },
+        {
+          "key": "hybrid-network-communication-check",
+          "title": "Check communication between hybrid-related modules",
+          "purpose": "Confirm that the hybrid control, battery management, inverter, and engine modules communicate reliably.",
+          "procedure": [
+            "Use the full-scan report to confirm that each hybrid-related module responds, and compare silent modules with the OEM network topology.",
+            "Review U-code status and occurrence counters to separate current from intermittent faults.",
+            "Inspect accessible 12 V network connectors and splice points for corrosion or damage. Do not open HV components.",
+            "Where the OEM procedure calls for it, measure bus resistance or check the waveforms at the DLC."
+          ],
+          "tools": [
+            "Scan tool with full network scan",
+            "Digital multimeter",
+            "Lab scope (optional)",
+            "OEM network topology diagram"
+          ],
+          "expected": "All hybrid-related modules communicate with no current U-codes, and bus measurements are within OEM specification.",
+          "specNote": "OEM network topology and bus test procedure.",
+          "minutes": 30,
+          "difficulty": 2,
+          "invasiveness": 1,
+          "safety": [],
+          "requiresAnyCause": [
+            "can-bus-wiring"
+          ],
+          "outcomes": [
+            {
+              "key": "network-ok",
+              "label": "All modules communicate; no current U-codes",
+              "normal": true,
+              "likelihoods": {
+                "can-bus-wiring": 0.1,
+                "battery-failed": 0.75,
+                "poor-ground": 0.75,
+                "pcm-software": 0.85,
+                "*": 0.92
+              },
+              "interpretation": "A network fault is unlikely."
+            },
+            {
+              "key": "lost-comm",
+              "label": "Hybrid-related module(s) lose communication",
+              "normal": false,
+              "likelihoods": {
+                "can-bus-wiring": 0.65,
+                "battery-failed": 0.1,
+                "poor-ground": 0.15,
+                "pcm-software": 0.05,
+                "*": 0.04
+              },
+              "interpretation": "Diagnose bus wiring, connectors, and module power/ground per the network topology."
+            },
+            {
+              "key": "history-intermittent",
+              "label": "History or intermittent U-codes only",
+              "normal": false,
+              "likelihoods": {
+                "can-bus-wiring": 0.25,
+                "battery-failed": 0.15,
+                "poor-ground": 0.1,
+                "pcm-software": 0.1,
+                "*": 0.04
+              },
+              "interpretation": "Look for low-voltage events and intermittent connections that line up with the occurrence data."
+            },
+            {
+              "key": "no-coverage",
+              "label": "Unable to access network data",
+              "inconclusive": true,
+              "interpretation": "Use OEM-level scan tool coverage."
+            }
+          ]
+        },
+        {
+          "key": "hv-insulation-resistance-test",
+          "title": "HV insulation resistance test (HV-certified technicians only)",
+          "purpose": "Confirm and locate an HV isolation fault. Only HV-certified technicians may perform this test.",
+          "procedure": [
+            "STOP: only an HV-certified technician trained on this vehicle's system may perform this test. If you are not certified, refer the vehicle to one.",
+            "Wear Class 0 insulated rubber gloves that have been air-tested and are within their test date, with leather protectors, and use insulated tools. Set up a barrier around the vehicle and post HV warning signs.",
+            "Perform the OEM HV disable procedure: vehicle off, key out of range, 12 V battery disconnected as specified, service disconnect removed, and the OEM waiting time observed for capacitors to discharge.",
+            "Verify zero voltage at the OEM-specified test points with a CAT III (or higher) rated meter. Use the live-dead-live method: confirm the meter on a known source, test, and confirm the meter again.",
+            "Using an insulation resistance tester (megohmmeter) at the test voltage the OEM specifies, measure between each HV conductor and chassis ground on the components and cables the OEM procedure lists.",
+            "Compare the results with the OEM specification, isolate the low-reading section, and restore the system per OEM procedure."
+          ],
+          "tools": [
+            "Class 0 insulated gloves with leather protectors",
+            "CAT III or higher rated digital multimeter",
+            "Insulation resistance tester (megohmmeter)",
+            "Insulated tools",
+            "HV safety barrier and signage",
+            "OEM service information"
+          ],
+          "expected": "Insulation resistance of every HV circuit to chassis is at or above the OEM specification.",
+          "specNote": "OEM HV disable procedure, wait time, test voltage, and minimum insulation resistance (per OEM specification).",
+          "minutes": 90,
+          "difficulty": 5,
+          "invasiveness": 4,
+          "safety": [
+            "high-voltage"
+          ],
+          "requiresAnyCause": [
+            "hybrid-insulation-fault"
+          ],
+          "outcomes": [
+            {
+              "key": "insulation-ok",
+              "label": "Insulation resistance within OEM specification",
+              "normal": true,
+              "likelihoods": {
+                "hybrid-insulation-fault": 0.1,
+                "*": 0.95
+              },
+              "interpretation": "An isolation fault is not confirmed. Look for intermittent moisture intrusion or check the isolation monitor per OEM procedure."
+            },
+            {
+              "key": "insulation-low",
+              "label": "Insulation resistance below OEM specification",
+              "normal": false,
+              "likelihoods": {
+                "hybrid-insulation-fault": 0.9,
+                "hybrid-inverter-cooling-fault": 0.08,
+                "*": 0.05
+              },
+              "interpretation": "An isolation fault is confirmed. An HV-certified technician must isolate and repair the affected component or cable."
+            },
+            {
+              "key": "not-performed",
+              "label": "Not performed (no HV-certified technician or equipment)",
+              "inconclusive": true,
+              "interpretation": "Refer the vehicle to an HV-certified technician or dealer."
+            }
+          ]
+        }
+      ],
+      "verification": [
+        "Confirm the 12 V battery is fully charged and the DC-DC converter holds 12 V system voltage in READY.",
+        "Clear DTCs only after saving the scan report and freeze frame.",
+        "Road test under the conditions that set the warning, including sustained load and warm operating temperature.",
+        "Confirm that HV battery block deltas, battery temperatures, and inverter temperatures stay within OEM limits.",
+        "Rescan all modules and confirm that no hybrid, voltage, or communication DTCs return and the vehicle enters READY normally."
+      ]
     }
   ]
 }
