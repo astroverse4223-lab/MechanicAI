@@ -6,11 +6,9 @@
     <Project Path="src/MechanicAI.Server/MechanicAI.Server.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/MechanicAI.Server.Tests/MechanicAI.Server.Tests.csproj" />
-  </Folder>
-  <Folder Name="/tests/">
     <Project Path="tests/MechanicAI.Application.Tests/MechanicAI.Application.Tests.csproj" />
     <Project Path="tests/MechanicAI.Domain.Tests/MechanicAI.Domain.Tests.csproj" />
     <Project Path="tests/MechanicAI.Infrastructure.Tests/MechanicAI.Infrastructure.Tests.csproj" />
+    <Project Path="tests/MechanicAI.Server.Tests/MechanicAI.Server.Tests.csproj" />
   </Folder>
 </Solution>
