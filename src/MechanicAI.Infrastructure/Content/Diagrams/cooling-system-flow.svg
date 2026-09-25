@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>Engine Cooling System Flow</title>
+<desc>Coolant flow from water pump through block and head to thermostat, upper hose, radiator and lower hose, with bypass, heater core and reservoir.</desc>
+<defs><linearGradient id="csf-rad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbbc04" stop-opacity="0.45"/><stop offset="1" stop-color="#8ab4f8" stop-opacity="0.45"/></linearGradient><marker id="csf-as7" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#9aa0a6"/></marker><marker id="csf-aa7" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#fbbc04"/></marker><marker id="csf-aa10" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#fbbc04"/></marker><marker id="csf-aa8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#fbbc04"/></marker><marker id="csf-ab10" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#8ab4f8"/></marker><marker id="csf-aa12" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#fbbc04"/></marker><marker id="csf-ab12" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#8ab4f8"/></marker><linearGradient id="csf-htr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fbbc04" stop-opacity="0.45"/><stop offset="1" stop-color="#8ab4f8" stop-opacity="0.45"/></linearGradient></defs>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">Engine Cooling System Flow</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">The water pump circulates coolant; the thermostat decides when coolant flows through the radiator.</text>
+<rect x="40" y="100" width="90" height="20" rx="4" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="40" y="120" width="90" height="220" fill="url(#csf-rad)" stroke="#bdc1c6" stroke-width="1.2"/>
+<line x1="49" y1="120" x2="49" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<line x1="58" y1="120" x2="58" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<line x1="67" y1="120" x2="67" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<line x1="76" y1="120" x2="76" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<line x1="85" y1="120" x2="85" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<line x1="94" y1="120" x2="94" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<line x1="103" y1="120" x2="103" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<line x1="112" y1="120" x2="112" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<line x1="121" y1="120" x2="121" y2="340" stroke="#16181d" stroke-width="1.6"/>
+<rect x="40" y="340" width="90" height="20" rx="4" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="54" y="90" width="20" height="10" rx="2" fill="#bdc1c6"/>
+<text x="64" y="82" font-size="12" fill="#9aa0a6" text-anchor="middle">Pressure cap</text>
+<text x="85" y="236" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">Radiator</text>
+<path d="M74,95 L137,95 Q140,95 140,92 L140,89 Q140,86 143,86 L160,86" fill="none" stroke="#bdc1c6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="160" y="72" width="56" height="28" rx="5" fill="#23272e" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="161" y="86" width="54" height="13" fill="#8ab4f8" fill-opacity="0.3"/>
+<text x="222" y="90" font-size="12" fill="#9aa0a6">Reservoir</text>
+<ellipse cx="152" cy="198" rx="6" ry="26" fill="#5f6368"/>
+<ellipse cx="152" cy="262" rx="6" ry="26" fill="#5f6368"/>
+<circle cx="152" cy="230" r="7" fill="#bdc1c6"/>
+<text x="164" y="316" font-size="12" fill="#9aa0a6">Cooling fan</text>
+<path d="M166,176 L198,176" fill="none" stroke="#9aa0a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-as7)"/>
+<path d="M166,230 L198,230" fill="none" stroke="#9aa0a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-as7)"/>
+<path d="M166,284 L198,284" fill="none" stroke="#9aa0a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-as7)"/>
+<text x="182" y="164" font-size="12" fill="#9aa0a6" text-anchor="middle">Airflow</text>
+<rect x="330" y="140" width="230" height="50" rx="4" fill="#30353d" stroke="#5f6368" stroke-width="1.2"/>
+<rect x="342" y="148" width="206" height="32" rx="3" fill="#fbbc04" fill-opacity="0.18"/>
+<rect x="330" y="190" width="230" height="170" rx="6" fill="#2d3139" stroke="#5f6368" stroke-width="1.2"/>
+<rect x="342" y="200" width="206" height="150" rx="4" fill="#fbbc04" fill-opacity="0.13"/>
+<rect x="352" y="206" width="36" height="120" rx="3" fill="#1f2228" stroke="#5f6368" stroke-width="1"/>
+<rect x="402" y="206" width="36" height="120" rx="3" fill="#1f2228" stroke="#5f6368" stroke-width="1"/>
+<rect x="452" y="206" width="36" height="120" rx="3" fill="#1f2228" stroke="#5f6368" stroke-width="1"/>
+<rect x="502" y="206" width="36" height="120" rx="3" fill="#1f2228" stroke="#5f6368" stroke-width="1"/>
+<path d="M395,318 L395,218" fill="none" stroke="#fbbc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-aa7)"/>
+<path d="M445,318 L445,218" fill="none" stroke="#fbbc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-aa7)"/>
+<path d="M495,318 L495,218" fill="none" stroke="#fbbc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-aa7)"/>
+<path d="M530,158 L470,158" fill="none" stroke="#fbbc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-aa7)"/>
+<path d="M420,158 L350,158" fill="none" stroke="#fbbc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-aa7)"/>
+<text x="445" y="132" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Cylinder head</text>
+<text x="445" y="346" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Engine block &#8212; water jackets</text>
+<path d="M342,164 L312,164" fill="none" stroke="#fbbc04" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-aa10)"/>
+<rect x="282" y="150" width="28" height="28" rx="4" fill="#23272e" stroke="#fbbc04" stroke-width="1.5"/>
+<ellipse cx="296" cy="164" rx="8" ry="4" fill="none" stroke="#fbbc04" stroke-width="1.5"/>
+<text x="296" y="142" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Thermostat</text>
+<path d="M296,178 L296,306" fill="none" stroke="#fbbc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 4" marker-end="url(#csf-aa8)"/>
+<text x="288" y="246" font-size="12" fill="#fbbc04" text-anchor="end" font-weight="600">Bypass</text>
+<text x="288" y="262" font-size="12" fill="#9aa0a6" text-anchor="end">(thermostat closed)</text>
+<circle cx="296" cy="330" r="20" fill="#23272e" stroke="#8ab4f8" stroke-width="1.8"/>
+<path d="M 300,330 Q 306.5,335.8 302.8,343.4" fill="none" stroke="#8ab4f8" stroke-width="1.5"/>
+<path d="M 298,333.5 Q 296.3,342 287.8,342.6" fill="none" stroke="#8ab4f8" stroke-width="1.5"/>
+<path d="M 294,333.5 Q 285.8,336.2 281,329.2" fill="none" stroke="#8ab4f8" stroke-width="1.5"/>
+<path d="M 292,330 Q 285.5,324.2 289.2,316.6" fill="none" stroke="#8ab4f8" stroke-width="1.5"/>
+<path d="M 294,326.5 Q 295.7,318 304.2,317.4" fill="none" stroke="#8ab4f8" stroke-width="1.5"/>
+<path d="M 298,326.5 Q 306.2,323.8 311,330.8" fill="none" stroke="#8ab4f8" stroke-width="1.5"/>
+<text x="296" y="374" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Water pump</text>
+<path d="M317,330 L344,330" fill="none" stroke="#8ab4f8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-ab10)"/>
+<path d="M282,164 L240,164 Q230,164 230,154 L230,120 Q230,110 220,110 L137,110" fill="none" stroke="#fbbc04" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-aa12)"/>
+<text x="182" y="128" font-size="12" fill="#9aa0a6" text-anchor="middle">Upper hose</text>
+<path d="M130,350 L220,350 Q230,350 230,340 L230,340 Q230,330 240,330 L269,330" fill="none" stroke="#8ab4f8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-ab12)"/>
+<text x="182" y="370" font-size="12" fill="#9aa0a6" text-anchor="middle">Lower hose</text>
+<line x1="620" y1="124" x2="620" y2="380" stroke="#3c4047" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="620" y="116" font-size="12" fill="#9aa0a6" text-anchor="middle">Firewall</text>
+<rect x="650" y="176" width="110" height="60" rx="4" fill="url(#csf-htr)" stroke="#bdc1c6" stroke-width="1.2"/>
+<line x1="658" y1="176" x2="658" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="667" y1="176" x2="667" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="676" y1="176" x2="676" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="685" y1="176" x2="685" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="694" y1="176" x2="694" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="703" y1="176" x2="703" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="712" y1="176" x2="712" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="721" y1="176" x2="721" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="730" y1="176" x2="730" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="739" y1="176" x2="739" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<line x1="748" y1="176" x2="748" y2="236" stroke="#16181d" stroke-width="1.4"/>
+<text x="705" y="256" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Heater core</text>
+<text x="705" y="272" font-size="12" fill="#9aa0a6" text-anchor="middle">warms cabin air</text>
+<path d="M560,160 L695,160 Q700,160 700,165 L700,170" fill="none" stroke="#fbbc04" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-aa12)"/>
+<path d="M660,236 L660,384 Q660,392 652,392 L238,392 Q230,392 230,384 L230,357" fill="none" stroke="#8ab4f8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#csf-ab12)"/>
+<text x="470" y="385" font-size="12" fill="#9aa0a6" text-anchor="middle">Heater return to pump inlet</text>
+<text x="630" y="152" font-size="12" fill="#9aa0a6" text-anchor="middle">Heater supply</text>
+<line x1="344" y1="93" x2="366" y2="93" stroke="#fbbc04" stroke-width="4.5" stroke-linecap="round"/>
+<text x="372" y="97" font-size="12" fill="#9aa0a6">Hot coolant</text>
+<line x1="458.6" y1="93" x2="480.6" y2="93" stroke="#8ab4f8" stroke-width="4.5" stroke-linecap="round"/>
+<text x="486.6" y="97" font-size="12" fill="#9aa0a6">Cooled coolant</text>
+<line x1="592" y1="93" x2="614" y2="93" stroke="#fbbc04" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<text x="620" y="97" font-size="12" fill="#9aa0a6">Bypass</text>
+<text x="24" y="418" font-size="12" fill="#9aa0a6"><tspan fill="#e8eaed" font-weight="600">Cold: </tspan>thermostat closed &#8212; coolant circulates through the engine, bypass and heater core only.</text>
+<text x="24" y="435" font-size="12" fill="#9aa0a6"><tspan fill="#e8eaed" font-weight="600">Warm: </tspan>thermostat opens &#8212; coolant also flows through the radiator to shed heat.</text>
+</svg>

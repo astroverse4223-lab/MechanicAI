@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>EV High-Voltage Layout</title>
+<desc>Battery-electric vehicle HV layout: HV battery with service disconnect, contactors and BMS, junction box, inverter and motor, DC-DC converter and 12 V battery, on-board charger and charge port.</desc>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">EV High-Voltage Layout</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">Orange cables are high voltage. The HV system is isolated from the vehicle chassis.</text>
+<rect x="24" y="96" width="92" height="54" rx="6" fill="#23272e" stroke="#f28b82" stroke-width="1.5"/>
+<text x="70" y="119.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">12 V battery</text>
+<text x="70" y="134.7" font-size="12" fill="#9aa0a6" text-anchor="middle">modules, relays</text>
+<rect x="140" y="96" width="116" height="54" rx="6" fill="#23272e" stroke="#ff8c1a" stroke-width="1.5"/>
+<text x="198" y="119.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">DC-DC converter</text>
+<text x="198" y="134.7" font-size="12" fill="#9aa0a6" text-anchor="middle">HV &#8594; 12 V</text>
+<rect x="276" y="96" width="116" height="54" rx="6" fill="#23272e" stroke="#ff8c1a" stroke-width="1.5"/>
+<text x="334" y="119.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">A/C compressor</text>
+<text x="334" y="134.7" font-size="12" fill="#9aa0a6" text-anchor="middle">(electric)</text>
+<rect x="412" y="96" width="116" height="54" rx="6" fill="#23272e" stroke="#ff8c1a" stroke-width="1.5"/>
+<text x="470" y="119.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Cabin heater</text>
+<text x="470" y="134.7" font-size="12" fill="#9aa0a6" text-anchor="middle">(PTC / heat pump)</text>
+<rect x="548" y="96" width="116" height="54" rx="6" fill="#23272e" stroke="#ff8c1a" stroke-width="1.5"/>
+<text x="606" y="119.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Inverter</text>
+<text x="606" y="134.7" font-size="12" fill="#9aa0a6" text-anchor="middle">DC &#8596; 3-phase AC</text>
+<rect x="688" y="96" width="88" height="54" rx="6" fill="#23272e" stroke="#ff8c1a" stroke-width="1.5"/>
+<text x="732" y="119.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Motor</text>
+<text x="732" y="134.7" font-size="12" fill="#9aa0a6" text-anchor="middle">(traction)</text>
+<line x1="664" y1="114" x2="688" y2="114" stroke="#ff8c1a" stroke-width="2"/>
+<line x1="664" y1="123" x2="688" y2="123" stroke="#ff8c1a" stroke-width="2"/>
+<line x1="664" y1="132" x2="688" y2="132" stroke="#ff8c1a" stroke-width="2"/>
+<path d="M140,123 L116,123" fill="none" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="160" y="194" width="520" height="40" rx="6" fill="#23272e" stroke="#ff8c1a" stroke-width="1.5"/>
+<text x="420" y="218.6" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">HV junction box &#8212; power distribution and fuses</text>
+<line x1="198" y1="150" x2="198" y2="194" stroke="#ff8c1a" stroke-width="4"/>
+<line x1="334" y1="150" x2="334" y2="194" stroke="#ff8c1a" stroke-width="4"/>
+<line x1="470" y1="150" x2="470" y2="194" stroke="#ff8c1a" stroke-width="4"/>
+<line x1="606" y1="150" x2="606" y2="194" stroke="#ff8c1a" stroke-width="4"/>
+<rect x="24" y="194" width="118" height="40" rx="6" fill="#23272e" stroke="#ff8c1a" stroke-width="1.5"/>
+<text x="83" y="210.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">On-board charger</text>
+<text x="83" y="225.7" font-size="12" fill="#9aa0a6" text-anchor="middle">(OBC) AC &#8594; DC</text>
+<line x1="142" y1="214" x2="160" y2="214" stroke="#ff8c1a" stroke-width="4"/>
+<rect x="24" y="296" width="118" height="52" rx="6" fill="#23272e" stroke="#ff8c1a" stroke-width="1.5"/>
+<text x="83" y="318.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Charge port</text>
+<text x="83" y="333.7" font-size="12" fill="#9aa0a6" text-anchor="middle">AC + DC fast</text>
+<line x1="83" y1="296" x2="83" y2="234" stroke="#ff8c1a" stroke-width="4"/>
+<line x1="142" y1="322" x2="180" y2="322" stroke="#ff8c1a" stroke-width="4" stroke-dasharray="7 5"/>
+<rect x="180" y="280" width="430" height="122" rx="10" fill="#23272e" stroke="#ff8c1a" stroke-width="2"/>
+<text x="194" y="300" font-size="13" fill="#e8eaed" font-weight="600">HV battery pack</text>
+<rect x="204" y="312" width="44" height="36" rx="3" fill="#2d3139" stroke="#bdc1c6" stroke-width="1"/>
+<line x1="212" y1="316" x2="212" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="221" y1="316" x2="221" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="230" y1="316" x2="230" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="239" y1="316" x2="239" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<rect x="256" y="312" width="44" height="36" rx="3" fill="#2d3139" stroke="#bdc1c6" stroke-width="1"/>
+<line x1="264" y1="316" x2="264" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="273" y1="316" x2="273" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="282" y1="316" x2="282" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="291" y1="316" x2="291" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<rect x="308" y="312" width="44" height="36" rx="3" fill="#2d3139" stroke="#bdc1c6" stroke-width="1"/>
+<line x1="316" y1="316" x2="316" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="325" y1="316" x2="325" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="334" y1="316" x2="334" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="343" y1="316" x2="343" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<rect x="440" y="312" width="44" height="36" rx="3" fill="#2d3139" stroke="#bdc1c6" stroke-width="1"/>
+<line x1="448" y1="316" x2="448" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="457" y1="316" x2="457" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="466" y1="316" x2="466" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="475" y1="316" x2="475" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<rect x="492" y="312" width="44" height="36" rx="3" fill="#2d3139" stroke="#bdc1c6" stroke-width="1"/>
+<line x1="500" y1="316" x2="500" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="509" y1="316" x2="509" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="518" y1="316" x2="518" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<line x1="527" y1="316" x2="527" y2="344" stroke="#4a4f57" stroke-width="3"/>
+<path d="M248,330 H256 M300,330 H308 M352,330 H376 M414,330 H440 M484,330 H492 M536,330 H552 V322 H556 M204,330 H194 V362 H556" fill="none" stroke="#ff8c1a" stroke-width="2"/>
+<rect x="376" y="319" width="38" height="22" rx="4" fill="#ff8c1a" stroke="#ff8c1a" stroke-width="1.5" fill-opacity="0.25"/>
+<rect x="386" y="313" width="18" height="8" rx="2" fill="#ff8c1a"/>
+<text x="395" y="386" font-size="12" fill="#ff8c1a" text-anchor="middle" font-weight="600">Service disconnect</text>
+<line x1="395" y1="342" x2="395" y2="374" stroke="#ff8c1a" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="556" y1="322" x2="581" y2="317.5" stroke="#ff8c1a" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="556" cy="322" r="3.5" fill="#16181d" stroke="#ff8c1a" stroke-width="1.8"/>
+<circle cx="580" cy="322" r="3.5" fill="#16181d" stroke="#ff8c1a" stroke-width="1.8"/>
+<line x1="556" y1="362" x2="581" y2="357.5" stroke="#ff8c1a" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="556" cy="362" r="3.5" fill="#16181d" stroke="#ff8c1a" stroke-width="1.8"/>
+<circle cx="580" cy="362" r="3.5" fill="#16181d" stroke="#ff8c1a" stroke-width="1.8"/>
+<path d="M580,322 H592 V234 M580,362 H602 V234" fill="none" stroke="#ff8c1a" stroke-width="3"/>
+<text x="566" y="390" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Contactors</text>
+<rect x="204" y="368" width="52" height="24" rx="6" fill="#23272e" stroke="#8ab4f8" stroke-width="1.5"/>
+<text x="230" y="384.2" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">BMS</text>
+<text x="610" y="262" font-size="12" fill="#ff8c1a" font-weight="600">HV+ / HV&#8722;</text>
+<text x="628" y="300" font-size="12" fill="#e8eaed" font-weight="600">Legend</text>
+<line x1="628" y1="318" x2="654" y2="318" stroke="#ff8c1a" stroke-width="4"/>
+<text x="662" y="322" font-size="12" fill="#9aa0a6">HV DC</text>
+<line x1="628" y1="336" x2="654" y2="336" stroke="#ff8c1a" stroke-width="1.6"/>
+<line x1="628" y1="340" x2="654" y2="340" stroke="#ff8c1a" stroke-width="1.6"/>
+<line x1="628" y1="344" x2="654" y2="344" stroke="#ff8c1a" stroke-width="1.6"/>
+<text x="662" y="344" font-size="12" fill="#9aa0a6">3-phase AC</text>
+<line x1="628" y1="362" x2="654" y2="362" stroke="#ff8c1a" stroke-width="4" stroke-dasharray="7 5"/>
+<text x="662" y="366" font-size="12" fill="#9aa0a6">DC fast charge</text>
+<line x1="628" y1="384" x2="654" y2="384" stroke="#f28b82" stroke-width="2.5"/>
+<text x="662" y="388" font-size="12" fill="#9aa0a6">12 V</text>
+<text x="24" y="422" font-size="12" fill="#fbbc04">Before HV service: follow the OEM disable procedure, remove the service disconnect, wait the specified time,</text>
+<text x="24" y="437" font-size="12" fill="#fbbc04">and verify zero voltage with rated insulated gloves and a CAT III meter.</text>
+</svg>

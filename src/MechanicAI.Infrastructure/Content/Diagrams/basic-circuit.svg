@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>Basic Automotive Circuit</title>
+<desc>Series circuit with battery, fuse, switch and lamp, returning through the chassis ground.</desc>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">Basic Automotive Circuit</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">A complete loop: power source &#8594; protection &#8594; control &#8594; load &#8594; ground return.</text>
+<line x1="102" y1="226" x2="138" y2="226" stroke="#e8eaed" stroke-width="2" stroke-linecap="round"/>
+<line x1="110" y1="234" x2="130" y2="234" stroke="#e8eaed" stroke-width="4" stroke-linecap="round"/>
+<line x1="102" y1="242" x2="138" y2="242" stroke="#e8eaed" stroke-width="2" stroke-linecap="round"/>
+<line x1="110" y1="250" x2="130" y2="250" stroke="#e8eaed" stroke-width="4" stroke-linecap="round"/>
+<text x="94" y="231" font-size="16" fill="#f28b82" text-anchor="end" font-weight="700">+</text>
+<text x="94" y="255" font-size="16" fill="#81c995" text-anchor="end" font-weight="700">&#8722;</text>
+<path d="M120,226 L120,140 Q120,134 126,134 L233,134" fill="none" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="233" y="127" width="34" height="14" rx="3" fill="#23272e" stroke="#f28b82" stroke-width="1.5"/>
+<path d="M 237,134 C 244,126 249,126 250,134 S 257,142 263,134" fill="none" stroke="#f28b82" stroke-width="1.5"/>
+<path d="M267,134 L350,134" fill="none" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="350" y1="134" x2="401" y2="129.5" stroke="#f28b82" stroke-width="2" stroke-linecap="round"/>
+<circle cx="350" cy="134" r="3.5" fill="#16181d" stroke="#f28b82" stroke-width="2"/>
+<circle cx="400" cy="134" r="3.5" fill="#16181d" stroke="#f28b82" stroke-width="2"/>
+<path d="M400,134 L534,134 Q540,134 540,140 L540,188" fill="none" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="540" cy="210" r="22" fill="#23272e" stroke="#e8eaed" stroke-width="2"/>
+<path d="M 526.4,196.4 L 553.6,223.6 M 553.6,196.4 L 526.4,223.6" fill="none" stroke="#e8eaed" stroke-width="1.5"/>
+<path d="M540,232 L540,300" fill="none" stroke="#81c995" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M120,250 L120,300" fill="none" stroke="#81c995" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 540,298 v 10 M 529,308 h 22 M 533,313 h 14 M 537,318 h 6" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round"/>
+<path d="M 120,298 v 10 M 109,308 h 22 M 113,313 h 14 M 117,318 h 6" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round"/>
+<rect x="86" y="322" width="490" height="16" rx="4" fill="#2d3139" stroke="#5f6368" stroke-width="1"/>
+<polygon points="465,330 474,333.8 474,326.2" fill="#81c995"/>
+<polygon points="325,330 334,333.8 334,326.2" fill="#81c995"/>
+<polygon points="185,330 194,333.8 194,326.2" fill="#81c995"/>
+<text x="331" y="358" font-size="12" fill="#9aa0a6" text-anchor="middle">Vehicle chassis / engine block &#8212; ground return path</text>
+<polygon points="181,134 170.2,129.5 170.2,138.5" fill="#f28b82"/>
+<polygon points="316,134 305.2,129.5 305.2,138.5" fill="#f28b82"/>
+<polygon points="476,134 465.2,129.5 465.2,138.5" fill="#f28b82"/>
+<polygon points="540,168 544.5,157.2 535.5,157.2" fill="#f28b82"/>
+<polygon points="540,274 544.5,263.2 535.5,263.2" fill="#81c995"/>
+<polygon points="120,269 115.5,279.8 124.5,279.8" fill="#81c995"/>
+<polygon points="120,174 115.5,184.8 124.5,184.8" fill="#f28b82"/>
+<circle cx="160" cy="222" r="9" fill="#8ab4f8"/>
+<text x="160" y="226.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">1</text>
+<text x="174" y="227" font-size="13" fill="#e8eaed" font-weight="600">Battery</text>
+<text x="160" y="245" font-size="12" fill="#9aa0a6">Power source</text>
+<circle cx="229" cy="104" r="9" fill="#8ab4f8"/>
+<text x="229" y="108.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">2</text>
+<text x="243" y="109" font-size="13" fill="#e8eaed" font-weight="600">Fuse</text>
+<text x="250" y="162" font-size="12" fill="#9aa0a6" text-anchor="middle">Protection</text>
+<circle cx="349" cy="104" r="9" fill="#8ab4f8"/>
+<text x="349" y="108.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">3</text>
+<text x="363" y="109" font-size="13" fill="#e8eaed" font-weight="600">Switch</text>
+<text x="375" y="162" font-size="12" fill="#9aa0a6" text-anchor="middle">Control</text>
+<circle cx="392" cy="205" r="9" fill="#8ab4f8"/>
+<text x="392" y="209.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">4</text>
+<text x="406" y="210" font-size="13" fill="#e8eaed" font-weight="600">Lamp</text>
+<text x="384" y="228" font-size="12" fill="#9aa0a6">Load &#8212; does the work</text>
+<circle cx="598" cy="330" r="9" fill="#8ab4f8"/>
+<text x="598" y="334.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">5</text>
+<text x="612" y="335" font-size="13" fill="#e8eaed" font-weight="600">Ground</text>
+<text x="470" y="122" font-size="12" fill="#f28b82" text-anchor="middle" font-weight="600">Power side (B+)</text>
+<text x="552" y="272" font-size="12" fill="#81c995" font-weight="600">Ground side</text>
+<rect x="646" y="84" width="130" height="206" rx="10" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="660" y="108" font-size="12" fill="#e8eaed" font-weight="600">Every circuit needs</text>
+<circle cx="668" cy="134" r="9" fill="#8ab4f8"/>
+<text x="668" y="138.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">1</text>
+<text x="684" y="139" font-size="12" fill="#e8eaed">Power source</text>
+<circle cx="668" cy="166" r="9" fill="#8ab4f8"/>
+<text x="668" y="170.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">2</text>
+<text x="684" y="171" font-size="12" fill="#e8eaed">Protection</text>
+<circle cx="668" cy="198" r="9" fill="#8ab4f8"/>
+<text x="668" y="202.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">3</text>
+<text x="684" y="203" font-size="12" fill="#e8eaed">Control</text>
+<circle cx="668" cy="230" r="9" fill="#8ab4f8"/>
+<text x="668" y="234.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">4</text>
+<text x="684" y="235" font-size="12" fill="#e8eaed">Load</text>
+<circle cx="668" cy="262" r="9" fill="#8ab4f8"/>
+<text x="668" y="266.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">5</text>
+<text x="684" y="267" font-size="12" fill="#e8eaed">Ground path</text>
+<text x="24" y="392" font-size="12" fill="#9aa0a6">Current flows only when the loop is complete. Opening the switch, a blown fuse, or a broken wire or ground stops current</text>
+<text x="24" y="409" font-size="12" fill="#9aa0a6">everywhere in the loop; extra resistance anywhere in the loop reduces current to the load.</text>
+<text x="776" y="434" font-size="12" fill="#9aa0a6" text-anchor="end" font-style="italic">Arrows show conventional current flow (+ to &#8722;).</text>
+</svg>

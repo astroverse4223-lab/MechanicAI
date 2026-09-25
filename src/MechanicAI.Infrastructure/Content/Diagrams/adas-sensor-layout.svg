@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>ADAS Sensor Layout</title>
+<desc>Top view of a vehicle with front radar, windshield camera, rear corner radars, ultrasonic parking sensors and surround and rear cameras, with their coverage zones.</desc>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">ADAS Sensor Layout</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">Typical sensor locations and coverage (top view, front of vehicle to the right).</text>
+<path d="M 296,214 L 203.7,332.2 A 150 150 0 0 1 203.7,95.8 Z" fill="#81c995" stroke="#81c995" stroke-width="1" fill-opacity="0.07" stroke-opacity="0.5" stroke-dasharray="5 4"/>
+<path d="M 300,178 L 197,192.5 A 104 104 0 0 1 321.6,76.3 Z" fill="#fbbc04" stroke="#fbbc04" stroke-width="1" fill-opacity="0.12" stroke-opacity="0.6"/>
+<path d="M 300,250 L 321.6,351.7 A 104 104 0 0 1 197,235.5 Z" fill="#fbbc04" stroke="#fbbc04" stroke-width="1" fill-opacity="0.12" stroke-opacity="0.6"/>
+<path d="M 422,168 L 360.4,139.3 A 68 68 0 0 1 483.6,139.3 Z" fill="#81c995" stroke="#81c995" stroke-width="1" fill-opacity="0.07" stroke-opacity="0.5" stroke-dasharray="5 4"/>
+<path d="M 422,260 L 483.6,288.7 A 68 68 0 0 1 360.4,288.7 Z" fill="#81c995" stroke="#81c995" stroke-width="1" fill-opacity="0.07" stroke-opacity="0.5" stroke-dasharray="5 4"/>
+<path d="M 448,214 L 670.8,100.5 A 250 250 0 0 1 670.8,327.5 Z" fill="#81c995" stroke="#81c995" stroke-width="1" fill-opacity="0.08" stroke-opacity="0.6" stroke-dasharray="5 4"/>
+<path d="M 506,214 L 774,181.1 A 270 270 0 0 1 774,246.9 Z" fill="#8ab4f8" stroke="#8ab4f8" stroke-width="1" fill-opacity="0.2" stroke-opacity="0.8"/>
+<path d="M506,164 A36,50 0 0,1 506,264 Z" fill="#f28b82" stroke="#f28b82" stroke-width="1" fill-opacity="0.15" stroke-opacity="0.6"/>
+<path d="M294,164 A36,50 0 0,0 294,264 Z" fill="#f28b82" stroke="#f28b82" stroke-width="1" fill-opacity="0.15" stroke-opacity="0.6"/>
+<rect x="318" y="164" width="32" height="8" rx="3" fill="#111317"/>
+<rect x="318" y="256" width="32" height="8" rx="3" fill="#111317"/>
+<rect x="452" y="164" width="32" height="8" rx="3" fill="#111317"/>
+<rect x="452" y="256" width="32" height="8" rx="3" fill="#111317"/>
+<rect x="294" y="170" width="212" height="88" rx="26" fill="#2a2e35" stroke="#bdc1c6" stroke-width="1.5"/>
+<polygon points="436,180 454,187 454,241 436,248" fill="#3d4a5c"/>
+<polygon points="330,186 342,182 342,246 330,242" fill="#3d4a5c"/>
+<rect x="342" y="182" width="94" height="64" rx="4" fill="#30353d"/>
+<rect x="416" y="162" width="12" height="8" rx="2" fill="#bdc1c6"/>
+<rect x="416" y="258" width="12" height="8" rx="2" fill="#bdc1c6"/>
+<rect x="500" y="206" width="7" height="16" rx="1" fill="#8ab4f8"/>
+<circle cx="446" cy="214" r="4.5" fill="#81c995"/>
+<circle cx="296" cy="214" r="4" fill="#81c995"/>
+<circle cx="422" cy="164" r="3.5" fill="#81c995"/>
+<circle cx="422" cy="264" r="3.5" fill="#81c995"/>
+<rect x="297" y="173" width="8" height="10" rx="1" fill="#fbbc04"/>
+<rect x="297" y="245" width="8" height="10" rx="1" fill="#fbbc04"/>
+<circle cx="502.1" cy="190" r="2.6" fill="#f28b82"/>
+<circle cx="297.9" cy="190" r="2.6" fill="#f28b82"/>
+<circle cx="503.6" cy="202" r="2.6" fill="#f28b82"/>
+<circle cx="296.4" cy="202" r="2.6" fill="#f28b82"/>
+<circle cx="503.6" cy="226" r="2.6" fill="#f28b82"/>
+<circle cx="296.4" cy="226" r="2.6" fill="#f28b82"/>
+<circle cx="502.1" cy="238" r="2.6" fill="#f28b82"/>
+<circle cx="297.9" cy="238" r="2.6" fill="#f28b82"/>
+<text x="770" y="176" font-size="12" fill="#8ab4f8" text-anchor="end" font-weight="600">Front radar</text>
+<text x="620" y="150" font-size="12" fill="#81c995" text-anchor="middle" font-weight="600">Windshield camera</text>
+<text x="176" y="218" font-size="12" fill="#81c995" text-anchor="middle" font-weight="600">Rear camera</text>
+<text x="224" y="112" font-size="12" fill="#fbbc04" text-anchor="middle" font-weight="600">Corner radar</text>
+<text x="224" y="324" font-size="12" fill="#fbbc04" text-anchor="middle" font-weight="600">Corner radar</text>
+<text x="422" y="92" font-size="12" fill="#81c995" text-anchor="middle" font-weight="600">Surround-view cameras</text>
+<line x1="422" y1="97" x2="422" y2="108" stroke="#81c995" stroke-width="1"/>
+<text x="506" y="290" font-size="12" fill="#f28b82" text-anchor="middle" font-weight="600">Ultrasonic</text>
+<text x="400" y="219" font-size="12" fill="#9aa0a6" text-anchor="middle">Vehicle</text>
+<rect x="24" y="360" width="14" height="12" rx="2" fill="#8ab4f8" stroke="#8ab4f8" stroke-width="1" fill-opacity="0.35"/>
+<text x="46" y="370" font-size="12" fill="#9aa0a6"><tspan fill="#e8eaed" font-weight="600">Front radar: </tspan>adaptive cruise, collision warning / AEB</text>
+<rect x="404" y="360" width="14" height="12" rx="2" fill="#81c995" stroke="#81c995" stroke-width="1" fill-opacity="0.35"/>
+<text x="426" y="370" font-size="12" fill="#9aa0a6"><tspan fill="#e8eaed" font-weight="600">Cameras: </tspan>lane keeping, signs, rear and surround view</text>
+<rect x="24" y="382" width="14" height="12" rx="2" fill="#fbbc04" stroke="#fbbc04" stroke-width="1" fill-opacity="0.35"/>
+<text x="46" y="392" font-size="12" fill="#9aa0a6"><tspan fill="#e8eaed" font-weight="600">Corner radars: </tspan>blind-spot and rear cross-traffic alert</text>
+<rect x="404" y="382" width="14" height="12" rx="2" fill="#f28b82" stroke="#f28b82" stroke-width="1" fill-opacity="0.35"/>
+<text x="426" y="392" font-size="12" fill="#9aa0a6"><tspan fill="#e8eaed" font-weight="600">Ultrasonic: </tspan>parking assist (short range)</text>
+<text x="24" y="428" font-size="12" fill="#fbbc04" font-weight="600">Calibrate after windshield, bumper, alignment or sensor work &#8212; per OEM service information.</text>
+</svg>

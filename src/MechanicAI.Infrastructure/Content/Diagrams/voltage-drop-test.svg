@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>Voltage Drop Test (Circuit Loaded)</title>
+<desc>Two DMMs measure power-side drop (B+ post to load +) and ground-side drop (load &#8722; to B&#8722; post) with the circuit switched on.</desc>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">Voltage Drop Test (Circuit Loaded)</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">Measure across each side of the circuit while current flows &#8212; the meter reads the voltage lost in that section.</text>
+<line x1="92" y1="240" x2="128" y2="240" stroke="#e8eaed" stroke-width="2" stroke-linecap="round"/>
+<line x1="100" y1="248" x2="120" y2="248" stroke="#e8eaed" stroke-width="4" stroke-linecap="round"/>
+<line x1="92" y1="256" x2="128" y2="256" stroke="#e8eaed" stroke-width="2" stroke-linecap="round"/>
+<line x1="100" y1="264" x2="120" y2="264" stroke="#e8eaed" stroke-width="4" stroke-linecap="round"/>
+<text x="84" y="245" font-size="16" fill="#f28b82" text-anchor="end" font-weight="700">+</text>
+<text x="84" y="269" font-size="16" fill="#81c995" text-anchor="end" font-weight="700">&#8722;</text>
+<text x="136" y="257" font-size="13" fill="#e8eaed" font-weight="600">Battery</text>
+<path d="M110,240 L110,176 Q110,170 116,170 L193,170" fill="none" stroke="#f28b82" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="193" y="163" width="34" height="14" rx="3" fill="#23272e" stroke="#f28b82" stroke-width="1.5"/>
+<path d="M 197,170 C 204,162 209,162 210,170 S 217,178 223,170" fill="none" stroke="#f28b82" stroke-width="1.5"/>
+<path d="M227,170 L280,170" fill="none" stroke="#f28b82" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="280" y1="170" x2="323" y2="165.5" stroke="#f28b82" stroke-width="2" stroke-linecap="round"/>
+<circle cx="280" cy="170" r="3.5" fill="#16181d" stroke="#f28b82" stroke-width="2"/>
+<circle cx="322" cy="170" r="3.5" fill="#16181d" stroke="#f28b82" stroke-width="2"/>
+<path d="M322,170 L434,170 Q440,170 440,176 L440,222" fill="none" stroke="#f28b82" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="210" y="196" font-size="12" fill="#9aa0a6" text-anchor="middle">Fuse</text>
+<text x="301" y="196" font-size="12" fill="#9aa0a6" text-anchor="middle">Switch ON</text>
+<circle cx="440" cy="248" r="26" fill="#23272e" stroke="#e8eaed" stroke-width="2"/>
+<text x="440" y="254" font-size="16" fill="#e8eaed" text-anchor="middle" font-weight="700">M</text>
+<text x="476" y="244" font-size="13" fill="#e8eaed" font-weight="600">Load</text>
+<text x="476" y="260" font-size="12" fill="#9aa0a6">e.g., motor</text>
+<path d="M440,274 L440,330 Q440,336 434,336 L116,336 Q110,336 110,330 L110,264" fill="none" stroke="#81c995" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="275" y="354" font-size="12" fill="#81c995" text-anchor="middle">Ground path (wires, straps, chassis)</text>
+<polygon points="166,170 155.2,165.5 155.2,174.5" fill="#f28b82"/>
+<polygon points="386,170 375.2,165.5 375.2,174.5" fill="#f28b82"/>
+<polygon points="354,336 364.8,340.5 364.8,331.5" fill="#81c995"/>
+<polygon points="184,336 194.8,340.5 194.8,331.5" fill="#81c995"/>
+<rect x="196" y="72" width="128" height="58" rx="8" fill="#2a2e36" stroke="#bdc1c6" stroke-width="1.5"/>
+<rect x="206" y="80" width="108" height="26" rx="4" fill="#0f1114" stroke="#5f6368" stroke-width="1"/>
+<text x="260" y="99" font-size="16" fill="#e8eaed" text-anchor="middle" font-weight="600">0.18 V</text>
+<text x="208" y="122" font-size="12" fill="#f28b82" font-weight="700">V</text>
+<text x="260" y="122" font-size="12" fill="#9aa0a6" text-anchor="middle">V DC</text>
+<text x="312" y="122" font-size="12" fill="#bdc1c6" text-anchor="end" font-weight="700">COM</text>
+<path d="M220,130 L220,145 Q220,150 215,150 L155,150 Q150,150 150,155 L150,207 Q150,212 145,212 L115,212" fill="none" stroke="#f28b82" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<path d="M300,130 L300,141 Q300,146 305,146 L405,146 Q410,146 410,151 L410,201 Q410,206 415,206 L435,206" fill="none" stroke="#bdc1c6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<rect x="196" y="368" width="128" height="58" rx="8" fill="#2a2e36" stroke="#bdc1c6" stroke-width="1.5"/>
+<rect x="206" y="376" width="108" height="26" rx="4" fill="#0f1114" stroke="#5f6368" stroke-width="1"/>
+<text x="260" y="395" font-size="16" fill="#e8eaed" text-anchor="middle" font-weight="600">0.06 V</text>
+<text x="208" y="418" font-size="12" fill="#bdc1c6" font-weight="700">COM</text>
+<text x="260" y="418" font-size="12" fill="#9aa0a6" text-anchor="middle">V DC</text>
+<text x="312" y="418" font-size="12" fill="#f28b82" text-anchor="end" font-weight="700">V</text>
+<path d="M300,368 L300,361 Q300,356 305,356 L405,356 Q410,356 410,351 L410,297 Q410,292 415,292 L435,292" fill="none" stroke="#f28b82" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<path d="M220,368 L220,364 Q220,360 216,360 L155,360 Q150,360 150,355 L150,305 Q150,300 145,300 L115,300" fill="none" stroke="#bdc1c6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<circle cx="110" cy="212" r="4.5" fill="#16181d" stroke="#e8eaed" stroke-width="2"/>
+<circle cx="440" cy="206" r="4.5" fill="#16181d" stroke="#e8eaed" stroke-width="2"/>
+<circle cx="440" cy="292" r="4.5" fill="#16181d" stroke="#e8eaed" stroke-width="2"/>
+<circle cx="110" cy="300" r="4.5" fill="#16181d" stroke="#e8eaed" stroke-width="2"/>
+<text x="98" y="216" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">B+ post</text>
+<text x="98" y="304" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">B&#8722; post</text>
+<text x="452" y="204" font-size="12" fill="#e8eaed" font-weight="600">Load +</text>
+<text x="452" y="302" font-size="12" fill="#e8eaed" font-weight="600">Load &#8722;</text>
+<text x="336" y="92" font-size="13" fill="#e8eaed" font-weight="600">Meter 1</text>
+<text x="336" y="108" font-size="12" fill="#f28b82">Power-side drop</text>
+<text x="336" y="124" font-size="12" fill="#9aa0a6">red: B+ post &#183; black: load +</text>
+<text x="336" y="388" font-size="13" fill="#e8eaed" font-weight="600">Meter 2</text>
+<text x="336" y="404" font-size="12" fill="#81c995">Ground-side drop</text>
+<text x="336" y="420" font-size="12" fill="#9aa0a6">red: load &#8722; &#183; black: B&#8722; post</text>
+<text x="24" y="400" font-size="12" fill="#9aa0a6">Black (COM) leads</text>
+<text x="24" y="416" font-size="12" fill="#9aa0a6">drawn grey</text>
+<rect x="560" y="76" width="216" height="356" rx="10" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="574" y="100" font-size="13" fill="#e8eaed" font-weight="600">How to read it</text>
+<circle cx="578" cy="120" r="2.5" fill="#8ab4f8"/>
+<text x="588" y="124" font-size="12" fill="#9aa0a6">Circuit ON and working &#8212; no</text>
+<text x="588" y="140" font-size="12" fill="#9aa0a6">current, no drop.</text>
+<circle cx="578" cy="160" r="2.5" fill="#8ab4f8"/>
+<text x="588" y="164" font-size="12" fill="#9aa0a6">Near 0&#160;V: low resistance in</text>
+<text x="588" y="180" font-size="12" fill="#9aa0a6">that section.</text>
+<circle cx="578" cy="200" r="2.5" fill="#8ab4f8"/>
+<text x="588" y="204" font-size="12" fill="#9aa0a6">High reading: unwanted</text>
+<text x="588" y="220" font-size="12" fill="#9aa0a6">resistance (corrosion, loose</text>
+<text x="588" y="236" font-size="12" fill="#9aa0a6">or damaged connection). Move</text>
+<text x="588" y="252" font-size="12" fill="#9aa0a6">the leads closer together to</text>
+<text x="588" y="268" font-size="12" fill="#9aa0a6">isolate it.</text>
+<circle cx="578" cy="288" r="2.5" fill="#8ab4f8"/>
+<text x="588" y="292" font-size="12" fill="#9aa0a6">Guideline: power side</text>
+<text x="588" y="308" font-size="12" fill="#9aa0a6">&#8804;&#160;0.5&#160;V, ground side &#8804;&#160;0.2&#160;V</text>
+<text x="588" y="324" font-size="12" fill="#9aa0a6">(general guideline &#8212; verify</text>
+<text x="588" y="340" font-size="12" fill="#9aa0a6">against OEM specification).</text>
+<line x1="574" y1="360" x2="762" y2="360" stroke="#3c4047" stroke-width="1"/>
+<text x="574" y="378" font-size="12" fill="#e8eaed" font-weight="600">Battery V =</text>
+<text x="574" y="394" font-size="12" fill="#e8eaed" font-weight="600">drop 1 + load V + drop 2</text>
+<text x="574" y="416" font-size="12" fill="#9aa0a6" font-style="italic">Example readings shown.</text>
+</svg>

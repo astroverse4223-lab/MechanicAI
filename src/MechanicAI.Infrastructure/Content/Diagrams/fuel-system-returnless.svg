@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>Returnless Fuel System</title>
+<desc>Returnless fuel system: in-tank pump module with regulator, single supply line, fuel rail with injectors, rail pressure sensor, pump control module and PCM.</desc>
+<defs><marker id="frs-aa8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#fbbc04"/></marker><marker id="frs-ab8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#8ab4f8"/></marker></defs>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">Returnless Fuel System</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">One supply line to the engine; pressure is controlled at the tank module and/or by varying pump speed.</text>
+<rect x="24" y="72" width="260" height="120" rx="10" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="38" y="94" font-size="12" fill="#e8eaed" font-weight="600">Mechanical returnless</text>
+<text x="38" y="110" font-size="12" fill="#9aa0a6">In-tank regulator holds pressure;</text>
+<text x="38" y="125" font-size="12" fill="#9aa0a6">excess fuel stays in the tank.</text>
+<text x="38" y="146" font-size="12" fill="#e8eaed" font-weight="600">Electronic returnless</text>
+<text x="38" y="162" font-size="12" fill="#9aa0a6">Pump speed is varied to hold rail</text>
+<text x="38" y="177" font-size="12" fill="#9aa0a6">pressure using FRP sensor feedback.</text>
+<rect x="36" y="256" width="264" height="164" rx="18" fill="#1d2127" stroke="#bdc1c6" stroke-width="1.5"/>
+<path d="M37,300 H299 V402 Q299,419 282,419 H54 Q37,419 37,402 Z" fill="#fbbc04" fill-opacity="0.13"/>
+<path d="M37,300 q6.5,-3 13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0 t13,0" fill="none" stroke="#fbbc04" stroke-width="1.2" stroke-opacity="0.7"/>
+<text x="50" y="284" font-size="13" fill="#e8eaed" font-weight="600">Fuel tank</text>
+<rect x="130" y="244" width="100" height="12" rx="2" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="138" y="272" width="84" height="136" rx="6" fill="#262a31" stroke="#5f6368" stroke-width="1.2"/>
+<rect x="139" y="292" width="82" height="115" rx="5" fill="#fbbc04" fill-opacity="0.16"/>
+<rect x="150" y="300" width="26" height="86" rx="6" fill="#3c4047" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="146" y="390" width="34" height="12" rx="3" fill="#23272e" stroke="#9aa0a6" stroke-width="1.2" stroke-dasharray="2 2"/>
+<path d="M163,300 L163,290 Q163,286 167,286 L197,286 Q201,286 201,282 L201,257" fill="none" stroke="#fbbc04" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M201,286 L201,318" fill="none" stroke="#fbbc04" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="188" y="318" width="26" height="22" rx="3" fill="#23272e" stroke="#fbbc04" stroke-width="1.5"/>
+<path d="M 193,334 L 201,324 L 209,334" fill="none" stroke="#fbbc04" stroke-width="1.5"/>
+<path d="M201,342 L201,368" fill="none" stroke="#fbbc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3" marker-end="url(#frs-aa8)"/>
+<text x="48" y="251" font-size="12" fill="#e8eaed" font-weight="600">Pump module</text>
+<polyline points="150,346 116,346" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="150" cy="346" r="2.2" fill="#9aa0a6"/>
+<text x="112" y="350" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Fuel pump</text>
+<polyline points="146,396 116,396" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="146" cy="396" r="2.2" fill="#9aa0a6"/>
+<text x="112" y="400" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Strainer</text>
+<text x="228" y="332" font-size="12" fill="#e8eaed" font-weight="600">Regulator</text>
+<text x="228" y="348" font-size="12" fill="#9aa0a6">excess fuel</text>
+<text x="228" y="363" font-size="12" fill="#9aa0a6">stays in tank</text>
+<path d="M201,244 L201,214 Q201,206 209,206 L422,206 Q430,206 430,198 L430,130 Q430,122 438,122 L460,122" fill="none" stroke="#fbbc04" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polygon points="255.5,206 245.6,201.9 245.6,210.1" fill="#fbbc04"/>
+<polygon points="385.5,206 375.6,201.9 375.6,210.1" fill="#fbbc04"/>
+<polygon points="430,170.5 425.9,180.4 434.1,180.4" fill="#fbbc04"/>
+<rect x="298" y="196" width="40" height="20" rx="4" fill="#23272e" stroke="#fbbc04" stroke-width="1.5"/>
+<line x1="304" y1="199" x2="304" y2="213" stroke="#fbbc04" stroke-width="1" stroke-opacity="0.7"/>
+<line x1="311" y1="199" x2="311" y2="213" stroke="#fbbc04" stroke-width="1" stroke-opacity="0.7"/>
+<line x1="318" y1="199" x2="318" y2="213" stroke="#fbbc04" stroke-width="1" stroke-opacity="0.7"/>
+<line x1="325" y1="199" x2="325" y2="213" stroke="#fbbc04" stroke-width="1" stroke-opacity="0.7"/>
+<line x1="332" y1="199" x2="332" y2="213" stroke="#fbbc04" stroke-width="1" stroke-opacity="0.7"/>
+<text x="318" y="189" font-size="12" fill="#9aa0a6" text-anchor="middle">Fuel filter</text>
+<text x="420" y="146" font-size="12" fill="#fbbc04" text-anchor="end" font-weight="600">Single supply line</text>
+<text x="420" y="162" font-size="12" fill="#fbbc04" text-anchor="end" font-weight="600">no return line</text>
+<rect x="462" y="114" width="272" height="16" rx="8" fill="#fbbc04" stroke="#fbbc04" stroke-width="1.5" fill-opacity="0.2"/>
+<text x="466" y="106" font-size="13" fill="#e8eaed" font-weight="600">Fuel rail</text>
+<rect x="496" y="130" width="16" height="30" rx="3" fill="#3c4047" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="512" y="137" width="7" height="9" rx="1" fill="#5f6368"/>
+<rect x="500" y="160" width="8" height="7" rx="1" fill="#bdc1c6"/>
+<polygon points="501.5,167 506.5,167 512,182 496,182" fill="#fbbc04" fill-opacity="0.35"/>
+<rect x="554" y="130" width="16" height="30" rx="3" fill="#3c4047" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="570" y="137" width="7" height="9" rx="1" fill="#5f6368"/>
+<rect x="558" y="160" width="8" height="7" rx="1" fill="#bdc1c6"/>
+<polygon points="559.5,167 564.5,167 570,182 554,182" fill="#fbbc04" fill-opacity="0.35"/>
+<rect x="612" y="130" width="16" height="30" rx="3" fill="#3c4047" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="628" y="137" width="7" height="9" rx="1" fill="#5f6368"/>
+<rect x="616" y="160" width="8" height="7" rx="1" fill="#bdc1c6"/>
+<polygon points="617.5,167 622.5,167 628,182 612,182" fill="#fbbc04" fill-opacity="0.35"/>
+<rect x="670" y="130" width="16" height="30" rx="3" fill="#3c4047" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="686" y="137" width="7" height="9" rx="1" fill="#5f6368"/>
+<rect x="674" y="160" width="8" height="7" rx="1" fill="#bdc1c6"/>
+<polygon points="675.5,167 680.5,167 686,182 670,182" fill="#fbbc04" fill-opacity="0.35"/>
+<text x="591" y="200" font-size="12" fill="#9aa0a6" text-anchor="middle">Injectors (one per cylinder)</text>
+<rect x="596" y="101" width="8" height="13" fill="#bdc1c6"/>
+<rect x="593" y="96" width="14" height="7" rx="2" fill="#5f6368"/>
+<text x="600" y="88" font-size="12" fill="#9aa0a6" text-anchor="middle">Test port</text>
+<rect x="734" y="110" width="24" height="24" rx="4" fill="#23272e" stroke="#8ab4f8" stroke-width="1.5"/>
+<text x="746" y="100" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">FRP sensor</text>
+<rect x="560" y="246" width="116" height="44" rx="6" fill="#23272e" stroke="#8ab4f8" stroke-width="1.5"/>
+<text x="618" y="272.6" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">PCM</text>
+<rect x="330" y="300" width="124" height="48" rx="6" fill="#23272e" stroke="#8ab4f8" stroke-width="1.5"/>
+<text x="392" y="320.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Fuel pump</text>
+<text x="392" y="335.7" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">control module</text>
+<path d="M746,134 L746,262 Q746,268 740,268 L681,268" fill="none" stroke="#8ab4f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#frs-ab8)"/>
+<text x="686" y="260" font-size="12" fill="#8ab4f8" font-weight="600">FRP signal</text>
+<path d="M600,290 L600,312 Q600,318 594,318 L459,318" fill="none" stroke="#8ab4f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#frs-ab8)"/>
+<text x="527" y="311" font-size="12" fill="#8ab4f8" text-anchor="middle" font-weight="600">Speed command</text>
+<path d="M330,324 L319,324 Q314,324 314,319 L314,233 Q314,228 309,228 L149,228 Q144,228 144,233 L144,307 Q144,310 147,310 L150,310" fill="none" stroke="#f28b82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="320" y="262" font-size="12" fill="#f28b82" font-weight="600">Pump power</text>
+<text x="320" y="277" font-size="12" fill="#f28b82">(variable)</text>
+<path d="M392,282 L392,300" fill="none" stroke="#f28b82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="400" y="287" font-size="12" fill="#f28b82" font-weight="600">Fused B+</text>
+<path d="M392,348 L392,358" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 392,358 v 4 M 381,362 h 22 M 385,367 h 14 M 389,372 h 6" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round"/>
+<line x1="474" y1="421" x2="496" y2="421" stroke="#fbbc04" stroke-width="4.5" stroke-linecap="round"/>
+<text x="502" y="425" font-size="12" fill="#9aa0a6">Fuel</text>
+<line x1="543" y1="421" x2="565" y2="421" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round"/>
+<text x="571" y="425" font-size="12" fill="#9aa0a6">Power</text>
+<line x1="618.2" y1="421" x2="640.2" y2="421" stroke="#8ab4f8" stroke-width="2.5" stroke-linecap="round"/>
+<text x="646.2" y="425" font-size="12" fill="#9aa0a6">Signal</text>
+<line x1="699.6" y1="421" x2="721.6" y2="421" stroke="#81c995" stroke-width="2.5" stroke-linecap="round"/>
+<text x="727.6" y="425" font-size="12" fill="#9aa0a6">Ground</text>
+</svg>

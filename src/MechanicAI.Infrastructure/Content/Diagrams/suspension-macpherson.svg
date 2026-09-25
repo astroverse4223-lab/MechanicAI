@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>MacPherson Strut Suspension</title>
+<desc>MacPherson strut corner: upper mount and bearing, coil spring, strut damper, steering knuckle, lower control arm with ball joint and bushing, stabilizer link, tie rod and steering axis.</desc>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">MacPherson Strut Suspension</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">Front view, left front corner. The strut is a structural member and the upper steering pivot.</text>
+<g transform="translate(-40,0)">
+<line x1="330" y1="426" x2="770" y2="426" stroke="#5f6368" stroke-width="1.5"/>
+<path d="M342,426 l-8,8 M358,426 l-8,8 M374,426 l-8,8 M390,426 l-8,8 M406,426 l-8,8 M422,426 l-8,8 M438,426 l-8,8 M454,426 l-8,8 M470,426 l-8,8 M486,426 l-8,8 M502,426 l-8,8 M518,426 l-8,8 M534,426 l-8,8 M550,426 l-8,8 M566,426 l-8,8 M582,426 l-8,8 M598,426 l-8,8 M614,426 l-8,8 M630,426 l-8,8 M646,426 l-8,8 M662,426 l-8,8 M678,426 l-8,8 M694,426 l-8,8 M710,426 l-8,8 M726,426 l-8,8 M742,426 l-8,8 M758,426 l-8,8" fill="none" stroke="#3c4047" stroke-width="1"/>
+<rect x="410" y="72" width="220" height="16" rx="3" fill="#2a2e35" stroke="#5f6368" stroke-width="1.2"/>
+<text x="402" y="85" font-size="12" fill="#9aa0a6" text-anchor="end">Body (strut tower)</text>
+<rect x="640" y="196" width="90" height="230" rx="26" fill="#2a2d33" stroke="#bdc1c6" stroke-width="1.5"/>
+<rect x="652" y="240" width="66" height="142" rx="8" fill="#2d3139" stroke="#5f6368" stroke-width="1.2"/>
+<rect x="628" y="294" width="34" height="34" rx="4" fill="#3c4047" stroke="#bdc1c6" stroke-width="1.2"/>
+<text x="685" y="186" font-size="12" fill="#9aa0a6" text-anchor="middle">Wheel &amp; tire</text>
+<g transform="translate(520,100) rotate(-15)">
+<rect x="-4" y="4" width="8" height="76" fill="#bdc1c6"/>
+<rect x="-36" y="14" width="72" height="6" rx="2" fill="#5f6368"/>
+<line x1="30" y1="27.5" x2="-30" y2="35" stroke="#4f6c99" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="30" y1="42.5" x2="-30" y2="50" stroke="#4f6c99" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="30" y1="57.5" x2="-30" y2="65" stroke="#4f6c99" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="30" y1="72.5" x2="-30" y2="80" stroke="#4f6c99" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="30" y1="87.5" x2="-30" y2="95" stroke="#4f6c99" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="30" y1="102.5" x2="-30" y2="110" stroke="#4f6c99" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="-30" y1="20" x2="30" y2="27.5" stroke="#8ab4f8" stroke-width="4.5" stroke-linecap="round"/>
+<line x1="-30" y1="35" x2="30" y2="42.5" stroke="#8ab4f8" stroke-width="4.5" stroke-linecap="round"/>
+<line x1="-30" y1="50" x2="30" y2="57.5" stroke="#8ab4f8" stroke-width="4.5" stroke-linecap="round"/>
+<line x1="-30" y1="65" x2="30" y2="72.5" stroke="#8ab4f8" stroke-width="4.5" stroke-linecap="round"/>
+<line x1="-30" y1="80" x2="30" y2="87.5" stroke="#8ab4f8" stroke-width="4.5" stroke-linecap="round"/>
+<line x1="-30" y1="95" x2="30" y2="102.5" stroke="#8ab4f8" stroke-width="4.5" stroke-linecap="round"/>
+<rect x="-15" y="76" width="30" height="108" rx="4" fill="#3c4047" stroke="#bdc1c6" stroke-width="1.5"/>
+<rect x="-36" y="110" width="72" height="6" rx="2" fill="#5f6368"/>
+<rect x="-19" y="170" width="38" height="22" rx="3" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.2"/>
+<circle cx="-8" cy="181" r="3" fill="#bdc1c6"/>
+<circle cx="8" cy="181" r="3" fill="#bdc1c6"/>
+</g>
+<rect x="486" y="88" width="68" height="16" rx="5" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.5"/>
+<circle cx="520" cy="96" r="5" fill="#bdc1c6"/>
+<polygon points="555.7,279.5 583.7,283.5 599.7,300 628,300 628,322 599.7,322 604,392 586,404 576,392 575.7,322 563.7,300" fill="#4a4f57" stroke="#bdc1c6" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="586,392 400,380 400,402 586,410" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.5" stroke-linejoin="round"/>
+<circle cx="588" cy="400" r="7" fill="#bdc1c6"/>
+<rect x="376" y="372" width="20" height="38" rx="3" fill="#2a2e35" stroke="#5f6368" stroke-width="1.2"/>
+<circle cx="398" cy="391" r="11" fill="#202124" stroke="#bdc1c6" stroke-width="1.5"/>
+<circle cx="398" cy="391" r="4" fill="#bdc1c6"/>
+<line x1="598" y1="352" x2="440" y2="352" stroke="#bdc1c6" stroke-width="5" stroke-linecap="round"/>
+<circle cx="598" cy="352" r="5" fill="#e8eaed"/>
+<line x1="569.1" y1="221.4" x2="520" y2="318" stroke="#bdc1c6" stroke-width="3"/>
+<circle cx="569.1" cy="221.4" r="4" fill="#e8eaed"/>
+<circle cx="520" cy="318" r="4" fill="#e8eaed"/>
+<line x1="520" y1="318" x2="424" y2="330" stroke="#80868b" stroke-width="7" stroke-linecap="round"/>
+<line x1="516" y1="70" x2="596" y2="426" stroke="#fbbc04" stroke-width="1.5" stroke-dasharray="7 5"/>
+<text x="562" y="104" font-size="12" fill="#fbbc04" font-weight="600">Steering axis</text>
+<polyline points="486,96 300,100" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="486" cy="96" r="2.2" fill="#9aa0a6"/>
+<text x="296" y="104" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Upper mount + bearing</text>
+<polyline points="503.6,151 300,155" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="503.6" cy="151" r="2.2" fill="#9aa0a6"/>
+<text x="296" y="159" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Coil spring</text>
+<polyline points="543.3,244.9 300,243" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="543.3" cy="244.9" r="2.2" fill="#9aa0a6"/>
+<text x="296" y="247" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Strut (damper)</text>
+<polyline points="424,330 300,322" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="424" cy="330" r="2.2" fill="#9aa0a6"/>
+<text x="296" y="326" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Stabilizer bar + link</text>
+<polyline points="440,352 300,352" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="440" cy="352" r="2.2" fill="#9aa0a6"/>
+<text x="296" y="356" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Tie rod (to steering rack)</text>
+<polyline points="586,372 300,380" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="586" cy="372" r="2.2" fill="#9aa0a6"/>
+<text x="296" y="384" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Steering knuckle</text>
+<polyline points="452,396 300,406" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="452" cy="396" r="2.2" fill="#9aa0a6"/>
+<text x="296" y="410" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Lower control arm + bushing</text>
+<text x="580" y="421" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Ball joint</text>
+</g>
+</svg>

@@ -1,0 +1,109 @@
+{
+  "version": "2026.09.1",
+  "notice": "Development sample data. Customers, vehicles, and sessions are fictional and are NOT verified real-world repair information. Vehicle details were entered manually for demonstration and have not been confirmed by a VIN decode.",
+  "customers": [
+    { "key": "c-rivera", "firstName": "Jordan", "lastName": "Sample (Rivera)", "phone": "(555) 010-0142", "email": "jordan.rivera@example.com" },
+    { "key": "c-nguyen", "firstName": "Casey", "lastName": "Sample (Nguyen)", "phone": "(555) 010-0177", "email": "casey.nguyen@example.com" },
+    { "key": "c-patel", "firstName": "Morgan", "lastName": "Sample (Patel)", "phone": "(555) 010-0118", "email": "morgan.patel@example.com" }
+  ],
+  "vehicles": [
+    {
+      "key": "f150",
+      "customerKey": "c-rivera",
+      "year": 2018,
+      "make": "Ford",
+      "model": "F-150",
+      "engine": "3.5L V6 Turbo (EcoBoost)",
+      "displacementLiters": 3.5,
+      "cylinders": 6,
+      "fuelType": "Gasoline",
+      "drivetrain": "4WD",
+      "transmission": "Automatic",
+      "mileage": 96400,
+      "notes": "SAMPLE vehicle for demonstration."
+    },
+    {
+      "key": "camry",
+      "customerKey": "c-nguyen",
+      "year": 2016,
+      "make": "Toyota",
+      "model": "Camry",
+      "engine": "2.5L I4",
+      "displacementLiters": 2.5,
+      "cylinders": 4,
+      "fuelType": "Gasoline",
+      "drivetrain": "FWD",
+      "transmission": "Automatic",
+      "mileage": 128000,
+      "notes": "SAMPLE vehicle for demonstration."
+    },
+    {
+      "key": "silverado",
+      "customerKey": "c-patel",
+      "year": 2019,
+      "make": "Chevrolet",
+      "model": "Silverado 1500",
+      "engine": "5.3L V8",
+      "displacementLiters": 5.3,
+      "cylinders": 8,
+      "fuelType": "Gasoline",
+      "drivetrain": "4WD",
+      "transmission": "Automatic",
+      "mileage": 74500,
+      "notes": "SAMPLE vehicle for demonstration."
+    },
+    {
+      "key": "civic",
+      "customerKey": "c-nguyen",
+      "year": 2020,
+      "make": "Honda",
+      "model": "Civic",
+      "engine": "1.5L I4 Turbo",
+      "displacementLiters": 1.5,
+      "cylinders": 4,
+      "fuelType": "Gasoline",
+      "drivetrain": "FWD",
+      "transmission": "Automatic",
+      "mileage": 41200,
+      "notes": "SAMPLE vehicle for demonstration."
+    },
+    {
+      "key": "wrangler",
+      "customerKey": "c-rivera",
+      "year": 2017,
+      "make": "Jeep",
+      "model": "Wrangler",
+      "engine": "3.6L V6",
+      "displacementLiters": 3.6,
+      "cylinders": 6,
+      "fuelType": "Gasoline",
+      "drivetrain": "4WD",
+      "transmission": "Automatic",
+      "mileage": 88200,
+      "notes": "SAMPLE vehicle for demonstration."
+    }
+  ],
+  "sessions": [
+    {
+      "vehicleKey": "f150",
+      "complaint": "Engine shakes at idle and the check engine light is on.",
+      "codes": [ "P0302" ],
+      "symptoms": [ "Shakes at idle", "Check engine light" ],
+      "mileage": 96400
+    },
+    {
+      "vehicleKey": "camry",
+      "complaint": "Runs rough after warming up.",
+      "codes": [ "P0171" ],
+      "symptoms": [ "Rough idle" ],
+      "mileage": 128000
+    },
+    {
+      "vehicleKey": "silverado",
+      "complaint": "Check engine light with hesitation on acceleration.",
+      "codes": [ "P0171", "P0174" ],
+      "symptoms": [ "Stumble / hesitation" ],
+      "mileage": 74500
+    }
+  ]
+}

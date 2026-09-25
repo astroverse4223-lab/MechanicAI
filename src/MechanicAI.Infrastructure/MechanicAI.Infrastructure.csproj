@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>MechanicAI.Infrastructure</RootNamespace>
+    <Description>Mechanic AI infrastructure: persistence (SQLite/PostgreSQL), AI providers, vehicle data APIs, web search, document processing, OBD-II, and platform services.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MechanicAI.Application\MechanicAI.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anthropic" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="Pgvector.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" />
+    <PackageReference Include="PdfPig" />
+    <PackageReference Include="HtmlAgilityPack" />
+    <PackageReference Include="ZXing.Net" />
+    <PackageReference Include="System.IO.Ports" />
+    <PackageReference Include="System.Numerics.Tensors" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Content\**\*.json" LogicalName="Content/%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Content\**\*.svg" LogicalName="Content/%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="MechanicAI.Infrastructure.Tests" />
+  </ItemGroup>
+
+</Project>

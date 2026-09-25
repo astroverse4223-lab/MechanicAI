@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MechanicAI.Application/MechanicAI.Application.csproj" />
+    <Project Path="src/MechanicAI.Domain/MechanicAI.Domain.csproj" />
+    <Project Path="src/MechanicAI.Infrastructure/MechanicAI.Infrastructure.csproj" />
+  </Folder>
+</Solution>

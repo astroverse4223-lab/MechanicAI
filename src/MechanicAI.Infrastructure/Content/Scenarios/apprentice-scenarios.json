@@ -1,0 +1,3203 @@
+{
+  "version": "2026.09.1",
+  "scenarios": [
+    {
+      "key": "camry-lean-pcv",
+      "title": "Rough when warm",
+      "category": "FuelSystems",
+      "difficulty": "Intermediate",
+      "vehicle": {
+        "year": 2016,
+        "make": "Toyota",
+        "model": "Camry",
+        "engine": "2.5L I4"
+      },
+      "mileage": 128000,
+      "complaint": "Vehicle runs rough after warming up; check engine light on.",
+      "customerStatement": "It starts fine and drives okay on the way to work, but once it's warmed up it idles rough at stoplights, almost like it wants to stall. The check engine light came on last week. Sometimes I think I hear a faint hiss under the hood.",
+      "codes": [
+        "P0171"
+      ],
+      "freezeFrame": {
+        "RPM": "720",
+        "ECT": "88 °C",
+        "Calc load": "24%",
+        "STFT B1": "+18%",
+        "LTFT B1": "+22%",
+        "Vehicle speed": "0 km/h"
+      },
+      "rootCause": "Split PCV hose at the valve cover elbow, admitting unmetered air into the intake.",
+      "rootCauseKeywords": [
+        "pcv",
+        "pcv hose",
+        "vacuum leak",
+        "split hose",
+        "crankcase ventilation hose",
+        "unmetered air"
+      ],
+      "tests": [
+        {
+          "key": "fuel-trim-review",
+          "title": "Review live fuel trims at idle and 2500 RPM",
+          "keywords": [
+            "fuel trim",
+            "fuel trims",
+            "stft",
+            "ltft",
+            "live data",
+            "trims",
+            "short term fuel trim",
+            "long term fuel trim",
+            "data stream"
+          ],
+          "result": "At warm idle: STFT +12%, LTFT +22% (combined about +34%). Held at a steady 2500 RPM for 30 seconds, STFT swings negative and the combined trim drops to roughly +6%. The upstream A/F sensor reports lean at idle, and the PCM is adding fuel to compensate.",
+          "value": "high",
+          "points": 15,
+          "teaches": "Comparing trims at idle and at a steady higher RPM splits the lean causes. Unmetered air has its biggest effect at idle, where it is a large share of total airflow, so trims that improve with RPM point toward a vacuum leak. A fuel-delivery problem usually gets worse under load, and a MAF that under-reports stays lean across the range. Combined trim beyond roughly ±10% generally warrants investigation (general guideline — verify against OEM specification)."
+        },
+        {
+          "key": "freeze-frame-review",
+          "title": "Review freeze frame data for P0171",
+          "keywords": [
+            "freeze frame",
+            "ff data",
+            "freeze-frame",
+            "code conditions",
+            "snapshot"
+          ],
+          "result": "P0171 set at 720 RPM, ECT 88 °C, calculated load 24%, vehicle stopped, with STFT B1 +18% and LTFT B1 +22%. The code set at warm idle, not under load.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "Freeze frame records the operating conditions when the fault was detected. A lean code that sets at warm idle and light load already leans toward unmetered air, and it tells you which conditions to recreate while testing."
+        },
+        {
+          "key": "visual-inspection",
+          "title": "Visual and audible inspection of the intake and vacuum hoses (engine running)",
+          "keywords": [
+            "visual inspection",
+            "visual",
+            "inspect hoses",
+            "vacuum hoses",
+            "listen for hiss",
+            "look under hood",
+            "check hoses",
+            "inspect intake"
+          ],
+          "result": "The intake boot and clamps are tight. With the engine idling you hear a faint hiss toward the rear of the valve cover, near where the PCV hose runs under the intake manifold. The hose elbow is partly hidden, and you cannot see a split without disturbing it.",
+          "value": "high",
+          "points": 12,
+          "teaches": "A quick look-and-listen with the engine running is cheap and often narrows the search area. Here it points to a zone but does not prove the leak, so a confirming test is still needed before replacing anything. Safety: keep hands, sleeves, and tools clear of the belt and cooling fan."
+        },
+        {
+          "key": "smoke-test",
+          "title": "Smoke test the intake system",
+          "keywords": [
+            "smoke test",
+            "smoke machine",
+            "smoke",
+            "smoke the intake",
+            "intake leak test"
+          ],
+          "result": "With the intake sealed at the air filter box and smoke introduced through a vacuum port, smoke streams from a split on the underside of the PCV hose at the valve cover elbow. No smoke appears at the intake manifold gasket, throttle body, or brake booster hose.",
+          "value": "high",
+          "points": 18,
+          "teaches": "A smoke test pinpoints unmetered air leaks and shows the exact location, including leaks you cannot see or hear. It also clears other suspects (intake gasket, booster hose) in the same step, making it the most efficient confirmation once the fuel trims point to a vacuum leak."
+        },
+        {
+          "key": "propane-enrichment",
+          "title": "Propane enrichment around suspected leak areas",
+          "keywords": [
+            "propane",
+            "propane enrichment",
+            "carb cleaner",
+            "spray around hoses",
+            "enrichment test",
+            "brake cleaner spray"
+          ],
+          "result": "Directing a small, controlled propane flow near the rear of the valve cover smooths the idle and drives STFT sharply negative. Other areas cause no change. The area is identified, but not the exact component.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Enrichment testing can localize a vacuum leak when a smoke machine is not available, but it is less precise and carries a fire risk. Never spray carburetor or brake cleaner on a running engine near hot exhaust or ignition parts; use a controlled propane tool and keep a fire extinguisher nearby."
+        },
+        {
+          "key": "maf-data-check",
+          "title": "Check the MAF sensor reading at idle and 2500 RPM",
+          "keywords": [
+            "maf",
+            "maf reading",
+            "mass air flow",
+            "maf g/s",
+            "airflow reading",
+            "grams per second"
+          ],
+          "result": "MAF reads 2.2 g/s at warm idle and rises smoothly with RPM, tracking throttle changes without dropouts. The idle reading is plausible, slightly on the low side.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "Checking MAF plausibility helps separate a vacuum leak from an under-reporting MAF. A common rule of thumb is roughly 1 g/s per liter of displacement at warm idle (general guideline — verify against OEM specification). A slightly low idle reading fits air entering after the MAF, and trims that improve at 2500 RPM make the MAF an unlikely primary cause."
+        },
+        {
+          "key": "fuel-pressure-test",
+          "title": "Test fuel pressure and pressure hold",
+          "keywords": [
+            "fuel pressure",
+            "fuel pressure test",
+            "pressure gauge",
+            "fuel gauge",
+            "fuel pump pressure",
+            "psi"
+          ],
+          "result": "Using the OEM-specified gauge adapter and procedure, fuel pressure is within the OEM specification at idle and at 2500 RPM, and it holds steady after shutdown.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "Fuel pressure verifies the supply side of the lean equation, and a normal reading rules out a weak pump, restricted filter, or regulator problem. It takes longer than the trim comparison and smoke test, so it fits best when the data does not clearly point to unmetered air. Safety: relieve fuel pressure first, wear eye protection, and keep ignition sources away."
+        },
+        {
+          "key": "af-sensor-response",
+          "title": "Test upstream A/F sensor response",
+          "keywords": [
+            "a/f sensor",
+            "af sensor",
+            "o2 sensor test",
+            "air fuel sensor",
+            "upstream sensor",
+            "sensor response",
+            "o2 response"
+          ],
+          "result": "The upstream A/F sensor responds quickly to a snap throttle and to propane enrichment, then returns to a lean reading at idle. It is accurately reporting the lean mixture.",
+          "value": "low",
+          "points": 3,
+          "teaches": "Confirming sensor response shows the sensor is the messenger, not the cause. It adds little here because the trims already make sense, but it reinforces why replacing the sensor would not fix a lean code."
+        },
+        {
+          "key": "replace-af-sensor",
+          "title": "Replace the upstream A/F (O2) sensor",
+          "keywords": [
+            "replace o2 sensor",
+            "replace a/f sensor",
+            "new o2 sensor",
+            "change o2 sensor",
+            "new air fuel sensor",
+            "swap o2 sensor"
+          ],
+          "result": "The new sensor reports the same lean condition. Fuel trims remain high at idle, and P0171 returns after the next warm drive cycle.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "P0171 means the PCM is correcting for a lean mixture, not that the sensor failed. A sensor that reports lean because the engine is lean is doing its job; replacing it wastes the customer's money."
+        },
+        {
+          "key": "replace-maf",
+          "title": "Replace the MAF sensor",
+          "keywords": [
+            "replace maf",
+            "new maf",
+            "change maf",
+            "maf replacement",
+            "swap maf sensor"
+          ],
+          "result": "The new MAF reports nearly identical airflow values. Idle trims remain high, and the rough idle is unchanged.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "A MAF is a common lean-code suspect, but data should condemn it first. Trims that improved with RPM and a plausible MAF reading pointed away from it."
+        },
+        {
+          "key": "replace-fuel-injectors",
+          "title": "Replace the fuel injectors",
+          "keywords": [
+            "replace injectors",
+            "new injectors",
+            "change injectors",
+            "injector replacement",
+            "replace fuel injectors"
+          ],
+          "result": "After a costly injector replacement, the engine still idles rough when warm, and the fuel trims are unchanged.",
+          "value": "parts-cannon",
+          "points": -18,
+          "teaches": "Restricted injectors can cause lean codes, but that pattern usually affects trims across the operating range and is verified with injector balance or flow testing. Replacing injectors on a hunch is an expensive guess."
+        },
+        {
+          "key": "clean-throttle-body",
+          "title": "Clean the throttle body",
+          "keywords": [
+            "clean throttle body",
+            "throttle body",
+            "throttle cleaning",
+            "carbon cleaning",
+            "tb clean"
+          ],
+          "result": "The throttle plate had light carbon. After cleaning, the idle is unchanged, and trims are still high at warm idle.",
+          "value": "low",
+          "points": 1,
+          "teaches": "A dirty throttle body can affect idle speed control, but it does not add unmetered air after the MAF and does not explain a lean code. Maintenance is not diagnosis."
+        }
+      ],
+      "idealPath": [
+        "fuel-trim-review",
+        "visual-inspection",
+        "smoke-test"
+      ],
+      "debrief": "P0171 means the PCM has reached its limit adding fuel to correct a lean mixture on bank 1. The code identifies a condition, not a part. The efficient first step is live fuel trim at warm idle and at a steady 2500 RPM. Here the combined trim was about +34% at idle but only about +6% at 2500 RPM. That pattern is the signature of unmetered air: at idle a small leak is a large share of total airflow, and as airflow rises the leak becomes a smaller percentage. A fuel-delivery fault usually worsens under load, and an under-reporting MAF tends to stay lean across the range, so the data ranks the suspects before any parts come off. The freeze frame agreed, showing the code set at warm idle and light load. A quick running inspection narrowed the search to the rear of the valve cover, and the smoke test pinpointed the split PCV hose while clearing the intake gasket and booster hose in the same step. Why only when warm? Cold-start enrichment masks the leak, and heat softens the cracked rubber so the split opens. After the repair, verify that trims return near zero and P0171 does not return.",
+      "commonMistakes": [
+        "Replacing the O2 (A/F) sensor because it reports lean — the sensor is the messenger, not the cause.",
+        "Replacing the MAF without comparing fuel trims at idle versus a higher, steady RPM.",
+        "Spraying carburetor cleaner around a hot, running engine to find the leak instead of using a smoke machine or controlled propane."
+      ]
+    },
+    {
+      "key": "f150-misfire-coil",
+      "title": "Shakes at idle",
+      "category": "Ignition",
+      "difficulty": "Beginner",
+      "vehicle": {
+        "year": 2018,
+        "make": "Ford",
+        "model": "F-150",
+        "engine": "3.5L EcoBoost V6"
+      },
+      "mileage": 96000,
+      "complaint": "Engine shakes at idle; check engine light flashed once while towing.",
+      "customerStatement": "The truck shakes at stoplights, and it feels worse with the A/C on. Last weekend the check engine light was flashing while I was pulling my boat up a hill, so I backed off. Otherwise it drives okay on the highway.",
+      "codes": [
+        "P0302"
+      ],
+      "freezeFrame": {
+        "RPM": "640",
+        "ECT": "92 °C",
+        "Calc load": "27%",
+        "STFT B1": "+2%",
+        "LTFT B1": "+1%",
+        "STFT B2": "+1%",
+        "LTFT B2": "+2%",
+        "Vehicle speed": "0 km/h"
+      },
+      "rootCause": "Failed ignition coil on cylinder 2; the misfire moved to another cylinder when the coil was swapped.",
+      "rootCauseKeywords": [
+        "ignition coil",
+        "coil",
+        "coil pack",
+        "cylinder 2 coil",
+        "coil on plug",
+        "cop coil"
+      ],
+      "tests": [
+        {
+          "key": "misfire-data",
+          "title": "Check live misfire counters and Mode $06 misfire data",
+          "keywords": [
+            "misfire counter",
+            "misfire counters",
+            "mode 6",
+            "mode $06",
+            "misfire data",
+            "live misfire",
+            "cylinder misfire count"
+          ],
+          "result": "At warm idle, cylinder 2 logs a steady stream of misfires while the other five cylinders show zero or near zero. The count rises with the A/C on. Mode $06 history also shows cylinder 2 as the only cylinder with a significant count.",
+          "value": "high",
+          "points": 12,
+          "teaches": "Misfire counters confirm the fault is current, show whether one cylinder or several are affected, and give you a baseline to compare after each test. A single-cylinder misfire points to something unique to that cylinder: coil, plug, injector, or mechanical condition."
+        },
+        {
+          "key": "freeze-frame-review",
+          "title": "Review freeze frame data for P0302",
+          "keywords": [
+            "freeze frame",
+            "ff data",
+            "snapshot",
+            "code conditions"
+          ],
+          "result": "P0302 set at 640 RPM, ECT 92 °C, calculated load 27%, vehicle stopped. Fuel trims are near zero on both banks.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Freeze frame shows when the misfire was detected. A warm-idle misfire with normal trims points toward ignition or a cylinder-specific fault rather than a bank-wide fuel or vacuum problem."
+        },
+        {
+          "key": "fuel-trim-check",
+          "title": "Review fuel trims on both banks",
+          "keywords": [
+            "fuel trim",
+            "fuel trims",
+            "stft",
+            "ltft",
+            "trims"
+          ],
+          "result": "Fuel trims are within a few percent of zero on both banks at idle and at 2500 RPM.",
+          "value": "low",
+          "points": 3,
+          "teaches": "Normal trims make a bank-wide lean or rich condition unlikely, which fits a single-cylinder fault. Useful context, but it does not identify the failing component."
+        },
+        {
+          "key": "coil-swap",
+          "title": "Swap the cylinder 2 ignition coil with a neighboring cylinder's coil",
+          "keywords": [
+            "coil swap",
+            "swap coil",
+            "swap coils",
+            "move coil",
+            "switch coils",
+            "coil test",
+            "swap ignition coil"
+          ],
+          "result": "After locating cylinder 2 with the OEM cylinder numbering diagram, you swap its coil with the coil from a neighboring cylinder on the same bank, clear the counters, and idle the engine with the A/C on. Misfires now build on the cylinder that received the suspect coil, and cylinder 2 counts zero. The misfire followed the coil.",
+          "value": "high",
+          "points": 18,
+          "teaches": "A swap test is fast, free, and discriminating: if the misfire follows the coil, the coil is the cause; if it stays on cylinder 2, look at the plug, injector, or mechanical condition next. Safety: shut the engine off before handling coils; secondary ignition voltage can cause injury."
+        },
+        {
+          "key": "spark-plug-inspection",
+          "title": "Remove and inspect the cylinder 2 spark plug",
+          "keywords": [
+            "spark plug",
+            "inspect plug",
+            "pull plug",
+            "check plug",
+            "plug gap",
+            "spark plug inspection"
+          ],
+          "result": "The cylinder 2 plug shows normal color and wear similar to the others, with no cracked insulator, oil fouling, or carbon tracking. The gap is slightly open, consistent with the mileage on all of the plugs.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "Inspecting the plug while the coil is out is cheap and can reveal cracked insulators or fouling. Worn plugs with widened gaps raise the voltage a coil must produce, so note plug condition for a maintenance recommendation, but the swap test already showed the fault moves with the coil."
+        },
+        {
+          "key": "spark-tester",
+          "title": "Check cylinder 2 spark output with an adjustable spark tester",
+          "keywords": [
+            "spark tester",
+            "spark test",
+            "check spark",
+            "test spark",
+            "spark gap tester"
+          ],
+          "result": "With an adjustable spark tester in place of the plug, the cylinder 2 coil fires intermittently at idle and misses at a wider gap setting. A coil from another cylinder fires consistently at the same setting.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "A spark tester gives direct evidence of weak output, but it takes longer than a swap test. Never let a coil fire without a proper load path; always use a tester designed for coil-on-plug systems. Safety: secondary ignition voltage."
+        },
+        {
+          "key": "ignition-scope",
+          "title": "Capture secondary ignition waveforms with a coil-on-plug probe",
+          "keywords": [
+            "ignition scope",
+            "secondary waveform",
+            "scope coil",
+            "lab scope",
+            "coil waveform",
+            "secondary ignition",
+            "burn time"
+          ],
+          "result": "Cylinder 2 shows an erratic firing line and a short, unstable burn time compared with the other cylinders on the same bank.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "Secondary waveforms can reveal coil and plug problems without removing parts, and reading them builds diagnostic skill. On this complaint the swap test reaches the same answer faster, but the scope is valuable when a swap test is inconclusive."
+        },
+        {
+          "key": "injector-check",
+          "title": "Check the cylinder 2 fuel injector operation",
+          "keywords": [
+            "injector",
+            "injector test",
+            "noid light",
+            "injector balance",
+            "stethoscope",
+            "injector pulse",
+            "check injector"
+          ],
+          "result": "Injector current waveforms and a stethoscope check show the cylinder 2 injector operating like the others. No injector circuit codes are stored.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Injector testing is the logical next step when a misfire does not follow the coil or plug. This engine uses high-pressure direct injection, so follow OEM procedures and never open the high-pressure side while it is pressurized. Here it adds little because the swap test already implicated the coil."
+        },
+        {
+          "key": "compression-test",
+          "title": "Compression test all cylinders",
+          "keywords": [
+            "compression test",
+            "compression",
+            "cylinder leakage",
+            "leak down",
+            "leakdown test",
+            "wet compression"
+          ],
+          "result": "Compression is even across all six cylinders when compared with each other. No mechanical fault is indicated.",
+          "value": "low",
+          "points": 3,
+          "teaches": "Mechanical testing matters when a misfire stays on one cylinder after the coil and plug are ruled out. Done first, it is slow and labor-intensive on this engine and skips the most likely, easiest-to-test causes."
+        },
+        {
+          "key": "replace-all-coils-plugs",
+          "title": "Replace all six coils and spark plugs",
+          "keywords": [
+            "replace all coils",
+            "replace coils and plugs",
+            "new coils",
+            "tune up",
+            "tune-up",
+            "new plugs and coils"
+          ],
+          "result": "The shake goes away, but the invoice includes five coils that were not faulty, and you cannot tell the customer which part actually failed.",
+          "value": "parts-cannon",
+          "points": -12,
+          "teaches": "Shotgunning parts may fix the symptom, but it costs the customer money and teaches nothing. A verified single-coil replacement (plus plugs if they are due by mileage or condition) is the professional repair."
+        },
+        {
+          "key": "replace-injector",
+          "title": "Replace the cylinder 2 fuel injector",
+          "keywords": [
+            "replace injector",
+            "new injector",
+            "change injector",
+            "injector replacement"
+          ],
+          "result": "After the injector replacement, cylinder 2 still misfires at idle, and the code returns on the next drive.",
+          "value": "parts-cannon",
+          "points": -18,
+          "teaches": "Direct injectors are expensive and labor-intensive to replace. Nothing in the evidence pointed to the injector; the misfire followed the coil."
+        },
+        {
+          "key": "clear-codes-road-test",
+          "title": "Clear codes and road test",
+          "keywords": [
+            "clear codes",
+            "clear code",
+            "erase codes",
+            "reset check engine light",
+            "road test"
+          ],
+          "result": "The code clears, but the idle shake is still there, and P0302 returns as pending within a few minutes of idling.",
+          "value": "low",
+          "points": 1,
+          "teaches": "Clearing codes erases freeze frame and monitor data you may need, so record everything first. Seeing the code return confirms the fault is still present, but it is not a diagnosis."
+        }
+      ],
+      "idealPath": [
+        "misfire-data",
+        "coil-swap",
+        "spark-plug-inspection"
+      ],
+      "debrief": "P0302 tells you cylinder 2 is misfiring, not why. Start by confirming that the misfire is current and isolated: the misfire counters showed cylinder 2 missing at warm idle while the other cylinders stayed clean, and normal fuel trims made a bank-wide fuel or air problem unlikely. With a single-cylinder misfire, the fastest discriminating test is a swap test. Moving the cylinder 2 coil to a neighboring cylinder costs only a few minutes, and the result splits the suspects cleanly: the misfire moved with the coil, so the coil is the fault. If it had stayed on cylinder 2, the plug, injector, and mechanical condition would be next, in order of ease. Pulling the plug while the coil is out is worth doing, because worn plugs raise the voltage demand on coils. If the plugs are due, recommend them as maintenance and label them honestly. The flashing MIL the customer saw while towing means the misfire rate was high enough to overheat the catalytic converter, so advise light loads until the repair is done. Verify by operating under the freeze-frame conditions and confirming the misfire counters stay at zero.",
+      "commonMistakes": [
+        "Replacing all coils and plugs before a swap test identifies the failed part.",
+        "Running a compression test first on a single-cylinder misfire that has not been checked for an ignition fault.",
+        "Clearing the code before recording freeze frame and misfire counter data.",
+        "Ignoring the flashing MIL — continued heavy load with a severe misfire can damage the catalytic converter."
+      ]
+    },
+    {
+      "key": "silverado-lean-maf",
+      "title": "Lean on both banks",
+      "category": "Diagnostics",
+      "difficulty": "Advanced",
+      "vehicle": {
+        "year": 2019,
+        "make": "Chevrolet",
+        "model": "Silverado 1500",
+        "engine": "5.3L V8"
+      },
+      "mileage": 74000,
+      "complaint": "Hesitation on acceleration, reduced power, lower fuel economy; check engine light on.",
+      "customerStatement": "It feels flat when I step on it, especially merging onto the highway, and it hesitates a little from a stop. My fuel mileage is down too. I put one of those washable performance air filters in it a couple of months ago and oiled it myself after cleaning it.",
+      "codes": [
+        "P0171",
+        "P0174"
+      ],
+      "freezeFrame": {
+        "RPM": "1650",
+        "ECT": "91 °C",
+        "Calc load": "46%",
+        "MAF": "18.2 g/s",
+        "STFT B1": "+9%",
+        "LTFT B1": "+17%",
+        "STFT B2": "+8%",
+        "LTFT B2": "+18%",
+        "Vehicle speed": "72 km/h"
+      },
+      "rootCause": "Contaminated MAF sensing element (oil film and debris from an over-oiled reusable air filter), causing the MAF to under-report airflow at all loads.",
+      "rootCauseKeywords": [
+        "maf",
+        "mass air flow",
+        "contaminated maf",
+        "dirty maf",
+        "maf sensor",
+        "oiled air filter"
+      ],
+      "tests": [
+        {
+          "key": "fuel-trim-load-comparison",
+          "title": "Compare fuel trims at idle, 2500 RPM, and under load on both banks",
+          "keywords": [
+            "fuel trim",
+            "fuel trims",
+            "stft",
+            "ltft",
+            "trims",
+            "live data",
+            "both banks"
+          ],
+          "result": "Warm idle: combined trim about +22% on bank 1 and +24% on bank 2. Steady 2500 RPM: about +21% and +23%. During a moderate-load road test with a helper recording data, the totals stay near +20% on both banks. The lean correction is present everywhere, not just at idle.",
+          "value": "high",
+          "points": 15,
+          "teaches": "Both banks lean points to a cause they share: air metering, fuel supply, or a leak common to the whole intake. Trims that stay high at idle AND under load argue against a simple vacuum leak, which fades as airflow rises, and toward a proportional error such as an under-reporting MAF or a fuel-supply problem. Combined trim beyond roughly ±10% generally warrants investigation (general guideline — verify against OEM specification)."
+        },
+        {
+          "key": "fuel-pressure-pid",
+          "title": "Check low-side and high-side fuel pressure, desired vs actual",
+          "keywords": [
+            "fuel pressure",
+            "fuel pressure test",
+            "fuel rail pressure",
+            "desired vs actual fuel pressure",
+            "fuel pump pressure",
+            "low side fuel pressure",
+            "high pressure fuel"
+          ],
+          "result": "Scan data shows low-side and high-side fuel pressure closely tracking their desired values at idle, at 2500 RPM, and during a recorded full-throttle acceleration. No fuel pressure codes are stored.",
+          "value": "high",
+          "points": 10,
+          "teaches": "Fuel supply is the other common cause of lean trims on both banks, especially when trims stay high under load. Normal desired-versus-actual tracking rules it out efficiently. Safety: this is a direct-injection engine with extremely high rail pressure; never open the high-pressure system except by the OEM procedure."
+        },
+        {
+          "key": "maf-vs-calculated",
+          "title": "Compare MAF g/s with calculated (expected) airflow",
+          "keywords": [
+            "maf vs calculated",
+            "calculated airflow",
+            "ve calculation",
+            "volumetric efficiency",
+            "expected airflow",
+            "maf g/s",
+            "maf reading",
+            "maf test"
+          ],
+          "result": "At warm idle the MAF reads 3.9 g/s. During a safe, legal full-throttle acceleration in second gear, recorded by a helper, the MAF peaks at about 165 g/s at 5000 RPM. A volumetric-efficiency calculation using displacement, RPM, IAT, and barometric pressure predicts roughly 220 g/s at that point, so the MAF is reporting only about three-quarters of the expected airflow.",
+          "value": "high",
+          "points": 18,
+          "teaches": "A VE calculation turns engine size and speed into an expected airflow, so you can judge whether the MAF is believable. A healthy naturally aspirated engine commonly calculates somewhere around 75–95% VE at full throttle (general guideline — verify against OEM specification). A MAF that reads low makes the PCM under-fuel at every load, which matches the trims."
+        },
+        {
+          "key": "maf-inspection",
+          "title": "Remove and inspect the MAF sensing element and air filter",
+          "keywords": [
+            "inspect maf",
+            "look at maf",
+            "maf inspection",
+            "check air filter",
+            "air filter",
+            "remove maf",
+            "maf element"
+          ],
+          "result": "The reusable air filter is visibly saturated with oil. The MAF sensing element has a sticky oil film with fine dust and fibers stuck to it, and the duct downstream of the filter has an oily sheen.",
+          "value": "high",
+          "points": 12,
+          "teaches": "Once data points at the MAF, a visual check confirms why. Contamination on the heated element insulates it and makes the sensor under-report airflow. Always fix the contamination source, or a cleaned or new sensor will be fouled again."
+        },
+        {
+          "key": "maf-clean-retest",
+          "title": "Clean the MAF with sensor-safe cleaner, correct the filter, and retest",
+          "keywords": [
+            "clean maf",
+            "maf cleaner",
+            "clean mass air flow",
+            "retest maf",
+            "maf clean and retest"
+          ],
+          "result": "After cleaning the element with MAF-safe cleaner, letting it dry fully, and installing a correctly serviced filter, idle MAF rises to 5.6 g/s, the full-throttle reading closely matches the calculated value, and trims settle within a few percent of zero on both banks.",
+          "value": "high",
+          "points": 10,
+          "teaches": "Retesting after a correction proves the diagnosis. If the element is damaged or the readings do not recover, replace the MAF; either way, correct the over-oiled filter or the sensor will foul again. Never touch the sensing element."
+        },
+        {
+          "key": "smoke-test",
+          "title": "Smoke test the intake for vacuum leaks",
+          "keywords": [
+            "smoke test",
+            "smoke machine",
+            "vacuum leak",
+            "intake leak",
+            "smoke"
+          ],
+          "result": "No smoke escapes from the intake manifold, throttle body, PCV system, or brake booster hose. The intake is sealed.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "Smoke testing is the right tool for unmetered air, but here the trims stayed high under load, which already made a vacuum leak less likely. It is a reasonable elimination step with lower yield than checking MAF plausibility."
+        },
+        {
+          "key": "o2-sensor-response",
+          "title": "Check upstream O2 sensor response on both banks",
+          "keywords": [
+            "o2 sensor test",
+            "o2 response",
+            "oxygen sensor",
+            "upstream o2",
+            "sensor response",
+            "o2 sensor graph"
+          ],
+          "result": "Both upstream sensors switch fully rich with propane enrichment and fully lean on a snap deceleration, with quick transitions. They are reporting accurately.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Proving the sensors respond correctly confirms the lean reports are real. Two sensors failing the same way at the same time would be very unlikely anyway."
+        },
+        {
+          "key": "unplug-maf",
+          "title": "Unplug the MAF and road test on the default airflow model",
+          "keywords": [
+            "unplug maf",
+            "disconnect maf",
+            "maf unplugged",
+            "unplug mass air flow"
+          ],
+          "result": "With the MAF disconnected, the PCM sets a MAF circuit code and runs on its calculated airflow model. The truck pulls noticeably better, and trims drop closer to zero.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Improvement with the MAF unplugged is a clue, not proof, and it adds a DTC you must record and clear. A measured comparison against calculated airflow is a stronger, cleaner test."
+        },
+        {
+          "key": "exhaust-leak-check",
+          "title": "Check for exhaust leaks ahead of the upstream O2 sensors",
+          "keywords": [
+            "exhaust leak",
+            "exhaust manifold leak",
+            "manifold leak",
+            "exhaust inspection",
+            "ticking"
+          ],
+          "result": "No ticking at cold start, no soot trails at the manifold flanges, and no leaks ahead of either upstream sensor.",
+          "value": "low",
+          "points": 3,
+          "teaches": "An exhaust leak ahead of an O2 sensor can pull in outside air and cause a false lean reading, but separate leaks on both banks at once would be unusual. Worth remembering; low yield here."
+        },
+        {
+          "key": "replace-o2-sensors",
+          "title": "Replace both upstream O2 sensors",
+          "keywords": [
+            "replace o2 sensors",
+            "new o2 sensors",
+            "change o2 sensors",
+            "replace oxygen sensors",
+            "replace upstream sensors"
+          ],
+          "result": "The new sensors report the same lean mixture. P0171 and P0174 return within a day.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "The sensors were reporting a real lean condition. Lean codes on both banks point to a shared cause upstream of combustion, not two failed sensors."
+        },
+        {
+          "key": "replace-fuel-pump",
+          "title": "Replace the fuel pump",
+          "keywords": [
+            "replace fuel pump",
+            "new fuel pump",
+            "change fuel pump",
+            "fuel pump replacement"
+          ],
+          "result": "Fuel pressure was already tracking desired values. The trims and the flat feeling are unchanged after the pump replacement.",
+          "value": "parts-cannon",
+          "points": -18,
+          "teaches": "Lean under load tempts people toward the fuel pump, but pressure data showed the supply side was healthy. Test pressure before condemning the pump."
+        },
+        {
+          "key": "replace-injectors",
+          "title": "Replace the fuel injectors",
+          "keywords": [
+            "replace injectors",
+            "new injectors",
+            "change injectors",
+            "injector replacement"
+          ],
+          "result": "After a very expensive direct-injector replacement, both banks remain lean by the same amount.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "Eight injectors restricted by the same amount is far less likely than one shared cause. Injector replacement on a direct-injection engine is costly and requires OEM procedures; it should never be a guess."
+        }
+      ],
+      "idealPath": [
+        "fuel-trim-load-comparison",
+        "fuel-pressure-pid",
+        "maf-vs-calculated",
+        "maf-inspection"
+      ],
+      "debrief": "Lean codes on both banks mean the cause is probably shared by both banks: air metering, fuel supply, or a leak common to the whole intake. The first job is to learn when the engine is lean. Trims were high at idle, at 2500 RPM, and under load. A vacuum leak usually fades as airflow rises, so a lean condition that persists everywhere points toward a proportional error: the MAF under-reporting or fuel pressure falling short. Scan data showed fuel pressure tracking its desired values, which removed the supply side without opening a direct-injection fuel system. The deciding test was comparing MAF readings with a volumetric-efficiency calculation. At full throttle the MAF reported only about three-quarters of the expected airflow, and idle g/s was low as well. Because the PCM fuels based on measured air, an under-reporting MAF makes it under-fuel at every load, and the trims try to make up the difference. Inspection confirmed an oil film on the sensing element from an over-oiled reusable filter, which also explains the customer's comment. Clean or replace the MAF as appropriate, correct the filter, and verify that MAF readings match the calculation and trims settle near zero on both banks.",
+      "commonMistakes": [
+        "Replacing the O2 sensors on both banks because they are the sensors reporting lean.",
+        "Assuming a vacuum leak without checking whether the trims stay high under load.",
+        "Cleaning or replacing the MAF without correcting the over-oiled air filter that contaminated it."
+      ]
+    },
+    {
+      "key": "civic-underboost-hose",
+      "title": "Down on power",
+      "category": "Engine",
+      "difficulty": "Intermediate",
+      "vehicle": {
+        "year": 2020,
+        "make": "Honda",
+        "model": "Civic",
+        "engine": "1.5L Turbo I4"
+      },
+      "mileage": 62000,
+      "complaint": "Lack of power under hard acceleration; check engine light on.",
+      "customerStatement": "It used to have plenty of pep, but now when I floor it to get on the freeway it feels like it runs out of breath. Sometimes I hear a whooshing sound from the front when I accelerate hard. It had an oil change at a quick-lube place about a month ago.",
+      "codes": [
+        "P0299"
+      ],
+      "freezeFrame": {
+        "RPM": "3450",
+        "ECT": "89 °C",
+        "IAT": "36 °C",
+        "Calc load": "86%",
+        "Boost pressure (actual)": "128 kPa abs",
+        "Boost pressure (desired)": "176 kPa abs",
+        "Vehicle speed": "96 km/h"
+      },
+      "rootCause": "Split charge-air (intercooler) hose at the lower intercooler outlet connection, venting boost pressure under load.",
+      "rootCauseKeywords": [
+        "charge air hose",
+        "intercooler hose",
+        "boost leak",
+        "boost hose",
+        "split hose",
+        "charge pipe",
+        "intercooler pipe"
+      ],
+      "tests": [
+        {
+          "key": "freeze-frame-review",
+          "title": "Review freeze frame data for P0299",
+          "keywords": [
+            "freeze frame",
+            "ff data",
+            "snapshot",
+            "code conditions"
+          ],
+          "result": "P0299 set at 3450 RPM, 86% load, and 96 km/h, with actual boost well below desired. The engine was at full operating temperature.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "The freeze frame shows the code set under high load, when the turbo should be making maximum boost. That tells you which conditions you must recreate while testing."
+        },
+        {
+          "key": "boost-data-graph",
+          "title": "Graph desired vs actual boost and the wastegate command during a load test",
+          "keywords": [
+            "boost pressure",
+            "desired boost",
+            "actual boost",
+            "graph boost",
+            "wastegate command",
+            "boost data",
+            "live data"
+          ],
+          "result": "During a safe, legal acceleration with a helper recording data, desired boost rises quickly and the PCM drives the wastegate command toward fully closed, but actual boost lags far behind and peaks well below desired. At idle and light cruise the readings look normal.",
+          "value": "high",
+          "points": 16,
+          "teaches": "Desired versus actual, with the wastegate commanded closed, shows the control system asking for boost and not getting it. That pattern points to air escaping or a turbo that cannot build pressure, not a control problem. Never read a scan tool while driving; use a helper or recorded data."
+        },
+        {
+          "key": "map-sensor-plausibility",
+          "title": "Check boost/MAP sensor plausibility at key on, engine off",
+          "keywords": [
+            "map sensor",
+            "boost sensor",
+            "koeo map",
+            "baro",
+            "barometric pressure",
+            "map plausibility",
+            "sensor plausibility"
+          ],
+          "result": "At key on, engine off, the boost/MAP sensor reads within a small margin of the barometric pressure value, and it responds smoothly when the engine is started and the throttle is snapped.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "A quick plausibility check confirms the sensor reporting boost can be trusted before you base a diagnosis on its data."
+        },
+        {
+          "key": "charge-air-visual",
+          "title": "Inspect the charge-air hoses, clamps, and intercooler connections",
+          "keywords": [
+            "visual inspection",
+            "inspect hoses",
+            "intercooler hose",
+            "charge pipe",
+            "check clamps",
+            "boost hose inspection",
+            "inspect intercooler"
+          ],
+          "result": "With the splash shield removed, the lower intercooler outlet hose has an oily film with road grime stuck around the connection. The clamp is tight, but the hose feels soft and swollen near its end. You cannot see clear damage without pressurizing the system.",
+          "value": "high",
+          "points": 12,
+          "teaches": "Oil residue at a charge-air connection is a classic clue: crankcase vapor carried in the intake air leaves a trail wherever pressurized air escapes. A visual check narrows the search, but a split can open under boost that looks closed at rest. Safety: let the turbo and exhaust cool before reaching near them."
+        },
+        {
+          "key": "charge-air-pressure-test",
+          "title": "Pressure test the charge-air system with a boost leak tester",
+          "keywords": [
+            "boost leak test",
+            "boost leak tester",
+            "pressure test",
+            "charge air pressure test",
+            "smoke test",
+            "leak tester",
+            "pressurize intake"
+          ],
+          "result": "With the intake sealed at the turbo inlet and regulated low shop-air pressure applied per the tester instructions, air is heard escaping at the lower intercooler outlet hose. Soapy water shows a split in the hose wall just behind the clamp that opens wider as pressure builds. No other leaks are found.",
+          "value": "high",
+          "points": 18,
+          "teaches": "Pressurizing the charge-air system recreates boost conditions with the engine off and pinpoints leaks that only open under pressure. Use regulated low pressure, follow the tester instructions, and never exceed what the adapters are rated for. Adding smoke makes small leaks visible."
+        },
+        {
+          "key": "wastegate-function",
+          "title": "Command the wastegate actuator and verify movement",
+          "keywords": [
+            "wastegate",
+            "wastegate test",
+            "wastegate actuator",
+            "command wastegate",
+            "actuator test",
+            "boost control"
+          ],
+          "result": "The wastegate actuator follows scan tool commands smoothly through its full range, and the position feedback (where available) matches the command.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "A wastegate stuck open is a common underboost cause, so verifying that it closes is a sensible elimination step. It passes here, which leaves a leak as the leading suspect."
+        },
+        {
+          "key": "fuel-trim-under-boost",
+          "title": "Review fuel trims at cruise and under boost",
+          "keywords": [
+            "fuel trim",
+            "fuel trims",
+            "stft",
+            "ltft",
+            "trims"
+          ],
+          "result": "Trims are near zero at cruise. Under boost, short-term trim swings to about -8% while actual boost is low.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "On an engine that measures intake air before the turbo, air that is metered and then escapes from a pressurized hose never reaches the cylinders, so the PCM sees a rich result and pulls fuel. A leak before the airflow sensor would do the opposite. The pattern supports a pressure-side leak without showing where it is."
+        },
+        {
+          "key": "turbo-shaft-play",
+          "title": "Check turbocharger shaft play and compressor wheel condition",
+          "keywords": [
+            "turbo shaft play",
+            "shaft play",
+            "check turbo",
+            "turbo inspection",
+            "compressor wheel",
+            "inspect turbo"
+          ],
+          "result": "With the engine off and cool and the inlet duct removed, the compressor wheel spins freely with no rubbing, blade damage, or excessive play by feel. There is no oil pooling in the compressor housing.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Shaft play and wheel condition help rule out a failing turbo, but they are a secondary check when data suggests a leak. Cover the inlet whenever the duct is off to keep debris out. Safety: turbochargers stay hot long after shutdown."
+        },
+        {
+          "key": "exhaust-restriction",
+          "title": "Check for exhaust restriction (back pressure)",
+          "keywords": [
+            "back pressure",
+            "backpressure",
+            "exhaust restriction",
+            "clogged cat",
+            "restricted exhaust",
+            "catalytic converter"
+          ],
+          "result": "Back pressure is normal at idle and at 2500 RPM according to the test equipment instructions and OEM guidance. No restriction is indicated.",
+          "value": "low",
+          "points": 3,
+          "teaches": "A restricted exhaust can hurt turbo performance, but nothing in the data pointed that way. This test takes time and involves hot components; it is low priority here."
+        },
+        {
+          "key": "replace-turbo",
+          "title": "Replace the turbocharger",
+          "keywords": [
+            "replace turbo",
+            "new turbo",
+            "replace turbocharger",
+            "turbo replacement",
+            "change turbo"
+          ],
+          "result": "After an expensive turbocharger replacement, the car still feels flat under hard acceleration, the whoosh is still there, and P0299 returns on the next freeway merge.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "When data shows the control system commanding maximum boost and the system cannot hold pressure, prove the charge-air system is sealed before condemning the turbo."
+        },
+        {
+          "key": "replace-boost-sensor",
+          "title": "Replace the boost/MAP sensor",
+          "keywords": [
+            "replace map sensor",
+            "replace boost sensor",
+            "new map sensor",
+            "new boost sensor",
+            "change boost sensor"
+          ],
+          "result": "The new sensor reads the same values; the original already agreed with barometric pressure at key on, engine off. P0299 returns.",
+          "value": "parts-cannon",
+          "points": -12,
+          "teaches": "Check sensor plausibility first: at key on, engine off, a boost or MAP sensor should read close to barometric pressure. A sensor that reads plausibly is not the problem."
+        },
+        {
+          "key": "replace-wastegate-actuator",
+          "title": "Replace the wastegate actuator",
+          "keywords": [
+            "replace wastegate",
+            "new wastegate actuator",
+            "replace wastegate actuator",
+            "change wastegate"
+          ],
+          "result": "The new actuator operates exactly like the old one. Boost remains low under load.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "The actuator had already passed a commanded function test. Replacing a component that tested good is a parts-cannon move."
+        }
+      ],
+      "idealPath": [
+        "freeze-frame-review",
+        "boost-data-graph",
+        "charge-air-visual",
+        "charge-air-pressure-test"
+      ],
+      "debrief": "P0299 means actual boost fell short of desired boost; it does not say why. The freeze frame showed the code set at high load, so the efficient move is to recreate that condition while recording data. Graphing desired versus actual boost with the wastegate command showed the PCM asking for maximum boost and driving the wastegate closed, yet actual boost lagged far behind. That clears the control side and leaves two broad possibilities: the turbo cannot build pressure, or the pressure is escaping. Leaks are far more common and far cheaper to fix, so they are checked first. Oil residue at the lower intercooler hose narrowed the search, and a regulated charge-air pressure test found a split that opened only under pressure, which also explains the whooshing sound. The fuel trim swing toward rich under boost fit the picture, because metered air was escaping before it reached the cylinders. Sensor plausibility, wastegate function, and turbo shaft play were reasonable eliminations, but none needed to come first. Replace the damaged hose, inspect the clamps, and verify with a recorded load test that actual boost follows desired and P0299 does not return.",
+      "commonMistakes": [
+        "Replacing the turbocharger before pressure testing the charge-air system.",
+        "Replacing the boost/MAP sensor without a key-on, engine-off plausibility check against barometric pressure.",
+        "Reading the scan tool while driving instead of using a helper or recorded data."
+      ]
+    },
+    {
+      "key": "wrangler-evap-vent-hose",
+      "title": "Small EVAP leak",
+      "category": "FuelSystems",
+      "difficulty": "Intermediate",
+      "vehicle": {
+        "year": 2017,
+        "make": "Jeep",
+        "model": "Wrangler",
+        "engine": "3.6L V6"
+      },
+      "mileage": 83000,
+      "complaint": "Check engine light on; no driveability concerns.",
+      "customerStatement": "The check engine light is on again. The parts store read it and said it's probably the gas cap, so I tightened it until it clicked a bunch of times, but the light came back a week later. It runs fine. I do a lot of trail driving on weekends.",
+      "codes": [
+        "P0456"
+      ],
+      "freezeFrame": {
+        "ECT": "38 °C",
+        "IAT": "24 °C",
+        "Fuel level": "46%",
+        "Baro": "99 kPa",
+        "Vehicle speed": "0 km/h"
+      },
+      "rootCause": "Cracked EVAP vent hose between the charcoal canister and the vent valve / leak-monitor assembly. The fuel cap and filler neck seal were good.",
+      "rootCauseKeywords": [
+        "evap vent hose",
+        "vent hose",
+        "cracked hose",
+        "evap hose",
+        "vent line",
+        "canister vent hose"
+      ],
+      "tests": [
+        {
+          "key": "scan-evap-data",
+          "title": "Review freeze frame, EVAP monitor status, and Mode $06 EVAP results",
+          "keywords": [
+            "freeze frame",
+            "mode 6",
+            "mode $06",
+            "evap monitor",
+            "monitor status",
+            "evap data",
+            "readiness"
+          ],
+          "result": "P0456 is confirmed, not just pending. Mode $06 shows the small-leak test result beyond its limit on the last two tests, while purge-related results pass. The freeze frame shows a partly filled tank and a warm, not hot, engine — conditions under which the leak test runs.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "Confirming the code history and monitor results shows the leak is repeatable, and passing purge-related results make a purge valve fault less likely. It also tells you the conditions needed to rerun the monitor when you verify the repair."
+        },
+        {
+          "key": "gas-cap-test",
+          "title": "Test the fuel cap and inspect the filler neck sealing surface",
+          "keywords": [
+            "gas cap",
+            "gas cap test",
+            "fuel cap",
+            "cap tester",
+            "test cap",
+            "filler neck",
+            "check gas cap"
+          ],
+          "result": "The fuel cap holds pressure on a cap tester with the correct adapter. The cap gasket is soft and uncracked, and the filler neck sealing lip is smooth with no rust or dents.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "The fuel cap is the most common small-leak cause and takes about two minutes to test, so it belongs early in the path. When it passes, move on instead of replacing it anyway."
+        },
+        {
+          "key": "smoke-test",
+          "title": "Smoke test the EVAP system with the vent side sealed",
+          "keywords": [
+            "smoke test",
+            "evap smoke test",
+            "smoke machine",
+            "smoke",
+            "leak test",
+            "evap leak test"
+          ],
+          "result": "Using an EVAP-rated smoke machine at the service port (or a filler neck adapter) and sealing the vent side per the OEM procedure, the system is slow to hold pressure. A thin wisp of smoke rises from the vent hose between the canister and the vent valve assembly, on the side facing the tire.",
+          "value": "high",
+          "points": 18,
+          "teaches": "A smoke test is the most direct way to find a very small EVAP leak. Sealing the vent side lets you pressurize the whole system at once, and the smoke shows exactly where it escapes. Use a smoke machine designed for EVAP testing, keep ignition sources away from fuel vapors, and never exceed the machine's regulated test pressure."
+        },
+        {
+          "key": "evap-line-inspection",
+          "title": "Inspect the EVAP lines and hoses from tank to canister to vent (on a lift)",
+          "keywords": [
+            "visual inspection",
+            "inspect evap lines",
+            "evap hoses",
+            "inspect hoses",
+            "evap line inspection",
+            "look under vehicle",
+            "trace evap lines"
+          ],
+          "result": "On the lift, the vent hose between the canister and the vent valve assembly is weather-checked and scuffed where it can touch a bracket as the suspension flexes. Flexing the hose opens a crack that goes all the way through the wall.",
+          "value": "high",
+          "points": 12,
+          "teaches": "A careful visual check alongside the smoke test confirms the damage and shows why it happened, so the repair can include proper routing or protection. Safety: support the vehicle properly on the lift before working underneath."
+        },
+        {
+          "key": "purge-valve-test",
+          "title": "Test the purge valve for sealing and commanded operation",
+          "keywords": [
+            "purge valve",
+            "purge solenoid",
+            "test purge",
+            "purge test",
+            "canister purge"
+          ],
+          "result": "With a hand vacuum pump, the purge valve holds vacuum when not commanded and flows when commanded with the scan tool.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "A purge valve that leaks or sticks can cause EVAP codes, so this is a reasonable check. It passes here, and a leaking purge valve usually produces a different pattern, such as flow or large-leak faults."
+        },
+        {
+          "key": "vent-valve-test",
+          "title": "Test the vent valve / leak-monitor assembly",
+          "keywords": [
+            "vent valve",
+            "vent solenoid",
+            "esim",
+            "leak detection pump",
+            "ldp",
+            "test vent valve",
+            "vent test"
+          ],
+          "result": "The vent valve / leak-monitor assembly passes its functional test per the OEM procedure, and its housing and seals hold smoke.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "Vent-side designs vary by manufacturer, so test them by the OEM procedure. Verifying the vent device works keeps you from replacing it when the leak is in the hose right next to it."
+        },
+        {
+          "key": "replace-gas-cap",
+          "title": "Replace the fuel cap",
+          "keywords": [
+            "replace gas cap",
+            "new gas cap",
+            "replace fuel cap",
+            "new fuel cap",
+            "change gas cap"
+          ],
+          "result": "The customer pays for a new cap. The monitor fails again after a few drive cycles, and P0456 returns.",
+          "value": "parts-cannon",
+          "points": -12,
+          "teaches": "The cap passed its test. Replacing it anyway is guessing, even when the part is cheap, and it delays the real repair."
+        },
+        {
+          "key": "replace-canister",
+          "title": "Replace the charcoal canister",
+          "keywords": [
+            "replace canister",
+            "new canister",
+            "replace charcoal canister",
+            "evap canister replacement",
+            "change canister"
+          ],
+          "result": "The new canister is installed, but the cracked vent hose stays in place. P0456 returns.",
+          "value": "parts-cannon",
+          "points": -18,
+          "teaches": "Canisters can leak, but the smoke test shows the exact source. Replacing the canister before locating the leak is expensive and can leave the real fault behind."
+        },
+        {
+          "key": "replace-purge-valve",
+          "title": "Replace the purge valve",
+          "keywords": [
+            "replace purge valve",
+            "new purge valve",
+            "replace purge solenoid",
+            "change purge valve"
+          ],
+          "result": "The new purge valve operates exactly like the old one. The small-leak test still fails.",
+          "value": "parts-cannon",
+          "points": -12,
+          "teaches": "The purge valve had already passed its test. Replacing a tested-good part adds cost and teaches nothing."
+        },
+        {
+          "key": "clear-and-recheck",
+          "title": "Clear the code and ask the customer to watch for it",
+          "keywords": [
+            "clear codes",
+            "clear code",
+            "erase code",
+            "reset light",
+            "clear and see"
+          ],
+          "result": "The light goes out. The customer returns a week later with P0456 back on.",
+          "value": "low",
+          "points": 1,
+          "teaches": "Clearing codes erases monitor results and freeze frame data and fixes nothing. It also leaves the vehicle not ready for an emissions inspection."
+        }
+      ],
+      "idealPath": [
+        "scan-evap-data",
+        "gas-cap-test",
+        "smoke-test",
+        "evap-line-inspection"
+      ],
+      "debrief": "P0456 means the EVAP monitor detected a very small leak. It does not mean the gas cap, even though the cap is the most common cause. The efficient approach is to confirm the fault, eliminate the easy suspect quickly, and then find the actual leak instead of guessing. The code was confirmed by repeated small-leak failures in Mode $06, while purge-related results were normal. The cap and filler neck passed a cap tester, which took two minutes and removed the most common cause from the list. From there, the smoke test is the most discriminating tool: with the vent side sealed, the whole system can be pressurized at once, and the smoke shows exactly where it escapes. It led straight to a cracked vent hose between the canister and the vent valve assembly, and the visual inspection showed why it cracked: contact with a bracket as the suspension flexed during trail use. Repair the hose with the correct EVAP-rated material, correct the routing, and verify by running the EVAP monitor under the freeze-frame conditions or with a scan-tool EVAP test if supported.",
+      "commonMistakes": [
+        "Replacing the fuel cap without testing it because P0456 is often a cap problem.",
+        "Replacing the canister or purge valve before locating the leak with smoke.",
+        "Clearing the code and returning the vehicle, which leaves the EVAP monitor incomplete for an emissions inspection."
+      ]
+    },
+    {
+      "key": "malibu-no-start-pump-relay",
+      "title": "Cranks but won't start",
+      "category": "Electrical",
+      "difficulty": "Intermediate",
+      "vehicle": {
+        "year": 2011,
+        "make": "Chevrolet",
+        "model": "Malibu",
+        "engine": "2.4L I4"
+      },
+      "mileage": 141000,
+      "complaint": "Engine cranks normally but will not start.",
+      "customerStatement": "It was fine yesterday. This morning it cranks and cranks but won't fire. I don't hear that little hum from the back when I turn the key like I usually do. The battery seems strong.",
+      "codes": [],
+      "freezeFrame": {},
+      "rootCause": "Burned fuel pump relay contacts: the relay coil energizes and clicks, but the contacts do not pass current to the fuel pump.",
+      "rootCauseKeywords": [
+        "fuel pump relay",
+        "relay",
+        "relay contacts",
+        "pump relay",
+        "burnt relay",
+        "relay contact"
+      ],
+      "tests": [
+        {
+          "key": "scan-codes-data",
+          "title": "Scan all modules for codes and check cranking data",
+          "keywords": [
+            "scan",
+            "scan for codes",
+            "check codes",
+            "dtc",
+            "codes",
+            "scan tool",
+            "crank rpm",
+            "cranking data"
+          ],
+          "result": "No DTCs are stored in any module. During cranking the scan tool shows a steady RPM signal, and the anti-theft status shows no fault.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "An RPM signal during cranking means the PCM sees the engine turning, which removes a failed crank sensor as a common suspect. No codes is useful information too: some faults, such as relay contacts, are not monitored by the PCM."
+        },
+        {
+          "key": "key-on-prime-listen",
+          "title": "Listen for fuel pump prime at key on",
+          "keywords": [
+            "listen for pump",
+            "pump prime",
+            "key on hum",
+            "listen fuel pump",
+            "fuel pump hum",
+            "prime"
+          ],
+          "result": "At key on you hear the fuel pump relay click in the underhood fuse block, but there is no pump hum from the rear of the vehicle.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "A two-second listening test separates the PCM commanding the pump (relay click) from the pump actually running (hum). It is a quick clue but not proof, because shop noise or a quiet pump can mislead you."
+        },
+        {
+          "key": "spark-check",
+          "title": "Check for spark with a spark tester",
+          "keywords": [
+            "spark",
+            "check spark",
+            "spark tester",
+            "spark test",
+            "ignition check"
+          ],
+          "result": "The spark tester shows strong, consistent spark while cranking.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "A no-start needs spark, fuel, compression, and correct timing. Strong spark shifts the focus to fuel. Use a proper spark tester and stay clear of secondary ignition voltage."
+        },
+        {
+          "key": "fuel-pressure-test",
+          "title": "Install a fuel pressure gauge and check pressure at key on and while cranking",
+          "keywords": [
+            "fuel pressure",
+            "fuel pressure test",
+            "fuel gauge",
+            "pressure gauge",
+            "check fuel pressure",
+            "schrader valve"
+          ],
+          "result": "The gauge reads 0 at key on and stays at 0 while cranking.",
+          "value": "high",
+          "points": 15,
+          "teaches": "Zero fuel pressure is a decisive result: no fuel is being delivered, which explains the no-start. The next question is whether the pump has failed or is not being powered. Safety: fuel under pressure — wear eye protection, wrap the fitting with a shop towel, and keep ignition sources away."
+        },
+        {
+          "key": "fuel-pump-fuse",
+          "title": "Check the fuel pump fuse",
+          "keywords": [
+            "fuse",
+            "fuel pump fuse",
+            "check fuse",
+            "blown fuse",
+            "fuse check"
+          ],
+          "result": "The fuel pump fuse is intact, and a test light shows battery voltage on both sides of it.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "A blown fuse would point to a short that must be explained before the fuse is replaced. An intact, powered fuse moves you along the circuit to the relay."
+        },
+        {
+          "key": "relay-coil-command-check",
+          "title": "Verify the PCM command and relay coil operation",
+          "keywords": [
+            "relay click",
+            "relay command",
+            "relay coil",
+            "relay control",
+            "command fuel pump",
+            "fuel pump command",
+            "check relay"
+          ],
+          "result": "With the scan tool commanding the fuel pump on, the relay clicks, and a test light on the relay coil circuit shows the PCM switching the coil on and off with each command. The coil and its control are working.",
+          "value": "high",
+          "points": 12,
+          "teaches": "A relay has two sides: the control (coil) side and the load (contact) side. Proving the coil is energized isolates the problem to the contacts, the wiring downstream, or the pump."
+        },
+        {
+          "key": "relay-contact-voltage-drop",
+          "title": "Voltage drop across the relay contacts with the pump commanded on",
+          "keywords": [
+            "voltage drop",
+            "relay voltage drop",
+            "relay contacts",
+            "voltage drop relay",
+            "test relay contacts",
+            "relay output",
+            "contact voltage drop"
+          ],
+          "result": "Using a relay breakout adapter with the relay installed and the pump commanded on, the relay's battery feed terminal reads 12.4 V and its switched output reads 0.3 V. About 12.1 V is being dropped across contacts that should be closed, so they are not passing current.",
+          "value": "high",
+          "points": 18,
+          "teaches": "A voltage drop test checks a circuit while it is working. Closed relay contacts should drop only a small fraction of a volt under load (general guideline — verify against OEM specification). Nearly full battery voltage across closed contacts means an open or badly burned contact, so the pump never receives power."
+        },
+        {
+          "key": "pump-power-at-connector",
+          "title": "Check power and ground at the fuel pump connector",
+          "keywords": [
+            "power at pump",
+            "pump connector",
+            "fuel pump voltage",
+            "check pump power",
+            "voltage at fuel pump",
+            "pump ground"
+          ],
+          "result": "Reaching the pump connector takes considerable time. With the pump commanded on, the power feed at the connector reads near 0 V, and the ground circuit is good.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "No voltage at the pump proves the pump is not the fault, but getting there takes longer than testing at the relay. Working from the easiest access point first saves time."
+        },
+        {
+          "key": "relay-swap",
+          "title": "Swap in a known-good identical relay",
+          "keywords": [
+            "swap relay",
+            "relay swap",
+            "known good relay",
+            "switch relays",
+            "try another relay"
+          ],
+          "result": "A relay with the same part number, borrowed from another circuit in the fuse block, is installed. The pump primes and the engine starts.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "A relay swap is a fast, practical check, but only with an identical relay, and it does not test the socket terminals or wiring. Confirm with a voltage drop test, inspect the socket terminals for heat damage, and return the borrowed relay to its own circuit."
+        },
+        {
+          "key": "tap-fuel-tank",
+          "title": "Tap on the fuel tank while cranking",
+          "keywords": [
+            "tap tank",
+            "hit fuel tank",
+            "bang on tank",
+            "tap on tank",
+            "hammer tank"
+          ],
+          "result": "Nothing changes. The engine still does not start, and the gauge still reads 0.",
+          "value": "low",
+          "points": 1,
+          "teaches": "Tapping can sometimes free a sticking pump, but it proves nothing about the circuit, and a pump that starts after tapping still needs electrical testing. Low value and potentially damaging."
+        },
+        {
+          "key": "starting-fluid",
+          "title": "Spray starting fluid into the intake",
+          "keywords": [
+            "starting fluid",
+            "ether",
+            "starter fluid",
+            "spray ether"
+          ],
+          "result": "The engine fires briefly and then dies.",
+          "value": "low",
+          "points": 2,
+          "teaches": "It suggests a fuel-delivery problem but says nothing about why. It carries a real risk of backfire and engine damage, and it is unnecessary once a fuel pressure gauge is available."
+        },
+        {
+          "key": "replace-fuel-pump",
+          "title": "Replace the fuel pump",
+          "keywords": [
+            "replace fuel pump",
+            "new fuel pump",
+            "change fuel pump",
+            "fuel pump replacement",
+            "replace pump"
+          ],
+          "result": "After the pump is replaced, the engine still cranks with no start. There is still no power reaching the pump.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "Zero fuel pressure does not mean a dead pump. Without proving power and ground at the pump, a pump replacement is an expensive guess."
+        },
+        {
+          "key": "replace-pcm",
+          "title": "Replace the PCM",
+          "keywords": [
+            "replace pcm",
+            "new pcm",
+            "replace ecm",
+            "new computer",
+            "replace computer",
+            "change pcm"
+          ],
+          "result": "The new PCM requires programming and anti-theft setup. The relay still clicks, the pump still does not run, and the engine still does not start.",
+          "value": "parts-cannon",
+          "points": -18,
+          "teaches": "The PCM was commanding the relay correctly; the fault was downstream of its control. Replace a PCM only after its power, ground, and output circuits are verified."
+        }
+      ],
+      "idealPath": [
+        "key-on-prime-listen",
+        "fuel-pressure-test",
+        "relay-coil-command-check",
+        "relay-contact-voltage-drop"
+      ],
+      "debrief": "A crank-no-start needs spark, fuel, compression, and correct timing, so the job is to find which one is missing as quickly as possible. The customer's comment about not hearing the pump hum was a valuable clue, and listening at key on confirmed that the relay clicked while the pump stayed silent. A fuel pressure gauge turned the clue into proof: zero pressure at key on and while cranking. Zero pressure means no delivery, but it does not tell you whether the pump is dead or never powered. Rather than drop the tank, work from the easiest access point, the relay. The scan tool command showed the PCM energizing the relay coil, which clears the control side. A voltage drop test across the contacts while commanded on found about 12 volts lost across contacts that should be closed, so the pump never received power. That pinpoints the relay contacts and saves the customer a fuel pump, a dropped tank, and possibly a PCM. After replacing the relay, inspect the socket terminals for heat damage, confirm pressure builds and holds, and confirm the pump's current draw is within the OEM specification, since excess draw can burn relay contacts.",
+      "commonMistakes": [
+        "Replacing the fuel pump because pressure is zero, without checking for power at the pump or the relay.",
+        "Assuming a relay that clicks is a good relay — the click only proves the coil works.",
+        "Using starting fluid instead of a fuel pressure gauge and then guessing at the cause."
+      ]
+    },
+    {
+      "key": "sonata-drain-glovebox-lamp",
+      "title": "Battery dead after sitting",
+      "category": "Fundamentals",
+      "difficulty": "Beginner",
+      "vehicle": {
+        "year": 2013,
+        "make": "Hyundai",
+        "model": "Sonata",
+        "engine": "2.4L I4"
+      },
+      "mileage": 109000,
+      "complaint": "Battery goes dead after the vehicle sits for two or three days.",
+      "customerStatement": "If I drive it every day it's fine, but when it sits over a weekend the battery is dead. I bought a new battery last month and it's still happening. My brother installed a remote starter for me last winter. Could that be it?",
+      "codes": [],
+      "freezeFrame": {},
+      "rootCause": "Glovebox lamp switch stuck closed, keeping the glovebox lamp lit with the door shut and draining the battery.",
+      "rootCauseKeywords": [
+        "glovebox",
+        "glove box",
+        "glovebox light",
+        "glovebox lamp",
+        "glovebox switch",
+        "glove box light"
+      ],
+      "tests": [
+        {
+          "key": "battery-test",
+          "title": "Charge and test the battery",
+          "keywords": [
+            "battery test",
+            "test battery",
+            "load test",
+            "conductance test",
+            "battery tester",
+            "check battery",
+            "battery health"
+          ],
+          "result": "After a full charge, the battery passes a conductance test and holds voltage normally. Its date code confirms it is about a month old.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "Always confirm the battery is healthy and fully charged before a drain test. A weak battery can mimic a drain, and a drain test on a discharged battery gives misleading results."
+        },
+        {
+          "key": "charging-check",
+          "title": "Check charging system output",
+          "keywords": [
+            "charging system",
+            "alternator output",
+            "charging voltage",
+            "check alternator",
+            "alternator test"
+          ],
+          "result": "With the engine running and loads on, charging voltage is stable and in the expected range, and alternator output current is normal on a load test.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "An undercharging alternator can leave the battery low, so this is a sensible elimination step. It passes, which makes a parasitic draw more likely."
+        },
+        {
+          "key": "immediate-draw-reading",
+          "title": "Measure the draw immediately after shutting the vehicle off",
+          "keywords": [
+            "quick draw check",
+            "immediate draw",
+            "draw right away",
+            "measure draw now",
+            "instant amp draw"
+          ],
+          "result": "The meter reads about 2.8 A right after shutdown, with modules still awake, interior lights on their timer, and the network active.",
+          "value": "low",
+          "points": 2,
+          "teaches": "Measuring right away captures normal wake-state current, not the problem. Without waiting for modules to sleep, the reading cannot tell you whether a real drain exists."
+        },
+        {
+          "key": "parasitic-draw-test",
+          "title": "Measure parasitic draw after the modules go to sleep",
+          "keywords": [
+            "parasitic draw",
+            "draw test",
+            "parasitic drain",
+            "key off draw",
+            "amp draw",
+            "battery drain test",
+            "current draw",
+            "ammeter"
+          ],
+          "result": "With a low-amp clamp around the negative battery cable, the door latches closed with a tool, and the hood switch handled per the procedure, the draw starts high and steps down as modules sleep. After about 45 minutes it settles at 0.42 A and stays there.",
+          "value": "high",
+          "points": 16,
+          "teaches": "Parasitic draw must be measured after the vehicle's modules go to sleep; many modern vehicles settle to about 50 mA or less (general guideline — verify against OEM specification). A steady 0.42 A can flatten a healthy battery in a few days. Measure without breaking the circuit, or with a battery disconnect switch used carefully, so modules do not wake up."
+        },
+        {
+          "key": "fuse-voltage-drop-survey",
+          "title": "Measure millivolt drop across each fuse without pulling fuses",
+          "keywords": [
+            "fuse voltage drop",
+            "voltage drop across fuses",
+            "millivolt fuse",
+            "mv across fuses",
+            "fuse drop test",
+            "check fuses"
+          ],
+          "result": "With the vehicle asleep, every fuse in the interior panel shows essentially 0 mV except the fuse feeding the interior lamp circuit, which shows a small, steady millivolt reading.",
+          "value": "high",
+          "points": 15,
+          "teaches": "Current through a fuse creates a tiny voltage drop across it. Measuring millivolts across each fuse finds the active circuit without pulling fuses, which can wake modules and restart the sleep timer. A fuse voltage-drop chart for the fuse type and rating converts the reading into approximate current."
+        },
+        {
+          "key": "pull-fuses-after-sleep",
+          "title": "Pull fuses one at a time after sleep while watching the ammeter",
+          "keywords": [
+            "pull fuses",
+            "fuse pulling",
+            "remove fuses",
+            "pull fuse",
+            "isolate circuit",
+            "fuse isolation"
+          ],
+          "result": "Pulling the interior lamp fuse drops the draw from 0.42 A to about 0.03 A, and reinstalling it brings the draw back. No other fuse makes a meaningful change.",
+          "value": "high",
+          "points": 13,
+          "teaches": "Fuse pulling isolates the circuit responsible for the draw. Wait for sleep first, pull one fuse at a time, and watch for a change. Pulling fuses can wake modules, so be patient between pulls."
+        },
+        {
+          "key": "unplug-remote-starter",
+          "title": "Disconnect the aftermarket remote starter",
+          "keywords": [
+            "remote starter",
+            "unplug remote start",
+            "aftermarket",
+            "disconnect remote starter",
+            "aftermarket device",
+            "remote start"
+          ],
+          "result": "Disconnecting the remote starter module changes the sleep draw only slightly, from 0.42 A to 0.41 A. Its wiring is neatly done and properly fused.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Aftermarket equipment is a common drain source and deserves a check, but it should be measured, not assumed. Here it is not the cause, which keeps you from blaming the installation without evidence."
+        },
+        {
+          "key": "circuit-load-check",
+          "title": "Inspect every load on the isolated circuit",
+          "keywords": [
+            "glovebox",
+            "glove box light",
+            "glovebox light",
+            "check lamps",
+            "interior lights",
+            "trunk light",
+            "courtesy lights",
+            "dome light",
+            "inspect lights",
+            "check loads"
+          ],
+          "result": "The dome, map, and trunk lamps are off with their doors closed. The glovebox lamp lens is warm to the touch, and a phone camera slipped through the gap shows it lit with the door shut. Unplugging the glovebox lamp drops the draw to about 0.03 A. Its plunger switch is stuck in the on position.",
+          "value": "high",
+          "points": 14,
+          "teaches": "Once the circuit is isolated, check every load on it. Lamps hidden behind closed doors, like glovebox and trunk lamps, are classic drains because you cannot see them lit. A thermal camera or a warm lens gives them away."
+        },
+        {
+          "key": "alternator-disconnect",
+          "title": "Disconnect the alternator output and recheck the draw (diode leakage)",
+          "keywords": [
+            "alternator diode",
+            "diode leak",
+            "disconnect alternator",
+            "alternator drain"
+          ],
+          "result": "With the alternator output lead disconnected (battery negative removed first, then reconnected for the measurement), the draw does not change.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "A leaking alternator diode can cause a drain that no fuse isolates, because the alternator output often bypasses the fuse panel. It is a good check when fuse isolation fails, but here the draw was already isolated to a fused circuit. Safety: high-current circuit; disconnect the battery before loosening the alternator output nut."
+        },
+        {
+          "key": "replace-battery",
+          "title": "Replace the battery again",
+          "keywords": [
+            "replace battery",
+            "new battery",
+            "change battery",
+            "battery replacement"
+          ],
+          "result": "Another new battery goes dead after the vehicle sits over the weekend.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "The battery tested good. A drain will flatten any battery; replacing it again treats the symptom and costs the customer money."
+        },
+        {
+          "key": "replace-alternator",
+          "title": "Replace the alternator",
+          "keywords": [
+            "replace alternator",
+            "new alternator",
+            "change alternator",
+            "alternator replacement"
+          ],
+          "result": "The new alternator charges normally, just like the old one did. The battery is still dead after a weekend.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "Charging tested good, and the draw was not related to the alternator. A tested-good alternator should not be replaced."
+        },
+        {
+          "key": "replace-bcm",
+          "title": "Replace the body control module",
+          "keywords": [
+            "replace bcm",
+            "new bcm",
+            "body control module",
+            "replace body module",
+            "change bcm"
+          ],
+          "result": "After the BCM is replaced and programmed, the sleep draw is still 0.42 A.",
+          "value": "parts-cannon",
+          "points": -18,
+          "teaches": "A module that fails to sleep shows up on the module's own supply circuits and would not disappear by pulling the lamp fuse. The evidence pointed to a lamp circuit, not the module."
+        }
+      ],
+      "idealPath": [
+        "battery-test",
+        "parasitic-draw-test",
+        "fuse-voltage-drop-survey",
+        "circuit-load-check"
+      ],
+      "debrief": "A battery that dies after sitting has three broad causes: a weak battery, a charging system that never fully recharges it, or a parasitic draw. The efficient path checks them in that order, quickly. The battery was fully charged and passed a test, and charging output was normal, so a draw was the most likely remaining cause. The critical skill is measuring draw correctly: set up a low-amp clamp or ammeter without breaking the circuit, latch the doors, then wait for the modules to sleep. A reading taken right after shutdown only shows normal wake-up current. After sleep, the draw settled at 0.42 A, far above the tens of milliamps most modern vehicles settle to (general guideline — verify against OEM specification). Measuring millivolt drop across each fuse found the one active circuit without waking modules; pulling fuses after sleep finds it too, with more patience. The customer's remote starter was a fair suspect, and disconnecting it proved it innocent. On the interior lamp circuit, the glovebox lamp was lit behind a closed door because its switch was stuck. Replace the switch or lamp assembly, repeat the sleep draw test to verify, and fully recharge the battery.",
+      "commonMistakes": [
+        "Measuring the draw immediately after shutdown instead of waiting for the modules to sleep.",
+        "Blaming the aftermarket remote starter without measuring its effect on the draw.",
+        "Replacing the battery or alternator when both tested good.",
+        "Opening a door or pulling fuses carelessly during the test, which wakes modules and restarts the sleep timer."
+      ]
+    },
+    {
+      "key": "frontier-charging-cable-drop",
+      "title": "Undercharging battery",
+      "category": "Electrical",
+      "difficulty": "Intermediate",
+      "vehicle": {
+        "year": 2014,
+        "make": "Nissan",
+        "model": "Frontier",
+        "engine": "4.0L V6"
+      },
+      "mileage": 156000,
+      "complaint": "Battery keeps running low; headlights dim at idle; check engine light on.",
+      "customerStatement": "The lights get dim when I'm idling at night, and twice this month it barely cranked in the morning. Another shop put in a new battery three weeks ago. Now the check engine light is on too.",
+      "codes": [
+        "P0562"
+      ],
+      "freezeFrame": {
+        "RPM": "700",
+        "ECT": "88 °C",
+        "Control module voltage": "11.7 V",
+        "Calc load": "31%",
+        "Vehicle speed": "0 km/h"
+      },
+      "rootCause": "High resistance in the alternator output (B+) cable from a corroded crimp at its ring terminal, limiting charging current to the battery. The alternator itself tests good.",
+      "rootCauseKeywords": [
+        "alternator output cable",
+        "alternator cable",
+        "charge wire",
+        "b+ cable",
+        "corroded terminal",
+        "high resistance",
+        "corroded crimp",
+        "output cable"
+      ],
+      "tests": [
+        {
+          "key": "battery-test",
+          "title": "Charge and test the battery",
+          "keywords": [
+            "battery test",
+            "test battery",
+            "load test",
+            "conductance test",
+            "battery tester",
+            "check battery"
+          ],
+          "result": "After a full charge, the three-week-old battery passes a conductance test and a load test.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "Judging a charging system requires a verified good, fully charged battery. A discharged battery skews voltage and output readings."
+        },
+        {
+          "key": "charging-voltage-at-battery",
+          "title": "Measure charging voltage at the battery posts with loads on",
+          "keywords": [
+            "charging voltage",
+            "voltage at battery",
+            "battery voltage running",
+            "check charging",
+            "charging system test",
+            "running voltage"
+          ],
+          "result": "At 2000 RPM with the headlights, blower, and rear defogger on, voltage at the battery posts is 12.8 V, and it drops further at idle.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "Charging voltage at the battery tells you whether the battery is actually being charged. A reading this low under load means the battery is discharging while the engine runs, but it does not yet say whether the alternator or the wiring is at fault. Measure on the posts, not the clamps."
+        },
+        {
+          "key": "alternator-output-at-bplus",
+          "title": "Measure voltage at the alternator B+ terminal and compare with the battery",
+          "keywords": [
+            "alternator b+",
+            "voltage at alternator",
+            "b+ terminal",
+            "alternator output voltage",
+            "compare voltage",
+            "b plus"
+          ],
+          "result": "Under the same conditions, the alternator B+ stud reads 14.3 V while the battery posts read 12.8 V.",
+          "value": "high",
+          "points": 12,
+          "teaches": "When the alternator produces normal voltage at its own terminal but the battery does not receive it, the problem is in the path between them. Comparing the two points is quick and discriminating."
+        },
+        {
+          "key": "positive-side-voltage-drop",
+          "title": "Voltage drop test from the alternator B+ terminal to battery positive under load",
+          "keywords": [
+            "voltage drop",
+            "positive side voltage drop",
+            "charging voltage drop",
+            "b+ to battery",
+            "voltage drop test",
+            "cable voltage drop"
+          ],
+          "result": "At 2000 RPM with heavy electrical loads on, the meter connected across the alternator B+ stud and the battery positive post reads 1.4 V.",
+          "value": "high",
+          "points": 18,
+          "teaches": "A voltage drop test measures resistance while real current flows. Positive-side charging circuit drop is commonly expected to be a few tenths of a volt or less (general guideline — verify against OEM specification). A 1.4 V drop means significant resistance in the output path, and that lost voltage never reaches the battery."
+        },
+        {
+          "key": "negative-side-voltage-drop",
+          "title": "Voltage drop test from the alternator case to battery negative under load",
+          "keywords": [
+            "ground side voltage drop",
+            "negative side voltage drop",
+            "ground voltage drop",
+            "alternator ground",
+            "engine ground test",
+            "case ground"
+          ],
+          "result": "Under the same load, the drop from the alternator case to the battery negative post is 0.08 V.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "Testing the ground side completes the circuit check. A low reading here clears the engine and body grounds and keeps the focus on the positive side."
+        },
+        {
+          "key": "voltage-drop-segment",
+          "title": "Section the positive circuit to locate the drop",
+          "keywords": [
+            "section the circuit",
+            "split the circuit",
+            "locate the drop",
+            "voltage drop each connection",
+            "segment test",
+            "pinpoint drop"
+          ],
+          "result": "Moving the meter lead point by point, almost all of the 1.4 V drop is across the ring terminal crimp at the output fuse/fusible link connection. Peeling back the insulation reveals green corrosion wicked into the copper strands.",
+          "value": "high",
+          "points": 14,
+          "teaches": "Once a drop is found, sectioning the circuit connection by connection pinpoints the resistance. Corrosion often hides under insulation, where a visual inspection misses it."
+        },
+        {
+          "key": "alternator-output-test",
+          "title": "Alternator output current test",
+          "keywords": [
+            "alternator output test",
+            "amperage test",
+            "output current",
+            "carbon pile",
+            "alternator load test",
+            "alternator amps"
+          ],
+          "result": "Measured with an inductive amp clamp at the alternator output under load, current output meets the rating per OEM specification. Ripple and diode checks are normal.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "An output test confirms the alternator itself can do its job. It tests good, which rules out replacing it: the fault was in the path, not the source."
+        },
+        {
+          "key": "belt-check",
+          "title": "Inspect the drive belt and tensioner",
+          "keywords": [
+            "belt",
+            "drive belt",
+            "serpentine belt",
+            "belt tension",
+            "tensioner",
+            "belt slip"
+          ],
+          "result": "The belt is in good condition, the tensioner holds steady, and there is no slip or glazing.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "A slipping belt can reduce alternator output under load, so it is a quick, worthwhile check, but it cannot explain a voltage difference between the alternator and the battery. Safety: engine off before touching the belt."
+        },
+        {
+          "key": "clean-battery-terminals",
+          "title": "Clean the battery terminals",
+          "keywords": [
+            "clean terminals",
+            "battery terminals",
+            "clean battery cables",
+            "terminal cleaning",
+            "battery corrosion"
+          ],
+          "result": "The terminals were already clean and tight from the recent battery installation. Nothing changes.",
+          "value": "low",
+          "points": 3,
+          "teaches": "Clean, tight terminals are basic maintenance, but they were not the problem here. A voltage drop test would have shown a terminal problem directly."
+        },
+        {
+          "key": "replace-alternator",
+          "title": "Replace the alternator",
+          "keywords": [
+            "replace alternator",
+            "new alternator",
+            "change alternator",
+            "alternator replacement",
+            "rebuild alternator"
+          ],
+          "result": "The new alternator produces the same voltage at its B+ terminal, and the battery still sees about 12.8 V under load. P0562 returns.",
+          "value": "parts-cannon",
+          "points": -18,
+          "teaches": "The alternator was producing normal voltage at its terminal; the loss was in the cable. Replacing it treats the source when the path was the problem."
+        },
+        {
+          "key": "replace-battery",
+          "title": "Replace the battery",
+          "keywords": [
+            "replace battery",
+            "new battery",
+            "change battery",
+            "battery replacement"
+          ],
+          "result": "Another new battery is installed, and within weeks it is undercharged again.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "The battery tested good and was only a few weeks old. The same undercharging will flatten any battery installed."
+        }
+      ],
+      "idealPath": [
+        "battery-test",
+        "charging-voltage-at-battery",
+        "positive-side-voltage-drop",
+        "negative-side-voltage-drop",
+        "voltage-drop-segment"
+      ],
+      "debrief": "Low system voltage with a new battery raises three questions: is the battery good, is the alternator producing, and is its output reaching the battery? After confirming the battery was charged and healthy, voltage at the battery posts under load was only 12.8 V, meaning the battery was discharging while the engine ran. The efficient next step is a voltage drop test under load, because it checks the wiring while it carries real current. From the alternator B+ stud to the battery positive post the meter read 1.4 V, far above the few tenths commonly expected (general guideline — verify against OEM specification), while the ground side was fine. Sectioning the positive path connection by connection placed nearly all of the drop at a corroded crimp hidden under the insulation, and an output test confirmed the alternator itself was healthy. This is why charging diagnosis never stops at the alternator: a perfect alternator cannot charge a battery through a high-resistance cable. Disconnect the battery negative first, repair or replace the cable end with the correct gauge and a sealed connection, then verify charging voltage at the battery under load and clear P0562.",
+      "commonMistakes": [
+        "Replacing the alternator because battery voltage was low, without measuring at the alternator or doing a voltage drop test.",
+        "Checking the cable with an ohmmeter when the resistance only shows up under current — a voltage drop test under load is the right tool.",
+        "Replacing the battery again without finding why it keeps running low."
+      ]
+    },
+    {
+      "key": "escape-p0128-thermostat",
+      "title": "Slow to warm up",
+      "category": "Cooling",
+      "difficulty": "Beginner",
+      "vehicle": {
+        "year": 2012,
+        "make": "Ford",
+        "model": "Escape",
+        "engine": "2.5L I4"
+      },
+      "mileage": 118000,
+      "complaint": "Check engine light on; weak heater output; temperature gauge reads low on the highway.",
+      "customerStatement": "Since it got cold out, the heater never really gets hot, especially on the highway. The temperature needle sits lower than it used to, and my gas mileage seems worse. Now the check engine light is on.",
+      "codes": [
+        "P0128"
+      ],
+      "freezeFrame": {
+        "RPM": "2150",
+        "ECT": "64 °C",
+        "IAT": "4 °C",
+        "Calc load": "34%",
+        "Vehicle speed": "100 km/h"
+      },
+      "rootCause": "Thermostat stuck partially open, letting coolant flow to the radiator before the engine reaches operating temperature.",
+      "rootCauseKeywords": [
+        "thermostat",
+        "stuck open thermostat",
+        "thermostat stuck open",
+        "t-stat",
+        "tstat"
+      ],
+      "tests": [
+        {
+          "key": "freeze-frame-review",
+          "title": "Review freeze frame data for P0128",
+          "keywords": [
+            "freeze frame",
+            "ff data",
+            "snapshot",
+            "code conditions"
+          ],
+          "result": "P0128 set at 100 km/h with ECT 64 °C and IAT 4 °C after an extended drive. The engine had run long enough that it should have reached its regulating temperature.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "P0128 compares actual warm-up against what the PCM expects. The freeze frame shows cold ambient air and highway speed, the conditions that expose a thermostat that is not closing fully."
+        },
+        {
+          "key": "ect-plausibility",
+          "title": "Check ECT sensor plausibility after a cold soak and against a thermometer",
+          "keywords": [
+            "ect sensor",
+            "coolant temp sensor",
+            "ect plausibility",
+            "cold soak",
+            "compare ect iat",
+            "ect vs iat",
+            "coolant temperature sensor test"
+          ],
+          "result": "After an overnight cold soak, ECT and IAT read within a couple of degrees of each other and of the outside temperature. Once warm, the ECT reading agrees with an infrared reading at the thermostat housing within a few degrees.",
+          "value": "high",
+          "points": 12,
+          "teaches": "Before blaming the thermostat, confirm the temperature sensor tells the truth. A cold-soaked engine should show ECT and IAT close to ambient. A plausible sensor means the low reading is real."
+        },
+        {
+          "key": "ect-warmup-graph",
+          "title": "Graph ECT during warm-up at idle and on a road test",
+          "keywords": [
+            "warm up graph",
+            "graph ect",
+            "ect data",
+            "coolant temp data",
+            "engine temp live data",
+            "warm-up test",
+            "temperature graph",
+            "ect live data"
+          ],
+          "result": "At idle the ECT climbs slowly and levels off well below normal operating temperature. On the highway it falls into the low 60s °C and stays there, climbing again only when the vehicle is stopped.",
+          "value": "high",
+          "points": 16,
+          "teaches": "A warm-up graph tells the whole story. An engine that warms slowly and loses temperature at highway speed, when the radiator gets the most airflow, is losing heat through the radiator too early. That is the classic signature of a thermostat that is not closing."
+        },
+        {
+          "key": "upper-hose-temperature",
+          "title": "Monitor upper radiator hose temperature during warm-up",
+          "keywords": [
+            "radiator hose",
+            "upper hose",
+            "feel hose",
+            "ir thermometer",
+            "infrared thermometer",
+            "hose temperature",
+            "thermal camera",
+            "upper radiator hose"
+          ],
+          "result": "Within a few minutes of a cold start, the upper radiator hose is already warming along with the engine instead of staying cool until the thermostat opens.",
+          "value": "high",
+          "points": 14,
+          "teaches": "With a closed thermostat, coolant should not flow to the radiator until the engine nears operating temperature. An upper hose that warms early confirms coolant is passing a thermostat that is not sealing. Safety: keep hands clear of the fan and belt, and never open a hot, pressurized cooling system."
+        },
+        {
+          "key": "coolant-level-check",
+          "title": "Check coolant level and condition (engine cold)",
+          "keywords": [
+            "coolant level",
+            "check coolant",
+            "coolant",
+            "antifreeze",
+            "reservoir",
+            "coolant condition"
+          ],
+          "result": "With the engine cold, the coolant is at the proper level, with no contamination and no visible leaks.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "Low coolant can cause erratic temperature readings and poor heater output, so a full system rules that out. Check it cold; never open the cap on a hot engine."
+        },
+        {
+          "key": "cooling-fan-check",
+          "title": "Verify cooling fan operation",
+          "keywords": [
+            "cooling fan",
+            "radiator fan",
+            "fan",
+            "fan running",
+            "check fan",
+            "fan relay",
+            "fan command"
+          ],
+          "result": "The cooling fan is off at a cold start and responds correctly to scan tool commands; it is not running continuously.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "A fan stuck on can cause slow warm-up and P0128, especially in cold weather. Ruling it out keeps the focus on the thermostat."
+        },
+        {
+          "key": "heater-output-check",
+          "title": "Check heater output temperature at the vents",
+          "keywords": [
+            "heater",
+            "heater output",
+            "vent temperature",
+            "no heat",
+            "heater core",
+            "check heat"
+          ],
+          "result": "Air at the vents is only lukewarm, especially at highway speed.",
+          "value": "low",
+          "points": 3,
+          "teaches": "This confirms the complaint but does not separate a stuck-open thermostat from low coolant or a heater core or blend door problem."
+        },
+        {
+          "key": "thermostat-remove-inspect",
+          "title": "Remove and inspect the thermostat",
+          "keywords": [
+            "remove thermostat",
+            "inspect thermostat",
+            "pull thermostat",
+            "check thermostat",
+            "test thermostat in water"
+          ],
+          "result": "The thermostat is stuck partially open, with debris lodged under its valve. It does not seal when cold.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "Removing the thermostat confirms the diagnosis, but it is invasive and belongs after the data shows the pattern. On many engines it means draining coolant and removing the housing."
+        },
+        {
+          "key": "replace-ect-sensor",
+          "title": "Replace the ECT sensor",
+          "keywords": [
+            "replace ect sensor",
+            "new coolant temp sensor",
+            "replace coolant temp sensor",
+            "new ect sensor",
+            "change ect sensor"
+          ],
+          "result": "The new sensor reads the same low temperatures on the highway, and P0128 returns.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "A sensor that passes a plausibility check is accurately reporting a real low temperature. Replacing it changes nothing."
+        },
+        {
+          "key": "replace-water-pump",
+          "title": "Replace the water pump",
+          "keywords": [
+            "replace water pump",
+            "new water pump",
+            "change water pump",
+            "water pump replacement"
+          ],
+          "result": "After a labor-intensive water pump replacement, the engine still runs cool on the highway.",
+          "value": "parts-cannon",
+          "points": -18,
+          "teaches": "A water pump problem typically causes overheating, not an engine that runs too cool. The symptom pattern did not fit."
+        },
+        {
+          "key": "flush-cooling-system",
+          "title": "Flush the cooling system",
+          "keywords": [
+            "flush coolant",
+            "coolant flush",
+            "cooling system flush",
+            "flush radiator"
+          ],
+          "result": "The coolant is replaced, but the engine still warms slowly and runs cool on the highway.",
+          "value": "low",
+          "points": 1,
+          "teaches": "A flush is maintenance, not diagnosis. It does not fix a thermostat that is not closing."
+        }
+      ],
+      "idealPath": [
+        "freeze-frame-review",
+        "ect-plausibility",
+        "ect-warmup-graph",
+        "upper-hose-temperature"
+      ],
+      "debrief": "P0128 means the engine coolant did not reach the temperature the PCM expected within the time it expected. The code describes a result, so the job is to find whether the engine is actually running cool or the sensor is reporting it wrong. Start with the freeze frame, which showed the code set at highway speed on a cold day, exactly when a thermostat that is not closing loses the most heat through the radiator. Next, prove the sensor is honest: after a cold soak, ECT matched IAT and the outside temperature, and once warm it agreed with an infrared reading. With the sensor trusted, a warm-up graph showed the engine warming slowly and cooling off at highway speed, and an upper radiator hose that warmed within minutes of a cold start confirmed coolant was reaching the radiator far too early. Coolant level and fan operation were quick eliminations. Only after the data told a consistent story does the thermostat come out, where it was found stuck open with debris. Replace it with the correct part and seal, bleed air from the system per the OEM procedure, and verify with a warm-up graph.",
+      "commonMistakes": [
+        "Replacing the ECT sensor without first checking its plausibility against ambient temperature and a thermometer.",
+        "Opening the cooling system while it is hot and pressurized.",
+        "Skipping the coolant level and cooling fan checks, which can also cause slow warm-up."
+      ]
+    },
+    {
+      "key": "optima-u0100-pcm-ground",
+      "title": "Stalls and lights up the dash",
+      "category": "CanBus",
+      "difficulty": "Advanced",
+      "vehicle": {
+        "year": 2015,
+        "make": "Kia",
+        "model": "Optima",
+        "engine": "2.4L I4"
+      },
+      "mileage": 132000,
+      "complaint": "Intermittent stalling with multiple warning lights; sometimes will not restart for a few minutes.",
+      "customerStatement": "A couple of times a week the car just dies, usually right after I hit a bump or a pothole. The whole dash lights up with ABS, traction control, and check engine lights, and the tach drops to zero. Sometimes it restarts right away and sometimes I have to wait. Another shop said the computer is bad and quoted me for a new one.",
+      "codes": [
+        "U0100"
+      ],
+      "freezeFrame": {
+        "Reported by": "ABS, TCM, instrument cluster",
+        "Ignition voltage": "12.3 V",
+        "Vehicle speed": "38 km/h",
+        "Status": "History, multiple occurrences"
+      },
+      "rootCause": "Corroded, loose PCM ground connection at its body ground point near the battery tray, causing intermittent loss of PCM ground; the PCM resets and drops off the CAN bus.",
+      "rootCauseKeywords": [
+        "pcm ground",
+        "ecm ground",
+        "corroded ground",
+        "bad ground",
+        "ground connection",
+        "ground strap",
+        "ground"
+      ],
+      "tests": [
+        {
+          "key": "network-scan",
+          "title": "Full network scan of all modules",
+          "keywords": [
+            "network scan",
+            "scan all modules",
+            "full scan",
+            "module scan",
+            "code scan",
+            "scan codes",
+            "health check",
+            "topology"
+          ],
+          "result": "The ABS module, TCM, and instrument cluster all store U0100 as a history code with multiple occurrences. The PCM responds now and has no stored codes of its own, which is common when it is the module that briefly lost power or ground.",
+          "value": "high",
+          "points": 12,
+          "teaches": "U0100 is set by the other modules when they stop hearing the PCM. When several modules agree that the PCM went silent, the PCM or its power, ground, or network connection is the focus. A single module reporting U0100 would point toward that module's own connection instead."
+        },
+        {
+          "key": "can-resistance-dlc",
+          "title": "Measure CAN bus resistance at the DLC (battery disconnected)",
+          "keywords": [
+            "can resistance",
+            "terminating resistance",
+            "60 ohms",
+            "can bus resistance",
+            "dlc resistance",
+            "measure can"
+          ],
+          "result": "With the battery disconnected, resistance between CAN-high and CAN-low at the DLC reads about 60 ohms, and neither line is shorted to ground or to power.",
+          "value": "high",
+          "points": 10,
+          "teaches": "About 60 ohms between CAN-high and CAN-low indicates both terminating resistors and the backbone wiring are intact on a typical two-terminator high-speed CAN bus (general guideline — verify against OEM specification). It rules out a bus-wide wiring fault and keeps the focus on the PCM's power, ground, or its own connection."
+        },
+        {
+          "key": "can-waveform",
+          "title": "Scope CAN-high and CAN-low while tapping the harness",
+          "keywords": [
+            "can scope",
+            "scope can",
+            "can waveform",
+            "oscilloscope can",
+            "can signal",
+            "can voltage",
+            "lab scope can"
+          ],
+          "result": "The CAN waveforms are clean and symmetrical. While you tap the harness near the battery tray, the PCM's messages disappear for a moment while the other modules keep communicating normally.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "A scope shows whether the bus itself is healthy and whether one module is dropping out. Because the bus stays active while the PCM's messages vanish, the problem is at the PCM, not the network."
+        },
+        {
+          "key": "pcm-ground-voltage-drop",
+          "title": "Voltage drop test on the PCM ground circuits under load",
+          "keywords": [
+            "pcm ground",
+            "ground voltage drop",
+            "voltage drop ground",
+            "check pcm ground",
+            "ground test",
+            "ecm ground",
+            "module ground"
+          ],
+          "result": "Backprobing the PCM ground terminals (identified from the OEM wiring diagram) to the battery negative post, with the engine running and loads on, reads 0.9 V, and it jumps above 2 V when the harness near the battery tray is flexed.",
+          "value": "high",
+          "points": 18,
+          "teaches": "Modules need clean power and ground to stay online. A voltage drop test under load reveals resistance that an ohmmeter misses. Module ground drop is commonly expected to be under about 0.1 V (general guideline — verify against OEM specification), and a reading that jumps with movement explains an intermittent reset."
+        },
+        {
+          "key": "pcm-power-feeds",
+          "title": "Check the PCM power feeds under load",
+          "keywords": [
+            "pcm power",
+            "module power",
+            "power feeds",
+            "b+ at pcm",
+            "ignition feed",
+            "check pcm power"
+          ],
+          "result": "The battery and ignition feeds at the PCM connector stay within a few tenths of a volt of battery voltage under load and while the harness is flexed.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "Power feeds and grounds should both be checked. Good feeds keep the focus on the ground side."
+        },
+        {
+          "key": "ground-point-inspection",
+          "title": "Locate and inspect the PCM ground termination",
+          "keywords": [
+            "inspect ground",
+            "ground point",
+            "ground eyelet",
+            "check ground connection",
+            "ground location",
+            "ground inspection"
+          ],
+          "result": "Following the OEM wiring diagram to the PCM ground termination, you find the ring terminal crusted with white and green corrosion under a loose bolt near the battery tray, with signs of old battery acid spillage.",
+          "value": "high",
+          "points": 12,
+          "teaches": "The wiring diagram tells you where a ground terminates. Corrosion near the battery is common from acid vapor and spills. The voltage drop test told you where to look; the inspection shows why."
+        },
+        {
+          "key": "wiggle-test",
+          "title": "Wiggle test the harness while watching live data",
+          "keywords": [
+            "wiggle test",
+            "wiggle",
+            "flex harness",
+            "tap test",
+            "shake harness",
+            "wiggle harness"
+          ],
+          "result": "With the engine running, flexing the harness near the battery tray makes the engine stumble and the tachometer drop out briefly.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "Recreating an intermittent fault proves you are in the right area. A wiggle test is most useful when paired with a measurement that shows which circuit is affected."
+        },
+        {
+          "key": "replace-pcm",
+          "title": "Replace the PCM",
+          "keywords": [
+            "replace pcm",
+            "new pcm",
+            "replace ecm",
+            "new computer",
+            "replace computer",
+            "change pcm"
+          ],
+          "result": "The new PCM is installed and programmed. Two days later the car stalls over a pothole, and the ABS module, TCM, and cluster set U0100 again.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "A module that loses communication is often a victim, not the cause. Verify power, ground, and network connections under load before condemning an expensive module."
+        },
+        {
+          "key": "reflash-pcm",
+          "title": "Reflash the PCM software",
+          "keywords": [
+            "reflash",
+            "reprogram",
+            "software update",
+            "flash pcm",
+            "update pcm",
+            "reprogram pcm"
+          ],
+          "result": "No service bulletin or software update matches this concern. The reflash completes, and the stalling continues.",
+          "value": "low",
+          "points": 0,
+          "teaches": "Software updates fix known issues only when a service bulletin matches the symptom. Reprogramming a module that is losing its ground does not help it stay online."
+        },
+        {
+          "key": "replace-battery",
+          "title": "Replace the battery",
+          "keywords": [
+            "replace battery",
+            "new battery",
+            "change battery",
+            "battery replacement"
+          ],
+          "result": "A new battery changes nothing. The car still stalls intermittently over bumps.",
+          "value": "parts-cannon",
+          "points": -12,
+          "teaches": "A battery problem affects every module, not just one. The evidence pointed to a single module's ground."
+        },
+        {
+          "key": "clear-codes-road-test",
+          "title": "Clear codes and road test over rough roads",
+          "keywords": [
+            "clear codes",
+            "clear code",
+            "road test",
+            "test drive",
+            "erase codes"
+          ],
+          "result": "The codes clear. After about 20 minutes on rough roads the engine stalls, and the U0100 codes return.",
+          "value": "low",
+          "points": 2,
+          "teaches": "Reproducing the fault confirms it is real, but clearing codes before recording which modules set them throws away information."
+        }
+      ],
+      "idealPath": [
+        "network-scan",
+        "can-resistance-dlc",
+        "pcm-ground-voltage-drop",
+        "ground-point-inspection"
+      ],
+      "debrief": "U0100 is not a PCM failure code. Other modules set it when they stop hearing the PCM. The first step is to see the whole network: a full scan showed the ABS module, TCM, and cluster all reporting U0100, which puts the PCM at the center of the problem. The question then is whether the PCM lost its network connection, lost its power or ground, or failed internally. A resistance check at the DLC found about 60 ohms, showing both terminating resistors and the backbone were intact, so a bus-wide wiring fault was unlikely. Because the PCM dropped offline at the same moment the engine stalled, loss of power or ground was the leading suspect. A voltage drop test on the PCM ground under load found excessive drop that spiked when the harness near the battery tray was flexed, matching the customer's comment about bumps. Following the wiring diagram to the ground termination led to a corroded, loose ring terminal. Clean or replace the terminal, repair any acid damage, protect the connection, and verify with a repeat voltage drop test and a rough-road test. The previous shop's quote would have replaced a healthy PCM and left the car stalling.",
+      "commonMistakes": [
+        "Treating U0100 as a failed PCM without checking the PCM's power, ground, and network connections.",
+        "Checking grounds with an ohmmeter instead of a voltage drop test under load.",
+        "Clearing U-codes before recording which modules set them, which loses the network picture."
+      ]
+    },
+    {
+      "key": "impala-p0420-exhaust-leak",
+      "title": "Catalyst efficiency code",
+      "category": "Diagnostics",
+      "difficulty": "Advanced",
+      "vehicle": {
+        "year": 2010,
+        "make": "Chevrolet",
+        "model": "Impala",
+        "engine": "3.5L V6"
+      },
+      "mileage": 147000,
+      "complaint": "Check engine light on and failed emissions inspection; no driveability concerns.",
+      "customerStatement": "It runs fine, but the check engine light is on and it didn't pass inspection. A friend said the catalytic converter is bad and it's going to be really expensive. I did notice a little ticking noise underneath when it's cold, but it goes away.",
+      "codes": [
+        "P0420"
+      ],
+      "freezeFrame": {
+        "RPM": "1850",
+        "ECT": "92 °C",
+        "Calc load": "29%",
+        "STFT B1": "+1%",
+        "LTFT B1": "+2%",
+        "Vehicle speed": "72 km/h"
+      },
+      "rootCause": "Exhaust leak at a flange gasket just ahead of the bank 1 downstream O2 sensor, drawing outside air past the sensor and making the catalyst appear inefficient. The catalyst was not the fault.",
+      "rootCauseKeywords": [
+        "exhaust leak",
+        "flange gasket",
+        "exhaust gasket",
+        "exhaust flange",
+        "leaking gasket",
+        "leak before o2 sensor"
+      ],
+      "tests": [
+        {
+          "key": "fuel-trim-misfire-check",
+          "title": "Check fuel trims and misfire history",
+          "keywords": [
+            "fuel trim",
+            "fuel trims",
+            "stft",
+            "ltft",
+            "misfire history",
+            "misfire counters",
+            "trims"
+          ],
+          "result": "Fuel trims are within a few percent of zero on both banks, and Mode $06 misfire counters show no significant misfire history.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "A catalyst can only be judged when the engine feeding it is healthy. Normal trims and no misfires mean the catalyst is not being flooded with fuel or overheated, and that the engine is not the reason for the code."
+        },
+        {
+          "key": "o2-sensor-graph",
+          "title": "Graph the upstream and downstream O2 sensors at a steady 2500 RPM",
+          "keywords": [
+            "o2 graph",
+            "o2 sensor data",
+            "graph o2 sensors",
+            "upstream downstream",
+            "downstream o2",
+            "post cat o2",
+            "o2 sensor graph",
+            "rear o2"
+          ],
+          "result": "The bank 1 upstream sensor switches normally. The bank 1 downstream sensor, which should stay relatively steady behind a working catalyst, switches frequently, especially right after deceleration. The bank 2 downstream sensor is steady.",
+          "value": "high",
+          "points": 12,
+          "teaches": "The PCM judges catalyst efficiency by comparing the upstream and downstream signals. A downstream sensor that mimics the upstream sensor looks like a catalyst with poor oxygen storage, but outside air leaking in ahead of the downstream sensor can create the same pattern. The graph shows what the PCM sees, not why."
+        },
+        {
+          "key": "exhaust-leak-inspection",
+          "title": "Inspect the exhaust for leaks from the manifolds to the downstream O2 sensors",
+          "keywords": [
+            "exhaust leak",
+            "check for exhaust leak",
+            "inspect exhaust",
+            "exhaust inspection",
+            "listen for leak",
+            "ticking",
+            "soot"
+          ],
+          "result": "On a cold engine, a light ticking is audible under the vehicle. On the lift there is black soot around the flange gasket just ahead of the bank 1 downstream sensor; the flange bolts are rusted and the gasket is partly missing.",
+          "value": "high",
+          "points": 14,
+          "teaches": "An exhaust leak ahead of an O2 sensor lets outside air in with the exhaust pulses. The customer's cold ticking noise was a clue, and because small leaks often seal as the metal expands with heat, a cold inspection matters. Safety: exhaust parts get extremely hot; let them cool and support the vehicle safely."
+        },
+        {
+          "key": "exhaust-smoke-test",
+          "title": "Smoke test the exhaust system",
+          "keywords": [
+            "exhaust smoke test",
+            "smoke test",
+            "smoke exhaust",
+            "smoke machine",
+            "smoke"
+          ],
+          "result": "With the engine off and cool, low-pressure smoke introduced at the tailpipe per the smoke machine instructions escapes steadily from the flange gasket ahead of the bank 1 downstream sensor. No other leaks are found.",
+          "value": "high",
+          "points": 16,
+          "teaches": "Smoke confirms the exact leak location and catches leaks you cannot hear once the engine warms up. It turns a suspicion into proof before any exhaust parts are replaced."
+        },
+        {
+          "key": "mode6-catalyst-results",
+          "title": "Review Mode $06 catalyst monitor test results",
+          "keywords": [
+            "mode 6",
+            "mode $06",
+            "catalyst monitor",
+            "cat monitor results",
+            "monitor test results",
+            "test results"
+          ],
+          "result": "The bank 1 catalyst monitor result is just past its threshold, while bank 2 passes with margin.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "Mode $06 shows how close a monitor is to passing or failing, and it is useful for verifying the repair later. It confirms the PCM's decision but not the cause."
+        },
+        {
+          "key": "catalyst-temp-check",
+          "title": "Compare catalyst inlet and outlet temperature",
+          "keywords": [
+            "cat temperature",
+            "catalyst temperature",
+            "inlet outlet temperature",
+            "ir cat test",
+            "cat temp test",
+            "infrared cat"
+          ],
+          "result": "At a steady 2500 RPM, an infrared thermometer shows the outlet somewhat hotter than the inlet.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "A working catalyst usually produces heat, so an outlet hotter than the inlet suggests it is active (general guideline — verify against OEM specification). It is a rough screening test, not proof of efficiency. Safety: extremely hot surfaces."
+        },
+        {
+          "key": "downstream-sensor-response",
+          "title": "Test the downstream O2 sensor response",
+          "keywords": [
+            "o2 sensor test",
+            "downstream sensor test",
+            "propane test",
+            "sensor response",
+            "o2 response"
+          ],
+          "result": "With propane enrichment the downstream sensor goes fully rich, and on a snap deceleration it goes fully lean. The sensor itself responds normally.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Proving the sensor works shows it is reporting what it sees. The real question is why it sees extra oxygen."
+        },
+        {
+          "key": "back-pressure-test",
+          "title": "Exhaust back pressure test",
+          "keywords": [
+            "back pressure",
+            "backpressure",
+            "exhaust restriction",
+            "restricted cat",
+            "clogged cat"
+          ],
+          "result": "Back pressure is normal at idle and at 2500 RPM according to the test equipment instructions.",
+          "value": "low",
+          "points": 3,
+          "teaches": "A restriction test looks for a plugged converter, which usually causes a loss of power, not a P0420 on a smooth-running engine. Low yield here."
+        },
+        {
+          "key": "replace-catalytic-converter",
+          "title": "Replace the catalytic converter",
+          "keywords": [
+            "replace cat",
+            "replace catalytic converter",
+            "new cat",
+            "new catalytic converter",
+            "change cat",
+            "cat replacement"
+          ],
+          "result": "A new converter is installed using the old flange hardware. After the monitor runs again, P0420 returns because the leak ahead of the downstream sensor remains.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "P0420 is the PCM's conclusion from two sensor signals. When outside air reaches the downstream sensor, even a new catalyst appears inefficient. Rule out leaks and engine problems before replacing a catalyst."
+        },
+        {
+          "key": "replace-downstream-o2",
+          "title": "Replace the downstream O2 sensor",
+          "keywords": [
+            "replace o2 sensor",
+            "new o2 sensor",
+            "replace downstream o2",
+            "change o2 sensor",
+            "replace rear o2"
+          ],
+          "result": "The new sensor switches exactly like the old one, and P0420 returns.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "The sensor was accurately reporting oxygen from the leak. A sensor that tests good should stay in place."
+        },
+        {
+          "key": "o2-spacer",
+          "title": "Install an O2 sensor spacer to hide the code",
+          "keywords": [
+            "o2 spacer",
+            "anti-fouler",
+            "o2 sensor spacer",
+            "defouler",
+            "o2 extender",
+            "cat delete"
+          ],
+          "result": "The code may disappear for a while, but the fault remains and the vehicle's emission controls have been tampered with.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "Spacers and similar tricks defeat emission monitoring. Tampering with emission controls is illegal under federal law and is never an acceptable repair. Find and fix the cause."
+        }
+      ],
+      "idealPath": [
+        "fuel-trim-misfire-check",
+        "o2-sensor-graph",
+        "exhaust-leak-inspection",
+        "exhaust-smoke-test"
+      ],
+      "debrief": "P0420 means the PCM concluded that the bank 1 catalyst is not storing oxygen well enough, based on comparing the upstream and downstream O2 signals. It does not prove the catalyst is bad. Before condemning an expensive converter, verify the three things that can fool that comparison: the engine feeding the catalyst, the sensors reporting on it, and leaks around it. Normal fuel trims and no misfire history showed the engine was not overloading or damaging the catalyst. Graphing the sensors showed the downstream sensor switching almost like the upstream one, which is exactly what the PCM saw. The question was why. The customer's cold ticking noise pointed toward a leak, inspection found soot around a flange gasket just ahead of the downstream sensor, and a smoke test confirmed it. Exhaust pulses create moments of low pressure that pull outside air in through a leak, and that extra oxygen makes the downstream sensor read lean, mimicking a catalyst with poor oxygen storage. Replace the gasket and hardware, then verify with a steady downstream signal and a completed catalyst monitor that passes in Mode $06. Never use spacers or other tricks to hide the code.",
+      "commonMistakes": [
+        "Replacing the catalytic converter because P0420 names the catalyst.",
+        "Replacing the downstream O2 sensor when it is accurately reporting oxygen from a leak.",
+        "Inspecting for exhaust leaks only on a hot engine, when small leaks may seal up.",
+        "Using an O2 sensor spacer or another tampering device to hide the code."
+      ]
+    },
+    {
+      "key": "sierra-abs-wss-harness",
+      "title": "ABS light on",
+      "category": "Brakes",
+      "difficulty": "Advanced",
+      "vehicle": {
+        "year": 2014,
+        "make": "GMC",
+        "model": "Sierra 1500",
+        "engine": "5.3L V8"
+      },
+      "mileage": 112000,
+      "complaint": "ABS and traction control warning lights come on intermittently, usually on rough roads.",
+      "customerStatement": "The ABS light and the traction light come on sometimes when I'm driving on our gravel road. If I shut it off and restart, they're usually off for a while. The brakes feel normal. I had a new front hub put on the driver's side last year.",
+      "codes": [
+        "C0035"
+      ],
+      "freezeFrame": {
+        "LF wheel speed": "0 km/h",
+        "RF wheel speed": "52 km/h",
+        "LR wheel speed": "52 km/h",
+        "RR wheel speed": "52 km/h",
+        "Ignition voltage": "13.9 V"
+      },
+      "rootCause": "Chafed left front wheel speed sensor harness rubbing on the upper control arm (a retaining clip was missing), with a conductor broken inside the insulation that intermittently opens the circuit.",
+      "rootCauseKeywords": [
+        "chafed harness",
+        "harness",
+        "wheel speed sensor wiring",
+        "wss wiring",
+        "broken wire",
+        "open circuit",
+        "damaged wiring",
+        "chafed wire"
+      ],
+      "tests": [
+        {
+          "key": "abs-code-scan",
+          "title": "Scan the ABS module for codes and snapshot data",
+          "keywords": [
+            "scan abs",
+            "abs codes",
+            "read abs codes",
+            "abs scan",
+            "scan tool",
+            "ebcm codes",
+            "check codes"
+          ],
+          "result": "The ABS module (EBCM) stores C0035 as a history code with multiple occurrences; the scan tool's enhanced ABS menu describes it as a left front wheel speed sensor circuit fault. The snapshot shows the LF wheel speed at 0 while the other three read about 52 km/h.",
+          "value": "high",
+          "points": 10,
+          "teaches": "Chassis codes are often manufacturer-specific, so use the scan tool's enhanced description and OEM service information for the exact meaning. The snapshot shows one wheel dropping to zero while the others kept reading, which points at that wheel's sensor circuit."
+        },
+        {
+          "key": "wheel-speed-data",
+          "title": "Graph all four wheel speeds on a road test",
+          "keywords": [
+            "wheel speed data",
+            "graph wheel speeds",
+            "wheel speed sensor data",
+            "wss data",
+            "abs live data",
+            "road test with scan tool"
+          ],
+          "result": "With a helper recording data on a rough road, the LF wheel speed drops to zero for a fraction of a second over bumps, then returns to match the others. On smooth pavement all four wheels track together.",
+          "value": "high",
+          "points": 14,
+          "teaches": "A signal that drops out completely and instantly, and only over bumps, suggests an intermittent open circuit. A weak sensor or damaged tone ring more often produces erratic or low readings."
+        },
+        {
+          "key": "harness-wiggle-continuity",
+          "title": "Wiggle test the LF sensor circuit while monitoring continuity",
+          "keywords": [
+            "wiggle test",
+            "wiggle harness",
+            "continuity test",
+            "flex harness",
+            "circuit test",
+            "check wiring",
+            "wiggle"
+          ],
+          "result": "With the truck on a lift and the wheels hanging, a meter monitoring continuity between the EBCM connector and the sensor connector (terminals identified from the OEM wiring diagram) shows one circuit going open intermittently when the harness is flexed near the upper control arm.",
+          "value": "high",
+          "points": 16,
+          "teaches": "Intermittent opens need a test that runs while you move the harness. Monitoring continuity or live data during a wiggle test finds the exact spot where the circuit breaks. Safety: support the vehicle properly and keep hands clear of suspension pinch points."
+        },
+        {
+          "key": "harness-visual-trace",
+          "title": "Trace and inspect the LF sensor harness along the suspension",
+          "keywords": [
+            "inspect harness",
+            "visual inspection",
+            "trace harness",
+            "harness inspection",
+            "look at wiring",
+            "harness routing"
+          ],
+          "result": "The harness is missing one retaining clip and rests against the upper control arm. At that spot the jacket is worn through, and one conductor is broken inside the insulation; the ends separate as the suspension moves.",
+          "value": "high",
+          "points": 12,
+          "teaches": "Wheel speed sensor harnesses move with the suspension and steering. When a clip is left off after repair work, the harness can rub through. Inspecting routing and retainers along the whole path finds the cause, not just the break."
+        },
+        {
+          "key": "sensor-signal-check",
+          "title": "Check the sensor signal at the sensor connector while spinning the wheel",
+          "keywords": [
+            "sensor signal",
+            "scope wheel speed sensor",
+            "wheel speed sensor test",
+            "wss test",
+            "test sensor",
+            "sensor output",
+            "spin wheel"
+          ],
+          "result": "With a breakout lead at the sensor connector and the wheel spun by hand, the sensor produces a clean, consistent signal as long as the harness is not flexed.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "Testing the signal at the sensor connector separates the sensor from the wiring. A good signal at the sensor with a dropout at the module means the fault is in the harness between them. Identify the sensor type (active or passive) from OEM service information before testing."
+        },
+        {
+          "key": "sensor-resistance",
+          "title": "Measure the wheel speed sensor resistance",
+          "keywords": [
+            "sensor resistance",
+            "ohm the sensor",
+            "measure resistance",
+            "ohms",
+            "resistance test"
+          ],
+          "result": "The meter shows a reading, but in this scenario the sensor is an active (powered) type, and OEM service information does not use resistance to test it. The reading tells you little.",
+          "value": "low",
+          "points": 3,
+          "teaches": "Resistance tests apply to passive (magnetic) sensors. Active sensors are tested for supply, ground, and signal per the OEM procedure. Always identify the sensor type first."
+        },
+        {
+          "key": "bearing-tone-ring-check",
+          "title": "Check wheel bearing play and tone ring condition",
+          "keywords": [
+            "wheel bearing",
+            "hub bearing",
+            "tone ring",
+            "reluctor",
+            "bearing play",
+            "check hub"
+          ],
+          "result": "The hub bearing has no noticeable play or noise, and the consistent signal at the sensor indicates the integrated tone ring is intact.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Excess bearing play or a damaged tone ring can cause wheel speed faults, usually as erratic readings. It is a reasonable check, but it does not fit a signal that drops to zero only when the harness moves."
+        },
+        {
+          "key": "replace-hub-sensor",
+          "title": "Replace the LF hub bearing and sensor assembly",
+          "keywords": [
+            "replace hub",
+            "new hub",
+            "replace wheel speed sensor",
+            "new wheel speed sensor",
+            "replace hub bearing",
+            "replace sensor"
+          ],
+          "result": "The new hub assembly is installed, and the ABS light returns on the next rough road because the harness damage was not addressed.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "Where the sensor is part of the hub, replacing the sensor means an expensive hub replacement. Test the circuit before replacing the hub, especially after previous work in the area."
+        },
+        {
+          "key": "replace-ebcm",
+          "title": "Replace the ABS module (EBCM)",
+          "keywords": [
+            "replace abs module",
+            "replace ebcm",
+            "new abs module",
+            "new ebcm",
+            "abs module replacement"
+          ],
+          "result": "After the module is replaced and programmed, the LF wheel speed still drops out over bumps, and C0035 returns.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "The module correctly reported a real circuit fault. Module replacement is costly and requires programming, and it is rarely justified when one wheel circuit has a fault."
+        },
+        {
+          "key": "clear-codes",
+          "title": "Clear the ABS codes and return the vehicle",
+          "keywords": [
+            "clear codes",
+            "clear abs codes",
+            "clear code",
+            "erase codes",
+            "reset abs light"
+          ],
+          "result": "The light goes out, then comes back on the next rough road.",
+          "value": "low",
+          "points": 1,
+          "teaches": "An intermittent fault will return. Clearing codes without a repair solves nothing, and the customer loses ABS and traction control whenever the fault is active."
+        },
+        {
+          "key": "brake-bleed",
+          "title": "Bleed the brakes",
+          "keywords": [
+            "bleed brakes",
+            "brake bleed",
+            "flush brake fluid",
+            "bleed abs"
+          ],
+          "result": "The brake fluid is refreshed, and the ABS light still comes on over bumps.",
+          "value": "low",
+          "points": 0,
+          "teaches": "Bleeding addresses hydraulic concerns, not an electrical sensor circuit fault. It does not fit the evidence."
+        }
+      ],
+      "idealPath": [
+        "abs-code-scan",
+        "wheel-speed-data",
+        "harness-wiggle-continuity",
+        "harness-visual-trace"
+      ],
+      "debrief": "The ABS light is a messenger. The EBCM stored C0035, which the scan tool described as a left front wheel speed sensor circuit fault, and that tells you which circuit to test, not which part to replace. The snapshot and a recorded road test showed the LF wheel speed dropping instantly to zero over bumps and recovering while the other wheels kept reading. A clean drop to zero points to an intermittent open, not a weak sensor or damaged tone ring, which usually produce erratic or low readings. The customer's mention of a hub replacement last year was a useful clue, because work in that area can leave a harness mis-routed or missing a clip. With the truck supported and the wheel hanging, a wiggle test while monitoring the circuit found an open when the harness flexed near the upper control arm, and a visual trace found the chafed section and the missing clip. Checking the signal at the sensor connector confirmed the sensor itself worked. On this design, replacing the sensor means replacing the hub, an expensive guess. Repair the conductors per OEM wiring repair guidance, restore the routing and clips, clear the codes, and verify with a rough-road test.",
+      "commonMistakes": [
+        "Replacing the hub and sensor assembly without testing the circuit.",
+        "Using a resistance test on an active wheel speed sensor without checking the OEM test procedure.",
+        "Repairing the broken wire without restoring the harness routing and clips, so it chafes through again."
+      ]
+    },
+    {
+      "key": "accord-pulsation-runout",
+      "title": "Pulsating brake pedal",
+      "category": "Brakes",
+      "difficulty": "Intermediate",
+      "vehicle": {
+        "year": 2015,
+        "make": "Honda",
+        "model": "Accord",
+        "engine": "2.4L I4"
+      },
+      "mileage": 71000,
+      "complaint": "Brake pedal pulsation and steering wheel shimmy when braking from highway speed.",
+      "customerStatement": "When I brake coming off the highway, the pedal pulses and the steering wheel shakes. It started a few thousand miles after I got new tires at a tire shop. The brakes were done about a year ago.",
+      "codes": [],
+      "freezeFrame": {},
+      "rootCause": "Excessive front rotor lateral runout caused by rust scale on the hub mounting faces and uneven, impact-gun lug nut torque, which led to rotor thickness variation.",
+      "rootCauseKeywords": [
+        "runout",
+        "lateral runout",
+        "rotor runout",
+        "hub rust",
+        "lug nut torque",
+        "uneven torque",
+        "hub face",
+        "thickness variation"
+      ],
+      "tests": [
+        {
+          "key": "road-test-confirm",
+          "title": "Road test to confirm the pulsation and where it is felt",
+          "keywords": [
+            "road test",
+            "test drive",
+            "drive it",
+            "confirm complaint",
+            "verify complaint"
+          ],
+          "result": "Moderate braking from highway speed produces a pedal pulsation and a steering wheel shimmy. Light braking at low speed is smoother, and there is no pull to either side.",
+          "value": "medium",
+          "points": 6,
+          "teaches": "Confirming the complaint and noting where it is felt matters: a steering wheel shimmy usually points to the front brakes, while a pulsation felt only in the seat or pedal can point to the rear. Road test safely and legally."
+        },
+        {
+          "key": "lug-nut-torque-check",
+          "title": "Check lug nut torque with a torque wrench",
+          "keywords": [
+            "lug nut torque",
+            "lug nuts",
+            "torque wrench",
+            "check torque",
+            "wheel torque",
+            "lug torque"
+          ],
+          "result": "Checking each lug nut with a torque wrench set to the OEM specification shows uneven tightening on both front wheels: several nuts are far tighter than the others, consistent with an impact gun.",
+          "value": "medium",
+          "points": 8,
+          "teaches": "Uneven or excessive lug nut torque can distort the rotor hat and create lateral runout. It is a quick check and a strong clue, especially after recent tire work. Always use the OEM specification and a star pattern."
+        },
+        {
+          "key": "rotor-lateral-runout",
+          "title": "Measure rotor lateral runout on the vehicle with a dial indicator",
+          "keywords": [
+            "runout",
+            "lateral runout",
+            "dial indicator",
+            "measure runout",
+            "rotor runout",
+            "check runout"
+          ],
+          "result": "With the rotors clamped by lug nuts torqued to specification in a star pattern, the dial indicator shows about 0.004 in (0.10 mm) of runout on the left front rotor; in this scenario both front rotors exceed the limit in the service information.",
+          "value": "high",
+          "points": 16,
+          "teaches": "Lateral runout is measured with a dial indicator on the rotor face, with the rotor clamped at the correct torque. Excess runout makes the rotor brush the pads once per revolution, wearing thickness variation into it over time. Compare readings with the OEM specification."
+        },
+        {
+          "key": "rotor-thickness-variation",
+          "title": "Measure rotor thickness variation with a micrometer",
+          "keywords": [
+            "thickness variation",
+            "dtv",
+            "micrometer",
+            "measure rotor thickness",
+            "rotor thickness",
+            "parallelism"
+          ],
+          "result": "Measurements at several points around each front rotor show thickness variation beyond the OEM limit: a small amount, but enough to be felt in the pedal. Neither rotor is below minimum thickness.",
+          "value": "high",
+          "points": 12,
+          "teaches": "Thickness variation is what the driver feels as pedal pulsation; runout is usually what creates it. Measuring both explains the symptom and its cause. Also compare against the minimum thickness marked on the rotor."
+        },
+        {
+          "key": "hub-flange-runout",
+          "title": "Remove the rotor, then inspect and measure hub flange runout",
+          "keywords": [
+            "hub runout",
+            "hub flange",
+            "hub face",
+            "hub rust",
+            "measure hub",
+            "clean hub",
+            "hub inspection"
+          ],
+          "result": "With the rotor removed, the hub face has uneven rust scale. After cleaning with a hub-resurfacing tool, hub flange runout measured with the dial indicator is within the OEM limit, and the bearing has no play.",
+          "value": "high",
+          "points": 14,
+          "teaches": "Rust between the hub and the rotor hat tilts the rotor and adds runout. Measuring the hub separates a hub or bearing problem from a mounting-surface problem, and a clean hub face is essential before installing any rotor."
+        },
+        {
+          "key": "pad-caliper-inspection",
+          "title": "Inspect the pads, caliper slides, and pad material transfer",
+          "keywords": [
+            "inspect pads",
+            "brake pads",
+            "caliper slides",
+            "check calipers",
+            "pad inspection",
+            "caliper"
+          ],
+          "result": "The pads have adequate thickness and even wear, the slides move freely, and there is some uneven pad material deposit on the rotor faces.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "Sticking slides and uneven pad deposits can contribute to pulsation, so this is a reasonable check. It does not explain the measured runout."
+        },
+        {
+          "key": "suspension-check",
+          "title": "Check the front suspension and steering components",
+          "keywords": [
+            "suspension check",
+            "ball joints",
+            "tie rods",
+            "control arm bushings",
+            "steering check",
+            "front end check"
+          ],
+          "result": "There is no looseness in the ball joints, tie rod ends, or control arm bushings.",
+          "value": "low",
+          "points": 3,
+          "teaches": "Worn suspension parts can amplify a brake shimmy, but they do not cause pedal pulsation. Worth a look, low yield."
+        },
+        {
+          "key": "wheel-balance-check",
+          "title": "Balance the front wheels",
+          "keywords": [
+            "wheel balance",
+            "balance tires",
+            "tire balance",
+            "balance wheels",
+            "road force"
+          ],
+          "result": "The wheels are within balance, and the shimmy occurs only while braking, not while cruising.",
+          "value": "low",
+          "points": 2,
+          "teaches": "Imbalance causes vibration at certain speeds whether or not you are braking. A vibration that appears only under braking points to the brakes."
+        },
+        {
+          "key": "resurface-rotors-off-car",
+          "title": "Resurface the rotors on an off-car lathe and reinstall",
+          "keywords": [
+            "resurface rotors",
+            "turn rotors",
+            "machine rotors",
+            "cut rotors",
+            "rotor lathe"
+          ],
+          "result": "The rotors are now flat and parallel, but after they are reinstalled on the uncleaned hubs, measured runout is still excessive.",
+          "value": "low",
+          "points": 2,
+          "teaches": "Machining removes thickness variation from the rotor but does not fix the mounting problem. Without cleaning the hub face and measuring runout after installation, the pulsation comes back."
+        },
+        {
+          "key": "replace-rotors-pads",
+          "title": "Replace the front rotors and pads without measuring",
+          "keywords": [
+            "replace rotors",
+            "new rotors",
+            "replace pads and rotors",
+            "new brakes",
+            "brake job",
+            "replace brakes"
+          ],
+          "result": "The pedal is smooth for a few thousand miles, then the pulsation returns because the rusty hub faces and uneven lug nut torque were never addressed.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "New rotors on rusty hubs with impact-gun torque develop runout and thickness variation again. Fix the cause: clean the hub faces, check runout after installation, and torque lug nuts to the OEM specification in a star pattern."
+        },
+        {
+          "key": "replace-calipers",
+          "title": "Replace the front calipers",
+          "keywords": [
+            "replace calipers",
+            "new calipers",
+            "replace caliper",
+            "change calipers"
+          ],
+          "result": "The new calipers do not change the pulsation.",
+          "value": "parts-cannon",
+          "points": -15,
+          "teaches": "The calipers were not sticking, and calipers do not cause lateral runout. Replacing working hydraulic parts adds cost and risk without addressing the cause."
+        }
+      ],
+      "idealPath": [
+        "road-test-confirm",
+        "lug-nut-torque-check",
+        "rotor-lateral-runout",
+        "rotor-thickness-variation",
+        "hub-flange-runout"
+      ],
+      "debrief": "Brake pulsation is almost always felt as rotor thickness variation, but the real question is what created it. The timing mattered here: the pulsation began a few thousand miles after new tires, which points toward how the wheels were installed rather than toward the brake parts themselves. The road test confirmed a pedal pulsation with steering shimmy, pointing to the front brakes. Checking lug nut torque before removal found uneven, impact-gun tightening. With the rotors properly clamped, a dial indicator showed lateral runout beyond the OEM limit, and a micrometer found thickness variation developing. Runout makes the rotor brush the pads once per revolution, wearing uneven spots that the driver eventually feels. Removing the rotor revealed rust scale on the hub face; after cleaning, the hub itself measured within the limit and the bearing had no play. The fix is not just parts: clean the hub faces, resurface or replace the rotors as the measurements dictate, re-measure runout after installation (indexing the rotor or using correction methods if needed), and torque the lug nuts to the OEM specification in a star pattern with a torque wrench. Replacing rotors without addressing the hubs and torque brings the pulsation back.",
+      "commonMistakes": [
+        "Replacing rotors and pads without measuring runout or cleaning the hub faces.",
+        "Tightening lug nuts with an impact gun instead of a torque wrench set to the OEM specification in a star pattern.",
+        "Measuring runout with the rotor loose on the hub instead of clamped at the correct torque."
+      ]
+    },
+    {
+      "key": "crv-ac-clutch-coil",
+      "title": "A/C blowing warm",
+      "category": "Hvac",
+      "difficulty": "Intermediate",
+      "vehicle": {
+        "year": 2012,
+        "make": "Honda",
+        "model": "CR-V",
+        "engine": "2.4L I4"
+      },
+      "mileage": 124000,
+      "complaint": "A/C blows warm air at all speeds.",
+      "customerStatement": "The air conditioning stopped cooling a few days ago. It just blows warm, even on the highway. My neighbor said to buy a can of refrigerant and top it off, but I wanted someone to look at it first.",
+      "codes": [],
+      "freezeFrame": {},
+      "rootCause": "Open A/C compressor clutch coil winding. The PCM commands the clutch relay, and power and ground reach the coil connector, but the coil draws no current, so the clutch never engages. The refrigerant charge and the compressor itself were not the fault.",
+      "rootCauseKeywords": [
+        "clutch coil",
+        "compressor clutch",
+        "a/c clutch",
+        "ac clutch",
+        "open coil",
+        "clutch coil open",
+        "field coil"
+      ],
+      "tests": [
+        {
+          "key": "vent-temperature-check",
+          "title": "Verify the complaint by measuring vent temperature",
+          "keywords": [
+            "vent temperature",
+            "check vent temp",
+            "thermometer in vent",
+            "verify complaint",
+            "vent temp"
+          ],
+          "result": "With the A/C on maximum, recirculation selected, and the engine at 1500 RPM, the center vent blows air at about the same temperature as the outside air.",
+          "value": "low",
+          "points": 3,
+          "teaches": "Verifying the complaint is required and gives you a baseline for checking the repair, but it does not discriminate between causes."
+        },
+        {
+          "key": "clutch-engagement-check",
+          "title": "Watch whether the compressor clutch engages",
+          "keywords": [
+            "clutch engage",
+            "compressor clutch",
+            "clutch engagement",
+            "look at clutch",
+            "is clutch spinning",
+            "compressor not engaging",
+            "clutch check"
+          ],
+          "result": "With the engine running and the A/C commanded on, the compressor pulley spins but the clutch hub stays stationary, and there is no click when the A/C is switched on.",
+          "value": "high",
+          "points": 12,
+          "teaches": "A clutch that never engages means the compressor is not pumping at all, which explains the warm air. The next question is whether the system chose not to engage it or could not. Safety: keep hands, tools, and clothing clear of the belt and pulleys."
+        },
+        {
+          "key": "scan-ac-data",
+          "title": "Check A/C request, clutch relay command, and A/C pressure sensor data",
+          "keywords": [
+            "scan ac data",
+            "a/c request",
+            "ac request",
+            "compressor command",
+            "a/c relay command",
+            "ac pressure sensor",
+            "hvac data",
+            "scan tool"
+          ],
+          "result": "With the A/C selected, the scan tool shows A/C request YES and clutch relay command ON, and the A/C pressure sensor reading is plausible and steady. No HVAC or engine codes are stored.",
+          "value": "high",
+          "points": 12,
+          "teaches": "Scan data tells you whether the control system is asking for the compressor. An active command and a plausible pressure reading mean the PCM is not locking out the compressor for low pressure or a sensor fault, which moves the focus to the clutch circuit."
+        },
+        {
+          "key": "static-running-pressures",
+          "title": "Read static and running pressure patterns with manifold gauges (EPA 609 certified technician)",
+          "keywords": [
+            "gauges",
+            "ac gauges",
+            "pressure readings",
+            "manifold gauges",
+            "low side pressure",
+            "high side pressure",
+            "static pressure",
+            "check pressures"
+          ],
+          "result": "Engine off, both gauges read the same static pressure, consistent with the pressure-temperature chart for today's ambient temperature, so refrigerant is present. Engine running with the A/C commanded on, the low side never pulls down and the high side never climbs; both stay near static pressure, so no pressure split develops.",
+          "value": "high",
+          "points": 12,
+          "teaches": "Static pressure only shows that some refrigerant is present; it cannot tell you how much. The charge amount is verified only by recovering and weighing the refrigerant against the OEM specification. Running pressures that never split mean the compressor is not pumping. Under EPA Section 609, technicians who service motor vehicle A/C for compensation must be certified and use approved equipment; wear eye protection and gloves, and never vent refrigerant."
+        },
+        {
+          "key": "fuse-relay-check",
+          "title": "Check the A/C clutch fuse and relay",
+          "keywords": [
+            "ac fuse",
+            "a/c fuse",
+            "clutch relay",
+            "ac relay",
+            "check fuse",
+            "relay test"
+          ],
+          "result": "The A/C clutch fuse is intact. The relay clicks when commanded and passes battery voltage to its output under a test-light load.",
+          "value": "medium",
+          "points": 7,
+          "teaches": "The fuse and relay are quick checks in the clutch feed path. Both pass, which pushes the fault further toward the clutch."
+        },
+        {
+          "key": "clutch-connector-power-ground",
+          "title": "Check power and ground at the clutch coil connector while commanded on",
+          "keywords": [
+            "clutch connector",
+            "power at clutch",
+            "voltage at compressor",
+            "clutch power and ground",
+            "clutch voltage",
+            "backprobe clutch"
+          ],
+          "result": "Backprobing the clutch connector with the A/C commanded on shows battery voltage on the feed and a good ground with low voltage drop. Power and ground reach the coil, but the clutch does not engage.",
+          "value": "high",
+          "points": 14,
+          "teaches": "Power and ground present at a load that does not work points to the load itself. This is the test that separates the clutch coil from everything upstream of it."
+        },
+        {
+          "key": "clutch-coil-resistance",
+          "title": "Measure clutch coil resistance with the connector unplugged",
+          "keywords": [
+            "coil resistance",
+            "clutch coil resistance",
+            "ohm the coil",
+            "measure coil",
+            "clutch coil test",
+            "field coil"
+          ],
+          "result": "With the connector unplugged, the meter reads OL (open) across the clutch coil. The normal value for this coil is found in OEM service information, but an open reading is a failure on any coil.",
+          "value": "high",
+          "points": 16,
+          "teaches": "An open coil cannot create the magnetic field that pulls the clutch in. Combined with power and ground present at the connector, an open coil confirms the diagnosis."
+        },
+        {
+          "key": "clutch-air-gap",
+          "title": "Measure the clutch air gap",
+          "keywords": [
+            "air gap",
+            "clutch gap",
+            "clutch air gap",
+            "feeler gauge",
+            "clutch clearance"
+          ],
+          "result": "The air gap measured with feeler gauges is within the OEM specification.",
+          "value": "medium",
+          "points": 5,
+          "teaches": "An excessive air gap can keep a clutch from engaging, especially when hot, so it is a sensible check on a clutch that will not pull in. It passes here, which keeps the coil as the prime suspect."
+        },
+        {
+          "key": "add-refrigerant",
+          "title": "Add refrigerant from a can to top off the system",
+          "keywords": [
+            "add refrigerant",
+            "top off",
+            "recharge",
+            "add freon",
+            "charge ac",
+            "can of refrigerant",
+            "add r134a"
+          ],
+          "result": "The pressure readings rise, but the clutch still does not engage and the air stays warm. The system is now at risk of being overcharged, and the actual charge amount is unknown.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "Adding refrigerant without a verified diagnosis is guesswork, and overcharging can damage components. The charge is verified only by recovering and weighing the refrigerant, then charging to the OEM specification on the underhood label or in service information. Refrigerant service requires EPA Section 609 certification, and venting refrigerant is prohibited."
+        },
+        {
+          "key": "replace-compressor",
+          "title": "Replace the A/C compressor",
+          "keywords": [
+            "replace compressor",
+            "new compressor",
+            "replace ac compressor",
+            "compressor replacement",
+            "change compressor"
+          ],
+          "result": "The new compressor, which comes with a new clutch, works, but the customer paid for a complete compressor plus refrigerant recovery, evacuation, and recharge when the coil was the only fault.",
+          "value": "parts-cannon",
+          "points": -20,
+          "teaches": "When a compressor will not engage, confirm why before replacing it. On many compressors the clutch or coil is serviceable separately; check OEM service information. Replacing the whole compressor is costly, requires refrigerant recovery by a Section 609 certified technician, and may be unnecessary."
+        },
+        {
+          "key": "replace-pressure-sensor",
+          "title": "Replace the A/C pressure sensor",
+          "keywords": [
+            "replace pressure sensor",
+            "new pressure sensor",
+            "replace ac pressure switch",
+            "replace pressure switch",
+            "a/c pressure sensor replacement"
+          ],
+          "result": "The new sensor reads the same values as the old one, and the clutch still does not engage.",
+          "value": "parts-cannon",
+          "points": -12,
+          "teaches": "The pressure sensor reading was already plausible, and the PCM was commanding the clutch on. A sensor that reports correctly should not be replaced."
+        }
+      ],
+      "idealPath": [
+        "clutch-engagement-check",
+        "scan-ac-data",
+        "static-running-pressures",
+        "clutch-connector-power-ground",
+        "clutch-coil-resistance"
+      ],
+      "debrief": "Warm air from the A/C has three broad causes: the compressor is not running, the refrigerant charge or flow is wrong, or air is being mixed or routed wrong inside the HVAC case. The fastest first look is the clutch: the pulley spun but the clutch hub stayed still, so the compressor was not pumping at all. The next question is whether the system chose not to engage it or could not. Scan data showed an A/C request, an active clutch relay command, and a plausible pressure sensor reading, so the PCM was not locking out the compressor. Gauges connected by an EPA Section 609 certified technician showed equal static pressures matching the pressure-temperature chart, so refrigerant was present, and no pressure split with the engine running, which fits a compressor that is not turning. Static pressure never tells you the charge amount; only recovering and weighing does. With power and ground confirmed at the clutch connector, the open coil reading proved the coil could not pull in the clutch. Adding refrigerant would have risked an overcharge and fixed nothing. Repair per OEM service information, then verify clutch engagement, a normal pressure split, and cold vent air.",
+      "commonMistakes": [
+        "Adding refrigerant from a can without diagnosing, which can overcharge the system and leaves the real fault in place.",
+        "Assuming static pressure tells you the refrigerant charge amount; only recovering and weighing the charge does.",
+        "Replacing the compressor without checking power, ground, and the clutch coil.",
+        "Connecting gauges or handling refrigerant without EPA Section 609 certification and approved equipment."
+      ]
+    }
+  ]
+}

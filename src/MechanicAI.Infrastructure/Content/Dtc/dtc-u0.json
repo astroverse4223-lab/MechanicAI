@@ -1,0 +1,1900 @@
+{
+  "version": "2026.09.1",
+  "source": "SAE J2012 / ISO 15031-6 generic DTC definitions (built-in reference)",
+  "codes": [
+    {
+      "code": "U0001",
+      "description": "High Speed CAN Communication Bus",
+      "subsystem": "Network Electrical",
+      "symptoms": [
+        "Multiple warning lamps on",
+        "U-codes stored in several modules",
+        "Some modules not communicating",
+        "Possible no-start or limp mode"
+      ],
+      "causes": [
+        "Open or shorted CAN high/low wiring",
+        "Failed or missing terminating resistor",
+        "Module shorting or loading the bus",
+        "Water intrusion in connectors",
+        "Aftermarket device on the data link",
+        "Low system voltage"
+      ],
+      "notes": "With the battery disconnected, resistance across CAN high and CAN low at the DLC (SAE J1962 pins 6 and 14) typically reads about 60 ohms on a two-terminator high-speed CAN bus (general guideline — verify against OEM specification and network topology). Isolate a shorted or loaded bus by disconnecting modules one at a time while watching bus voltages or a lab scope pattern. Check module powers and grounds before condemning a module.",
+      "related": [
+        "U0002",
+        "U0073",
+        "U0100",
+        "U0101",
+        "U0121",
+        "U0140"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0002",
+      "description": "High Speed CAN Communication Bus Performance",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0003",
+      "description": "High Speed CAN Communication Bus (+) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0004",
+      "description": "High Speed CAN Communication Bus (+) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0005",
+      "description": "High Speed CAN Communication Bus (+) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0006",
+      "description": "High Speed CAN Communication Bus (-) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0007",
+      "description": "High Speed CAN Communication Bus (-) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0008",
+      "description": "High Speed CAN Communication Bus (-) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0009",
+      "description": "High Speed CAN Communication Bus (-) Shorted to Bus (+)",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0010",
+      "description": "Medium Speed CAN Communication Bus",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0011",
+      "description": "Medium Speed CAN Communication Bus Performance",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0012",
+      "description": "Medium Speed CAN Communication Bus (+) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0013",
+      "description": "Medium Speed CAN Communication Bus (+) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0014",
+      "description": "Medium Speed CAN Communication Bus (+) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0015",
+      "description": "Medium Speed CAN Communication Bus (-) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0016",
+      "description": "Medium Speed CAN Communication Bus (-) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0017",
+      "description": "Medium Speed CAN Communication Bus (-) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0018",
+      "description": "Medium Speed CAN Communication Bus (-) Shorted to Bus (+)",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0019",
+      "description": "Low Speed CAN Communication Bus",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0020",
+      "description": "Low Speed CAN Communication Bus Performance",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0021",
+      "description": "Low Speed CAN Communication Bus (+) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0022",
+      "description": "Low Speed CAN Communication Bus (+) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0023",
+      "description": "Low Speed CAN Communication Bus (+) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0024",
+      "description": "Low Speed CAN Communication Bus (-) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0025",
+      "description": "Low Speed CAN Communication Bus (-) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0026",
+      "description": "Low Speed CAN Communication Bus (-) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0027",
+      "description": "Low Speed CAN Communication Bus (-) Shorted to Bus (+)",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0028",
+      "description": "Vehicle Communication Bus A",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0029",
+      "description": "Vehicle Communication Bus A Performance",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0030",
+      "description": "Vehicle Communication Bus A (+) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0031",
+      "description": "Vehicle Communication Bus A (+) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0032",
+      "description": "Vehicle Communication Bus A (+) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0033",
+      "description": "Vehicle Communication Bus A (-) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0034",
+      "description": "Vehicle Communication Bus A (-) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0035",
+      "description": "Vehicle Communication Bus A (-) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0036",
+      "description": "Vehicle Communication Bus A (-) Shorted to Bus A (+)",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0037",
+      "description": "Vehicle Communication Bus B",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0038",
+      "description": "Vehicle Communication Bus B Performance",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0039",
+      "description": "Vehicle Communication Bus B (+) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0040",
+      "description": "Vehicle Communication Bus B (+) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0041",
+      "description": "Vehicle Communication Bus B (+) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0042",
+      "description": "Vehicle Communication Bus B (-) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0043",
+      "description": "Vehicle Communication Bus B (-) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0044",
+      "description": "Vehicle Communication Bus B (-) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0045",
+      "description": "Vehicle Communication Bus B (-) Shorted to Bus B (+)",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0046",
+      "description": "Vehicle Communication Bus C",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0047",
+      "description": "Vehicle Communication Bus C Performance",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0048",
+      "description": "Vehicle Communication Bus C (+) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0049",
+      "description": "Vehicle Communication Bus C (+) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0050",
+      "description": "Vehicle Communication Bus C (+) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0051",
+      "description": "Vehicle Communication Bus C (-) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0052",
+      "description": "Vehicle Communication Bus C (-) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0053",
+      "description": "Vehicle Communication Bus C (-) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0054",
+      "description": "Vehicle Communication Bus C (-) Shorted to Bus C (+)",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0055",
+      "description": "Vehicle Communication Bus D",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0056",
+      "description": "Vehicle Communication Bus D Performance",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0057",
+      "description": "Vehicle Communication Bus D (+) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0058",
+      "description": "Vehicle Communication Bus D (+) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0059",
+      "description": "Vehicle Communication Bus D (+) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0060",
+      "description": "Vehicle Communication Bus D (-) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0061",
+      "description": "Vehicle Communication Bus D (-) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0062",
+      "description": "Vehicle Communication Bus D (-) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0063",
+      "description": "Vehicle Communication Bus D (-) Shorted to Bus D (+)",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0064",
+      "description": "Vehicle Communication Bus E",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0065",
+      "description": "Vehicle Communication Bus E Performance",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0066",
+      "description": "Vehicle Communication Bus E (+) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0067",
+      "description": "Vehicle Communication Bus E (+) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0068",
+      "description": "Vehicle Communication Bus E (+) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0069",
+      "description": "Vehicle Communication Bus E (-) Open",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0070",
+      "description": "Vehicle Communication Bus E (-) Low",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0071",
+      "description": "Vehicle Communication Bus E (-) High",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0072",
+      "description": "Vehicle Communication Bus E (-) Shorted to Bus E (+)",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0073",
+      "description": "Control Module Communication Bus Off",
+      "subsystem": "Network Electrical",
+      "symptoms": [
+        "Multiple warning lamps on",
+        "Several modules not communicating",
+        "Possible no-start or limp mode"
+      ],
+      "causes": [
+        "CAN bus shorted to ground or voltage",
+        "CAN high shorted to CAN low",
+        "Faulty module disrupting the bus",
+        "Open terminating resistor or wiring",
+        "Water intrusion in connectors",
+        "Low system voltage"
+      ],
+      "notes": "Set by a module that detected so many transmit errors that it removed itself from the bus (bus-off). Later J2012 revisions label this code Bus A. Check bus voltages and termination resistance, then isolate by disconnecting modules one at a time; a lab scope on CAN high and CAN low quickly shows shorts and noise.",
+      "related": [
+        "U0001",
+        "U0074",
+        "U0100",
+        "U0140"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0074",
+      "description": "Control Module Communication Bus \"B\" Off",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0075",
+      "description": "Control Module Communication Bus \"C\" Off",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0076",
+      "description": "Control Module Communication Bus \"D\" Off",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0077",
+      "description": "Control Module Communication Bus \"E\" Off",
+      "subsystem": "Network Electrical"
+    },
+    {
+      "code": "U0100",
+      "description": "Lost Communication With ECM/PCM \"A\"",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "No-start or stall",
+        "Multiple warning lamps on",
+        "Gauges inoperative or erratic",
+        "No scan tool communication with ECM"
+      ],
+      "causes": [
+        "Loss of ECM power or ground",
+        "Blown ECM fuse or failed relay",
+        "Open or shorted CAN wiring at ECM",
+        "Corroded ECM connector",
+        "Low battery voltage",
+        "ECM failure (after other checks)"
+      ],
+      "notes": "Determine which modules set the code and whether the ECM communicates with the scan tool at all. Voltage-drop test ECM powers, grounds, and ignition feed under load, then check CAN wiring at the ECM connector. Intermittent U0100 often traces to battery terminals, ground straps, or connector problems.",
+      "related": [
+        "U0001",
+        "U0073",
+        "U0101",
+        "U0401",
+        "P0606"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0101",
+      "description": "Lost Communication With TCM",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "Transmission in failsafe or limp mode",
+        "Harsh or no shifting",
+        "Warning lamps on",
+        "Incorrect gear indication"
+      ],
+      "causes": [
+        "Loss of TCM power or ground",
+        "Blown TCM fuse",
+        "CAN wiring fault to TCM",
+        "Corroded TCM connector (fluid intrusion)",
+        "Low battery voltage",
+        "TCM failure"
+      ],
+      "notes": "Many TCMs are mounted on or inside the transmission, where fluid wicking or heat can damage connectors. Verify TCM power, ground, and ignition feed and check CAN wiring before replacing the TCM; a replacement TCM usually requires programming per OEM procedure.",
+      "related": [
+        "U0100",
+        "U0001",
+        "U0402",
+        "U0302"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0102",
+      "description": "Lost Communication With Transfer Case Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0103",
+      "description": "Lost Communication With Gear Shift Control Module \"A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0104",
+      "description": "Lost Communication With Cruise Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0105",
+      "description": "Lost Communication With Fuel Injector Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0106",
+      "description": "Lost Communication With Glow Plug Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0107",
+      "description": "Lost Communication With Throttle Actuator Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0108",
+      "description": "Lost Communication With Alternative Fuel Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0109",
+      "description": "Lost Communication With Fuel Pump Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0110",
+      "description": "Lost Communication With Drive Motor Control Module \"A\"",
+      "subsystem": "Network Communication",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0111",
+      "description": "Lost Communication With Battery Energy Control Module \"A\"",
+      "subsystem": "Network Communication",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0112",
+      "description": "Lost Communication With Battery Energy Control Module \"B\"",
+      "subsystem": "Network Communication",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0113",
+      "description": "Lost Communication With Emissions Critical Control Information",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0114",
+      "description": "Lost Communication With Four-Wheel Drive Clutch Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0115",
+      "description": "Lost Communication With ECM/PCM \"B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0116",
+      "description": "Lost Communication With Coolant Temperature Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0117",
+      "description": "Lost Communication With PTO Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0118",
+      "description": "Lost Communication With Fuel Additive Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0119",
+      "description": "Lost Communication With Fuel Cell Control Module",
+      "subsystem": "Network Communication",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0120",
+      "description": "Lost Communication With Starter/Generator Control Module",
+      "subsystem": "Network Communication",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0121",
+      "description": "Lost Communication With Anti-Lock Brake System (ABS) Control Module",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "ABS, traction, and stability lamps on",
+        "Speedometer inoperative (some vehicles)",
+        "Possible brake warning lamp",
+        "Cruise control inoperative"
+      ],
+      "causes": [
+        "Loss of ABS module power or ground",
+        "Blown ABS fuse (high-current feed)",
+        "CAN wiring fault to ABS module",
+        "Corroded ABS module connector",
+        "Low battery voltage",
+        "ABS module failure"
+      ],
+      "notes": "The ABS module normally has a separate high-current (pump and valve) feed and an ignition feed; check both along with the ground under load. Inspect the module connector for water intrusion. Base brakes normally remain functional, but ABS and stability control are disabled, so road test with caution.",
+      "related": [
+        "U0415",
+        "U0100",
+        "C0020",
+        "U0001"
+      ],
+      "safety": [
+        "brakes",
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0122",
+      "description": "Lost Communication With Vehicle Dynamics Control Module",
+      "subsystem": "Network Communication",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0123",
+      "description": "Lost Communication With Yaw Rate Sensor Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0124",
+      "description": "Lost Communication With Lateral Acceleration Sensor Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0125",
+      "description": "Lost Communication With Multi-axis Acceleration Sensor Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0126",
+      "description": "Lost Communication With Steering Angle Sensor Module",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "Stability control lamp on",
+        "Traction control disabled",
+        "Possible steering assist warning"
+      ],
+      "causes": [
+        "Steering angle sensor power or ground loss",
+        "CAN wiring fault at steering column",
+        "Connector fault at clockspring or sensor",
+        "Steering angle sensor failure",
+        "Low battery voltage"
+      ],
+      "notes": "The steering angle sensor is often mounted with the clockspring at the top of the steering column. SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before working near the clockspring or driver airbag, and reconnect and verify the system per OEM procedure. A replaced or disconnected sensor usually requires calibration with a scan tool.",
+      "related": [
+        "U0428",
+        "C0051",
+        "U0121",
+        "U0131"
+      ],
+      "safety": [
+        "airbag",
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0127",
+      "description": "Lost Communication With Tire Pressure Monitor Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0128",
+      "description": "Lost Communication With Park Brake Control Module",
+      "subsystem": "Network Communication",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0129",
+      "description": "Lost Communication With Brake System Control Module",
+      "subsystem": "Network Communication",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0130",
+      "description": "Lost Communication With Steering Effort Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0131",
+      "description": "Lost Communication With Power Steering Control Module",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "Loss of power steering assist",
+        "Power steering warning lamp",
+        "Stability control lamp on"
+      ],
+      "causes": [
+        "Loss of steering module power or ground",
+        "Blown high-current steering fuse",
+        "CAN wiring fault to steering module",
+        "Connector corrosion",
+        "Low battery voltage",
+        "Power steering control module failure"
+      ],
+      "notes": "Electric power steering draws high current; voltage-drop test the main power feed and ground under load. Low battery voltage can make the system reduce or shut off assist. Steering effort rises sharply without assist, so road test with caution.",
+      "related": [
+        "U0420",
+        "U0126",
+        "U0100",
+        "C0051"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0132",
+      "description": "Lost Communication With Ride Level Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0133",
+      "description": "Lost Communication With Active Roll Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0134",
+      "description": "Lost Communication With Power Steering Control Module Rear",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0135",
+      "description": "Lost Communication With Differential Control Module Front",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0136",
+      "description": "Lost Communication With Differential Control Module Rear",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0137",
+      "description": "Lost Communication With Trailer Brake Control Module",
+      "subsystem": "Network Communication",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0138",
+      "description": "Lost Communication With All Terrain Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0139",
+      "description": "Lost Communication With Suspension Control Module \"B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0140",
+      "description": "Lost Communication With Body Control Module",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "Interior or exterior lighting faults",
+        "Power locks or windows inoperative",
+        "Security or no-start issues",
+        "Multiple warning lamps"
+      ],
+      "causes": [
+        "Loss of BCM power or ground",
+        "Blown BCM fuse",
+        "CAN wiring fault to BCM",
+        "Water intrusion at BCM",
+        "Low battery voltage",
+        "BCM failure or software fault"
+      ],
+      "notes": "The BCM often acts as a gateway or powers other circuits, so a BCM outage can cause many secondary symptoms. Check all BCM power feeds, grounds, and CAN connections. Replacement BCMs typically require programming and key or immobilizer setup per OEM procedure.",
+      "related": [
+        "U0100",
+        "U0155",
+        "U0422",
+        "U0001"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0141",
+      "description": "Lost Communication With Body Control Module \"A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0142",
+      "description": "Lost Communication With Body Control Module \"B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0143",
+      "description": "Lost Communication With Body Control Module \"C\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0144",
+      "description": "Lost Communication With Body Control Module \"D\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0145",
+      "description": "Lost Communication With Body Control Module \"E\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0146",
+      "description": "Lost Communication With Gateway \"A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0147",
+      "description": "Lost Communication With Gateway \"B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0148",
+      "description": "Lost Communication With Gateway \"C\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0149",
+      "description": "Lost Communication With Gateway \"D\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0150",
+      "description": "Lost Communication With Gateway \"E\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0151",
+      "description": "Lost Communication With Restraints Control Module",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "Airbag (SRS) warning lamp on",
+        "Passenger airbag status indicator abnormal",
+        "Seatbelt reminder concerns"
+      ],
+      "causes": [
+        "Loss of restraints module power or ground",
+        "Blown SRS fuse",
+        "CAN wiring fault to restraints module",
+        "Connector fault at restraints module",
+        "Low battery voltage",
+        "Restraints module failure"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure. Check restraints module power, ground, and CAN wiring at the module. Replacement modules usually require programming, and a module with stored crash data may need replacement per OEM.",
+      "related": [
+        "U0154",
+        "B00A0",
+        "U0155",
+        "U0100"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0152",
+      "description": "Lost Communication With Side Restraints Control Module Left",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0153",
+      "description": "Lost Communication With Side Restraints Control Module Right",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0154",
+      "description": "Lost Communication With Restraints Occupant Classification System Module",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0155",
+      "description": "Lost Communication With Instrument Panel Cluster (IPC) Control Module",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "Gauges inoperative or erratic",
+        "Missing warning lamps or chimes",
+        "Odometer display blank",
+        "Possible no-start (cluster-based immobilizer)"
+      ],
+      "causes": [
+        "Loss of cluster power or ground",
+        "Blown cluster fuse",
+        "CAN wiring fault behind dash",
+        "Loose cluster connector",
+        "Low battery voltage",
+        "Instrument cluster failure"
+      ],
+      "notes": "Check cluster power, ignition feed, ground, and CAN wiring at the cluster connector. On some vehicles the cluster is part of the immobilizer or gateway function. Replacement clusters often require programming and odometer transfer per OEM procedure and applicable regulations.",
+      "related": [
+        "U0140",
+        "U0100",
+        "U0423",
+        "U0001"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0156",
+      "description": "Lost Communication With Information Center \"A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0157",
+      "description": "Lost Communication With Information Center \"B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0158",
+      "description": "Lost Communication With Head Up Display",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0159",
+      "description": "Lost Communication With Parking Assist Control Module \"A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0160",
+      "description": "Lost Communication With Audible Alert Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0161",
+      "description": "Lost Communication With Compass Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0162",
+      "description": "Lost Communication With Navigation Display Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0163",
+      "description": "Lost Communication With Navigation Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0164",
+      "description": "Lost Communication With HVAC Control Module",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "HVAC controls inoperative",
+        "Blower or A/C not responding",
+        "Control display blank or frozen"
+      ],
+      "causes": [
+        "Loss of HVAC module power or ground",
+        "Blown HVAC fuse",
+        "Network wiring fault (CAN or LIN)",
+        "Connector fault behind dash",
+        "Low battery voltage",
+        "HVAC module failure"
+      ],
+      "notes": "The HVAC module may sit on a low- or medium-speed bus or on a LIN sub-bus behind another module; identify the network topology in OEM information. Verify power, ground, and bus wiring before replacing the module; some require configuration after replacement.",
+      "related": [
+        "U0424",
+        "U0140",
+        "U0155"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0165",
+      "description": "Lost Communication With Rear HVAC Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0166",
+      "description": "Lost Communication With Auxiliary Heater Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0167",
+      "description": "Lost Communication With Vehicle Immobilizer Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0168",
+      "description": "Lost Communication With Vehicle Security Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0169",
+      "description": "Lost Communication With Sunroof Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0170",
+      "description": "Lost Communication With \"Restraints System Sensor A\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0171",
+      "description": "Lost Communication With \"Restraints System Sensor B\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0172",
+      "description": "Lost Communication With \"Restraints System Sensor C\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0173",
+      "description": "Lost Communication With \"Restraints System Sensor D\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0174",
+      "description": "Lost Communication With \"Restraints System Sensor E\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0175",
+      "description": "Lost Communication With \"Restraints System Sensor F\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0176",
+      "description": "Lost Communication With \"Restraints System Sensor G\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0177",
+      "description": "Lost Communication With \"Restraints System Sensor H\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0178",
+      "description": "Lost Communication With \"Restraints System Sensor I\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0179",
+      "description": "Lost Communication With \"Restraints System Sensor J\"",
+      "subsystem": "Network Communication",
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, and reconnect and verify the system per OEM procedure.",
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "U0180",
+      "description": "Lost Communication With Automatic Lighting Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0181",
+      "description": "Lost Communication With Headlamp Leveling Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0182",
+      "description": "Lost Communication With Lighting Control Module Front",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0183",
+      "description": "Lost Communication With Lighting Control Module Rear",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0184",
+      "description": "Lost Communication With Radio",
+      "subsystem": "Network Communication",
+      "symptoms": [
+        "Radio inoperative or rebooting",
+        "No audio or display",
+        "Hands-free or camera display issues"
+      ],
+      "causes": [
+        "Loss of radio power or ground",
+        "Blown radio fuse",
+        "Network wiring or connector fault",
+        "Aftermarket audio equipment or wiring",
+        "Low battery voltage",
+        "Radio failure or software fault"
+      ],
+      "notes": "Check for aftermarket equipment and wiring changes first. Verify power, ground, and network connections at the radio; some head units require a software update or configuration per OEM procedure after replacement.",
+      "related": [
+        "U0155",
+        "U0140",
+        "U0198"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "U0185",
+      "description": "Lost Communication With Antenna Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0186",
+      "description": "Lost Communication With Audio Amplifier \"A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0187",
+      "description": "Lost Communication With Digital Disc Player/Changer Module \"A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0188",
+      "description": "Lost Communication With Digital Disc Player/Changer Module \"B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0189",
+      "description": "Lost Communication With Digital Disc Player/Changer Module \"C\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0190",
+      "description": "Lost Communication With Digital Disc Player/Changer Module \"D\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0191",
+      "description": "Lost Communication With Television",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0192",
+      "description": "Lost Communication With Personal Computer",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0193",
+      "description": "Lost Communication With \"Digital Audio Control Module A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0194",
+      "description": "Lost Communication With \"Digital Audio Control Module B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0195",
+      "description": "Lost Communication With Subscription Entertainment Receiver Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0196",
+      "description": "Lost Communication With Rear Seat Entertainment Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0197",
+      "description": "Lost Communication With Telephone Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0198",
+      "description": "Lost Communication With Telematic Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0199",
+      "description": "Lost Communication With \"Door Control Module A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0200",
+      "description": "Lost Communication With \"Door Control Module B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0201",
+      "description": "Lost Communication With \"Door Control Module C\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0202",
+      "description": "Lost Communication With \"Door Control Module D\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0203",
+      "description": "Lost Communication With \"Door Control Module E\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0204",
+      "description": "Lost Communication With \"Door Control Module F\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0205",
+      "description": "Lost Communication With \"Door Control Module G\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0206",
+      "description": "Lost Communication With Folding Top Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0207",
+      "description": "Lost Communication With Movable Roof Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0208",
+      "description": "Lost Communication With \"Seat Control Module A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0209",
+      "description": "Lost Communication With \"Seat Control Module B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0210",
+      "description": "Lost Communication With \"Seat Control Module C\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0211",
+      "description": "Lost Communication With \"Seat Control Module D\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0212",
+      "description": "Lost Communication With Steering Column Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0213",
+      "description": "Lost Communication With Mirror Control Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0214",
+      "description": "Lost Communication With Remote Function Actuation",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0215",
+      "description": "Lost Communication With \"Door Switch A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0216",
+      "description": "Lost Communication With \"Door Switch B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0217",
+      "description": "Lost Communication With \"Door Switch C\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0218",
+      "description": "Lost Communication With \"Door Switch D\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0219",
+      "description": "Lost Communication With \"Door Switch E\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0220",
+      "description": "Lost Communication With \"Door Switch F\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0221",
+      "description": "Lost Communication With \"Door Switch G\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0222",
+      "description": "Lost Communication With \"Door Window Motor A\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0223",
+      "description": "Lost Communication With \"Door Window Motor B\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0224",
+      "description": "Lost Communication With \"Door Window Motor C\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0225",
+      "description": "Lost Communication With \"Door Window Motor D\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0226",
+      "description": "Lost Communication With \"Door Window Motor E\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0227",
+      "description": "Lost Communication With \"Door Window Motor F\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0228",
+      "description": "Lost Communication With \"Door Window Motor G\"",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0229",
+      "description": "Lost Communication With Heated Steering Wheel Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0230",
+      "description": "Lost Communication With Rear Gate Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0231",
+      "description": "Lost Communication With Rain Sensing Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0232",
+      "description": "Lost Communication With Side Obstacle Detection Control Module Left",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0233",
+      "description": "Lost Communication With Side Obstacle Detection Control Module Right",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0234",
+      "description": "Lost Communication With Convenience Recall Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0235",
+      "description": "Lost Communication With Cruise Control Front Distance Range Sensor",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0236",
+      "description": "Lost Communication With Column Lock Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0253",
+      "description": "Lost Communication With Accessory Protocol Interface Module",
+      "subsystem": "Network Communication"
+    },
+    {
+      "code": "U0293",
+      "description": "Lost Communication With Hybrid Powertrain Control Module",
+      "subsystem": "Network Communication",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0300",
+      "description": "Internal Control Module Software Incompatibility",
+      "subsystem": "Network Software",
+      "symptoms": [
+        "Warning lamps after module replacement",
+        "Features inoperative",
+        "Module not communicating correctly"
+      ],
+      "causes": [
+        "Module not programmed after replacement",
+        "Incorrect software or calibration",
+        "Interrupted programming event",
+        "Used module from another vehicle",
+        "Configuration data mismatch"
+      ],
+      "notes": "Typically follows module replacement or an interrupted programming session. Program and configure the module per OEM procedure with a stable programming power supply, then clear codes and verify operation. Confirm the correct part and software level for the VIN.",
+      "related": [
+        "U0301",
+        "U0302",
+        "U0100"
+      ]
+    },
+    {
+      "code": "U0301",
+      "description": "Software Incompatibility With ECM/PCM",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0302",
+      "description": "Software Incompatibility With Transmission Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0303",
+      "description": "Software Incompatibility With Transfer Case Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0304",
+      "description": "Software Incompatibility With Gear Shift Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0305",
+      "description": "Software Incompatibility With Cruise Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0306",
+      "description": "Software Incompatibility With Fuel Injector Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0307",
+      "description": "Software Incompatibility With Glow Plug Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0308",
+      "description": "Software Incompatibility With Throttle Actuator Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0309",
+      "description": "Software Incompatibility With Alternative Fuel Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0310",
+      "description": "Software Incompatibility With Fuel Pump Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0311",
+      "description": "Software Incompatibility With Drive Motor Control Module",
+      "subsystem": "Network Software",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0312",
+      "description": "Software Incompatibility With Battery Energy Control Module \"A\"",
+      "subsystem": "Network Software",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0313",
+      "description": "Software Incompatibility With Battery Energy Control Module \"B\"",
+      "subsystem": "Network Software",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0314",
+      "description": "Software Incompatibility With Four-Wheel Drive Clutch Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0315",
+      "description": "Software Incompatibility With Anti-Lock Brake System Control Module",
+      "subsystem": "Network Software",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0316",
+      "description": "Software Incompatibility With Vehicle Dynamics Control Module",
+      "subsystem": "Network Software",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0317",
+      "description": "Software Incompatibility With Park Brake Control Module",
+      "subsystem": "Network Software",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0318",
+      "description": "Software Incompatibility With Brake System Control Module",
+      "subsystem": "Network Software",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0319",
+      "description": "Software Incompatibility With Steering Effort Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0320",
+      "description": "Software Incompatibility With Power Steering Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0321",
+      "description": "Software Incompatibility With Ride Level Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0322",
+      "description": "Software Incompatibility With Body Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0323",
+      "description": "Software Incompatibility With Instrument Panel Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0324",
+      "description": "Software Incompatibility With HVAC Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0325",
+      "description": "Software Incompatibility With Auxiliary Heater Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0326",
+      "description": "Software Incompatibility With Vehicle Immobilizer Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0327",
+      "description": "Software Incompatibility With Vehicle Security Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0328",
+      "description": "Software Incompatibility With Steering Angle Sensor Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0329",
+      "description": "Software Incompatibility With Steering Column Control Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0330",
+      "description": "Software Incompatibility With Tire Pressure Monitor Module",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0331",
+      "description": "Software Incompatibility With Body Control Module \"A\"",
+      "subsystem": "Network Software"
+    },
+    {
+      "code": "U0400",
+      "description": "Invalid Data Received",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0401",
+      "description": "Invalid Data Received From ECM/PCM \"A\"",
+      "subsystem": "Network Data",
+      "symptoms": [
+        "Warning lamps in receiving module",
+        "Related features disabled (cruise, stability)",
+        "Possible transmission limp mode"
+      ],
+      "causes": [
+        "ECM has its own DTCs (invalid sensor data)",
+        "ECM software or configuration mismatch",
+        "Network noise or intermittent wiring",
+        "Low system voltage",
+        "Incorrect module after replacement"
+      ],
+      "notes": "The receiving module got messages from the ECM/PCM, but the data was invalid or flagged as faulty. Diagnose DTCs stored in the ECM first; an ECM sensor fault is often the root cause. Check for OEM software updates and service bulletins.",
+      "related": [
+        "U0100",
+        "U0402",
+        "U0301"
+      ]
+    },
+    {
+      "code": "U0402",
+      "description": "Invalid Data Received From Transmission Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0403",
+      "description": "Invalid Data Received From Transfer Case Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0404",
+      "description": "Invalid Data Received From Gear Shift Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0405",
+      "description": "Invalid Data Received From Cruise Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0406",
+      "description": "Invalid Data Received From Fuel Injector Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0407",
+      "description": "Invalid Data Received From Glow Plug Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0408",
+      "description": "Invalid Data Received From Throttle Actuator Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0409",
+      "description": "Invalid Data Received From Alternative Fuel Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0410",
+      "description": "Invalid Data Received From Fuel Pump Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0411",
+      "description": "Invalid Data Received From Drive Motor Control Module",
+      "subsystem": "Network Data",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0412",
+      "description": "Invalid Data Received From Battery Energy Control Module \"A\"",
+      "subsystem": "Network Data",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0413",
+      "description": "Invalid Data Received From Battery Energy Control Module \"B\"",
+      "subsystem": "Network Data",
+      "notes": "On hybrid and electric vehicles, follow OEM high-voltage safety procedures (service disconnect, insulated PPE, and verification of zero voltage) before servicing high-voltage components. Check the module's 12 V power, ground, and network wiring first.",
+      "safety": [
+        "high-voltage"
+      ]
+    },
+    {
+      "code": "U0414",
+      "description": "Invalid Data Received From Four-Wheel Drive Clutch Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0415",
+      "description": "Invalid Data Received From Anti-Lock Brake System (ABS) Control Module",
+      "subsystem": "Network Data",
+      "symptoms": [
+        "ABS, traction, and stability lamps on",
+        "Speedometer or cruise concerns",
+        "Possible shift concerns"
+      ],
+      "causes": [
+        "Wheel speed sensor fault in ABS module",
+        "ABS module DTCs present",
+        "Mismatched tire sizes",
+        "ABS software or configuration mismatch",
+        "Intermittent network wiring"
+      ],
+      "notes": "Retrieve and repair DTCs stored in the ABS module first; a wheel speed sensor fault commonly causes other modules to flag ABS data as invalid. Verify correct, matched tire sizes and the ABS module configuration.",
+      "related": [
+        "U0121",
+        "C0031",
+        "C0034",
+        "C0037",
+        "C003A"
+      ],
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0416",
+      "description": "Invalid Data Received From Vehicle Dynamics Control Module",
+      "subsystem": "Network Data",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0417",
+      "description": "Invalid Data Received From Park Brake Control Module",
+      "subsystem": "Network Data",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0418",
+      "description": "Invalid Data Received From Brake System Control Module",
+      "subsystem": "Network Data",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "U0419",
+      "description": "Invalid Data Received From Steering Effort Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0420",
+      "description": "Invalid Data Received From Power Steering Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0421",
+      "description": "Invalid Data Received From Ride Level Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0422",
+      "description": "Invalid Data Received From Body Control Module",
+      "subsystem": "Network Data",
+      "symptoms": [
+        "Lighting or accessory faults",
+        "Warning lamps in receiving modules",
+        "Possible security or starting concerns"
+      ],
+      "causes": [
+        "BCM has its own DTCs",
+        "BCM software or configuration mismatch",
+        "Faulty switch or sensor input to BCM",
+        "Intermittent network wiring",
+        "Low system voltage"
+      ],
+      "notes": "Diagnose DTCs stored in the BCM first and check for configuration or software updates, especially after module replacement.",
+      "related": [
+        "U0140",
+        "U0322",
+        "U0100"
+      ]
+    },
+    {
+      "code": "U0423",
+      "description": "Invalid Data Received From Instrument Panel Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0424",
+      "description": "Invalid Data Received From HVAC Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0425",
+      "description": "Invalid Data Received From Auxiliary Heater Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0426",
+      "description": "Invalid Data Received From Vehicle Immobilizer Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0427",
+      "description": "Invalid Data Received From Vehicle Security Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0428",
+      "description": "Invalid Data Received From Steering Angle Sensor Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0429",
+      "description": "Invalid Data Received From Steering Column Control Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0430",
+      "description": "Invalid Data Received From Tire Pressure Monitor Module",
+      "subsystem": "Network Data"
+    },
+    {
+      "code": "U0431",
+      "description": "Invalid Data Received From Body Control Module \"A\"",
+      "subsystem": "Network Data"
+    }
+  ]
+}

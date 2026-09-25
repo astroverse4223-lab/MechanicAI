@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>Fuel Trim &#8212; Closed-Loop Feedback</title>
+<desc>Closed-loop fuel control: MAF/MAP input and PCM base fuel, injector pulse width, combustion, and upstream O2/A/F sensor feedback, with STFT and LTFT explained.</desc>
+<defs><marker id="ftc-ab8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#8ab4f8"/></marker><marker id="ftc-ab10" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#8ab4f8"/></marker><marker id="ftc-aa10" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#fbbc04"/></marker><marker id="ftc-an10" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#bdc1c6"/></marker><marker id="ftc-as8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#9aa0a6"/></marker></defs>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">Fuel Trim &#8212; Closed-Loop Feedback</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">The PCM corrects its base fuel calculation using the upstream O2 / A/F sensor signal.</text>
+<rect x="30" y="86" width="128" height="50" rx="6" fill="#23272e" stroke="#5f6368" stroke-width="1.5"/>
+<text x="94" y="108" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">MAF / MAP</text>
+<text x="94" y="123" font-size="12" fill="#9aa0a6" text-anchor="middle">Airflow / load</text>
+<path d="M158,111 L201,111" fill="none" stroke="#8ab4f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ftc-ab8)"/>
+<rect x="206" y="84" width="190" height="70" rx="6" fill="#23272e" stroke="#8ab4f8" stroke-width="1.5"/>
+<text x="301" y="108.5" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">PCM</text>
+<text x="301" y="123.5" font-size="12" fill="#9aa0a6" text-anchor="middle">Base fuel from airflow</text>
+<text x="301" y="138.6" font-size="12" fill="#9aa0a6" text-anchor="middle">+ STFT + LTFT correction</text>
+<rect x="374" y="206" width="132" height="58" rx="6" fill="#23272e" stroke="#5f6368" stroke-width="1.5"/>
+<text x="440" y="232.1" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">Fuel injector</text>
+<text x="440" y="247.1" font-size="12" fill="#9aa0a6" text-anchor="middle">Opens for pulse width</text>
+<rect x="232" y="318" width="140" height="58" rx="6" fill="#23272e" stroke="#5f6368" stroke-width="1.5"/>
+<text x="302" y="344.1" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">Engine</text>
+<text x="302" y="359.1" font-size="12" fill="#9aa0a6" text-anchor="middle">Combustion</text>
+<rect x="44" y="206" width="150" height="58" rx="6" fill="#23272e" stroke="#5f6368" stroke-width="1.5"/>
+<text x="119" y="232.1" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">O2 / A/F sensor</text>
+<text x="119" y="247.1" font-size="12" fill="#9aa0a6" text-anchor="middle">Upstream (sensor 1)</text>
+<path d="M396,119 L434,119 Q440,119 440,125 L440,201" fill="none" stroke="#8ab4f8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ftc-ab10)"/>
+<path d="M440,264 L440,341 Q440,347 434,347 L378,347" fill="none" stroke="#fbbc04" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ftc-aa10)"/>
+<path d="M232,347 L125,347 Q119,347 119,341 L119,270" fill="none" stroke="#bdc1c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ftc-an10)"/>
+<path d="M119,206 L119,192 Q119,186 125,186 L244,186 Q250,186 250,180 L250,160" fill="none" stroke="#8ab4f8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ftc-ab10)"/>
+<text x="432" y="170" font-size="12" fill="#8ab4f8" text-anchor="end" font-weight="600">Injector</text>
+<text x="432" y="185" font-size="12" fill="#8ab4f8" text-anchor="end" font-weight="600">pulse width</text>
+<text x="432" y="312" font-size="12" fill="#fbbc04" text-anchor="end" font-weight="600">Fuel</text>
+<text x="176" y="340" font-size="12" fill="#bdc1c6" text-anchor="middle" font-weight="600">Exhaust gas</text>
+<text x="185" y="178" font-size="12" fill="#8ab4f8" text-anchor="middle" font-weight="600">Rich / lean signal</text>
+<path d="M 295.7,248.3 A 16 16 0 1 1 314,249.9" fill="none" stroke="#9aa0a6" stroke-width="2" marker-end="url(#ftc-as8)"/>
+<text x="306" y="276" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">Closed loop</text>
+<text x="306" y="293" font-size="12" fill="#9aa0a6" text-anchor="middle">continuous correction</text>
+<text x="30" y="404" font-size="12" fill="#9aa0a6">Open loop (e.g., cold start, wide-open throttle): the sensor signal is not used</text>
+<text x="30" y="420" font-size="12" fill="#9aa0a6">for correction and STFT typically reads 0%; learned LTFT is still applied.</text>
+<rect x="528" y="76" width="248" height="356" rx="10" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="542" y="100" font-size="13" fill="#e8eaed" font-weight="600">Reading fuel trim</text>
+<rect x="542.6" y="114" width="46.8" height="20" rx="10" fill="#8ab4f8" fill-opacity="0.14" stroke="#8ab4f8" stroke-width="1"/>
+<text x="566" y="128.3" font-size="12" fill="#8ab4f8" text-anchor="middle" font-weight="600">STFT</text>
+<text x="598" y="128" font-size="12" fill="#e8eaed" font-weight="600">Short-term fuel trim</text>
+<text x="542" y="150" font-size="12" fill="#9aa0a6">Fast correction driven by the O2 /</text>
+<text x="542" y="166" font-size="12" fill="#9aa0a6">A/F sensor signal. Resets at key-off.</text>
+<rect x="542.6" y="182" width="46.8" height="20" rx="10" fill="#fbbc04" fill-opacity="0.14" stroke="#fbbc04" stroke-width="1"/>
+<text x="566" y="196.3" font-size="12" fill="#fbbc04" text-anchor="middle" font-weight="600">LTFT</text>
+<text x="598" y="196" font-size="12" fill="#e8eaed" font-weight="600">Long-term fuel trim</text>
+<text x="542" y="218" font-size="12" fill="#9aa0a6">Learned, slow correction that lets</text>
+<text x="542" y="234" font-size="12" fill="#9aa0a6">STFT return toward 0%. Kept in</text>
+<text x="542" y="250" font-size="12" fill="#9aa0a6">memory.</text>
+<text x="546" y="288" font-size="12" fill="#e8eaed" font-weight="600">&#8722; Removing fuel</text>
+<text x="758" y="288" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Adding fuel +</text>
+<rect x="546" y="296" width="106" height="8" rx="4" fill="#8ab4f8" fill-opacity="0.45"/>
+<rect x="652" y="296" width="106" height="8" rx="4" fill="#fbbc04" fill-opacity="0.45"/>
+<line x1="652" y1="291" x2="652" y2="309" stroke="#e8eaed" stroke-width="2"/>
+<text x="652" y="322" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">0%</text>
+<text x="546" y="322" font-size="12" fill="#9aa0a6">rich signal</text>
+<text x="758" y="322" font-size="12" fill="#9aa0a6" text-anchor="end">lean signal</text>
+<text x="542" y="348" font-size="13" fill="#e8eaed" font-weight="600">Total trim = STFT + LTFT</text>
+<text x="542" y="368" font-size="12" fill="#9aa0a6">A total beyond roughly &#177;10% generally</text>
+<text x="542" y="384" font-size="12" fill="#9aa0a6">warrants investigation (general</text>
+<text x="542" y="400" font-size="12" fill="#9aa0a6">guideline &#8212; verify against OEM</text>
+<text x="542" y="416" font-size="12" fill="#9aa0a6">specification).</text>
+</svg>

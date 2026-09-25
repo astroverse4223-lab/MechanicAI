@@ -1,0 +1,5376 @@
+{
+  "version": "2026.09.1",
+  "source": "SAE J2012 / ISO 15031-6 generic DTC definitions (built-in reference)",
+  "codes": [
+    {
+      "code": "P2000",
+      "description": "NOx Trap Efficiency Below Threshold (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2001",
+      "description": "NOx Trap Efficiency Below Threshold (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2002",
+      "description": "Diesel Particulate Filter Efficiency Below Threshold (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Black smoke at tailpipe",
+        "Soot inside tailpipe outlet",
+        "Possible reduced power mode"
+      ],
+      "causes": [
+        "Cracked or melted DPF substrate",
+        "DPF removed or tampered with",
+        "DPF pressure sensor or hose fault",
+        "Exhaust leak ahead of DPF",
+        "Excessive engine-out soot"
+      ],
+      "notes": "The ECM infers filter efficiency mainly from the DPF differential pressure signal and, on some systems, from a downstream particulate matter sensor. Verify the pressure sensor, its hoses and ports before condemning the filter; a cracked substrate typically shows abnormally low differential pressure for the exhaust flow and soot at the tailpipe. Refer to OEM service information for expected differential pressure values.",
+      "related": [
+        "P2463",
+        "P2452",
+        "P2453",
+        "P2458",
+        "P2459"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2003",
+      "description": "Diesel Particulate Filter Efficiency Below Threshold (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2004",
+      "description": "Intake Manifold Runner Control Stuck Open (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Reduced low-speed torque",
+        "Often no drivability change"
+      ],
+      "causes": [
+        "Runner actuator or motor failure",
+        "Broken or seized runner linkage",
+        "Carbon buildup on runner flaps",
+        "Vacuum leak at vacuum actuator",
+        "Actuator control circuit fault",
+        "Runner position sensor fault"
+      ],
+      "notes": "The ECM compares the commanded runner position with position feedback (or with the expected manifold pressure response). Command the runners with a scan tool while watching the linkage and the position PID. On vacuum-operated designs, check the vacuum supply and actuator diaphragm before replacing the actuator or manifold.",
+      "related": [
+        "P2006",
+        "P2008",
+        "P2014",
+        "P2015"
+      ]
+    },
+    {
+      "code": "P2005",
+      "description": "Intake Manifold Runner Control Stuck Open (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2006",
+      "description": "Intake Manifold Runner Control Stuck Closed (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Reduced high-RPM power",
+        "Possible hesitation under load"
+      ],
+      "causes": [
+        "Runner actuator or motor failure",
+        "Broken or seized runner linkage",
+        "Carbon buildup on runner flaps",
+        "Vacuum leak at vacuum actuator",
+        "Actuator control circuit fault",
+        "Runner position sensor fault"
+      ],
+      "notes": "Command the runners with a scan tool and confirm actual movement at the linkage and on the position PID. Carbon-bound flaps and broken linkage pivots are common; confirm mechanical operation before replacing the actuator or manifold.",
+      "related": [
+        "P2004",
+        "P2008",
+        "P2015"
+      ]
+    },
+    {
+      "code": "P2007",
+      "description": "Intake Manifold Runner Control Stuck Closed (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2008",
+      "description": "Intake Manifold Runner Control Circuit/Open (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Runner control inoperative",
+        "Possible reduced performance"
+      ],
+      "causes": [
+        "Open actuator or solenoid winding",
+        "Open or damaged wiring",
+        "Loose or corroded connector",
+        "Loss of actuator power supply",
+        "ECM driver fault (less common)"
+      ],
+      "notes": "Check the actuator or solenoid supply and control circuits with a DVOM or test light while commanding the output, and compare winding resistance with the OEM specification. Inspect the harness near hot or moving components.",
+      "related": [
+        "P2009",
+        "P2010",
+        "P2004",
+        "P2006"
+      ]
+    },
+    {
+      "code": "P2009",
+      "description": "Intake Manifold Runner Control Circuit Low (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P200A",
+      "description": "Intake Manifold Runner Performance (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P200B",
+      "description": "Intake Manifold Runner Performance (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2010",
+      "description": "Intake Manifold Runner Control Circuit High (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2011",
+      "description": "Intake Manifold Runner Control Circuit/Open (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2012",
+      "description": "Intake Manifold Runner Control Circuit Low (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2013",
+      "description": "Intake Manifold Runner Control Circuit High (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2014",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2015",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit Range/Performance (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Often no drivability change",
+        "Possible reduced low-speed torque"
+      ],
+      "causes": [
+        "Worn or broken runner flap linkage",
+        "Runner actuator or position sensor failure",
+        "Carbon-fouled runner flaps",
+        "Vacuum leak (vacuum-actuated designs)",
+        "Wiring or connector fault"
+      ],
+      "notes": "Common on engines with a manifold-mounted runner flap actuator and position sensor. Command the runner with a scan tool and compare commanded and actual position; a sticking or broken linkage, not the sensor, is a frequent cause. Confirm mechanical movement before replacing the actuator or intake manifold.",
+      "related": [
+        "P2004",
+        "P2006",
+        "P2014",
+        "P2016",
+        "P2017"
+      ]
+    },
+    {
+      "code": "P2016",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit Low (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2017",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit High (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2018",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit Intermittent (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2019",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2020",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit Range/Performance (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2021",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit Low (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2022",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit High (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2023",
+      "description": "Intake Manifold Runner Position Sensor/Switch Circuit Intermittent (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2031",
+      "description": "Exhaust Gas Temperature Sensor Circuit (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2032",
+      "description": "Exhaust Gas Temperature Sensor Circuit Low (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2033",
+      "description": "Exhaust Gas Temperature Sensor Circuit High (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2034",
+      "description": "Exhaust Gas Temperature Sensor Circuit (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2035",
+      "description": "Exhaust Gas Temperature Sensor Circuit Low (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2036",
+      "description": "Exhaust Gas Temperature Sensor Circuit High (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P203F",
+      "description": "Reductant Level Too Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "DEF low warning",
+        "Inducement or speed-limit countdown",
+        "MIL on"
+      ],
+      "causes": [
+        "DEF tank low or empty",
+        "DEF level sensor fault",
+        "Level sensor wiring or connector fault",
+        "Incorrect fluid added to DEF tank"
+      ],
+      "notes": "Top off with fresh, certified DEF and allow the system to recognize the new level per OEM procedure; some systems need a drive cycle or a scan-tool reset to clear an inducement. If the tank is full, test the level sensor, which is often part of a tank header assembly with the heater and quality sensor.",
+      "related": [
+        "P20EE",
+        "P2047"
+      ]
+    },
+    {
+      "code": "P2047",
+      "description": "Reductant Injector Circuit/Open (Bank 1 Unit 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2048",
+      "description": "Reductant Injector Circuit Low (Bank 1 Unit 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2049",
+      "description": "Reductant Injector Circuit High (Bank 1 Unit 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2065",
+      "description": "Fuel Level Sensor \"B\" Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2066",
+      "description": "Fuel Level Sensor \"B\" Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2067",
+      "description": "Fuel Level Sensor \"B\" Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2068",
+      "description": "Fuel Level Sensor \"B\" Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2069",
+      "description": "Fuel Level Sensor \"B\" Circuit Intermittent",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2070",
+      "description": "Intake Manifold Tuning (IMT) Valve Stuck Open",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2071",
+      "description": "Intake Manifold Tuning (IMT) Valve Stuck Closed",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2072",
+      "description": "Electronic Throttle Control System - Ice Blockage",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2073",
+      "description": "Manifold Absolute Pressure/Mass Air Flow - Throttle Position Correlation at Idle",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2074",
+      "description": "Manifold Absolute Pressure/Mass Air Flow - Throttle Position Correlation at Higher Load",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2075",
+      "description": "Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2076",
+      "description": "Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2077",
+      "description": "Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2078",
+      "description": "Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2079",
+      "description": "Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Intermittent",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2080",
+      "description": "Exhaust Gas Temperature Sensor Circuit Range/Performance (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2081",
+      "description": "Exhaust Gas Temperature Sensor Circuit Intermittent (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2082",
+      "description": "Exhaust Gas Temperature Sensor Circuit Range/Performance (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2083",
+      "description": "Exhaust Gas Temperature Sensor Circuit Intermittent (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2084",
+      "description": "Exhaust Gas Temperature Sensor Circuit Range/Performance (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2085",
+      "description": "Exhaust Gas Temperature Sensor Circuit Intermittent (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2086",
+      "description": "Exhaust Gas Temperature Sensor Circuit Range/Performance (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2087",
+      "description": "Exhaust Gas Temperature Sensor Circuit Intermittent (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2088",
+      "description": "\"A\" Camshaft Position Actuator Control Circuit Low (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2089",
+      "description": "\"A\" Camshaft Position Actuator Control Circuit High (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2090",
+      "description": "\"B\" Camshaft Position Actuator Control Circuit Low (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2091",
+      "description": "\"B\" Camshaft Position Actuator Control Circuit High (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2092",
+      "description": "\"A\" Camshaft Position Actuator Control Circuit Low (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2093",
+      "description": "\"A\" Camshaft Position Actuator Control Circuit High (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2094",
+      "description": "\"B\" Camshaft Position Actuator Control Circuit Low (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2095",
+      "description": "\"B\" Camshaft Position Actuator Control Circuit High (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2096",
+      "description": "Post Catalyst Fuel Trim System Too Lean (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Often no drivability complaint",
+        "Possible lean hesitation"
+      ],
+      "causes": [
+        "Exhaust leak near downstream O2 sensor",
+        "Exhaust leak upstream of catalyst",
+        "Downstream O2 sensor biased lean",
+        "Upstream O2 or A/F sensor skewed",
+        "Vacuum leak or unmetered air",
+        "Low fuel pressure or restricted injectors"
+      ],
+      "notes": "The downstream (post-catalyst) sensor trims the upstream fuel control. A lean post-catalyst trim often traces to an exhaust leak drawing air in near the downstream sensor, or to an upstream sensor that reads rich and drives the mixture lean. Review short- and long-term fuel trims and both sensor signals before replacing sensors.",
+      "related": [
+        "P2097",
+        "P0171",
+        "P0137",
+        "P2270",
+        "P0420"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2097",
+      "description": "Post Catalyst Fuel Trim System Too Rich (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible fuel odor",
+        "Possible reduced fuel economy"
+      ],
+      "causes": [
+        "Downstream O2 sensor biased rich",
+        "Upstream O2 or A/F sensor skewed lean",
+        "Leaking fuel injector",
+        "Excessive fuel pressure",
+        "Sensor contaminated by oil or coolant",
+        "EVAP purge valve stuck open"
+      ],
+      "notes": "Compare upstream and downstream sensor activity with fuel trims. An upstream sensor that reads lean causes the ECM to add fuel, which the downstream sensor then sees as rich. Look for real sources of richness (purge flow, injector leakage, fuel pressure) and sensor contamination before replacing sensors.",
+      "related": [
+        "P2096",
+        "P0172",
+        "P0138",
+        "P2271",
+        "P0420"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2098",
+      "description": "Post Catalyst Fuel Trim System Too Lean (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Often no drivability complaint",
+        "Possible lean hesitation"
+      ],
+      "causes": [
+        "Exhaust leak near downstream O2 sensor",
+        "Exhaust leak upstream of catalyst",
+        "Downstream O2 sensor biased lean",
+        "Upstream O2 or A/F sensor skewed",
+        "Vacuum leak or unmetered air",
+        "Low fuel pressure or restricted injectors"
+      ],
+      "notes": "Bank 2 counterpart of P2096. Check for exhaust leaks near the bank 2 downstream sensor and compare bank-to-bank fuel trims; a condition affecting only one bank points toward that bank's sensors, exhaust, or intake leaks.",
+      "related": [
+        "P2099",
+        "P0174",
+        "P0157",
+        "P2272",
+        "P0430"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2099",
+      "description": "Post Catalyst Fuel Trim System Too Rich (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible fuel odor",
+        "Possible reduced fuel economy"
+      ],
+      "causes": [
+        "Downstream O2 sensor biased rich",
+        "Upstream O2 or A/F sensor skewed lean",
+        "Leaking fuel injector",
+        "Excessive fuel pressure",
+        "Sensor contaminated by oil or coolant",
+        "EVAP purge valve stuck open"
+      ],
+      "notes": "Bank 2 counterpart of P2097. Compare bank-to-bank fuel trims and sensor signals; a rich condition on both banks points toward a shared cause such as fuel pressure or purge flow.",
+      "related": [
+        "P2098",
+        "P0175",
+        "P0158",
+        "P2273",
+        "P0430"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P20EE",
+      "description": "SCR NOx Catalyst Efficiency Below Threshold (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "DEF or emissions warning message",
+        "Possible inducement or derate",
+        "Often no drivability change"
+      ],
+      "causes": [
+        "Poor-quality or contaminated DEF",
+        "DEF dosing injector clogged or crystallized",
+        "Upstream or downstream NOx sensor fault",
+        "DEF supply pressure or pump fault",
+        "Exhaust leak affecting NOx sensors",
+        "Degraded or contaminated SCR catalyst"
+      ],
+      "notes": "Test DEF concentration with a refractometer and compare it with the OEM specification before other work. Perform the OEM dosing quantity test and compare upstream and downstream NOx readings during a steady drive. Dosing and sensor faults are more common than a failed SCR catalyst. Many systems apply an inducement (speed or power limit) if the fault persists.",
+      "related": [
+        "P20EF",
+        "P203F",
+        "P2047",
+        "P2200"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P20EF",
+      "description": "SCR NOx Catalyst Efficiency Below Threshold (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2100",
+      "description": "Throttle Actuator Control Motor Circuit/Open",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2101",
+      "description": "Throttle Actuator Control Motor Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or limp mode",
+        "Electronic throttle warning lamp",
+        "Poor or no throttle response",
+        "Possible stall or high idle"
+      ],
+      "causes": [
+        "Carbon buildup binding throttle plate",
+        "Throttle body motor or gear failure",
+        "Wiring or connector fault at throttle body",
+        "Poor ECM power or ground",
+        "Low system voltage",
+        "Throttle position sensor fault"
+      ],
+      "notes": "Inspect for carbon or ice binding and check connector terminals for fretting or corrosion. Compare commanded and actual throttle angle and TP sensor tracking, and voltage-drop test the motor control circuits and ECM powers and grounds before replacing the throttle body. Perform any required throttle relearn per OEM procedure after cleaning or replacement. Keep fingers out of the throttle bore with the ignition on; the plate can move without warning.",
+      "related": [
+        "P2100",
+        "P2102",
+        "P2103",
+        "P2111",
+        "P2112",
+        "P2119",
+        "P2135"
+      ]
+    },
+    {
+      "code": "P2102",
+      "description": "Throttle Actuator Control Motor Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2103",
+      "description": "Throttle Actuator Control Motor Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2104",
+      "description": "Throttle Actuator Control System - Forced Idle",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2105",
+      "description": "Throttle Actuator Control System - Forced Engine Shutdown",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2106",
+      "description": "Throttle Actuator Control System - Forced Limited Power",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2107",
+      "description": "Throttle Actuator Control Module Processor",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2108",
+      "description": "Throttle Actuator Control Module Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2109",
+      "description": "Throttle/Pedal Position Sensor \"A\" Minimum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2110",
+      "description": "Throttle Actuator Control System - Forced Limited RPM",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2111",
+      "description": "Throttle Actuator Control System - Stuck Open",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "High idle",
+        "Reduced power or limp mode",
+        "Electronic throttle warning lamp"
+      ],
+      "causes": [
+        "Throttle plate sticking open",
+        "Carbon or ice buildup",
+        "Worn throttle body gears or motor",
+        "Throttle position sensor fault",
+        "Wiring or connector fault"
+      ],
+      "notes": "Check the throttle plate for binding with the ignition off, then compare commanded and actual throttle position during a commanded sweep. Clean or replace as needed and perform the OEM throttle relearn. Keep fingers out of the throttle bore with the ignition on.",
+      "related": [
+        "P2112",
+        "P2101",
+        "P2119",
+        "P2135"
+      ]
+    },
+    {
+      "code": "P2112",
+      "description": "Throttle Actuator Control System - Stuck Closed",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Low power or limp mode",
+        "Stall or low idle",
+        "Electronic throttle warning lamp"
+      ],
+      "causes": [
+        "Throttle plate binding closed",
+        "Carbon or ice buildup",
+        "Throttle actuator motor failure",
+        "Throttle position sensor fault",
+        "Wiring or connector fault"
+      ],
+      "notes": "Check for carbon or ice restricting the plate and for a failed actuator motor or gear set. Verify the motor control circuits and TP sensor signals with a scan tool and DVOM before replacing the throttle body, then perform the OEM throttle relearn.",
+      "related": [
+        "P2111",
+        "P2101",
+        "P2119",
+        "P2072"
+      ]
+    },
+    {
+      "code": "P2113",
+      "description": "Throttle/Pedal Position Sensor \"B\" Minimum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2114",
+      "description": "Throttle/Pedal Position Sensor \"C\" Minimum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2115",
+      "description": "Throttle/Pedal Position Sensor \"D\" Minimum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2116",
+      "description": "Throttle/Pedal Position Sensor \"E\" Minimum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2117",
+      "description": "Throttle/Pedal Position Sensor \"F\" Minimum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2118",
+      "description": "Throttle Actuator Control Motor Current Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2119",
+      "description": "Throttle Actuator Control Throttle Body Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or limp mode",
+        "Poor throttle response",
+        "Electronic throttle warning lamp",
+        "Possible stalling"
+      ],
+      "causes": [
+        "Throttle plate binding (carbon or ice)",
+        "Failed return spring or gears",
+        "Throttle body motor failure",
+        "Wiring or connector fault",
+        "ECM power or ground issue"
+      ],
+      "notes": "Sets when the throttle does not reach the expected default (limp-home) or commanded position. Check for mechanical binding with the ignition off, clean if contaminated, inspect the connector terminals, and verify TP sensor tracking during a commanded sweep. Relearn per OEM procedure after service.",
+      "related": [
+        "P2101",
+        "P2111",
+        "P2112",
+        "P2135",
+        "P2176"
+      ]
+    },
+    {
+      "code": "P2120",
+      "description": "Throttle/Pedal Position Sensor/Switch \"D\" Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2121",
+      "description": "Throttle/Pedal Position Sensor/Switch \"D\" Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2122",
+      "description": "Throttle/Pedal Position Sensor/Switch \"D\" Circuit Low Input",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or limp mode",
+        "Poor or no acceleration response",
+        "Electronic throttle warning lamp"
+      ],
+      "causes": [
+        "Accelerator pedal sensor failure",
+        "Signal circuit open or shorted to ground",
+        "Open 5 V reference circuit",
+        "Connector fault at pedal assembly",
+        "ECM fault (rare)"
+      ],
+      "notes": "Sensors D and E (and F where used) are commonly the accelerator pedal position sensors; confirm the assignment in OEM service information. Check the reference, signal, and low-reference circuits at the pedal connector while wiggle-testing the harness, and watch the PID for dropouts while slowly sweeping the pedal. A shorted 5 V reference shared with other sensors can set several codes at once.",
+      "related": [
+        "P2123",
+        "P2127",
+        "P2128",
+        "P2138"
+      ]
+    },
+    {
+      "code": "P2123",
+      "description": "Throttle/Pedal Position Sensor/Switch \"D\" Circuit High Input",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or limp mode",
+        "Poor or no acceleration response",
+        "Electronic throttle warning lamp"
+      ],
+      "causes": [
+        "Accelerator pedal sensor failure",
+        "Signal circuit shorted to voltage",
+        "Open low-reference (ground) circuit",
+        "Connector fault at pedal assembly",
+        "ECM fault (rare)"
+      ],
+      "notes": "Check for a signal circuit shorted to voltage or an open low-reference circuit at the pedal connector. Graph the PID while slowly sweeping the pedal and wiggle-testing the harness. Compare readings with OEM specifications before replacing the pedal assembly.",
+      "related": [
+        "P2122",
+        "P2128",
+        "P2138"
+      ]
+    },
+    {
+      "code": "P2124",
+      "description": "Throttle/Pedal Position Sensor/Switch \"D\" Circuit Intermittent",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2125",
+      "description": "Throttle/Pedal Position Sensor/Switch \"E\" Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2126",
+      "description": "Throttle/Pedal Position Sensor/Switch \"E\" Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2127",
+      "description": "Throttle/Pedal Position Sensor/Switch \"E\" Circuit Low Input",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or limp mode",
+        "Poor or no acceleration response",
+        "Electronic throttle warning lamp"
+      ],
+      "causes": [
+        "Accelerator pedal sensor failure",
+        "Signal circuit open or shorted to ground",
+        "Open 5 V reference circuit",
+        "Connector fault at pedal assembly",
+        "ECM fault (rare)"
+      ],
+      "notes": "Sensor E is commonly the second accelerator pedal position sensor; confirm in OEM service information. Test the reference, signal, and low-reference circuits at the pedal connector and look for PID dropouts during a slow pedal sweep. A shared 5 V reference fault can set codes for other sensors at the same time.",
+      "related": [
+        "P2128",
+        "P2122",
+        "P2138"
+      ]
+    },
+    {
+      "code": "P2128",
+      "description": "Throttle/Pedal Position Sensor/Switch \"E\" Circuit High Input",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or limp mode",
+        "Poor or no acceleration response",
+        "Electronic throttle warning lamp"
+      ],
+      "causes": [
+        "Accelerator pedal sensor failure",
+        "Signal circuit shorted to voltage",
+        "Open low-reference (ground) circuit",
+        "Connector fault at pedal assembly",
+        "ECM fault (rare)"
+      ],
+      "notes": "Check for a signal shorted to voltage or an open low reference at the pedal connector, and graph the PID during a slow pedal sweep while wiggle-testing the harness.",
+      "related": [
+        "P2127",
+        "P2123",
+        "P2138"
+      ]
+    },
+    {
+      "code": "P2129",
+      "description": "Throttle/Pedal Position Sensor/Switch \"E\" Circuit Intermittent",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2130",
+      "description": "Throttle/Pedal Position Sensor/Switch \"F\" Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2131",
+      "description": "Throttle/Pedal Position Sensor/Switch \"F\" Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2132",
+      "description": "Throttle/Pedal Position Sensor/Switch \"F\" Circuit Low Input",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2133",
+      "description": "Throttle/Pedal Position Sensor/Switch \"F\" Circuit High Input",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2134",
+      "description": "Throttle/Pedal Position Sensor/Switch \"F\" Circuit Intermittent",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2135",
+      "description": "Throttle/Pedal Position Sensor/Switch \"A\"/\"B\" Voltage Correlation",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or limp mode",
+        "Electronic throttle warning lamp",
+        "Hesitation or surge",
+        "Possible stall"
+      ],
+      "causes": [
+        "Worn TP sensor in throttle body",
+        "Connector terminal fretting or corrosion",
+        "High resistance in reference or ground",
+        "Water intrusion in throttle body connector",
+        "Harness chafe or intermittent open"
+      ],
+      "notes": "TP sensors A and B are normally both inside the electronic throttle body and are compared continuously. Graph both signals during a slow throttle sweep (commanded or key-on, where the system allows) and look for dropouts or divergence; voltage-drop test the reference and ground circuits. On many designs the TP sensors are not serviceable separately from the throttle body.",
+      "related": [
+        "P0122",
+        "P0123",
+        "P0222",
+        "P0223",
+        "P2101"
+      ]
+    },
+    {
+      "code": "P2136",
+      "description": "Throttle/Pedal Position Sensor/Switch \"A\"/\"C\" Voltage Correlation",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2137",
+      "description": "Throttle/Pedal Position Sensor/Switch \"B\"/\"C\" Voltage Correlation",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2138",
+      "description": "Throttle/Pedal Position Sensor/Switch \"D\"/\"E\" Voltage Correlation",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or limp mode",
+        "Poor throttle response",
+        "Electronic throttle warning lamp",
+        "Engine limited to idle"
+      ],
+      "causes": [
+        "Worn accelerator pedal sensor",
+        "Connector corrosion at pedal",
+        "High resistance in reference or ground",
+        "Harness chafe near pedal",
+        "Shared 5 V reference fault"
+      ],
+      "notes": "Pedal sensors D and E usually have different voltage ranges or slopes, and the ECM compares them for plausibility. Graph both PIDs while slowly pressing the pedal, look for dropouts, and voltage-drop test the reference and ground circuits before replacing the pedal assembly. Compare values with OEM specifications.",
+      "related": [
+        "P2122",
+        "P2123",
+        "P2127",
+        "P2128"
+      ]
+    },
+    {
+      "code": "P2139",
+      "description": "Throttle/Pedal Position Sensor/Switch \"D\"/\"F\" Voltage Correlation",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2140",
+      "description": "Throttle/Pedal Position Sensor/Switch \"E\"/\"F\" Voltage Correlation",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2146",
+      "description": "Fuel Injector Group \"A\" Supply Voltage Circuit/Open",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2147",
+      "description": "Fuel Injector Group \"A\" Supply Voltage Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2148",
+      "description": "Fuel Injector Group \"A\" Supply Voltage Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2149",
+      "description": "Fuel Injector Group \"B\" Supply Voltage Circuit/Open",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2150",
+      "description": "Fuel Injector Group \"B\" Supply Voltage Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2151",
+      "description": "Fuel Injector Group \"B\" Supply Voltage Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2152",
+      "description": "Fuel Injector Group \"C\" Supply Voltage Circuit/Open",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2153",
+      "description": "Fuel Injector Group \"C\" Supply Voltage Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2154",
+      "description": "Fuel Injector Group \"C\" Supply Voltage Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2155",
+      "description": "Fuel Injector Group \"D\" Supply Voltage Circuit/Open",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2156",
+      "description": "Fuel Injector Group \"D\" Supply Voltage Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2157",
+      "description": "Fuel Injector Group \"D\" Supply Voltage Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2158",
+      "description": "Vehicle Speed Sensor \"B\"",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2159",
+      "description": "Vehicle Speed Sensor \"B\" Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2160",
+      "description": "Vehicle Speed Sensor \"B\" Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2161",
+      "description": "Vehicle Speed Sensor \"B\" Intermittent/Erratic",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2162",
+      "description": "Vehicle Speed Sensor \"A\"/\"B\" Correlation",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2163",
+      "description": "Throttle/Pedal Position Sensor \"A\" Maximum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2164",
+      "description": "Throttle/Pedal Position Sensor \"B\" Maximum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2165",
+      "description": "Throttle/Pedal Position Sensor \"C\" Maximum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2166",
+      "description": "Throttle/Pedal Position Sensor \"D\" Maximum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2167",
+      "description": "Throttle/Pedal Position Sensor \"E\" Maximum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2168",
+      "description": "Throttle/Pedal Position Sensor \"F\" Maximum Stop Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2172",
+      "description": "Throttle Actuator Control System - Sudden High Airflow Detected",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2173",
+      "description": "Throttle Actuator Control System - High Airflow Detected",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2174",
+      "description": "Throttle Actuator Control System - Sudden Low Airflow Detected",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2175",
+      "description": "Throttle Actuator Control System - Low Airflow Detected",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2176",
+      "description": "Throttle Actuator Control System - Idle Position Not Learned",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Unstable or high idle",
+        "Stalling after battery reconnect",
+        "Possible throttle warning lamp"
+      ],
+      "causes": [
+        "Throttle relearn not performed",
+        "Battery or ECM recently disconnected",
+        "Dirty or carbon-fouled throttle body",
+        "Throttle body cleaned or replaced",
+        "Vacuum leak affecting idle"
+      ],
+      "notes": "Often follows battery disconnection, throttle body cleaning, or throttle body or ECM replacement. Perform the idle/throttle learn specified by the OEM (some are drive-cycle based, others require a scan tool). If the learn will not complete, check for vacuum leaks and throttle contamination.",
+      "related": [
+        "P2119",
+        "P2101",
+        "P0506",
+        "P0507"
+      ]
+    },
+    {
+      "code": "P2177",
+      "description": "System Too Lean Off Idle (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Hesitation or stumble on acceleration",
+        "Possible surge at cruise",
+        "MIL on"
+      ],
+      "causes": [
+        "Contaminated or failing MAF sensor",
+        "Low fuel pressure or volume",
+        "Restricted fuel filter or pump",
+        "Restricted fuel injectors",
+        "Intake leak after MAF",
+        "Exhaust leak upstream of O2 sensor"
+      ],
+      "notes": "A lean condition off idle (higher airflow) points more toward fuel delivery or airflow measurement than toward small vacuum leaks, which dominate at idle. Compare fuel trims at idle, around 2,500 RPM, and under load; check fuel pressure and volume under load and compare MAF readings with expected values for the engine. Total fuel trim beyond roughly ±10% generally warrants investigation (general guideline — verify against OEM specification).",
+      "related": [
+        "P2178",
+        "P2187",
+        "P2191",
+        "P0171",
+        "P0101"
+      ],
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2178",
+      "description": "System Too Rich Off Idle (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2179",
+      "description": "System Too Lean Off Idle (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2180",
+      "description": "System Too Rich Off Idle (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2181",
+      "description": "Cooling System Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Slow warm-up or low temperature gauge",
+        "Poor heater output",
+        "Possible overheating",
+        "MIL on"
+      ],
+      "causes": [
+        "Thermostat stuck open",
+        "Low coolant level",
+        "ECT sensor reading inaccurately",
+        "Air in cooling system",
+        "Cooling fan running continuously",
+        "Restricted radiator or coolant flow"
+      ],
+      "notes": "Compare scan-tool ECT with an independent measurement and review the warm-up rate from a cold start. A thermostat stuck open is the most common cause, but verify coolant level and ECT sensor accuracy first. Never open a hot, pressurized cooling system.",
+      "related": [
+        "P0128",
+        "P0116",
+        "P0117",
+        "P0118",
+        "P2182"
+      ],
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2182",
+      "description": "Engine Coolant Temperature Sensor 2 Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2183",
+      "description": "Engine Coolant Temperature Sensor 2 Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2184",
+      "description": "Engine Coolant Temperature Sensor 2 Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2185",
+      "description": "Engine Coolant Temperature Sensor 2 Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2186",
+      "description": "Engine Coolant Temperature Sensor 2 Circuit Intermittent/Erratic",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2187",
+      "description": "System Too Lean at Idle (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Rough or unstable idle",
+        "Possible stalling",
+        "MIL on"
+      ],
+      "causes": [
+        "Vacuum leak at intake",
+        "PCV system leak",
+        "Leaking intake manifold gasket",
+        "Brake booster vacuum leak",
+        "Unmetered air after MAF",
+        "Low fuel pressure",
+        "Exhaust leak upstream of O2 sensor"
+      ],
+      "notes": "Lean at idle that improves at higher RPM strongly suggests unmetered air, because a fixed leak is a larger share of total airflow at idle. Smoke-test the intake and PCV system, check brake booster connections, and confirm fuel pressure. Total fuel trim beyond roughly ±10% generally warrants investigation (general guideline — verify against OEM specification).",
+      "related": [
+        "P2189",
+        "P0171",
+        "P2177",
+        "P2279",
+        "P0507"
+      ],
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2188",
+      "description": "System Too Rich at Idle (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Rough idle",
+        "Fuel odor or black smoke",
+        "Reduced fuel economy",
+        "MIL on"
+      ],
+      "causes": [
+        "Leaking fuel injector",
+        "Excessive fuel pressure or regulator fault",
+        "EVAP purge valve stuck open",
+        "Fuel-diluted engine oil (PCV vapors)",
+        "MAF sensor over-reporting airflow",
+        "ECT sensor reading falsely cold"
+      ],
+      "notes": "Check for a purge valve stuck open (command it closed or pinch the purge line and watch fuel trims), leaking injectors (fuel pressure leak-down test), and fuel pressure regulator operation. Fuel-diluted oil can feed rich vapor through the PCV system at idle.",
+      "related": [
+        "P2190",
+        "P0172",
+        "P2178",
+        "P0496"
+      ],
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2189",
+      "description": "System Too Lean at Idle (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2190",
+      "description": "System Too Rich at Idle (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2191",
+      "description": "System Too Lean at Higher Load (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Hesitation under load",
+        "Loss of power when accelerating",
+        "Possible spark knock",
+        "MIL on"
+      ],
+      "causes": [
+        "Weak fuel pump or low fuel volume",
+        "Restricted fuel filter",
+        "Restricted fuel injectors",
+        "MAF sensor under-reporting airflow",
+        "Boost leak (turbocharged engines)",
+        "Fuel pressure regulator fault"
+      ],
+      "notes": "Measure fuel pressure, and fuel volume where possible, under load (road test with a gauge or the scan-tool fuel pressure PID). Verify MAF output under load. On turbocharged engines, pressure-test the charge-air system for leaks.",
+      "related": [
+        "P2193",
+        "P2177",
+        "P0171",
+        "P0087",
+        "P0101"
+      ],
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2192",
+      "description": "System Too Rich at Higher Load (Bank 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2193",
+      "description": "System Too Lean at Higher Load (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2194",
+      "description": "System Too Rich at Higher Load (Bank 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2195",
+      "description": "O2 Sensor Signal Biased/Stuck Lean (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible rich running",
+        "Reduced fuel economy"
+      ],
+      "causes": [
+        "Exhaust leak ahead of sensor",
+        "Aged or failed upstream O2/A/F sensor",
+        "Sensor wiring or connector fault",
+        "Actual lean condition (vacuum or fuel)",
+        "Sensor contamination (silicone, coolant)"
+      ],
+      "notes": "Determine whether the sensor reports a real lean mixture or is biased. If the upstream sensor reads lean while fuel trims are strongly positive and the downstream sensor reads rich, suspect the upstream sensor or an exhaust leak at it; a real lean condition usually shows lean readings on both sensors. Propane enrichment or a snap-throttle test can check sensor response (general technique — wide-range A/F sensors report current or lambda rather than a switching voltage).",
+      "related": [
+        "P2196",
+        "P0171",
+        "P0131",
+        "P2270",
+        "P2096"
+      ],
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2196",
+      "description": "O2 Sensor Signal Biased/Stuck Rich (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible lean running or hesitation",
+        "Possible rough idle"
+      ],
+      "causes": [
+        "Sensor contaminated (oil, coolant, fuel)",
+        "Actual rich condition (injector, purge)",
+        "Sensor signal shorted to voltage",
+        "Aged or slow sensor",
+        "Fuel-diluted engine oil"
+      ],
+      "notes": "A sensor biased rich makes the ECM remove fuel, so fuel trims go negative while the downstream sensor reads lean. Look for sources of real richness (EVAP purge stuck open, leaking injectors, high fuel pressure) and for contamination from coolant or oil consumption before replacing the sensor.",
+      "related": [
+        "P2195",
+        "P0172",
+        "P0132",
+        "P2271",
+        "P2097"
+      ],
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2197",
+      "description": "O2 Sensor Signal Biased/Stuck Lean (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2198",
+      "description": "O2 Sensor Signal Biased/Stuck Rich (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2199",
+      "description": "Intake Air Temperature Sensor 1/2 Correlation",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2200",
+      "description": "NOx Sensor Circuit (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2201",
+      "description": "NOx Sensor Circuit Range/Performance (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2202",
+      "description": "NOx Sensor Circuit Low Input (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2203",
+      "description": "NOx Sensor Circuit High Input (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2204",
+      "description": "NOx Sensor Circuit Intermittent Input (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2205",
+      "description": "NOx Sensor Heater Control Circuit/Open (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2206",
+      "description": "NOx Sensor Heater Control Circuit Low (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2207",
+      "description": "NOx Sensor Heater Control Circuit High (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2208",
+      "description": "NOx Sensor Heater Sense Circuit (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2209",
+      "description": "NOx Sensor Heater Sense Circuit Range/Performance (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2210",
+      "description": "NOx Sensor Heater Sense Circuit Low Input (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2211",
+      "description": "NOx Sensor Heater Sense Circuit High Input (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2212",
+      "description": "NOx Sensor Heater Sense Circuit Intermittent (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2213",
+      "description": "NOx Sensor Circuit (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2214",
+      "description": "NOx Sensor Circuit Range/Performance (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2215",
+      "description": "NOx Sensor Circuit Low Input (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2216",
+      "description": "NOx Sensor Circuit High Input (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2217",
+      "description": "NOx Sensor Circuit Intermittent Input (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2218",
+      "description": "NOx Sensor Heater Control Circuit/Open (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2219",
+      "description": "NOx Sensor Heater Control Circuit Low (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2220",
+      "description": "NOx Sensor Heater Control Circuit High (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2221",
+      "description": "NOx Sensor Heater Sense Circuit (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2222",
+      "description": "NOx Sensor Heater Sense Circuit Range/Performance (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2223",
+      "description": "NOx Sensor Heater Sense Circuit Low Input (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2224",
+      "description": "NOx Sensor Heater Sense Circuit High Input (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2225",
+      "description": "NOx Sensor Heater Sense Circuit Intermittent (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2226",
+      "description": "Barometric Pressure Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2227",
+      "description": "Barometric Pressure Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Usually no drivability change",
+        "Possible poor running at altitude"
+      ],
+      "causes": [
+        "BARO sensor fault (often inside ECM)",
+        "MAP sensor skewed (where BARO is inferred)",
+        "Restricted or leaking sensor port or hose",
+        "Wiring or 5 V reference issue"
+      ],
+      "notes": "Many systems use a BARO sensor inside the ECM; others infer barometric pressure from the MAP sensor at key-on or wide-open throttle, or use a separate sensor. With the key on and engine off, compare BARO and MAP readings with each other and with local barometric pressure. Confirm the sensor location in OEM information before replacing parts.",
+      "related": [
+        "P2226",
+        "P2228",
+        "P2229",
+        "P0106",
+        "P0069"
+      ]
+    },
+    {
+      "code": "P2228",
+      "description": "Barometric Pressure Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2229",
+      "description": "Barometric Pressure Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2230",
+      "description": "Barometric Pressure Circuit Intermittent",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2231",
+      "description": "O2 Sensor Signal Circuit Shorted to Heater Circuit (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2232",
+      "description": "O2 Sensor Signal Circuit Shorted to Heater Circuit (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2233",
+      "description": "O2 Sensor Signal Circuit Shorted to Heater Circuit (Bank 1 Sensor 3)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2234",
+      "description": "O2 Sensor Signal Circuit Shorted to Heater Circuit (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2235",
+      "description": "O2 Sensor Signal Circuit Shorted to Heater Circuit (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2236",
+      "description": "O2 Sensor Signal Circuit Shorted to Heater Circuit (Bank 2 Sensor 3)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2237",
+      "description": "O2 Sensor Positive Current Control Circuit/Open (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible rich or lean running",
+        "Possible reduced fuel economy"
+      ],
+      "causes": [
+        "Open in A/F sensor pump current circuit",
+        "Failed wide-range (A/F) O2 sensor",
+        "Connector corrosion or water intrusion",
+        "Harness damage near exhaust",
+        "ECM circuit fault (rare)"
+      ],
+      "notes": "Applies to wide-range (A/F) upstream sensors. Inspect harness routing near the exhaust and the connector terminals, then check circuit continuity and shorts per OEM procedure. These circuits operate at low currents, so do not use a test light on them.",
+      "related": [
+        "P2238",
+        "P2239",
+        "P2243",
+        "P2251",
+        "P0130"
+      ],
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2238",
+      "description": "O2 Sensor Positive Current Control Circuit Low (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2239",
+      "description": "O2 Sensor Positive Current Control Circuit High (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2240",
+      "description": "O2 Sensor Positive Current Control Circuit/Open (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2241",
+      "description": "O2 Sensor Positive Current Control Circuit Low (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2242",
+      "description": "O2 Sensor Positive Current Control Circuit High (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2243",
+      "description": "O2 Sensor Reference Voltage Circuit/Open (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2244",
+      "description": "O2 Sensor Reference Voltage Performance (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2245",
+      "description": "O2 Sensor Reference Voltage Circuit Low (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2246",
+      "description": "O2 Sensor Reference Voltage Circuit High (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2247",
+      "description": "O2 Sensor Reference Voltage Circuit/Open (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2248",
+      "description": "O2 Sensor Reference Voltage Performance (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2249",
+      "description": "O2 Sensor Reference Voltage Circuit Low (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2250",
+      "description": "O2 Sensor Reference Voltage Circuit High (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2251",
+      "description": "O2 Sensor Negative Current Control Circuit/Open (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible rich or lean running",
+        "Possible reduced fuel economy"
+      ],
+      "causes": [
+        "Open in A/F sensor negative current circuit",
+        "Failed wide-range (A/F) O2 sensor",
+        "Connector corrosion or water intrusion",
+        "Harness damage near exhaust",
+        "ECM circuit fault (rare)"
+      ],
+      "notes": "Applies to wide-range (A/F) upstream sensors. Inspect harness routing and connector terminals, then check continuity and shorts per OEM procedure. Do not use a test light on these low-current circuits.",
+      "related": [
+        "P2252",
+        "P2253",
+        "P2237",
+        "P2243"
+      ],
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2252",
+      "description": "O2 Sensor Negative Current Control Circuit Low (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2253",
+      "description": "O2 Sensor Negative Current Control Circuit High (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2254",
+      "description": "O2 Sensor Negative Current Control Circuit/Open (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2255",
+      "description": "O2 Sensor Negative Current Control Circuit Low (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2256",
+      "description": "O2 Sensor Negative Current Control Circuit High (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2257",
+      "description": "Secondary Air Injection System Control \"A\" Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2258",
+      "description": "Secondary Air Injection System Control \"B\" Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2259",
+      "description": "Secondary Air Injection System Control \"A\" Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2260",
+      "description": "Secondary Air Injection System Control \"B\" Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2261",
+      "description": "Turbo/Super Charger Bypass Valve - Mechanical",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2262",
+      "description": "Turbo/Super Charger Boost Pressure Not Detected - Mechanical",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2263",
+      "description": "Turbo/Super Charger Boost System Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Low power or reduced power mode",
+        "Slow boost build",
+        "Whistle or hiss under boost",
+        "Possible black smoke (diesel)"
+      ],
+      "causes": [
+        "Charge-air (boost) leak",
+        "Wastegate or actuator fault",
+        "Boost control solenoid or vacuum supply fault",
+        "Turbocharger wear or damage",
+        "Boost pressure sensor fault",
+        "Exhaust leak before turbine",
+        "Restricted intake or exhaust"
+      ],
+      "notes": "Compare desired and actual boost on a road test. Pressure-test the charge-air system with the engine off, check the wastegate or variable-geometry actuator and its control, and verify the boost sensor reads close to BARO with the engine off. Check turbocharger shaft play and blade damage only with the engine off and cool.",
+      "related": [
+        "P0299",
+        "P0234",
+        "P0236",
+        "P2261",
+        "P2262"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2264",
+      "description": "Water in Fuel Sensor Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2265",
+      "description": "Water in Fuel Sensor Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2266",
+      "description": "Water in Fuel Sensor Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2267",
+      "description": "Water in Fuel Sensor Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2268",
+      "description": "Water in Fuel Sensor Circuit Intermittent",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2269",
+      "description": "Water in Fuel Condition",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2270",
+      "description": "O2 Sensor Signal Biased/Stuck Lean (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Usually no drivability complaint"
+      ],
+      "causes": [
+        "Exhaust leak near downstream sensor",
+        "Downstream O2 sensor failure",
+        "Signal wiring or connector fault",
+        "Actual lean condition",
+        "Sensor contamination"
+      ],
+      "notes": "The ECM checks that the downstream sensor responds in both directions, rich during enrichment and lean during deceleration fuel cut. An exhaust leak ahead of the sensor, including at flex joints and flange gaskets, can draw in air and hold the signal lean. Verify with propane enrichment or a snap-throttle test before replacing the sensor (general technique).",
+      "related": [
+        "P2271",
+        "P0137",
+        "P0140",
+        "P2096",
+        "P0420"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2271",
+      "description": "O2 Sensor Signal Biased/Stuck Rich (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Usually no drivability complaint"
+      ],
+      "causes": [
+        "Downstream O2 sensor failure",
+        "Sensor contaminated (oil, coolant)",
+        "Signal shorted to heater or voltage",
+        "Actual rich condition",
+        "Leaking injector or purge valve"
+      ],
+      "notes": "The sensor should read lean during deceleration fuel cut. If it stays rich while the injectors are shut off, the sensor or its circuit is at fault. Check for contamination sources such as oil burning or coolant leaks before installing a new sensor.",
+      "related": [
+        "P2270",
+        "P0138",
+        "P2097",
+        "P0420"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2272",
+      "description": "O2 Sensor Signal Biased/Stuck Lean (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2273",
+      "description": "O2 Sensor Signal Biased/Stuck Rich (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2274",
+      "description": "O2 Sensor Signal Biased/Stuck Lean (Bank 1 Sensor 3)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2275",
+      "description": "O2 Sensor Signal Biased/Stuck Rich (Bank 1 Sensor 3)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2276",
+      "description": "O2 Sensor Signal Biased/Stuck Lean (Bank 2 Sensor 3)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2277",
+      "description": "O2 Sensor Signal Biased/Stuck Rich (Bank 2 Sensor 3)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2278",
+      "description": "O2 Sensor Signals Swapped Bank 1 Sensor 3 / Bank 2 Sensor 3",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2279",
+      "description": "Intake Air System Leak",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "Rough or high idle",
+        "Hissing noise",
+        "Lean fuel trims at idle",
+        "MIL on"
+      ],
+      "causes": [
+        "Cracked or disconnected intake hose",
+        "PCV valve or hose leak",
+        "Intake manifold gasket leak",
+        "Brake booster hose leak",
+        "Throttle body gasket leak",
+        "EVAP purge hose leak"
+      ],
+      "notes": "Usually set when the ECM sees more airflow than the MAF or throttle model predicts. Smoke-test the intake from the MAF to the intake valves with the engine off, including PCV and brake booster connections. Long-term fuel trims at idle often show a positive correction that decreases at higher RPM.",
+      "related": [
+        "P0171",
+        "P0174",
+        "P2187",
+        "P0507",
+        "P0101"
+      ],
+      "safety": [
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2280",
+      "description": "Air Flow Restriction / Air Leak Between Air Filter and MAF",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2281",
+      "description": "Air Leak Between MAF and Throttle Body",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2282",
+      "description": "Air Leak Between Throttle Body and Intake Valves",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls"
+    },
+    {
+      "code": "P2283",
+      "description": "Injector Control Pressure Sensor Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2284",
+      "description": "Injector Control Pressure Sensor Circuit Range/Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2285",
+      "description": "Injector Control Pressure Sensor Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2286",
+      "description": "Injector Control Pressure Sensor Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2287",
+      "description": "Injector Control Pressure Sensor Circuit Intermittent",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2288",
+      "description": "Injector Control Pressure Too High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2289",
+      "description": "Injector Control Pressure Too High - Engine Off",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2290",
+      "description": "Injector Control Pressure Too Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2291",
+      "description": "Injector Control Pressure Too Low - Engine Cranking",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2293",
+      "description": "Fuel Pressure Regulator 2 Performance",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2294",
+      "description": "Fuel Pressure Regulator 2 Control Circuit",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2295",
+      "description": "Fuel Pressure Regulator 2 Control Circuit Low",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2296",
+      "description": "Fuel Pressure Regulator 2 Control Circuit High",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2297",
+      "description": "O2 Sensor Out of Range During Deceleration (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2298",
+      "description": "O2 Sensor Out of Range During Deceleration (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2299",
+      "description": "Brake Pedal Position / Accelerator Pedal Position Incompatible",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "P2300",
+      "description": "Ignition Coil \"A\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "symptoms": [
+        "Misfire on affected cylinder",
+        "Rough running",
+        "Flashing MIL possible",
+        "Possible no-start on shared-coil systems"
+      ],
+      "causes": [
+        "Coil control circuit shorted to ground",
+        "Failed ignition coil (internal short)",
+        "Chafed harness",
+        "Connector fault at coil",
+        "ECM coil driver fault"
+      ],
+      "notes": "Coil letter-to-cylinder assignment is defined by the manufacturer; on many coil-per-cylinder engines coil A serves cylinder 1, but confirm in OEM information. Check the coil power feed and control circuit with the coil disconnected, and use a lab scope or test light on the control circuit while cranking to see whether the driver switches. An internally shorted coil can damage the ECM driver, so test before installing a replacement ECM.",
+      "related": [
+        "P2301",
+        "P2302",
+        "P0351",
+        "P0301",
+        "P0300"
+      ],
+      "safety": [
+        "ignition-voltage",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2301",
+      "description": "Ignition Coil \"A\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "symptoms": [
+        "Misfire on affected cylinder",
+        "Rough running",
+        "Flashing MIL possible"
+      ],
+      "causes": [
+        "Coil control circuit shorted to voltage",
+        "Failed ignition coil or igniter",
+        "Open coil ground (integrated igniter)",
+        "Connector fault at coil",
+        "ECM coil driver fault"
+      ],
+      "notes": "Check for a control circuit shorted to voltage and, on coils with an integrated igniter, for an open ground. Confirm the coil lettering for the engine in OEM information before testing.",
+      "related": [
+        "P2300",
+        "P2302",
+        "P0351",
+        "P0301"
+      ],
+      "safety": [
+        "ignition-voltage",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2302",
+      "description": "Ignition Coil \"A\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "symptoms": [
+        "Misfire on affected cylinder",
+        "Rough running under load",
+        "Flashing MIL possible"
+      ],
+      "causes": [
+        "Failed ignition coil secondary",
+        "Worn or fouled spark plug",
+        "Damaged coil boot or plug wire",
+        "Carbon tracking on boot",
+        "Moisture in spark plug well"
+      ],
+      "notes": "Some systems monitor secondary (spark) current or ion-sense feedback. Inspect the boot and plug for tracking, check plug gap and condition, and swap the coil to another cylinder to see whether the fault follows. Secondary ignition voltage can be very high; keep clear of coils and boots with the engine running.",
+      "related": [
+        "P2300",
+        "P2301",
+        "P0351",
+        "P0301"
+      ],
+      "safety": [
+        "ignition-voltage",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2303",
+      "description": "Ignition Coil \"B\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2304",
+      "description": "Ignition Coil \"B\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2305",
+      "description": "Ignition Coil \"B\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2306",
+      "description": "Ignition Coil \"C\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2307",
+      "description": "Ignition Coil \"C\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2308",
+      "description": "Ignition Coil \"C\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2309",
+      "description": "Ignition Coil \"D\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2310",
+      "description": "Ignition Coil \"D\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2311",
+      "description": "Ignition Coil \"D\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2312",
+      "description": "Ignition Coil \"E\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2313",
+      "description": "Ignition Coil \"E\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2314",
+      "description": "Ignition Coil \"E\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2315",
+      "description": "Ignition Coil \"F\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2316",
+      "description": "Ignition Coil \"F\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2317",
+      "description": "Ignition Coil \"F\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2318",
+      "description": "Ignition Coil \"G\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2319",
+      "description": "Ignition Coil \"G\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2320",
+      "description": "Ignition Coil \"G\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2321",
+      "description": "Ignition Coil \"H\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2322",
+      "description": "Ignition Coil \"H\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2323",
+      "description": "Ignition Coil \"H\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2324",
+      "description": "Ignition Coil \"I\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2325",
+      "description": "Ignition Coil \"I\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2326",
+      "description": "Ignition Coil \"I\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2327",
+      "description": "Ignition Coil \"J\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2328",
+      "description": "Ignition Coil \"J\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2329",
+      "description": "Ignition Coil \"J\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2330",
+      "description": "Ignition Coil \"K\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2331",
+      "description": "Ignition Coil \"K\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2332",
+      "description": "Ignition Coil \"K\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2333",
+      "description": "Ignition Coil \"L\" Primary Control Circuit Low",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2334",
+      "description": "Ignition Coil \"L\" Primary Control Circuit High",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2335",
+      "description": "Ignition Coil \"L\" Secondary Circuit",
+      "subsystem": "Ignition System or Misfire",
+      "safety": [
+        "ignition-voltage"
+      ]
+    },
+    {
+      "code": "P2336",
+      "description": "Cylinder #1 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2337",
+      "description": "Cylinder #2 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2338",
+      "description": "Cylinder #3 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2339",
+      "description": "Cylinder #4 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2340",
+      "description": "Cylinder #5 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2341",
+      "description": "Cylinder #6 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2342",
+      "description": "Cylinder #7 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2343",
+      "description": "Cylinder #8 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2344",
+      "description": "Cylinder #9 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2345",
+      "description": "Cylinder #10 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2346",
+      "description": "Cylinder #11 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2347",
+      "description": "Cylinder #12 Above Knock Threshold",
+      "subsystem": "Ignition System or Misfire"
+    },
+    {
+      "code": "P2400",
+      "description": "Evaporative Emission System Leak Detection Pump Control Circuit/Open",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2401",
+      "description": "Evaporative Emission System Leak Detection Pump Control Circuit Low",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2402",
+      "description": "Evaporative Emission System Leak Detection Pump Control Circuit High",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2403",
+      "description": "Evaporative Emission System Leak Detection Pump Sense Circuit/Open",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2404",
+      "description": "Evaporative Emission System Leak Detection Pump Sense Circuit Range/Performance",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2405",
+      "description": "Evaporative Emission System Leak Detection Pump Sense Circuit Low",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2406",
+      "description": "Evaporative Emission System Leak Detection Pump Sense Circuit High",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2407",
+      "description": "Evaporative Emission System Leak Detection Pump Sense Circuit Intermittent/Erratic",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2408",
+      "description": "Fuel Cap Sensor/Switch Circuit",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2409",
+      "description": "Fuel Cap Sensor/Switch Circuit Range/Performance",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2410",
+      "description": "Fuel Cap Sensor/Switch Circuit Low",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2411",
+      "description": "Fuel Cap Sensor/Switch Circuit High",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2412",
+      "description": "Fuel Cap Sensor/Switch Circuit Intermittent/Erratic",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2413",
+      "description": "Exhaust Gas Recirculation System Performance",
+      "subsystem": "Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible spark knock (low EGR flow)",
+        "Possible rough idle or stall (high flow)",
+        "Diesel: possible smoke or power loss"
+      ],
+      "causes": [
+        "Carbon-clogged EGR valve or passages",
+        "EGR valve stuck or sticking",
+        "EGR position sensor fault",
+        "Vacuum supply or solenoid fault",
+        "Restricted or leaking EGR cooler (diesel)",
+        "MAP or MAF sensor fault"
+      ],
+      "notes": "The ECM usually evaluates EGR flow from the change in MAP, MAF, or EGR differential pressure when EGR is commanded. Command the valve with a scan tool and observe position feedback and engine response. Check for carbon restriction in the valve and passages before replacing the valve.",
+      "related": [
+        "P0400",
+        "P0401",
+        "P0402",
+        "P0404",
+        "P2457"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2414",
+      "description": "O2 Sensor Exhaust Sample Error (Bank 1 Sensor 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2415",
+      "description": "O2 Sensor Exhaust Sample Error (Bank 2 Sensor 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2416",
+      "description": "O2 Sensor Signals Swapped Bank 1 Sensor 2 / Bank 1 Sensor 3",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2417",
+      "description": "O2 Sensor Signals Swapped Bank 2 Sensor 2 / Bank 2 Sensor 3",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2418",
+      "description": "Evaporative Emission System Switching Valve Control Circuit/Open",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2419",
+      "description": "Evaporative Emission System Switching Valve Control Circuit Low",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2420",
+      "description": "Evaporative Emission System Switching Valve Control Circuit High",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2421",
+      "description": "Evaporative Emission System Vent Valve Stuck Open",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2422",
+      "description": "Evaporative Emission System Vent Valve Stuck Closed",
+      "subsystem": "Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Fuel nozzle shuts off when refueling",
+        "Rush of air when cap is removed"
+      ],
+      "causes": [
+        "Vent valve stuck closed",
+        "Blocked vent filter or hose",
+        "Debris or insect nests in vent line",
+        "Canister saturated with liquid fuel",
+        "Vent valve control circuit fault"
+      ],
+      "notes": "Check the vent path by commanding the vent valve open and confirming flow, or by applying low-pressure smoke or air to the vent line per OEM procedure. Inspect the vent filter and inlet for dirt, insects, or water. A canister contaminated with liquid fuel from overfilling can restrict venting.",
+      "related": [
+        "P0446",
+        "P0449",
+        "P2421",
+        "P0455"
+      ],
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2423",
+      "description": "HC Adsorption Catalyst Efficiency Below Threshold (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2424",
+      "description": "HC Adsorption Catalyst Efficiency Below Threshold (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2425",
+      "description": "Exhaust Gas Recirculation Cooling Valve Control Circuit/Open",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2426",
+      "description": "Exhaust Gas Recirculation Cooling Valve Control Circuit Low",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2427",
+      "description": "Exhaust Gas Recirculation Cooling Valve Control Circuit High",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2428",
+      "description": "Exhaust Gas Temperature Too High (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2429",
+      "description": "Exhaust Gas Temperature Too High (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2430",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2431",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit Range/Performance (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2432",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit Low (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2433",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit High (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2434",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit Intermittent/Erratic (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2435",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2436",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit Range/Performance (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2437",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit Low (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2438",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit High (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2439",
+      "description": "Secondary Air Injection System Air Flow/Pressure Sensor Circuit Intermittent/Erratic (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2440",
+      "description": "Secondary Air Injection System Switching Valve Stuck Open (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible noise from air pump",
+        "Possible seized air pump"
+      ],
+      "causes": [
+        "Secondary air switching valve stuck open",
+        "Carbon or corrosion in valve",
+        "Valve control fault (vacuum or electric)",
+        "Moisture damage in valve"
+      ],
+      "notes": "A switching (check) valve that sticks open lets exhaust gas and moisture back into the air pump and hoses, which can seize the pump. When replacing a failed air pump, inspect the switching valve and hoses for moisture and carbon to avoid a repeat failure.",
+      "related": [
+        "P2441",
+        "P2444",
+        "P0410",
+        "P0411"
+      ],
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2441",
+      "description": "Secondary Air Injection System Switching Valve Stuck Closed (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2442",
+      "description": "Secondary Air Injection System Switching Valve Stuck Open (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2443",
+      "description": "Secondary Air Injection System Switching Valve Stuck Closed (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2444",
+      "description": "Secondary Air Injection System Pump Stuck On (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "symptoms": [
+        "Air pump runs continuously",
+        "Air pump noise beyond cold-start period",
+        "Possible drained battery"
+      ],
+      "causes": [
+        "Air pump relay stuck closed",
+        "Relay control circuit shorted to ground",
+        "ECM driver fault",
+        "Pump wiring fault"
+      ],
+      "notes": "Check whether the pump runs with the ignition off or longer than commanded; if so, test the pump relay and its control circuit. Continuous operation can overheat the pump and drain the battery.",
+      "related": [
+        "P2445",
+        "P2440",
+        "P0410",
+        "P0411"
+      ],
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "P2445",
+      "description": "Secondary Air Injection System Pump Stuck Off (Bank 1)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2446",
+      "description": "Secondary Air Injection System Pump Stuck On (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2447",
+      "description": "Secondary Air Injection System Pump Stuck Off (Bank 2)",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2452",
+      "description": "Diesel Particulate Filter Pressure Sensor \"A\" Circuit",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2453",
+      "description": "Diesel Particulate Filter Pressure Sensor \"A\" Circuit Range/Performance",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2454",
+      "description": "Diesel Particulate Filter Pressure Sensor \"A\" Circuit Low",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2455",
+      "description": "Diesel Particulate Filter Pressure Sensor \"A\" Circuit High",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2456",
+      "description": "Diesel Particulate Filter Pressure Sensor \"A\" Circuit Intermittent/Erratic",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2457",
+      "description": "Exhaust Gas Recirculation Cooling System Performance",
+      "subsystem": "Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible coolant loss",
+        "White smoke or steam from exhaust",
+        "Possible overheating"
+      ],
+      "causes": [
+        "Restricted or fouled EGR cooler",
+        "Internally leaking EGR cooler",
+        "Low coolant flow through cooler",
+        "EGR temperature sensor fault",
+        "Cooling system fault (thermostat, pump)"
+      ],
+      "notes": "The ECM compares EGR gas temperature after the cooler with expected values. A restricted cooler or low coolant flow raises outlet temperature; an internally leaking cooler can consume coolant and produce white exhaust smoke. Pressure-test the cooling system and check EGR temperature sensor readings before replacing the cooler, and look for coolant in the intake or exhaust.",
+      "related": [
+        "P0401",
+        "P2413",
+        "P0400"
+      ],
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2458",
+      "description": "Diesel Particulate Filter Regeneration Duration",
+      "subsystem": "Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2459",
+      "description": "Diesel Particulate Filter Regeneration Frequency",
+      "subsystem": "Auxiliary Emission Controls",
+      "symptoms": [
+        "Frequent DPF regenerations",
+        "Increased fuel consumption",
+        "MIL on",
+        "Possible rising oil level (fuel dilution)"
+      ],
+      "causes": [
+        "Excessive engine-out soot",
+        "Short-trip or idle-heavy duty cycle",
+        "DPF pressure sensor or hose fault",
+        "Injector, EGR, or boost faults",
+        "Ash-loaded DPF"
+      ],
+      "notes": "The ECM counts regenerations over distance or time. Review soot load and regeneration history with a scan tool, verify the DPF pressure sensor and hoses, and look for root causes of high soot production such as injectors, EGR faults, boost leaks, or a restricted air filter. Stationary regeneration produces very high exhaust temperatures; perform it outdoors or with suitable exhaust extraction and keep clear of the outlet.",
+      "related": [
+        "P2458",
+        "P2463",
+        "P2452",
+        "P2453",
+        "P2002"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2463",
+      "description": "Diesel Particulate Filter Restriction - Soot Accumulation",
+      "subsystem": "Auxiliary Emission Controls",
+      "symptoms": [
+        "Reduced power or derate",
+        "DPF warning lamp",
+        "Regeneration will not complete",
+        "MIL on"
+      ],
+      "causes": [
+        "Interrupted regenerations (short trips)",
+        "DPF pressure sensor or hose fault",
+        "Excessive engine-out soot",
+        "EGT sensor fault inhibiting regeneration",
+        "Ash-loaded DPF",
+        "Injector or EGR problems"
+      ],
+      "notes": "Verify the DPF differential pressure sensor and its hoses first; hoses can crack, melt, or plug. Check that no other faults (EGT sensors, NOx sensors, EGR) are inhibiting regeneration. A scan-tool service regeneration may recover a moderately loaded filter within OEM-defined soot limits; beyond those limits the filter may need off-vehicle cleaning or replacement. Follow OEM safety precautions for stationary regeneration.",
+      "related": [
+        "P2459",
+        "P2458",
+        "P2452",
+        "P2453",
+        "P2002",
+        "P2032"
+      ],
+      "safety": [
+        "hot-surfaces",
+        "exhaust-gas"
+      ]
+    },
+    {
+      "code": "P2500",
+      "description": "Generator Lamp/L-Terminal Circuit Low",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2501",
+      "description": "Generator Lamp/L-Terminal Circuit High",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2502",
+      "description": "Charging System Voltage",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2503",
+      "description": "Charging System Voltage Low",
+      "subsystem": "Auxiliary Inputs",
+      "symptoms": [
+        "Battery or charge warning lamp",
+        "Dim lights",
+        "Slow crank or no-start",
+        "Multiple module U-codes"
+      ],
+      "causes": [
+        "Loose or worn drive belt",
+        "Failed generator (alternator)",
+        "Poor generator B+ or ground connection",
+        "Generator control circuit fault",
+        "Weak or failed battery",
+        "Excessive electrical load"
+      ],
+      "notes": "Test battery state of charge and capacity first, then check generator output under load and voltage drop on the B+ and ground paths. Many late-model systems control generator output through the ECM or BCM, so compare commanded and actual output with a scan tool before replacing the generator.",
+      "related": [
+        "P2504",
+        "P0562",
+        "P0620",
+        "P0622",
+        "P2500"
+      ],
+      "safety": [
+        "high-current",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2504",
+      "description": "Charging System Voltage High",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current",
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2505",
+      "description": "ECM/PCM Power Input Signal",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "P2506",
+      "description": "ECM/PCM Power Input Signal Range/Performance",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "P2507",
+      "description": "ECM/PCM Power Input Signal Low",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "P2508",
+      "description": "ECM/PCM Power Input Signal High",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "P2509",
+      "description": "ECM/PCM Power Input Signal Intermittent",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "P2510",
+      "description": "ECM/PCM Power Relay Sense Circuit Range/Performance",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "P2511",
+      "description": "ECM/PCM Power Relay Sense Circuit Intermittent",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "high-current"
+      ]
+    },
+    {
+      "code": "P2515",
+      "description": "A/C Refrigerant Pressure Sensor \"B\" Circuit",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "refrigerant"
+      ]
+    },
+    {
+      "code": "P2516",
+      "description": "A/C Refrigerant Pressure Sensor \"B\" Circuit Range/Performance",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "refrigerant"
+      ]
+    },
+    {
+      "code": "P2517",
+      "description": "A/C Refrigerant Pressure Sensor \"B\" Circuit Low",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "refrigerant"
+      ]
+    },
+    {
+      "code": "P2518",
+      "description": "A/C Refrigerant Pressure Sensor \"B\" Circuit High",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "refrigerant"
+      ]
+    },
+    {
+      "code": "P2519",
+      "description": "A/C Request \"A\" Circuit",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2520",
+      "description": "A/C Request \"A\" Circuit Low",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2521",
+      "description": "A/C Request \"A\" Circuit High",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2522",
+      "description": "A/C Request \"B\" Circuit",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2523",
+      "description": "A/C Request \"B\" Circuit Low",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2524",
+      "description": "A/C Request \"B\" Circuit High",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2525",
+      "description": "Vacuum Reservoir Pressure Sensor Circuit",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2526",
+      "description": "Vacuum Reservoir Pressure Sensor Circuit Range/Performance",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2527",
+      "description": "Vacuum Reservoir Pressure Sensor Circuit Low",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2528",
+      "description": "Vacuum Reservoir Pressure Sensor Circuit High",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2529",
+      "description": "Vacuum Reservoir Pressure Sensor Circuit Intermittent",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2530",
+      "description": "Ignition Switch Run Position Circuit",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2531",
+      "description": "Ignition Switch Run Position Circuit Low",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2532",
+      "description": "Ignition Switch Run Position Circuit High",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2533",
+      "description": "Ignition Switch Run/Start Position Circuit",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2534",
+      "description": "Ignition Switch Run/Start Position Circuit Low",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2535",
+      "description": "Ignition Switch Run/Start Position Circuit High",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2536",
+      "description": "Ignition Switch Accessory Position Circuit",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2537",
+      "description": "Ignition Switch Accessory Position Circuit Low",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2538",
+      "description": "Ignition Switch Accessory Position Circuit High",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2539",
+      "description": "Low Pressure Fuel System Sensor Circuit",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2540",
+      "description": "Low Pressure Fuel System Sensor Circuit Range/Performance",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2541",
+      "description": "Low Pressure Fuel System Sensor Circuit Low",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2542",
+      "description": "Low Pressure Fuel System Sensor Circuit High",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2543",
+      "description": "Low Pressure Fuel System Sensor Circuit Intermittent",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2544",
+      "description": "Torque Management Request Input Signal \"A\"",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2545",
+      "description": "Torque Management Request Input Signal \"A\" Range/Performance",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2546",
+      "description": "Torque Management Request Input Signal \"A\" Low",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2547",
+      "description": "Torque Management Request Input Signal \"A\" High",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2548",
+      "description": "Torque Management Request Input Signal \"B\"",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2549",
+      "description": "Torque Management Request Input Signal \"B\" Range/Performance",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2550",
+      "description": "Torque Management Request Input Signal \"B\" Low",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2551",
+      "description": "Torque Management Request Input Signal \"B\" High",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2556",
+      "description": "Engine Coolant Level Sensor/Switch Circuit",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2557",
+      "description": "Engine Coolant Level Sensor/Switch Circuit Range/Performance",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2558",
+      "description": "Engine Coolant Level Sensor/Switch Circuit Low",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2559",
+      "description": "Engine Coolant Level Sensor/Switch Circuit High",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2560",
+      "description": "Engine Coolant Level Low",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2561",
+      "description": "A/C Control Module Requested MIL Illumination",
+      "subsystem": "Auxiliary Inputs"
+    },
+    {
+      "code": "P2562",
+      "description": "Turbocharger Boost Control Position Sensor Circuit",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2563",
+      "description": "Turbocharger Boost Control Position Sensor Circuit Range/Performance",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2564",
+      "description": "Turbocharger Boost Control Position Sensor Circuit Low",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2565",
+      "description": "Turbocharger Boost Control Position Sensor Circuit High",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2566",
+      "description": "Turbocharger Boost Control Position Sensor Circuit Intermittent",
+      "subsystem": "Auxiliary Inputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2600",
+      "description": "Coolant Pump Control Circuit/Open",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2601",
+      "description": "Coolant Pump Control Circuit Range/Performance",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2602",
+      "description": "Coolant Pump Control Circuit Low",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2603",
+      "description": "Coolant Pump Control Circuit High",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2610",
+      "description": "ECM/PCM Internal Engine Off Timer Performance",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2614",
+      "description": "Camshaft Position Signal Output Circuit/Open",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2615",
+      "description": "Camshaft Position Signal Output Circuit Low",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2616",
+      "description": "Camshaft Position Signal Output Circuit High",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2617",
+      "description": "Crankshaft Position Signal Output Circuit/Open",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2618",
+      "description": "Crankshaft Position Signal Output Circuit Low",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2619",
+      "description": "Crankshaft Position Signal Output Circuit High",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2620",
+      "description": "Throttle Position Output Circuit/Open",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2621",
+      "description": "Throttle Position Output Circuit Low",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2622",
+      "description": "Throttle Position Output Circuit High",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2623",
+      "description": "Injector Control Pressure Regulator Circuit/Open",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2624",
+      "description": "Injector Control Pressure Regulator Circuit Low",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2625",
+      "description": "Injector Control Pressure Regulator Circuit High",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "compressed"
+      ]
+    },
+    {
+      "code": "P2626",
+      "description": "O2 Sensor Pumping Current Trim Circuit/Open (Bank 1 Sensor 1)",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2627",
+      "description": "O2 Sensor Pumping Current Trim Circuit Low (Bank 1 Sensor 1)",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2628",
+      "description": "O2 Sensor Pumping Current Trim Circuit High (Bank 1 Sensor 1)",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2629",
+      "description": "O2 Sensor Pumping Current Trim Circuit/Open (Bank 2 Sensor 1)",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2630",
+      "description": "O2 Sensor Pumping Current Trim Circuit Low (Bank 2 Sensor 1)",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2631",
+      "description": "O2 Sensor Pumping Current Trim Circuit High (Bank 2 Sensor 1)",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2632",
+      "description": "Fuel Pump \"B\" Control Circuit/Open",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2633",
+      "description": "Fuel Pump \"B\" Control Circuit Low",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2634",
+      "description": "Fuel Pump \"B\" Control Circuit High",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2635",
+      "description": "Fuel Pump \"A\" Low Flow/Performance",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "symptoms": [
+        "Hesitation or power loss under load",
+        "Extended crank or hard start",
+        "Engine stalling",
+        "Possible lean codes"
+      ],
+      "causes": [
+        "Weak or failing fuel pump",
+        "Restricted fuel filter or strainer",
+        "High resistance in pump power or ground",
+        "Fuel pump control module fault",
+        "Fuel pressure sensor fault",
+        "Leaking fuel line or fitting"
+      ],
+      "notes": "Measure fuel pressure and volume under load and voltage-drop test the pump power and ground circuits while the pump runs. On returnless systems with a fuel pump control module, compare commanded duty cycle with actual pressure. Relieve fuel pressure per OEM procedure before opening the system.",
+      "related": [
+        "P0087",
+        "P0171",
+        "P0230",
+        "P0627",
+        "P2632"
+      ],
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2636",
+      "description": "Fuel Pump \"B\" Low Flow/Performance",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "safety": [
+        "fuel"
+      ]
+    },
+    {
+      "code": "P2645",
+      "description": "\"A\" Rocker Arm Actuator Control Circuit/Open (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2646",
+      "description": "\"A\" Rocker Arm Actuator System Performance or Stuck Off (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs",
+      "symptoms": [
+        "MIL on",
+        "Lack of power at high RPM",
+        "Possible rough idle"
+      ],
+      "causes": [
+        "Low or dirty engine oil",
+        "Incorrect oil viscosity",
+        "Clogged oil control solenoid screen",
+        "Faulty rocker arm oil pressure switch",
+        "Sticking rocker arm oil control solenoid",
+        "Low oil pressure (engine wear)"
+      ],
+      "notes": "Common on engines with oil-pressure-switched variable valve lift. Check oil level, condition, and grade first, then inspect the oil control solenoid, its filter screen, and the oil pressure switch or sensor. Verify actual oil pressure with a mechanical gauge if low oil pressure is suspected.",
+      "related": [
+        "P2645",
+        "P2647",
+        "P2648",
+        "P2649"
+      ],
+      "safety": [
+        "rotating"
+      ]
+    },
+    {
+      "code": "P2647",
+      "description": "\"A\" Rocker Arm Actuator System Stuck On (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2648",
+      "description": "\"A\" Rocker Arm Actuator Control Circuit Low (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2649",
+      "description": "\"A\" Rocker Arm Actuator Control Circuit High (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2650",
+      "description": "\"B\" Rocker Arm Actuator Control Circuit/Open (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2651",
+      "description": "\"B\" Rocker Arm Actuator System Performance or Stuck Off (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2652",
+      "description": "\"B\" Rocker Arm Actuator System Stuck On (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2653",
+      "description": "\"B\" Rocker Arm Actuator Control Circuit Low (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2654",
+      "description": "\"B\" Rocker Arm Actuator Control Circuit High (Bank 1)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2655",
+      "description": "\"A\" Rocker Arm Actuator Control Circuit/Open (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2656",
+      "description": "\"A\" Rocker Arm Actuator System Performance or Stuck Off (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2657",
+      "description": "\"A\" Rocker Arm Actuator System Stuck On (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2658",
+      "description": "\"A\" Rocker Arm Actuator Control Circuit Low (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2659",
+      "description": "\"A\" Rocker Arm Actuator Control Circuit High (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2660",
+      "description": "\"B\" Rocker Arm Actuator Control Circuit/Open (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2661",
+      "description": "\"B\" Rocker Arm Actuator System Performance or Stuck Off (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2662",
+      "description": "\"B\" Rocker Arm Actuator System Stuck On (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2663",
+      "description": "\"B\" Rocker Arm Actuator Control Circuit Low (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2664",
+      "description": "\"B\" Rocker Arm Actuator Control Circuit High (Bank 2)",
+      "subsystem": "Computer and Auxiliary Outputs"
+    },
+    {
+      "code": "P2700",
+      "description": "Transmission Friction Element \"A\" Apply Time Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2701",
+      "description": "Transmission Friction Element \"B\" Apply Time Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2702",
+      "description": "Transmission Friction Element \"C\" Apply Time Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2703",
+      "description": "Transmission Friction Element \"D\" Apply Time Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2704",
+      "description": "Transmission Friction Element \"E\" Apply Time Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2705",
+      "description": "Transmission Friction Element \"F\" Apply Time Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2706",
+      "description": "Shift Solenoid \"F\"",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2707",
+      "description": "Shift Solenoid \"F\" Performance or Stuck Off",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2708",
+      "description": "Shift Solenoid \"F\" Stuck On",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2709",
+      "description": "Shift Solenoid \"F\" Electrical",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2710",
+      "description": "Shift Solenoid \"F\" Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2711",
+      "description": "Unexpected Mechanical Gear Disengagement",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2713",
+      "description": "Pressure Control Solenoid \"D\"",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2714",
+      "description": "Pressure Control Solenoid \"D\" Performance or Stuck Off",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2715",
+      "description": "Pressure Control Solenoid \"D\" Stuck On",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2716",
+      "description": "Pressure Control Solenoid \"D\" Electrical",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2717",
+      "description": "Pressure Control Solenoid \"D\" Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2718",
+      "description": "Pressure Control Solenoid \"D\" Control Circuit/Open",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2719",
+      "description": "Pressure Control Solenoid \"D\" Control Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2720",
+      "description": "Pressure Control Solenoid \"D\" Control Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2721",
+      "description": "Pressure Control Solenoid \"D\" Control Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2722",
+      "description": "Pressure Control Solenoid \"E\"",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2723",
+      "description": "Pressure Control Solenoid \"E\" Performance or Stuck Off",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2724",
+      "description": "Pressure Control Solenoid \"E\" Stuck On",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2725",
+      "description": "Pressure Control Solenoid \"E\" Electrical",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2726",
+      "description": "Pressure Control Solenoid \"E\" Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2727",
+      "description": "Pressure Control Solenoid \"E\" Control Circuit/Open",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2728",
+      "description": "Pressure Control Solenoid \"E\" Control Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2729",
+      "description": "Pressure Control Solenoid \"E\" Control Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2730",
+      "description": "Pressure Control Solenoid \"E\" Control Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2731",
+      "description": "Pressure Control Solenoid \"F\"",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2732",
+      "description": "Pressure Control Solenoid \"F\" Performance or Stuck Off",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2733",
+      "description": "Pressure Control Solenoid \"F\" Stuck On",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2734",
+      "description": "Pressure Control Solenoid \"F\" Electrical",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2735",
+      "description": "Pressure Control Solenoid \"F\" Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2736",
+      "description": "Pressure Control Solenoid \"F\" Control Circuit/Open",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2737",
+      "description": "Pressure Control Solenoid \"F\" Control Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2738",
+      "description": "Pressure Control Solenoid \"F\" Control Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2739",
+      "description": "Pressure Control Solenoid \"F\" Control Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2740",
+      "description": "Transmission Fluid Temperature Sensor \"B\" Circuit",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2741",
+      "description": "Transmission Fluid Temperature Sensor \"B\" Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2742",
+      "description": "Transmission Fluid Temperature Sensor \"B\" Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2743",
+      "description": "Transmission Fluid Temperature Sensor \"B\" Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2744",
+      "description": "Transmission Fluid Temperature Sensor \"B\" Circuit Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2745",
+      "description": "Intermediate Shaft Speed Sensor \"B\" Circuit",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2746",
+      "description": "Intermediate Shaft Speed Sensor \"B\" Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2747",
+      "description": "Intermediate Shaft Speed Sensor \"B\" Circuit No Signal",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2748",
+      "description": "Intermediate Shaft Speed Sensor \"B\" Circuit Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2749",
+      "description": "Intermediate Shaft Speed Sensor \"C\" Circuit",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2750",
+      "description": "Intermediate Shaft Speed Sensor \"C\" Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2751",
+      "description": "Intermediate Shaft Speed Sensor \"C\" Circuit No Signal",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2752",
+      "description": "Intermediate Shaft Speed Sensor \"C\" Circuit Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2753",
+      "description": "Transmission Fluid Cooler Control Circuit/Open",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2754",
+      "description": "Transmission Fluid Cooler Control Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2755",
+      "description": "Transmission Fluid Cooler Control Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2756",
+      "description": "Torque Converter Clutch Pressure Control Solenoid",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2757",
+      "description": "Torque Converter Clutch Pressure Control Solenoid Control Circuit Performance or Stuck Off",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2758",
+      "description": "Torque Converter Clutch Pressure Control Solenoid Control Circuit Stuck On",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2759",
+      "description": "Torque Converter Clutch Pressure Control Solenoid Control Circuit Electrical",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2760",
+      "description": "Torque Converter Clutch Pressure Control Solenoid Control Circuit Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2761",
+      "description": "Torque Converter Clutch Pressure Control Solenoid Control Circuit/Open",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2762",
+      "description": "Torque Converter Clutch Pressure Control Solenoid Control Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2763",
+      "description": "Torque Converter Clutch Pressure Control Solenoid Control Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2764",
+      "description": "Torque Converter Clutch Pressure Control Solenoid Control Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2765",
+      "description": "Input/Turbine Speed Sensor \"B\" Circuit",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2766",
+      "description": "Input/Turbine Speed Sensor \"B\" Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2767",
+      "description": "Input/Turbine Speed Sensor \"B\" Circuit No Signal",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2768",
+      "description": "Input/Turbine Speed Sensor \"B\" Circuit Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2769",
+      "description": "Torque Converter Clutch Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2770",
+      "description": "Torque Converter Clutch Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2771",
+      "description": "Four Wheel Drive (4WD) Low Switch Circuit",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2772",
+      "description": "Four Wheel Drive (4WD) Low Switch Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2773",
+      "description": "Four Wheel Drive (4WD) Low Switch Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2774",
+      "description": "Four Wheel Drive (4WD) Low Switch Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2775",
+      "description": "Upshift Switch Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2776",
+      "description": "Upshift Switch Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2777",
+      "description": "Upshift Switch Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2778",
+      "description": "Upshift Switch Circuit Intermittent/Erratic",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2779",
+      "description": "Downshift Switch Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2780",
+      "description": "Downshift Switch Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2781",
+      "description": "Downshift Switch Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2782",
+      "description": "Downshift Switch Circuit Intermittent/Erratic",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2783",
+      "description": "Torque Converter Temperature Too High",
+      "subsystem": "Transmission",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2784",
+      "description": "Input/Turbine Speed Sensor \"A\"/\"B\" Correlation",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2785",
+      "description": "Clutch Actuator Temperature Too High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2786",
+      "description": "Gear Shift Actuator Temperature Too High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2787",
+      "description": "Clutch Temperature Too High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2788",
+      "description": "Auto Shift Manual Adaptive Learning at Limit",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2789",
+      "description": "Clutch Adaptive Learning at Limit",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2800",
+      "description": "Transmission Range Sensor \"B\" Circuit (PRNDL Input)",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2801",
+      "description": "Transmission Range Sensor \"B\" Circuit Range/Performance",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2802",
+      "description": "Transmission Range Sensor \"B\" Circuit Low",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2803",
+      "description": "Transmission Range Sensor \"B\" Circuit High",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2804",
+      "description": "Transmission Range Sensor \"B\" Circuit Intermittent",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2805",
+      "description": "Transmission Range Sensor \"A\"/\"B\" Correlation",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2806",
+      "description": "Transmission Range Sensor Alignment",
+      "subsystem": "Transmission"
+    },
+    {
+      "code": "P2A00",
+      "description": "O2 Sensor Circuit Range/Performance (Bank 1 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "symptoms": [
+        "MIL on",
+        "Possible reduced fuel economy",
+        "Possible rough running"
+      ],
+      "causes": [
+        "Aged or slow A/F or O2 sensor",
+        "Exhaust leak ahead of sensor",
+        "Sensor contamination",
+        "Fuel delivery or airflow fault",
+        "Wiring or connector fault"
+      ],
+      "notes": "Sets when the upstream sensor output is implausible for operating conditions or responds too slowly. Check for exhaust leaks and fuel trim problems first, then evaluate sensor response to commanded or induced rich and lean changes. Check for applicable OEM service bulletins or software updates.",
+      "related": [
+        "P2A03",
+        "P0133",
+        "P2195",
+        "P2196",
+        "P0171"
+      ],
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2A01",
+      "description": "O2 Sensor Circuit Range/Performance (Bank 1 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2A02",
+      "description": "O2 Sensor Circuit Range/Performance (Bank 1 Sensor 3)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2A03",
+      "description": "O2 Sensor Circuit Range/Performance (Bank 2 Sensor 1)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2A04",
+      "description": "O2 Sensor Circuit Range/Performance (Bank 2 Sensor 2)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P2A05",
+      "description": "O2 Sensor Circuit Range/Performance (Bank 2 Sensor 3)",
+      "subsystem": "Fuel and Air Metering and Auxiliary Emission Controls",
+      "safety": [
+        "hot-surfaces"
+      ]
+    },
+    {
+      "code": "P3400",
+      "description": "Cylinder Deactivation System Bank 1",
+      "subsystem": "Cylinder Deactivation",
+      "symptoms": [
+        "MIL on",
+        "Cylinder deactivation disabled",
+        "Possible misfire or rough running",
+        "Possible valvetrain noise"
+      ],
+      "causes": [
+        "Low oil level or pressure",
+        "Incorrect oil viscosity",
+        "Deactivation solenoid or valve fault",
+        "Oil pressure sensor fault",
+        "Sticking or collapsed deactivation lifters",
+        "Solenoid circuit fault"
+      ],
+      "notes": "Cylinder deactivation systems are sensitive to oil level, viscosity, and pressure. Verify oil level and grade per OEM specification and check oil pressure with a gauge, then test the deactivation solenoids with a scan tool. Mechanical lifter or rocker failures can also cause misfire codes on deactivated cylinders.",
+      "related": [
+        "P3497",
+        "P3401",
+        "P0521",
+        "P0300"
+      ],
+      "safety": [
+        "rotating"
+      ]
+    },
+    {
+      "code": "P3401",
+      "description": "Cylinder 1 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation",
+      "symptoms": [
+        "MIL on",
+        "Cylinder deactivation disabled",
+        "Possible reduced fuel economy"
+      ],
+      "causes": [
+        "Open solenoid winding",
+        "Open or damaged wiring",
+        "Connector or harness fault at solenoid",
+        "Loss of solenoid power supply",
+        "ECM driver fault (rare)"
+      ],
+      "notes": "On many V8 cylinder deactivation systems the solenoids are part of an oil control assembly under the intake manifold. Check solenoid resistance and circuit integrity from the ECM connector against OEM specifications before removing the intake.",
+      "related": [
+        "P3400",
+        "P3425",
+        "P3441",
+        "P3449"
+      ]
+    },
+    {
+      "code": "P3402",
+      "description": "Cylinder 1 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3403",
+      "description": "Cylinder 1 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3404",
+      "description": "Cylinder 1 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3405",
+      "description": "Cylinder 1 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3406",
+      "description": "Cylinder 1 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3407",
+      "description": "Cylinder 1 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3408",
+      "description": "Cylinder 1 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3409",
+      "description": "Cylinder 2 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3410",
+      "description": "Cylinder 2 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3411",
+      "description": "Cylinder 2 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3412",
+      "description": "Cylinder 2 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3413",
+      "description": "Cylinder 2 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3414",
+      "description": "Cylinder 2 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3415",
+      "description": "Cylinder 2 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3416",
+      "description": "Cylinder 2 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3417",
+      "description": "Cylinder 3 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3418",
+      "description": "Cylinder 3 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3419",
+      "description": "Cylinder 3 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3420",
+      "description": "Cylinder 3 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3421",
+      "description": "Cylinder 3 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3422",
+      "description": "Cylinder 3 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3423",
+      "description": "Cylinder 3 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3424",
+      "description": "Cylinder 3 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3425",
+      "description": "Cylinder 4 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3426",
+      "description": "Cylinder 4 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3427",
+      "description": "Cylinder 4 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3428",
+      "description": "Cylinder 4 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3429",
+      "description": "Cylinder 4 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3430",
+      "description": "Cylinder 4 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3431",
+      "description": "Cylinder 4 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3432",
+      "description": "Cylinder 4 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3433",
+      "description": "Cylinder 5 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3434",
+      "description": "Cylinder 5 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3435",
+      "description": "Cylinder 5 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3436",
+      "description": "Cylinder 5 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3437",
+      "description": "Cylinder 5 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3438",
+      "description": "Cylinder 5 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3439",
+      "description": "Cylinder 5 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3440",
+      "description": "Cylinder 5 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3441",
+      "description": "Cylinder 6 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3442",
+      "description": "Cylinder 6 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3443",
+      "description": "Cylinder 6 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3444",
+      "description": "Cylinder 6 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3445",
+      "description": "Cylinder 6 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3446",
+      "description": "Cylinder 6 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3447",
+      "description": "Cylinder 6 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3448",
+      "description": "Cylinder 6 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3449",
+      "description": "Cylinder 7 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3450",
+      "description": "Cylinder 7 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3451",
+      "description": "Cylinder 7 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3452",
+      "description": "Cylinder 7 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3453",
+      "description": "Cylinder 7 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3454",
+      "description": "Cylinder 7 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3455",
+      "description": "Cylinder 7 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3456",
+      "description": "Cylinder 7 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3457",
+      "description": "Cylinder 8 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3458",
+      "description": "Cylinder 8 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3459",
+      "description": "Cylinder 8 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3460",
+      "description": "Cylinder 8 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3461",
+      "description": "Cylinder 8 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3462",
+      "description": "Cylinder 8 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3463",
+      "description": "Cylinder 8 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3464",
+      "description": "Cylinder 8 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3465",
+      "description": "Cylinder 9 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3466",
+      "description": "Cylinder 9 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3467",
+      "description": "Cylinder 9 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3468",
+      "description": "Cylinder 9 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3469",
+      "description": "Cylinder 9 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3470",
+      "description": "Cylinder 9 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3471",
+      "description": "Cylinder 9 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3472",
+      "description": "Cylinder 9 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3473",
+      "description": "Cylinder 10 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3474",
+      "description": "Cylinder 10 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3475",
+      "description": "Cylinder 10 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3476",
+      "description": "Cylinder 10 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3477",
+      "description": "Cylinder 10 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3478",
+      "description": "Cylinder 10 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3479",
+      "description": "Cylinder 10 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3480",
+      "description": "Cylinder 10 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3481",
+      "description": "Cylinder 11 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3482",
+      "description": "Cylinder 11 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3483",
+      "description": "Cylinder 11 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3484",
+      "description": "Cylinder 11 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3485",
+      "description": "Cylinder 11 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3486",
+      "description": "Cylinder 11 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3487",
+      "description": "Cylinder 11 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3488",
+      "description": "Cylinder 11 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3489",
+      "description": "Cylinder 12 Deactivation/Intake Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3490",
+      "description": "Cylinder 12 Deactivation/Intake Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3491",
+      "description": "Cylinder 12 Deactivation/Intake Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3492",
+      "description": "Cylinder 12 Deactivation/Intake Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3493",
+      "description": "Cylinder 12 Exhaust Valve Control Circuit/Open",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3494",
+      "description": "Cylinder 12 Exhaust Valve Control Circuit Performance",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3495",
+      "description": "Cylinder 12 Exhaust Valve Control Circuit Low",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3496",
+      "description": "Cylinder 12 Exhaust Valve Control Circuit High",
+      "subsystem": "Cylinder Deactivation"
+    },
+    {
+      "code": "P3497",
+      "description": "Cylinder Deactivation System Bank 2",
+      "subsystem": "Cylinder Deactivation",
+      "symptoms": [
+        "MIL on",
+        "Cylinder deactivation disabled",
+        "Possible misfire or rough running",
+        "Possible valvetrain noise"
+      ],
+      "causes": [
+        "Low oil level or pressure",
+        "Incorrect oil viscosity",
+        "Deactivation solenoid or valve fault",
+        "Oil pressure sensor fault",
+        "Sticking or collapsed deactivation lifters",
+        "Solenoid circuit fault"
+      ],
+      "notes": "Bank 2 counterpart of P3400. Verify oil level, grade, and pressure first, then test the bank 2 deactivation solenoids and circuits with a scan tool. Confirm which cylinders deactivate on this engine in OEM information.",
+      "related": [
+        "P3400",
+        "P0521",
+        "P0300"
+      ],
+      "safety": [
+        "rotating"
+      ]
+    }
+  ]
+}

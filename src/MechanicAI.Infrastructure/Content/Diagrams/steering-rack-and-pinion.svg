@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>Rack-and-Pinion Steering</title>
+<desc>Rack-and-pinion steering: steering wheel, column, intermediate shaft with U-joints, pinion, rack housing, bellows boots, tie rods, steering arms and front wheels, with a pinion and rack close-up.</desc>
+<defs><marker id="srp-ab8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#8ab4f8"/></marker><marker id="srp-rb8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M10,0.8 L0,5 L10,9.2 z" fill="#8ab4f8"/></marker><marker id="srp-at8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#e8eaed"/></marker><marker id="srp-rt8" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M10,0.8 L0,5 L10,9.2 z" fill="#e8eaed"/></marker></defs>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">Rack-and-Pinion Steering</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">Top view. The pinion turns rotary steering-wheel motion into side-to-side rack travel.</text>
+<polygon points="400,72 408,82 392,82" fill="#9aa0a6"/>
+<text x="400" y="97" font-size="12" fill="#9aa0a6" text-anchor="middle" font-weight="600">FRONT</text>
+<rect x="60" y="118" width="40" height="104" rx="12" fill="#2a2d33" stroke="#bdc1c6" stroke-width="1.5"/>
+<rect x="60" y="118" width="40" height="104" rx="12" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-dasharray="4 4" transform="rotate(-14 80 170)"/>
+<rect x="700" y="118" width="40" height="104" rx="12" fill="#2a2d33" stroke="#bdc1c6" stroke-width="1.5"/>
+<rect x="700" y="118" width="40" height="104" rx="12" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-dasharray="4 4" transform="rotate(-14 720 170)"/>
+<text x="80" y="246" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Front wheel</text>
+<line x1="100" y1="170" x2="116" y2="170" stroke="#bdc1c6" stroke-width="5"/>
+<circle cx="116" cy="170" r="7" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.5"/>
+<line x1="116" y1="170" x2="146" y2="212" stroke="#bdc1c6" stroke-width="5" stroke-linecap="round"/>
+<line x1="146" y1="212" x2="214" y2="220" stroke="#bdc1c6" stroke-width="4" stroke-linecap="round"/>
+<circle cx="146" cy="212" r="6" fill="#e8eaed"/>
+<line x1="700" y1="170" x2="684" y2="170" stroke="#bdc1c6" stroke-width="5"/>
+<circle cx="684" cy="170" r="7" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.5"/>
+<line x1="684" y1="170" x2="654" y2="212" stroke="#bdc1c6" stroke-width="5" stroke-linecap="round"/>
+<line x1="654" y1="212" x2="586" y2="220" stroke="#bdc1c6" stroke-width="4" stroke-linecap="round"/>
+<circle cx="654" cy="212" r="6" fill="#e8eaed"/>
+<polygon points="214,206 220.3,211 226.7,206 233,211 239.3,206 245.7,211 252,206 252,234 245.7,229 239.3,234 233,229 226.7,234 220.3,229 214,234" fill="#202124" stroke="#9aa0a6" stroke-width="1.2" stroke-linejoin="round"/>
+<polygon points="548,206 554.3,211 560.7,206 567,211 573.3,206 579.6,211 586,206 586,234 579.6,229 573.3,234 567,229 560.7,234 554.3,229 548,234" fill="#202124" stroke="#9aa0a6" stroke-width="1.2" stroke-linejoin="round"/>
+<rect x="252" y="208" width="296" height="24" rx="6" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.5"/>
+<path d="M338.2,221.1 L342.8,223 L342.2,225.1 L337.3,223.9 L336,225.7 L338.6,230 L336.9,231.3 L333.6,227.4 L331.5,228.1 L331.1,233.2 L328.9,233.2 L328.5,228.1 L326.4,227.4 L323.1,231.3 L321.4,230 L324,225.7 L322.7,223.9 L317.8,225.1 L317.2,223 L321.8,221.1 L321.8,218.9 L317.2,217 L317.8,214.9 L322.7,216.1 L324,214.3 L321.4,210 L323.1,208.7 L326.4,212.6 L328.5,211.9 L328.9,206.8 L331.1,206.8 L331.5,211.9 L333.6,212.6 L336.9,208.7 L338.6,210 L336,214.3 L337.3,216.1 L342.2,214.9 L342.8,217 L338.2,218.9 Z" fill="#5f6368" stroke="#e8eaed" stroke-width="1"/>
+<circle cx="330" cy="220" r="4" fill="#e8eaed"/>
+<text x="330" y="197" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Pinion</text>
+<path d="M404,194 L516,194" fill="none" stroke="#8ab4f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#srp-ab8)" marker-start="url(#srp-rb8)"/>
+<text x="460" y="186" font-size="12" fill="#8ab4f8" text-anchor="middle" font-weight="600">Rack slides left / right</text>
+<text x="460" y="250" font-size="12" fill="#e8eaed" text-anchor="middle" font-weight="600">Rack housing (rack inside)</text>
+<line x1="330" y1="236" x2="330" y2="382" stroke="#bdc1c6" stroke-width="5"/>
+<circle cx="330" cy="262" r="7" fill="#2d3139" stroke="#e8eaed" stroke-width="1.5"/>
+<line x1="324" y1="262" x2="336" y2="262" stroke="#e8eaed" stroke-width="1.5"/>
+<circle cx="330" cy="300" r="7" fill="#2d3139" stroke="#e8eaed" stroke-width="1.5"/>
+<line x1="324" y1="300" x2="336" y2="300" stroke="#e8eaed" stroke-width="1.5"/>
+<rect x="306" y="316" width="48" height="28" rx="4" fill="#23272e" stroke="#8ab4f8" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="342" y="268" font-size="12" fill="#e8eaed" font-weight="600">Intermediate shaft</text>
+<text x="342" y="284" font-size="12" fill="#9aa0a6">and U-joints</text>
+<text x="362" y="327" font-size="12" fill="#e8eaed" font-weight="600">Power assist</text>
+<text x="362" y="342" font-size="12" fill="#9aa0a6">(EPS or hydraulic)</text>
+<text x="342" y="368" font-size="12" fill="#e8eaed" font-weight="600">Steering column</text>
+<ellipse cx="330" cy="396" rx="64" ry="16" fill="none" stroke="#bdc1c6" stroke-width="5"/>
+<line x1="268" y1="396" x2="392" y2="396" stroke="#bdc1c6" stroke-width="3"/>
+<circle cx="330" cy="396" r="9" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.5"/>
+<path d="M286,424 Q330,438 374,424" fill="none" stroke="#e8eaed" stroke-width="2" marker-end="url(#srp-at8)" marker-start="url(#srp-rt8)"/>
+<text x="402" y="400" font-size="12" fill="#e8eaed" font-weight="600">Steering wheel</text>
+<polyline points="133,195 150,132" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="133" cy="195" r="2.2" fill="#9aa0a6"/>
+<text x="154" y="136" font-size="12" fill="#e8eaed" font-weight="600">Steering arm (on knuckle)</text>
+<polyline points="146,212 120,262" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="146" cy="212" r="2.2" fill="#9aa0a6"/>
+<text x="124" y="266" font-size="12" fill="#e8eaed" font-weight="600">Outer tie rod end</text>
+<polyline points="190,217 196,290" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="190" cy="217" r="2.2" fill="#9aa0a6"/>
+<text x="200" y="294" font-size="12" fill="#e8eaed" font-weight="600">Tie rod</text>
+<polyline points="233,207 236,156" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="233" cy="207" r="2.2" fill="#9aa0a6"/>
+<text x="240" y="160" font-size="12" fill="#e8eaed" font-weight="600">Bellows boot</text>
+<circle cx="33" cy="318" r="9" fill="#8ab4f8"/>
+<text x="33" y="322.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">1</text>
+<text x="48" y="322" font-size="12" fill="#9aa0a6">The steering wheel turns the column</text>
+<text x="48" y="338" font-size="12" fill="#9aa0a6">and pinion.</text>
+<circle cx="33" cy="358" r="9" fill="#8ab4f8"/>
+<text x="33" y="362.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">2</text>
+<text x="48" y="362" font-size="12" fill="#9aa0a6">Pinion teeth drive the rack</text>
+<text x="48" y="378" font-size="12" fill="#9aa0a6">sideways.</text>
+<circle cx="33" cy="398" r="9" fill="#8ab4f8"/>
+<text x="33" y="402.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">3</text>
+<text x="48" y="402" font-size="12" fill="#9aa0a6">Tie rods push or pull the steering</text>
+<text x="48" y="418" font-size="12" fill="#9aa0a6">arms; the wheels pivot on the</text>
+<text x="48" y="434" font-size="12" fill="#9aa0a6">knuckles.</text>
+<rect x="484" y="262" width="292" height="170" rx="10" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="498" y="284" font-size="12" fill="#e8eaed" font-weight="600">Close-up: pinion and rack</text>
+<path d="M580.5,336.3 L589.8,339.8 L588.7,343.8 L578.8,342.3 L576.6,346.2 L582.9,353.9 L579.9,356.9 L572.2,350.6 L568.3,352.8 L569.8,362.7 L565.8,363.8 L562.3,354.5 L557.7,354.5 L554.2,363.8 L550.2,362.7 L551.7,352.8 L547.8,350.6 L540.1,356.9 L537.1,353.9 L543.4,346.2 L541.2,342.3 L531.3,343.8 L530.2,339.8 L539.5,336.3 L539.5,331.7 L530.2,328.2 L531.3,324.2 L541.2,325.7 L543.4,321.8 L537.1,314.1 L540.1,311.1 L547.8,317.4 L551.7,315.2 L550.2,305.3 L554.2,304.2 L557.7,313.5 L562.3,313.5 L565.8,304.2 L569.8,305.3 L568.3,315.2 L572.2,317.4 L579.9,311.1 L582.9,314.1 L576.6,321.8 L578.8,325.7 L588.7,324.2 L589.8,328.2 L580.5,331.7 Z" fill="#5f6368" stroke="#e8eaed" stroke-width="1.2" fill-opacity="0.9"/>
+<circle cx="560" cy="334" r="7" fill="#1c1f25" stroke="#e8eaed" stroke-width="1.2"/>
+<polygon points="508,365.4 501.6,365.4 503.8,355.7 507.3,355.7 509.5,365.4 515.2,365.4 517.4,355.7 520.9,355.7 523.1,365.4 528.8,365.4 531,355.7 534.5,355.7 536.7,365.4 542.4,365.4 544.6,355.7 548.2,355.7 550.3,365.4 556.1,365.4 558.2,355.7 561.8,355.7 563.9,365.4 569.7,365.4 571.8,355.7 575.4,355.7 577.6,365.4 583.3,365.4 585.5,355.7 589,355.7 591.2,365.4 596.9,365.4 599.1,355.7 602.6,355.7 604.8,365.4 610.5,365.4 612.7,355.7 616.2,355.7 618.4,365.4 624.1,365.4 626.3,355.7 629.8,355.7 632,365.4 637.7,365.4 639.9,355.7 643.5,355.7 645.6,365.4 652,365.4 652,379.4 508,379.4" fill="#80868b" stroke="#e8eaed" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M 527.1,315 A 38 38 0 0 1 592.9,315" fill="none" stroke="#8ab4f8" stroke-width="2" marker-end="url(#srp-ab8)" marker-start="url(#srp-rb8)"/>
+<path d="M530,395.4 L630,395.4" fill="none" stroke="#8ab4f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#srp-ab8)" marker-start="url(#srp-rb8)"/>
+<text x="612" y="324" font-size="12" fill="#e8eaed" font-weight="600">Pinion</text>
+<text x="612" y="340" font-size="12" fill="#9aa0a6">turns with shaft</text>
+<text x="662" y="378" font-size="12" fill="#e8eaed" font-weight="600">Rack</text>
+<text x="662" y="394" font-size="12" fill="#9aa0a6">slides sideways</text>
+</svg>

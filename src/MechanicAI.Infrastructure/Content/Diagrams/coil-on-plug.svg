@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>Coil-on-Plug Ignition</title>
+<desc>Coil-on-plug cutaway (windings, core, boot, spark plug) and primary/secondary circuit with the driver switched by the PCM spark timing signal.</desc>
+<defs><pattern id="cop-sec" width="8" height="3.5" patternUnits="userSpaceOnUse"><rect width="8" height="1.2" fill="#fbbc04" fill-opacity="0.9"/></pattern><pattern id="cop-pri" width="8" height="7" patternUnits="userSpaceOnUse"><rect width="8" height="2.5" fill="#f28b82" fill-opacity="1"/></pattern><marker id="cop-at7" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.8 L10,5 L0,9.2 z" fill="#e8eaed"/></marker></defs>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">Coil-on-Plug Ignition</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">One coil per cylinder, mounted directly on the spark plug &#8212; no plug wires.</text>
+<rect x="160" y="96" width="34" height="22" rx="3" fill="#2d3139" stroke="#bdc1c6" stroke-width="1.2"/>
+<rect x="167" y="102" width="4" height="10" rx="1" fill="#bdc1c6"/>
+<rect x="175" y="102" width="4" height="10" rx="1" fill="#bdc1c6"/>
+<rect x="183" y="102" width="4" height="10" rx="1" fill="#bdc1c6"/>
+<rect x="72" y="88" width="88" height="152" rx="10" fill="#262a31" stroke="#bdc1c6" stroke-width="1.5"/>
+<rect x="80" y="104" width="16" height="120" fill="#fbbc04" fill-opacity="0.12"/>
+<rect x="80" y="104" width="16" height="120" fill="url(#cop-sec)"/>
+<rect x="136" y="104" width="16" height="120" fill="#fbbc04" fill-opacity="0.12"/>
+<rect x="136" y="104" width="16" height="120" fill="url(#cop-sec)"/>
+<rect x="97" y="104" width="10" height="120" fill="url(#cop-pri)"/>
+<rect x="125" y="104" width="10" height="120" fill="url(#cop-pri)"/>
+<rect x="108" y="96" width="16" height="136" fill="#5f6368"/>
+<line x1="108" y1="104" x2="124" y2="104" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="115" x2="124" y2="115" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="126" x2="124" y2="126" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="137" x2="124" y2="137" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="148" x2="124" y2="148" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="159" x2="124" y2="159" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="170" x2="124" y2="170" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="181" x2="124" y2="181" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="192" x2="124" y2="192" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="203" x2="124" y2="203" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="214" x2="124" y2="214" stroke="#4a4f57" stroke-width="1"/>
+<line x1="108" y1="225" x2="124" y2="225" stroke="#4a4f57" stroke-width="1"/>
+<rect x="100" y="240" width="32" height="64" rx="4" fill="#2d3139" stroke="#5f6368" stroke-width="1.2"/>
+<polyline points="116,242 116,244 109,246.8 123,252.4 109,258 123,263.6 109,269.2 123,274.8 109,280.4 123,286 109,291.6 123,297.2 116,300 116,302" fill="none" stroke="#bdc1c6" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="111" y="302" width="10" height="8" rx="1" fill="#bdc1c6"/>
+<rect x="104" y="310" width="24" height="36" rx="3" fill="#dadce0"/>
+<line x1="104" y1="318" x2="128" y2="318" stroke="#9aa0a6" stroke-width="1.2"/>
+<line x1="104" y1="326" x2="128" y2="326" stroke="#9aa0a6" stroke-width="1.2"/>
+<line x1="104" y1="334" x2="128" y2="334" stroke="#9aa0a6" stroke-width="1.2"/>
+<rect x="96" y="346" width="40" height="14" rx="2" fill="#80868b"/>
+<rect x="36" y="360" width="64" height="34" fill="#2d3139" stroke="#5f6368" stroke-width="1"/>
+<rect x="132" y="360" width="64" height="34" fill="#2d3139" stroke="#5f6368" stroke-width="1"/>
+<rect x="102" y="360" width="28" height="34" fill="#5f6368"/>
+<line x1="102" y1="364" x2="130" y2="366" stroke="#80868b" stroke-width="1"/>
+<line x1="102" y1="369" x2="130" y2="371" stroke="#80868b" stroke-width="1"/>
+<line x1="102" y1="374" x2="130" y2="376" stroke="#80868b" stroke-width="1"/>
+<line x1="102" y1="379" x2="130" y2="381" stroke="#80868b" stroke-width="1"/>
+<line x1="102" y1="384" x2="130" y2="386" stroke="#80868b" stroke-width="1"/>
+<line x1="102" y1="389" x2="130" y2="391" stroke="#80868b" stroke-width="1"/>
+<rect x="36" y="394" width="160" height="26" fill="#fbbc04" fill-opacity="0.07"/>
+<rect x="114" y="394" width="4" height="9" fill="#bdc1c6"/>
+<path d="M126,394 V409 H116" fill="none" stroke="#bdc1c6" stroke-width="3"/>
+<line x1="114.1" y1="405.7" x2="108.5" y2="407.7" stroke="#fbbc04" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="114" y1="404.7" x2="108.1" y2="403.6" stroke="#fbbc04" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="114.5" y1="403.7" x2="109.9" y2="399.9" stroke="#fbbc04" stroke-width="1.4" stroke-linecap="round"/>
+<polyline points="194,107 204,111" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="194" cy="107" r="2.2" fill="#9aa0a6"/>
+<text x="208" y="115" font-size="12" fill="#e8eaed" font-weight="600">Connector</text>
+<polyline points="130,140 204,146" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="130" cy="140" r="2.2" fill="#9aa0a6"/>
+<text x="208" y="150" font-size="12" fill="#e8eaed" font-weight="600">Primary winding</text>
+<polyline points="150,182 204,182" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="150" cy="182" r="2.2" fill="#9aa0a6"/>
+<text x="208" y="186" font-size="12" fill="#e8eaed" font-weight="600">Secondary winding</text>
+<polyline points="122,214 204,218" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="122" cy="214" r="2.2" fill="#9aa0a6"/>
+<text x="208" y="222" font-size="12" fill="#e8eaed" font-weight="600">Iron core</text>
+<polyline points="132,272 204,272" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="132" cy="272" r="2.2" fill="#9aa0a6"/>
+<text x="208" y="276" font-size="12" fill="#e8eaed" font-weight="600">Boot &amp; spring</text>
+<polyline points="128,326 204,326" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="128" cy="326" r="2.2" fill="#9aa0a6"/>
+<text x="208" y="330" font-size="12" fill="#e8eaed" font-weight="600">Spark plug</text>
+<polyline points="180,377 204,377" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="180" cy="377" r="2.2" fill="#9aa0a6"/>
+<text x="208" y="381" font-size="12" fill="#e8eaed" font-weight="600">Cylinder head</text>
+<polyline points="120,406 204,410" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-opacity="0.9"/>
+<circle cx="120" cy="406" r="2.2" fill="#9aa0a6"/>
+<text x="208" y="414" font-size="12" fill="#e8eaed" font-weight="600">Spark gap</text>
+<text x="330" y="96" font-size="12" fill="#f28b82" font-weight="600">Ignition feed (B+)</text>
+<path d="M340,112 L390,112" fill="none" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="390" y="105" width="34" height="14" rx="3" fill="#23272e" stroke="#f28b82" stroke-width="1.5"/>
+<path d="M 394,112 C 401,104 406,104 407,112 S 414,120 420,112" fill="none" stroke="#f28b82" stroke-width="1.5"/>
+<path d="M424,112 L447,112 Q452,112 452,117 L452,122" fill="none" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M452,122 a8.5,8.5 0 0 1 0,17 a8.5,8.5 0 0 1 0,17 a8.5,8.5 0 0 1 0,17 a8.5,8.5 0 0 1 0,17" fill="none" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="470" y1="118" x2="470" y2="196" stroke="#bdc1c6" stroke-width="2"/>
+<line x1="476" y1="118" x2="476" y2="196" stroke="#bdc1c6" stroke-width="2"/>
+<path d="M494,196 a4.7,4.7 0 0 1 0,-9.3 a4.7,4.7 0 0 1 0,-9.3 a4.7,4.7 0 0 1 0,-9.3 a4.7,4.7 0 0 1 0,-9.3 a4.7,4.7 0 0 1 0,-9.3 a4.7,4.7 0 0 1 0,-9.3 a4.7,4.7 0 0 1 0,-9.3 a4.7,4.7 0 0 1 0,-9.3 a4.7,4.7 0 0 1 0,-9.3" fill="none" stroke="#fbbc04" stroke-width="2" stroke-linecap="round"/>
+<text x="440" y="150" font-size="12" fill="#e8eaed" text-anchor="end" font-weight="600">Primary</text>
+<text x="440" y="166" font-size="12" fill="#9aa0a6" text-anchor="end">few turns</text>
+<text x="508" y="140" font-size="12" fill="#e8eaed" font-weight="600">Secondary</text>
+<text x="508" y="156" font-size="12" fill="#9aa0a6">many turns &#8594;</text>
+<text x="508" y="172" font-size="12" fill="#9aa0a6">very high voltage</text>
+<path d="M452,190 L452,236" fill="none" stroke="#f28b82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="446" cy="254" r="19" fill="#23272e" stroke="#9aa0a6" stroke-width="1.5"/>
+<line x1="438" y1="242" x2="438" y2="266" stroke="#e8eaed" stroke-width="2.5"/>
+<line x1="438" y1="248" x2="452" y2="236" stroke="#e8eaed" stroke-width="2"/>
+<line x1="438" y1="260" x2="452" y2="272" stroke="#e8eaed" stroke-width="2" marker-end="url(#cop-at7)"/>
+<path d="M452,272 L452,290" fill="none" stroke="#81c995" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 452,290 v 4 M 441,294 h 22 M 445,299 h 14 M 449,304 h 6" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round"/>
+<rect x="414" y="222" width="70" height="92" rx="6" fill="none" stroke="#9aa0a6" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="494" y="250" font-size="12" fill="#e8eaed" font-weight="600">Driver (igniter)</text>
+<text x="494" y="266" font-size="12" fill="#9aa0a6">in coil or PCM</text>
+<rect x="330" y="232" width="70" height="44" rx="6" fill="#23272e" stroke="#8ab4f8" stroke-width="1.5"/>
+<text x="365" y="258.6" font-size="13" fill="#e8eaed" text-anchor="middle" font-weight="600">PCM</text>
+<path d="M400,254 L438,254" fill="none" stroke="#8ab4f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="365" y="294" font-size="12" fill="#8ab4f8" text-anchor="middle" font-weight="600">Spark timing</text>
+<text x="365" y="309" font-size="12" fill="#8ab4f8" text-anchor="middle" font-weight="600">signal</text>
+<path d="M494,112 L654,112 Q660,112 660,118 L660,200" fill="none" stroke="#fbbc04" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M494,196 L494,208" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 494,208 v 4 M 483,212 h 22 M 487,217 h 14 M 491,222 h 6" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round"/>
+<polygon points="654,200 666,200 660,214" fill="#fbbc04"/>
+<rect x="652" y="222" width="16" height="4" fill="#bdc1c6"/>
+<path d="M660,214 l-4,3 l7,1.5 l-4,3.5" fill="none" stroke="#fbbc04" stroke-width="1.5"/>
+<path d="M660,226 L660,238" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 660,238 v 4 M 649,242 h 22 M 653,247 h 14 M 657,252 h 6" fill="none" stroke="#81c995" stroke-width="2" stroke-linecap="round"/>
+<text x="676" y="212" font-size="12" fill="#e8eaed" font-weight="600">Spark plug</text>
+<text x="676" y="228" font-size="12" fill="#9aa0a6">(gap)</text>
+<text x="676" y="252" font-size="12" fill="#9aa0a6">Engine ground</text>
+<rect x="330" y="326" width="446" height="106" rx="10" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<circle cx="352" cy="347" r="9" fill="#8ab4f8"/>
+<text x="352" y="351.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">1</text>
+<text x="368" y="351" font-size="12" fill="#e8eaed">Driver ON: primary current builds a magnetic field (dwell).</text>
+<circle cx="352" cy="369" r="9" fill="#8ab4f8"/>
+<text x="352" y="373.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">2</text>
+<text x="368" y="373" font-size="12" fill="#e8eaed">Driver OFF: the field collapses &#8594; very high secondary voltage.</text>
+<circle cx="352" cy="391" r="9" fill="#fbbc04"/>
+<text x="352" y="395.3" font-size="12" fill="#16181d" text-anchor="middle" font-weight="700">3</text>
+<text x="368" y="395" font-size="12" fill="#e8eaed">The voltage jumps the plug gap; the spark ignites the mixture.</text>
+<text x="346" y="419" font-size="12" fill="#fbbc04">Caution: high secondary voltage &#8212; keep clear while the engine runs.</text>
+</svg>

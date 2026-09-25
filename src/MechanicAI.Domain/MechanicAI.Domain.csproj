@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>MechanicAI.Domain</RootNamespace>
+    <Description>Mechanic AI domain model: entities, value objects, and domain rules. No infrastructure dependencies.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="MechanicAI.Domain.Tests" />
+  </ItemGroup>
+
+</Project>

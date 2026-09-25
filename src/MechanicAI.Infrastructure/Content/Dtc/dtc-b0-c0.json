@@ -1,0 +1,824 @@
+{
+  "version": "2026.09.1",
+  "source": "SAE J2012 / ISO 15031-6 generic DTC definitions (built-in reference)",
+  "codes": [
+    {
+      "code": "B0001",
+      "description": "Driver Frontal Stage 1 Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Driver frontal airbag may not deploy",
+        "Horn or wheel controls may fail too"
+      ],
+      "causes": [
+        "Clockspring open or high resistance",
+        "Driver airbag connector not seated",
+        "Harness or connector damage",
+        "Driver airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Clockspring (spiral cable) faults are common, especially when steering wheel controls or the horn fail at the same time. Use the OEM load tool at each connector to isolate the faulty section. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0002",
+        "B0003",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0002",
+      "description": "Driver Frontal Stage 2 Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Driver frontal airbag may not deploy",
+        "Horn or wheel controls may fail too"
+      ],
+      "causes": [
+        "Clockspring open or high resistance",
+        "Driver airbag connector not seated",
+        "Harness or connector damage",
+        "Driver airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Clockspring (spiral cable) faults are common, especially when steering wheel controls or the horn fail at the same time. Use the OEM load tool at each connector to isolate the faulty section. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0001",
+        "B0003",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0003",
+      "description": "Driver Frontal Stage 3 Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Driver frontal airbag may not deploy",
+        "Horn or wheel controls may fail too"
+      ],
+      "causes": [
+        "Clockspring open or high resistance",
+        "Driver airbag connector not seated",
+        "Harness or connector damage",
+        "Driver airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Clockspring (spiral cable) faults are common, especially when steering wheel controls or the horn fail at the same time. Use the OEM load tool at each connector to isolate the faulty section. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0001",
+        "B0002",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0004",
+      "description": "Driver Knee Bolster Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Knee airbag may not deploy"
+      ],
+      "causes": [
+        "Knee airbag connector disturbed",
+        "Harness damage under dash",
+        "Knee airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Knee airbag connectors are often disturbed during under-dash repairs; check connector seating and locking features first. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0013",
+        "B0001",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0005",
+      "description": "Collapsible Steering Column Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Column collapse feature may not deploy"
+      ],
+      "causes": [
+        "Column actuator connector disturbed",
+        "Harness damage at steering column",
+        "Column deployment actuator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Used only on vehicles with a pyrotechnic collapsible or adjustable-energy steering column; confirm the system design in OEM information. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0001",
+        "B0004",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0010",
+      "description": "Passenger Frontal Stage 1 Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Passenger frontal airbag may not deploy"
+      ],
+      "causes": [
+        "Passenger airbag connector not seated",
+        "Harness damage behind instrument panel",
+        "Passenger airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Check connector seating after instrument panel or glove box work before replacing components. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0011",
+        "B0012",
+        "B00A0",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0011",
+      "description": "Passenger Frontal Stage 2 Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Passenger frontal airbag may not deploy"
+      ],
+      "causes": [
+        "Passenger airbag connector not seated",
+        "Harness damage behind instrument panel",
+        "Passenger airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Check connector seating after instrument panel or glove box work before replacing components. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0010",
+        "B0012",
+        "B00A0",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0012",
+      "description": "Passenger Frontal Stage 3 Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Passenger frontal airbag may not deploy"
+      ],
+      "causes": [
+        "Passenger airbag connector not seated",
+        "Harness damage behind instrument panel",
+        "Passenger airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Check connector seating after instrument panel or glove box work before replacing components. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0010",
+        "B0011",
+        "B00A0",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0013",
+      "description": "Passenger Knee Bolster Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Knee airbag may not deploy"
+      ],
+      "causes": [
+        "Knee airbag connector disturbed",
+        "Harness damage under dash",
+        "Knee airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Knee airbag connectors are often disturbed during under-dash repairs; check connector seating and locking features first. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0004",
+        "B0010",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0020",
+      "description": "Left Side Airbag Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Side airbag may not deploy"
+      ],
+      "causes": [
+        "Under-seat connector loose or damaged",
+        "Harness damage from seat movement",
+        "Side airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Side airbags are commonly seat-mounted, and seat removal or cleaning under the seat often disturbs connectors; some designs mount them in the door. Confirm the location in OEM information. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0028",
+        "B0021",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0021",
+      "description": "Left Curtain Deployment Control 1",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Curtain airbag may not deploy"
+      ],
+      "causes": [
+        "Curtain airbag connector disturbed",
+        "Harness damage after headliner or pillar work",
+        "Curtain airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Curtain airbag connectors are usually at a pillar or along the roof rail and are often disturbed during headliner, pillar trim, or glass work. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0022",
+        "B0029",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0022",
+      "description": "Left Curtain Deployment Control 2",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Curtain airbag may not deploy"
+      ],
+      "causes": [
+        "Curtain airbag connector disturbed",
+        "Harness damage after headliner or pillar work",
+        "Curtain airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Curtain airbag connectors are usually at a pillar or along the roof rail and are often disturbed during headliner, pillar trim, or glass work. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0021",
+        "B002A",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0028",
+      "description": "Right Side Airbag Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Side airbag may not deploy"
+      ],
+      "causes": [
+        "Under-seat connector loose or damaged",
+        "Harness damage from seat movement",
+        "Side airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Side airbags are commonly seat-mounted, and seat removal or cleaning under the seat often disturbs connectors; some designs mount them in the door. Confirm the location in OEM information. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0020",
+        "B0029",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0029",
+      "description": "Right Curtain Deployment Control 1",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Curtain airbag may not deploy"
+      ],
+      "causes": [
+        "Curtain airbag connector disturbed",
+        "Harness damage after headliner or pillar work",
+        "Curtain airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Curtain airbag connectors are usually at a pillar or along the roof rail and are often disturbed during headliner, pillar trim, or glass work. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B002A",
+        "B0021",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B002A",
+      "description": "Right Curtain Deployment Control 2",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Curtain airbag may not deploy"
+      ],
+      "causes": [
+        "Curtain airbag connector disturbed",
+        "Harness damage after headliner or pillar work",
+        "Curtain airbag inflator fault",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Curtain airbag connectors are usually at a pillar or along the roof rail and are often disturbed during headliner, pillar trim, or glass work. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0029",
+        "B0022",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0050",
+      "description": "Driver Seatbelt Sensor",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "Seatbelt warning lamp or chime incorrect",
+        "SRS warning lamp on"
+      ],
+      "causes": [
+        "Seatbelt buckle switch fault",
+        "Under-seat connector or harness damage",
+        "Buckle contaminated or damaged",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. The restraints module uses buckle status to adapt its deployment strategy, so buckle faults are treated as SRS faults. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0052",
+        "B0070",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0052",
+      "description": "Passenger Seatbelt Sensor",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "Seatbelt warning lamp or chime incorrect",
+        "SRS warning lamp on"
+      ],
+      "causes": [
+        "Seatbelt buckle switch fault",
+        "Under-seat connector or harness damage",
+        "Buckle contaminated or damaged",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. The restraints module uses buckle status to adapt its deployment strategy, so buckle faults are treated as SRS faults. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0050",
+        "B0072",
+        "B00A0",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0070",
+      "description": "Driver Seatbelt Pretensioner \"A\" Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Pretensioner may not deploy"
+      ],
+      "causes": [
+        "Pretensioner connector disturbed",
+        "Harness damage at seat or pillar",
+        "Pretensioner deployed or faulty",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Pretensioners are pyrotechnic devices; depending on design they are at the buckle, the retractor, or the belt anchor. A deployed pretensioner must be replaced per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0072",
+        "B0050",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0072",
+      "description": "Passenger Seatbelt Pretensioner \"A\" Deployment Control",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Pretensioner may not deploy"
+      ],
+      "causes": [
+        "Pretensioner connector disturbed",
+        "Harness damage at seat or pillar",
+        "Pretensioner deployed or faulty",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Pretensioners are pyrotechnic devices; depending on design they are at the buckle, the retractor, or the belt anchor. A deployed pretensioner must be replaced per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0070",
+        "B0052",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0090",
+      "description": "Left Frontal Restraints Sensor",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Frontal crash sensing degraded"
+      ],
+      "causes": [
+        "Sensor left unplugged after front-end repair",
+        "Sensor or mount damaged in collision",
+        "Harness or connector damage or corrosion",
+        "Incorrect sensor installed",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Frontal restraints sensors are typically mounted at the front of the vehicle, for example on the radiator support, and are easily damaged or left unplugged after front-end repairs. Mount sensors exactly as specified by the OEM. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0095",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B0095",
+      "description": "Right Frontal Restraints Sensor",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Frontal crash sensing degraded"
+      ],
+      "causes": [
+        "Sensor left unplugged after front-end repair",
+        "Sensor or mount damaged in collision",
+        "Harness or connector damage or corrosion",
+        "Incorrect sensor installed",
+        "Restraints control module fault"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Frontal restraints sensors are typically mounted at the front of the vehicle, for example on the radiator support, and are easily damaged or left unplugged after front-end repairs. Mount sensors exactly as specified by the OEM. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "B0090",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "B00A0",
+      "description": "Occupant Classification System",
+      "subsystem": "Restraints",
+      "symptoms": [
+        "SRS warning lamp on",
+        "Passenger airbag status indicator incorrect",
+        "Passenger airbag may be suppressed"
+      ],
+      "causes": [
+        "Occupant classification sensor or mat fault",
+        "Occupant classification module fault",
+        "Under-seat wiring or connector damage",
+        "Objects under or on the passenger seat",
+        "Seat damage or aftermarket seat cover",
+        "Rezero or calibration not performed"
+      ],
+      "notes": "SRS work requires following OEM disable/enable procedures: disconnect the battery and wait the OEM-specified time before disconnecting any SRS component, use the OEM-specified load tool or simulator, and never probe or measure resistance directly across an inflator or pretensioner with a meter or test light. After repair, enable the system per OEM procedure and confirm the SRS lamp completes its bulb check and goes out. Many occupant classification systems require a rezero or calibration with a scan tool after seat or sensor service, performed with the seat empty per OEM procedure. Never modify or bypass occupant classification components. Generic SAE J2012 base DTC, normally reported with a failure-type byte (for example -11 short to ground, -12 short to battery, -13 circuit open). Some older vehicles, notably older GM models, assign manufacturer-specific meanings to B0 codes; confirm with OEM service information.",
+      "related": [
+        "U0154",
+        "B0010",
+        "B0052",
+        "U0151"
+      ],
+      "safety": [
+        "airbag"
+      ]
+    },
+    {
+      "code": "C0020",
+      "description": "ABS Pump Motor Control",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "ABS warning lamp on",
+        "Traction and stability lamps on",
+        "ABS pump does not run on self-test"
+      ],
+      "causes": [
+        "Pump motor fuse or power feed fault",
+        "Poor ABS module ground",
+        "Pump motor seized or worn",
+        "Connector corrosion at ABS module",
+        "Low battery voltage",
+        "ABS module internal fault"
+      ],
+      "notes": "Voltage-drop test the high-current fuse, main power feed, and ground while the pump is commanded on, if the scan tool supports a pump test. On many units the pump motor and module are serviced as an assembly, and hydraulic unit replacement usually requires an OEM scan-tool bleed procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "U0121",
+        "U0415"
+      ],
+      "safety": [
+        "brakes",
+        "high-current"
+      ]
+    },
+    {
+      "code": "C0031",
+      "description": "Left Front Wheel Speed Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "ABS warning lamp on",
+        "Traction and stability lamps on",
+        "Possible false ABS activation at low speed",
+        "Speedometer concerns (some vehicles)"
+      ],
+      "causes": [
+        "Wheel speed sensor failure",
+        "Damaged or corroded sensor wiring",
+        "Connector corrosion or damage",
+        "Damaged or rusted tone ring",
+        "Excessive wheel bearing play",
+        "Metallic debris on sensor tip"
+      ],
+      "notes": "Compare all four wheel speeds on a scan tool during a road test to find signal dropouts. Inspect the harness where it flexes with suspension travel, check the tone ring and wheel bearing, and verify sensor output (AC voltage for passive sensors or a square-wave or current signal for active sensors) per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "C0034",
+        "C0037",
+        "C003A",
+        "U0415"
+      ],
+      "safety": [
+        "lifting",
+        "brakes"
+      ]
+    },
+    {
+      "code": "C0034",
+      "description": "Right Front Wheel Speed Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "ABS warning lamp on",
+        "Traction and stability lamps on",
+        "Possible false ABS activation at low speed",
+        "Speedometer concerns (some vehicles)"
+      ],
+      "causes": [
+        "Wheel speed sensor failure",
+        "Damaged or corroded sensor wiring",
+        "Connector corrosion or damage",
+        "Damaged or rusted tone ring",
+        "Excessive wheel bearing play",
+        "Metallic debris on sensor tip"
+      ],
+      "notes": "Compare all four wheel speeds on a scan tool during a road test to find signal dropouts. Inspect the harness where it flexes with suspension travel, check the tone ring and wheel bearing, and verify sensor output (AC voltage for passive sensors or a square-wave or current signal for active sensors) per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "C0031",
+        "C0037",
+        "C003A",
+        "U0415"
+      ],
+      "safety": [
+        "lifting",
+        "brakes"
+      ]
+    },
+    {
+      "code": "C0037",
+      "description": "Left Rear Wheel Speed Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "ABS warning lamp on",
+        "Traction and stability lamps on",
+        "Possible false ABS activation at low speed",
+        "Speedometer concerns (some vehicles)"
+      ],
+      "causes": [
+        "Wheel speed sensor failure",
+        "Damaged or corroded sensor wiring",
+        "Connector corrosion or damage",
+        "Damaged or rusted tone ring",
+        "Excessive wheel bearing play",
+        "Metallic debris on sensor tip"
+      ],
+      "notes": "Compare all four wheel speeds on a scan tool during a road test to find signal dropouts. Inspect the harness where it flexes with suspension travel, check the tone ring and wheel bearing, and verify sensor output (AC voltage for passive sensors or a square-wave or current signal for active sensors) per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "C0031",
+        "C0034",
+        "C003A",
+        "U0415"
+      ],
+      "safety": [
+        "lifting",
+        "brakes"
+      ]
+    },
+    {
+      "code": "C003A",
+      "description": "Right Rear Wheel Speed Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "ABS warning lamp on",
+        "Traction and stability lamps on",
+        "Possible false ABS activation at low speed",
+        "Speedometer concerns (some vehicles)"
+      ],
+      "causes": [
+        "Wheel speed sensor failure",
+        "Damaged or corroded sensor wiring",
+        "Connector corrosion or damage",
+        "Damaged or rusted tone ring",
+        "Excessive wheel bearing play",
+        "Metallic debris on sensor tip"
+      ],
+      "notes": "Compare all four wheel speeds on a scan tool during a road test to find signal dropouts. Inspect the harness where it flexes with suspension travel, check the tone ring and wheel bearing, and verify sensor output (AC voltage for passive sensors or a square-wave or current signal for active sensors) per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "C0031",
+        "C0034",
+        "C0037",
+        "U0415"
+      ],
+      "safety": [
+        "lifting",
+        "brakes"
+      ]
+    },
+    {
+      "code": "C0051",
+      "description": "Steering Wheel Position Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "Stability control lamp on",
+        "Traction control disabled",
+        "Possible driver-assist warnings"
+      ],
+      "causes": [
+        "Sensor not calibrated",
+        "Steering angle sensor failure",
+        "Wiring or connector fault at column",
+        "Clockspring assembly fault (integrated designs)",
+        "Alignment or steering component change"
+      ],
+      "notes": "After a wheel alignment, steering component replacement, or battery disconnect, many systems require a steering angle sensor calibration with a scan tool. Where the sensor is part of the clockspring, SRS work requires following OEM disable/enable procedures before the driver airbag or clockspring is disturbed. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "U0126",
+        "U0428",
+        "C0063"
+      ],
+      "safety": [
+        "brakes",
+        "airbag"
+      ]
+    },
+    {
+      "code": "C0061",
+      "description": "Lateral Acceleration Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "Stability control lamp on",
+        "Traction control disabled"
+      ],
+      "causes": [
+        "Sensor module loose or misaligned",
+        "Sensor or multi-axis module failure",
+        "Wiring or network fault",
+        "Calibration not performed after service",
+        "ABS/ESC module internal fault"
+      ],
+      "notes": "On many vehicles the lateral, longitudinal, yaw, and roll sensors are combined in one multi-axis module or built into the ABS/ESC or restraints module. Verify secure mounting and correct orientation, then perform any required calibration per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "C0062",
+        "C0063",
+        "U0124",
+        "U0125"
+      ],
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "C0062",
+      "description": "Longitudinal Acceleration Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "Stability control lamp on",
+        "Traction control disabled"
+      ],
+      "causes": [
+        "Sensor module loose or misaligned",
+        "Sensor or multi-axis module failure",
+        "Wiring or network fault",
+        "Calibration not performed after service",
+        "ABS/ESC module internal fault"
+      ],
+      "notes": "On many vehicles the lateral, longitudinal, yaw, and roll sensors are combined in one multi-axis module or built into the ABS/ESC or restraints module. Verify secure mounting and correct orientation, then perform any required calibration per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "C0061",
+        "C0063",
+        "U0125"
+      ],
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "C0063",
+      "description": "Yaw Rate Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "Stability control lamp on",
+        "Traction control disabled"
+      ],
+      "causes": [
+        "Sensor module loose or misaligned",
+        "Sensor or multi-axis module failure",
+        "Wiring or network fault",
+        "Calibration not performed after service",
+        "ABS/ESC module internal fault"
+      ],
+      "notes": "On many vehicles the lateral, longitudinal, yaw, and roll sensors are combined in one multi-axis module or built into the ABS/ESC or restraints module. Verify secure mounting and correct orientation, then perform any required calibration per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "C0061",
+        "C0051",
+        "U0123",
+        "U0125"
+      ],
+      "safety": [
+        "brakes"
+      ]
+    },
+    {
+      "code": "C0064",
+      "description": "Roll Rate Sensor",
+      "subsystem": "Chassis",
+      "symptoms": [
+        "Stability control lamp on",
+        "Traction control disabled"
+      ],
+      "causes": [
+        "Sensor module loose or misaligned",
+        "Sensor or multi-axis module failure",
+        "Wiring or network fault",
+        "Calibration not performed after service",
+        "ABS/ESC module internal fault"
+      ],
+      "notes": "On many vehicles the lateral, longitudinal, yaw, and roll sensors are combined in one multi-axis module or built into the ABS/ESC or restraints module. Verify secure mounting and correct orientation, then perform any required calibration per OEM procedure. Generic SAE J2012 base DTC, normally reported with a failure-type byte that narrows the fault. Many older vehicles (for example older GM and Toyota models) use C0 codes with manufacturer-specific meanings; confirm the definition in OEM service information for the vehicle.",
+      "related": [
+        "C0061",
+        "C0063",
+        "U0125"
+      ],
+      "safety": [
+        "brakes"
+      ]
+    }
+  ]
+}

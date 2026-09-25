@@ -1,0 +1,39 @@
+## Build output
+bin/
+obj/
+out/
+publish/
+artifacts/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/*
+!.vscode/extensions.json
+*.binlog
+
+## Test output
+TestResults/
+coverage/
+*.coverage
+*.trx
+
+## Installer output
+installer/**/bin/
+installer/**/obj/
+
+## Local data & secrets (never commit)
+*.db
+*.db-shm
+*.db-wal
+appsettings.Local.json
+appsettings.*.Local.json
+.env
+secrets.json
+*.pfx
+*.snk
+
+## OS
+Thumbs.db
+.DS_Store

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<title>Ohm's Law Triangle</title>
+<desc>Ohm's law triangle with V on top and I and R below, the three rearranged formulas, units and a worked automotive example.</desc>
+<rect x="0.75" y="0.75" width="798.5" height="448.5" rx="14" fill="#16181d" stroke="#3a3f47" stroke-width="1.5"/>
+<rect x="24" y="21" width="4" height="21" rx="2" fill="#8ab4f8"/>
+<text x="38" y="38" font-size="18" fill="#e8eaed" font-weight="600">Ohm's Law Triangle</text>
+<text x="38" y="57" font-size="12" fill="#9aa0a6">Cover the value you want to find; the remaining two show how to calculate it.</text>
+<polygon points="190,88 279.7,250 100.3,250" fill="#f28b82" fill-opacity="0.13"/>
+<polygon points="100.3,250 190,250 190,330 56,330" fill="#8ab4f8" fill-opacity="0.13"/>
+<polygon points="190,250 279.7,250 324,330 190,330" fill="#fbbc04" fill-opacity="0.13"/>
+<polygon points="190,88 324,330 56,330" fill="none" stroke="#9aa0a6" stroke-width="2" stroke-linejoin="round"/>
+<line x1="100.3" y1="250" x2="279.7" y2="250" stroke="#9aa0a6" stroke-width="2"/>
+<line x1="190" y1="250" x2="190" y2="330" stroke="#9aa0a6" stroke-width="2"/>
+<text x="190" y="212" font-size="34" fill="#f28b82" text-anchor="middle" font-weight="700">V</text>
+<text x="190" y="236" font-size="12" fill="#9aa0a6" text-anchor="middle">Voltage (volts)</text>
+<text x="142" y="300" font-size="34" fill="#8ab4f8" text-anchor="middle" font-weight="700">I</text>
+<text x="135" y="320" font-size="12" fill="#9aa0a6" text-anchor="middle">Current (amps)</text>
+<text x="238" y="300" font-size="34" fill="#fbbc04" text-anchor="middle" font-weight="700">R</text>
+<text x="245" y="320" font-size="12" fill="#9aa0a6" text-anchor="middle">Resistance (&#937;)</text>
+<circle cx="190" cy="280" r="10" fill="#16181d" stroke="#9aa0a6" stroke-width="1.5"/>
+<text x="190" y="285" font-size="16" fill="#e8eaed" text-anchor="middle" font-weight="700">&#215;</text>
+<text x="190" y="360" font-size="12" fill="#9aa0a6" text-anchor="middle">Horizontal line = divide &#183; vertical line = multiply</text>
+<text x="360" y="104" font-size="13" fill="#e8eaed" font-weight="600">Three forms of the same law</text>
+<rect x="360" y="120" width="200" height="52" rx="8" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="374" y="143" font-size="18" fill="#e8eaed" font-weight="700"><tspan fill="#f28b82">V</tspan> = I &#215; R</text>
+<text x="374" y="162" font-size="12" fill="#9aa0a6">Find voltage: current &#215; resistance</text>
+<rect x="360" y="182" width="200" height="52" rx="8" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="374" y="205" font-size="18" fill="#e8eaed" font-weight="700"><tspan fill="#8ab4f8">I</tspan> = V &#247; R</text>
+<text x="374" y="224" font-size="12" fill="#9aa0a6">Find current: voltage &#247; resistance</text>
+<rect x="360" y="244" width="200" height="52" rx="8" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="374" y="267" font-size="18" fill="#e8eaed" font-weight="700"><tspan fill="#fbbc04">R</tspan> = V &#247; I</text>
+<text x="374" y="286" font-size="12" fill="#9aa0a6">Find resistance: voltage &#247; current</text>
+<text x="360" y="344" font-size="13" fill="#e8eaed"><tspan fill="#e8eaed" font-weight="600">Power: </tspan><tspan fill="#9aa0a6">P = V &#215; I  (watts)</tspan></text>
+<text x="360" y="366" font-size="12" fill="#9aa0a6">Units: volt (V) &#183; ampere (A)</text>
+<text x="360" y="383" font-size="12" fill="#9aa0a6">ohm (&#937;) &#183; watt (W)</text>
+<rect x="586" y="76" width="190" height="356" rx="10" fill="#1c1f25" stroke="#2c3037" stroke-width="1"/>
+<text x="600" y="100" font-size="13" fill="#e8eaed" font-weight="600">Worked example</text>
+<text x="600" y="122" font-size="12" fill="#9aa0a6">A 12&#160;V circuit feeds a 4&#160;&#937;</text>
+<text x="600" y="138" font-size="12" fill="#9aa0a6">load.</text>
+<text x="600" y="160" font-size="14" fill="#8ab4f8" font-weight="600">I = 12 &#247; 4 = 3 A</text>
+<text x="600" y="182" font-size="14" fill="#e8eaed" font-weight="600">P = 12 &#215; 3 = 36 W</text>
+<line x1="600" y1="198" x2="762" y2="198" stroke="#3c4047" stroke-width="1"/>
+<text x="600" y="220" font-size="12" fill="#9aa0a6">Add 2 &#937; of unwanted</text>
+<text x="600" y="236" font-size="12" fill="#9aa0a6">resistance (a corroded</text>
+<text x="600" y="252" font-size="12" fill="#9aa0a6">connection) in series:</text>
+<text x="600" y="274" font-size="14" fill="#fbbc04" font-weight="600">I = 12 &#247; 6 = 2 A</text>
+<text x="600" y="298" font-size="12" fill="#9aa0a6">Less current reaches the</text>
+<text x="600" y="314" font-size="12" fill="#9aa0a6">load &#8212; dim lamps, slow</text>
+<text x="600" y="330" font-size="12" fill="#9aa0a6">motors.</text>
+<text x="600" y="352" font-size="12" fill="#e8eaed">The bad connection itself</text>
+<text x="600" y="368" font-size="12" fill="#e8eaed">drops 2&#160;A &#215; 2&#160;&#937; = 4&#160;V &#8212;</text>
+<text x="600" y="384" font-size="12" fill="#e8eaed">exactly what a voltage drop</text>
+<text x="600" y="400" font-size="12" fill="#e8eaed">test finds.</text>
+<text x="24" y="412" font-size="12" fill="#9aa0a6">Example values are for illustration only. Always use OEM specifications when judging a real</text>
+<text x="24" y="428" font-size="12" fill="#9aa0a6">circuit.</text>
+</svg>
