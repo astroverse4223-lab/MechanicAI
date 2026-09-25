@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="MechanicAI.Desktop.Views.ApprenticePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:h="using:MechanicAI.Desktop.Helpers"
+    xmlns:models="using:MechanicAI.Presentation.Models"
+    NavigationCacheMode="Required">
+
+    <Grid Padding="{StaticResource PageMargin}" RowSpacing="12" ColumnSpacing="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.ColumnSpan="2" Spacing="4">
+            <TextBlock Text="Apprentice mode" Style="{StaticResource PageTitleStyle}" />
+            <TextBlock Text="Diagnose a fictional case. Each check reveals only its own result; efficient, discriminating tests score best. Replacing parts without proof costs points." Style="{StaticResource MutedTextStyle}" />
+            <ProgressBar IsIndeterminate="True" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsBusy), Mode=OneWay}" />
+        </StackPanel>
+
+        <InfoBar
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            IsOpen="{x:Bind ViewModel.IsNoticeOpen, Mode=TwoWay}"
+            Title="{x:Bind ViewModel.NoticeTitle, Mode=OneWay}"
+            Message="{x:Bind ViewModel.NoticeMessage, Mode=OneWay}"
+            Severity="{x:Bind h:Ui.Severity(ViewModel.NoticeSeverity), Mode=OneWay}" />
+
+        <Grid Grid.Row="2" RowSpacing="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ListView ItemsSource="{x:Bind ViewModel.Scenarios}" SelectedItem="{x:Bind ViewModel.SelectedScenario, Mode=TwoWay}" SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ScenarioItem">
+                        <StackPanel Padding="0,8" Spacing="2">
+                            <TextBlock Text="{x:Bind Title}" TextWrapping="Wrap" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                            <TextBlock Text="{x:Bind Meta}" Style="{StaticResource MutedTextStyle}" />
+                            <TextBlock Text="{x:Bind Vehicle}" Style="{StaticResource MutedTextStyle}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Grid.Row="1" HorizontalAlignment="Stretch" Content="Start case" Style="{StaticResource AccentButtonStyle}" Command="{x:Bind ViewModel.StartScenarioCommand}" />
+        </Grid>
+
+        <ScrollViewer Grid.Row="2" Grid.Column="1">
+            <StackPanel Spacing="16" Padding="0,0,12,24">
+                <TextBlock Text="Pick a case on the left and start." Style="{StaticResource MutedTextStyle}" Visibility="{x:Bind h:Ui.Collapsed(ViewModel.HasAttempt), Mode=OneWay}" />
+
+                <StackPanel Spacing="16" Visibility="{x:Bind h:Ui.Visible(ViewModel.HasAttempt), Mode=OneWay}">
+                    <InfoBar IsOpen="True" IsClosable="False" Severity="Informational" Title="Training scenario" Message="{x:Bind ViewModel.Notice, Mode=OneWay}" />
+
+                    <Border Style="{StaticResource CardStyle}">
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="{x:Bind ViewModel.BriefingTitle, Mode=OneWay}" Style="{StaticResource SubtitleTextBlockStyle}" />
+                            <TextBlock Text="{x:Bind ViewModel.BriefingVehicle, Mode=OneWay}" Style="{StaticResource MutedTextStyle}" />
+                            <TextBlock Style="{StaticResource BodyWrapStyle}"><Run Text="Complaint: " FontWeight="SemiBold" /><Run Text="{x:Bind ViewModel.BriefingComplaint, Mode=OneWay}" /></TextBlock>
+                            <TextBlock Style="{StaticResource BodyWrapStyle}" Visibility="{x:Bind h:Ui.VisibleIfText(ViewModel.CustomerStatement), Mode=OneWay}"><Run Text="Customer says: " FontWeight="SemiBold" /><Run Text="{x:Bind ViewModel.CustomerStatement, Mode=OneWay}" /></TextBlock>
+                            <TextBlock Style="{StaticResource BodyWrapStyle}"><Run Text="Codes: " FontWeight="SemiBold" /><Run Text="{x:Bind ViewModel.Codes, Mode=OneWay}" /></TextBlock>
+                            <Expander Header="Freeze frame" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Visibility="{x:Bind h:Ui.Visible(ViewModel.HasFreezeFrame), Mode=OneWay}">
+                                <ItemsControl ItemsSource="{x:Bind ViewModel.FreezeFrame}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="models:LabeledValue">
+                                            <TextBlock><Run Text="{x:Bind Label}" /><Run Text=": " /><Run Text="{x:Bind Value}" /></TextBlock>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Expander>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource CardStyle}" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsInProgress), Mode=OneWay}">
+                        <StackPanel Spacing="8">
+                            <TextBlock Style="{StaticResource SectionHeaderStyle}"><Run Text="Your moves · score " /><Run Text="{x:Bind ViewModel.ScoreText, Mode=OneWay}" /></TextBlock>
+                            <Grid ColumnSpacing="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ComboBox HorizontalAlignment="Stretch" PlaceholderText="Choose a check or test" ItemsSource="{x:Bind ViewModel.TestMenu}" SelectedItem="{x:Bind ViewModel.SelectedTest, Mode=TwoWay}" />
+                                <Button Grid.Column="1" Content="Perform" Command="{x:Bind ViewModel.PerformTestCommand}" />
+                            </Grid>
+                            <Grid ColumnSpacing="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox PlaceholderText="Or describe what you would check" Text="{x:Bind ViewModel.FreeInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Grid.Column="1" Content="Check" Command="{x:Bind ViewModel.AskCommand}" />
+                            </Grid>
+                            <Grid ColumnSpacing="8" Margin="0,8,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Header="Your diagnosis" PlaceholderText="Root cause" Text="{x:Bind ViewModel.Diagnosis, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Grid.Column="1" VerticalAlignment="Bottom" Content="Submit diagnosis" Style="{StaticResource AccentButtonStyle}" Command="{x:Bind ViewModel.SubmitDiagnosisCommand}" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource CardStyle}" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsGraded), Mode=OneWay}">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Debrief" Style="{StaticResource SectionHeaderStyle}" />
+                            <TextBlock Text="{x:Bind ViewModel.GradeSummary, Mode=OneWay}" Style="{StaticResource BodyStrongTextBlockStyle}" TextWrapping="Wrap" />
+                            <TextBlock Style="{StaticResource BodyWrapStyle}"><Run Text="Root cause: " FontWeight="SemiBold" /><Run Text="{x:Bind ViewModel.RootCause, Mode=OneWay}" /></TextBlock>
+                            <TextBlock Text="{x:Bind ViewModel.Debrief, Mode=OneWay}" Style="{StaticResource BodyWrapStyle}" />
+                            <TextBlock Text="Ideal path" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                            <ItemsControl ItemsSource="{x:Bind ViewModel.IdealPath}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate x:DataType="x:String">
+                                        <TextBlock TextWrapping="Wrap"><Run Text="• " /><Run Text="{x:Bind}" /></TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <TextBlock Text="Common mistakes" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                            <ItemsControl ItemsSource="{x:Bind ViewModel.CommonMistakes}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate x:DataType="x:String">
+                                        <TextBlock TextWrapping="Wrap"><Run Text="• " /><Run Text="{x:Bind}" /></TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <Button Content="Try another case" Command="{x:Bind ViewModel.RestartCommand}" />
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Text="Results" Style="{StaticResource SectionHeaderStyle}" />
+                    <ItemsControl ItemsSource="{x:Bind ViewModel.Turns}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="models:TurnItem">
+                                <Border Style="{StaticResource CardStyle}" Margin="0,0,0,8" Padding="12">
+                                    <StackPanel Spacing="4">
+                                        <Grid>
+                                            <TextBlock Text="{x:Bind Input}" Style="{StaticResource BodyStrongTextBlockStyle}" TextWrapping="Wrap" Margin="0,0,48,0" />
+                                            <TextBlock Text="{x:Bind PointsText}" HorizontalAlignment="Right" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                                        </Grid>
+                                        <TextBlock Text="{x:Bind Result}" Style="{StaticResource BodyWrapStyle}" />
+                                        <TextBlock Text="{x:Bind Feedback}" Style="{StaticResource MutedTextStyle}" />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

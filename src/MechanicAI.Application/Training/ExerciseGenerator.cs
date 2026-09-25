@@ -1,8 +1,9 @@
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace MechanicAI.Application.Training;
 
-public sealed record Exercise(
+public sealed partial record Exercise(
     string Key,
     string Type,
     string Prompt,
@@ -18,11 +19,15 @@ public sealed record Exercise(
     public bool Check(string response)
     {
         if (IsMultipleChoice) return int.TryParse(response, out var i) && i == CorrectChoice;
-        var cleaned = new string(response.Where(c => char.IsDigit(c) || c is '.' or '-' or ',').ToArray()).Replace(",", string.Empty, StringComparison.Ordinal);
+        // Take the first number in the response so units such as "lb-ft" or "N·m" don't break parsing.
+        var cleaned = NumberRegex().Match(response).Value.Replace(",", string.Empty, StringComparison.Ordinal);
         if (!double.TryParse(cleaned, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) || NumericAnswer is not { } answer) return false;
         var tolerance = Math.Max(Math.Abs(answer) * TolerancePercent / 100, 0.051);
         return Math.Abs(value - answer) <= tolerance;
     }
+
+    [GeneratedRegex(@"-?(?:\d[\d,]*(?:\.\d+)?|\.\d+)")]
+    private static partial Regex NumberRegex();
 }
 
 /// <summary>
@@ -67,6 +72,9 @@ public static class ExerciseGenerator
     public static Exercise Create(string type, Random random, string key)
     {
         string F(double v, string format = "0.##") => v.ToString(format, CultureInfo.InvariantCulture);
+
+        // Signed percentage; negative zero (from rounding) is shown as +0.0 rather than "-+0.0".
+        string Signed(double v) => (v == 0 ? 0.0 : v).ToString("+0.0;-0.0", CultureInfo.InvariantCulture);
 
         switch (type)
         {
@@ -141,11 +149,11 @@ public static class ExerciseGenerator
                     _ => 2,
                 };
                 return new Exercise(key, type,
-                    $"At a warm idle in closed loop: STFT {stft:+0.0;-0.0}%, LTFT {ltft:+0.0;-0.0}%. What is the PCM doing? (General guideline: total trim beyond roughly ±10% warrants investigation — verify against OEM specification.)",
+                    $"At a warm idle in closed loop: STFT {Signed(stft)}%, LTFT {Signed(ltft)}%. What is the PCM doing? (General guideline: total trim beyond roughly ±10% warrants investigation — verify against OEM specification.)",
                     null, null, 0,
                     ["Adding significant fuel — the engine was running lean", "Removing significant fuel — the engine was running rich", "Trims are within the general guideline — no strong correction", "Fuel trim cannot be interpreted at idle"],
                     choice,
-                    $"Total trim = STFT + LTFT = {total:+0.0;-0.0}%. Positive trim means the PCM is adding fuel to correct a lean condition; negative means it is removing fuel to correct a rich condition. Compare idle vs. 2,500 rpm to separate vacuum leaks (improve with RPM) from fuel delivery problems (worsen with load).");
+                    $"Total trim = STFT + LTFT = {Signed(total)}%. Positive trim means the PCM is adding fuel to correct a lean condition; negative means it is removing fuel to correct a rich condition. Compare idle vs. 2,500 rpm to separate vacuum leaks (improve with RPM) from fuel delivery problems (worsen with load).");
             }
 
             case "unit-pressure":

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="MechanicAI.Desktop.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:h="using:MechanicAI.Desktop.Helpers"
+    xmlns:models="using:MechanicAI.Presentation.Models"
+    mc:Ignorable="d"
+    Title="Mechanic AI">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Custom title bar (drag region). Caption buttons are drawn by the system on the right. -->
+        <Grid x:Name="AppTitleBar" Height="48" Padding="16,0,160,0">
+            <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                <Image Source="ms-appx:///Assets/Square44x44Logo.png" Width="20" Height="20" />
+                <TextBlock Text="Mechanic AI" Style="{StaticResource CaptionTextBlockStyle}" VerticalAlignment="Center" />
+                <Border Style="{StaticResource TagBorderStyle}">
+                    <StackPanel Orientation="Horizontal" Spacing="6">
+                        <FontIcon Glyph="{x:Bind ViewModel.ConnectivityGlyph, Mode=OneWay}" FontSize="12" />
+                        <TextBlock Text="{x:Bind ViewModel.ConnectivityText, Mode=OneWay}" Style="{StaticResource CaptionTextBlockStyle}" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <NavigationView
+            x:Name="NavView"
+            Grid.Row="1"
+            PaneDisplayMode="Left"
+            OpenPaneLength="264"
+            IsSettingsVisible="True"
+            IsTitleBarAutoPaddingEnabled="False"
+            IsBackButtonVisible="Auto"
+            IsBackEnabled="{x:Bind ViewModel.CanGoBack, Mode=OneWay}"
+            BackRequested="OnBackRequested"
+            ItemInvoked="OnItemInvoked">
+
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox
+                    x:Name="SearchBox"
+                    PlaceholderText="Search codes, vehicles, documents, or describe a problem"
+                    QueryIcon="Find"
+                    TextMemberPath="Title"
+                    ItemsSource="{x:Bind ViewModel.Suggestions}"
+                    TextChanged="OnSearchTextChanged"
+                    QuerySubmitted="OnSearchQuerySubmitted">
+                    <AutoSuggestBox.ItemTemplate>
+                        <DataTemplate x:DataType="models:SearchSuggestion">
+                            <StackPanel Orientation="Horizontal" Spacing="10" Padding="0,4">
+                                <FontIcon Glyph="{x:Bind Glyph}" FontSize="14" VerticalAlignment="Center" />
+                                <StackPanel>
+                                    <TextBlock Text="{x:Bind Title}" TextTrimming="CharacterEllipsis" />
+                                    <TextBlock Text="{x:Bind Subtitle}" Style="{StaticResource MutedTextStyle}" Visibility="{x:Bind h:Ui.VisibleIfText(Subtitle)}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </AutoSuggestBox.ItemTemplate>
+                </AutoSuggestBox>
+            </NavigationView.AutoSuggestBox>
+
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Workspace" />
+                <NavigationViewItem Content="Home" Tag="Home" ToolTipService.ToolTip="Dashboard">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE80F;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Vehicles" Tag="Vehicles" ToolTipService.ToolTip="VIN decode, vehicle records, recalls">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE804;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Diagnostics" Tag="Diagnostics" ToolTipService.ToolTip="Guided diagnostic sessions">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE9D9;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Trouble codes" Tag="Dtc" ToolTipService.ToolTip="DTC reference lookup">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE7BA;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Live data" Tag="LiveData" ToolTipService.ToolTip="OBD-II live data (ELM327)">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE9D2;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItemHeader Content="Information" />
+                <NavigationViewItem Content="Knowledge base" Tag="KnowledgeBase" ToolTipService.ToolTip="Service documents with cited answers">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE8F1;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Wiring" Tag="Wiring" ToolTipService.ToolTip="Wiring diagrams">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE945;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Research" Tag="Research" ToolTipService.ToolTip="Web research with cited summaries">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE721;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Assistant" Tag="Assistant" ToolTipService.ToolTip="AI assistant">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE8BD;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItemHeader Content="Learning" />
+                <NavigationViewItem Content="Training" Tag="Training" ToolTipService.ToolTip="Courses, quizzes, flashcards, exercises">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE7BE;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Apprentice" Tag="Apprentice" ToolTipService.ToolTip="Practice on fictional cases">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE77B;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItemHeader Content="Business" />
+                <NavigationViewItem Content="Shop" Tag="Shop" ToolTipService.ToolTip="Customers, estimates, inspections">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE719;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="History" Tag="History" ToolTipService.ToolTip="Vehicle service history">
+                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE81C;" /></NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <NavigationView.PaneFooter>
+                <Button
+                    Margin="8,4"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Left"
+                    Command="{x:Bind ViewModel.OpenActiveVehicleCommand}"
+                    Visibility="{x:Bind h:Ui.Visible(ViewModel.HasActiveVehicle), Mode=OneWay}"
+                    ToolTipService.ToolTip="Active vehicle (used as context for AI, research and new sessions)">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE804;" FontSize="14" />
+                        <TextBlock Text="{x:Bind ViewModel.ActiveVehicleName, Mode=OneWay}" TextTrimming="CharacterEllipsis" MaxWidth="190" />
+                    </StackPanel>
+                </Button>
+            </NavigationView.PaneFooter>
+
+            <Grid>
+                <Frame x:Name="ContentFrame" />
+                <InfoBar
+                    Margin="24"
+                    MaxWidth="720"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    IsOpen="{x:Bind ViewModel.IsNoticeOpen, Mode=TwoWay}"
+                    Title="{x:Bind ViewModel.NoticeTitle, Mode=OneWay}"
+                    Message="{x:Bind ViewModel.NoticeMessage, Mode=OneWay}"
+                    Severity="{x:Bind h:Ui.Severity(ViewModel.NoticeSeverity), Mode=OneWay}" />
+            </Grid>
+        </NavigationView>
+
+        <!-- Startup: shown until the local database is ready. -->
+        <Grid
+            Grid.Row="1"
+            Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
+            Visibility="{x:Bind h:Ui.Visible(ViewModel.IsStarting), Mode=OneWay}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="16" MaxWidth="560">
+                <Image Source="ms-appx:///Assets/Square150x150Logo.png" Width="96" Height="96" />
+                <ProgressRing IsActive="{x:Bind h:Ui.Not(ViewModel.HasStartupError), Mode=OneWay}" Width="32" Height="32" />
+                <TextBlock Text="{x:Bind ViewModel.StartupMessage, Mode=OneWay}" Style="{StaticResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" />
+                <TextBlock
+                    Text="{x:Bind ViewModel.StartupError, Mode=OneWay}"
+                    Style="{StaticResource BodyWrapStyle}"
+                    Foreground="{ThemeResource SystemFillColorCriticalBrush}"
+                    Visibility="{x:Bind h:Ui.Visible(ViewModel.HasStartupError), Mode=OneWay}" />
+            </StackPanel>
+        </Grid>
+
+        <!-- Workstation lock (Settings > Security > Require sign-in). -->
+        <Grid
+            Grid.Row="1"
+            Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
+            Visibility="{x:Bind h:Ui.Visible(ViewModel.IsLocked), Mode=OneWay}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="12" Width="340">
+                <FontIcon Glyph="&#xE72E;" FontSize="40" />
+                <TextBlock Text="Workstation locked" Style="{StaticResource SubtitleTextBlockStyle}" HorizontalAlignment="Center" />
+                <PasswordBox
+                    x:Name="UnlockPasswordBox"
+                    Header="Password"
+                    Password="{x:Bind ViewModel.Password, Mode=TwoWay}"
+                    KeyDown="OnUnlockKeyDown" />
+                <TextBlock
+                    Text="{x:Bind ViewModel.UnlockError, Mode=OneWay}"
+                    Foreground="{ThemeResource SystemFillColorCriticalBrush}"
+                    TextWrapping="Wrap"
+                    Visibility="{x:Bind h:Ui.VisibleIfText(ViewModel.UnlockError), Mode=OneWay}" />
+                <Button Content="Unlock" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Stretch" Command="{x:Bind ViewModel.UnlockCommand}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

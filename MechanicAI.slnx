@@ -1,7 +1,20 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/MechanicAI.Application/MechanicAI.Application.csproj" />
+    <Project Path="src/MechanicAI.Desktop/MechanicAI.Desktop.csproj">
+      <Platform Project="x64" />
+      <Deploy />
+    </Project>
     <Project Path="src/MechanicAI.Domain/MechanicAI.Domain.csproj" />
     <Project Path="src/MechanicAI.Infrastructure/MechanicAI.Infrastructure.csproj" />
+    <Project Path="src/MechanicAI.Presentation/MechanicAI.Presentation.csproj" />
+    <Project Path="src/MechanicAI.Server/MechanicAI.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MechanicAI.Application.Tests/MechanicAI.Application.Tests.csproj" />
+    <Project Path="tests/MechanicAI.Domain.Tests/MechanicAI.Domain.Tests.csproj" />
+    <Project Path="tests/MechanicAI.Infrastructure.Tests/MechanicAI.Infrastructure.Tests.csproj" />
+    <Project Path="tests/MechanicAI.Presentation.Tests/MechanicAI.Presentation.Tests.csproj" />
+    <Project Path="tests/MechanicAI.Server.Tests/MechanicAI.Server.Tests.csproj" />
   </Folder>
 </Solution>
