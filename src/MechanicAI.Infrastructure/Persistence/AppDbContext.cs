@@ -530,6 +530,17 @@ public abstract class AppDbContext(DbContextOptions options) : DbContext(options
             e.HasOne<LiveDataSession>().WithMany().HasForeignKey(x => x.SessionId).OnDelete(DeleteBehavior.Cascade);
         });
 
+        // Entity ids are assigned by the application (UUIDv7 in Entity) — never by the database.
+        // With EF's default (ValueGeneratedOnAdd for Guid keys), a new child added to a tracked
+        // aggregate's collection (e.g. session.AddStep during an update) already has a non-default
+        // key, so change detection treats it as an existing row and issues an UPDATE that affects
+        // 0 rows (DbUpdateConcurrencyException). Declaring the keys as never generated makes EF
+        // insert such children.
+        foreach (var entityType in b.Model.GetEntityTypes().Where(t => typeof(Entity).IsAssignableFrom(t.ClrType)))
+        {
+            b.Entity(entityType.ClrType).Property(nameof(Entity.Id)).ValueGeneratedNever();
+        }
+
         ConfigureProvider(b);
     }
 

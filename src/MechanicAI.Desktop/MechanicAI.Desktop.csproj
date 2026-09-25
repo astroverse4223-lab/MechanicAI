@@ -1,0 +1,89 @@
+<Project>
+
+  <!--
+    WinUI 3 desktop app (Windows App SDK, single-project MSIX).
+
+    The XAML compiler and MSIX tooling only run on Windows. On any other OS this project turns
+    into an empty no-op (see Build/NonWindows.targets) so `dotnet build MechanicAI.slnx` stays
+    green on Linux CI while Visual Studio on Windows builds it normally.
+    Pass -p:ForceDesktopBuild=true to attempt a real build elsewhere (restore works; the XAML
+    compiler does not).
+
+    Packaging: MSIX by default. Build unpackaged with -p:WindowsPackageType=None.
+  -->
+  <PropertyGroup>
+    <MechanicAiDesktopSupported Condition="$([MSBuild]::IsOSPlatform('Windows')) or '$(ForceDesktopBuild)' == 'true'">true</MechanicAiDesktopSupported>
+  </PropertyGroup>
+
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+
+  <PropertyGroup Condition="'$(MechanicAiDesktopSupported)' == 'true'">
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <RootNamespace>MechanicAI.Desktop</RootNamespace>
+    <AssemblyName>MechanicAI</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <Platforms>x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <PublishProfile>win-$(Platform).pubxml</PublishProfile>
+    <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <Description>Mechanic AI workstation — offline-first diagnostic desktop app for automotive technicians.</Description>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <!-- Unpackaged builds carry the Windows App SDK runtime with them (no separate runtime install). -->
+  <PropertyGroup Condition="'$(MechanicAiDesktopSupported)' == 'true' and '$(WindowsPackageType)' == 'None' and '$(WindowsAppSDKSelfContained)' == ''">
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+  </PropertyGroup>
+
+  <!-- Non-Windows: an empty project that restores instantly and builds nothing. -->
+  <PropertyGroup Condition="'$(MechanicAiDesktopSupported)' != 'true'">
+    <TargetFramework>net10.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(MechanicAiDesktopSupported)' == 'true'">
+    <Content Include="Assets\**\*.png" />
+    <Content Include="Assets\AppIcon.ico" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(MechanicAiDesktopSupported)' == 'true'">
+    <PackageReference Include="Microsoft.WindowsAppSDK" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.Segmented" />
+    <PackageReference Include="CommunityToolkit.WinUI.Converters" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Serilog" />
+    <PackageReference Include="Serilog.Extensions.Hosting" />
+    <PackageReference Include="Serilog.Sinks.File" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(MechanicAiDesktopSupported)' == 'true'">
+    <ProjectReference Include="..\MechanicAI.Presentation\MechanicAI.Presentation.csproj" />
+    <ProjectReference Include="..\MechanicAI.Infrastructure\MechanicAI.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <!-- Enables the "Package and Publish" menu and MSIX project capability in Visual Studio. -->
+  <ItemGroup Condition="'$(MechanicAiDesktopSupported)' == 'true' and '$(DisableMsixProjectCapabilityAddedByProject)' != 'true' and '$(EnableMsixTooling)' == 'true'">
+    <ProjectCapability Include="Msix" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(MechanicAiDesktopSupported)' == 'true' and '$(DisableHasPackageAndPublishMenuAddedByProject)' != 'true' and '$(EnableMsixTooling)' == 'true'">
+    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+  </PropertyGroup>
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+
+  <Import Project="Build\NonWindows.targets" Condition="'$(MechanicAiDesktopSupported)' != 'true'" />
+
+</Project>
