@@ -30,6 +30,7 @@ public sealed class DatabaseInitializer(IServiceProvider services, ILogger<Datab
         {
             await using var db = await postgresFactory.CreateDbContextAsync(ct);
             await db.Database.MigrateAsync(ct);
+            await db.Database.ExecuteSqlRawAsync(PostgresKeywordIndex.CreateSql, ct);
         }
 
         var seeder = services.GetService<ReferenceDataSeeder>();

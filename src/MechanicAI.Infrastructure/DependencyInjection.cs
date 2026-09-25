@@ -87,6 +87,8 @@ public static partial class DependencyInjection
                     n.EnableRetryOnFailure(3);
                 }));
             services.TryAddSingleton<IAppDbContextFactory, EfAppDbContextFactory<PostgresAppDbContext>>();
+            services.TryAddSingleton<IKeywordIndex, PostgresKeywordIndex>();
+            services.TryAddSingleton<IVectorIndex, PostgresVectorIndex>();
         }
 
         if (options.Workstation)

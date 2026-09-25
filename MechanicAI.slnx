@@ -3,5 +3,9 @@
     <Project Path="src/MechanicAI.Application/MechanicAI.Application.csproj" />
     <Project Path="src/MechanicAI.Domain/MechanicAI.Domain.csproj" />
     <Project Path="src/MechanicAI.Infrastructure/MechanicAI.Infrastructure.csproj" />
+    <Project Path="src/MechanicAI.Server/MechanicAI.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MechanicAI.Server.Tests/MechanicAI.Server.Tests.csproj" />
   </Folder>
 </Solution>

@@ -46,6 +46,12 @@ public sealed class ShopService(IAppDbContextFactory dbFactory)
         return await query.OrderBy(c => c.LastName).ThenBy(c => c.FirstName).Take(500).ToListAsync(ct);
     }
 
+    public async Task<Customer?> GetCustomerAsync(Guid id, CancellationToken ct = default)
+    {
+        await using var db = await dbFactory.CreateAsync(ct);
+        return await db.Customers.AsNoTracking().Include(c => c.Vehicles).FirstOrDefaultAsync(c => c.Id == id, ct);
+    }
+
     public async Task<Result<Guid>> SaveCustomerAsync(CustomerInput input, CancellationToken ct = default)
     {
         if (string.IsNullOrWhiteSpace(input.LastName) && string.IsNullOrWhiteSpace(input.CompanyName) && string.IsNullOrWhiteSpace(input.FirstName))
@@ -59,7 +65,9 @@ public sealed class ShopService(IAppDbContextFactory dbFactory)
         Customer customer;
         if (input.Id is { } id)
         {
-            customer = await db.Customers.FirstOrDefaultAsync(c => c.Id == id, ct) ?? throw new InvalidOperationException("Customer not found.");
+            var existing = await db.Customers.FirstOrDefaultAsync(c => c.Id == id, ct);
+            if (existing is null) return Error.NotFound("Customer");
+            customer = existing;
         }
         else
         {
@@ -146,7 +154,9 @@ public sealed class ShopService(IAppDbContextFactory dbFactory)
         Note note;
         if (id is { } existingId)
         {
-            note = await db.Notes.FirstOrDefaultAsync(n => n.Id == existingId, ct) ?? throw new InvalidOperationException("Note not found.");
+            var existing = await db.Notes.FirstOrDefaultAsync(n => n.Id == existingId, ct);
+            if (existing is null) return Error.NotFound("Note");
+            note = existing;
         }
         else
         {
@@ -198,7 +208,9 @@ public sealed class ShopService(IAppDbContextFactory dbFactory)
         Estimate estimate;
         if (id is { } existingId)
         {
-            estimate = await db.Estimates.Include(e => e.Lines).FirstOrDefaultAsync(e => e.Id == existingId, ct) ?? throw new InvalidOperationException("Estimate not found.");
+            var existing = await db.Estimates.Include(e => e.Lines).FirstOrDefaultAsync(e => e.Id == existingId, ct);
+            if (existing is null) return Error.NotFound("Estimate");
+            estimate = existing;
             db.EstimateLines.RemoveRange(estimate.Lines);
             estimate.Lines.Clear();
         }
