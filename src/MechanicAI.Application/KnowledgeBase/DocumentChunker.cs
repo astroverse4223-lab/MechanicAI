@@ -34,6 +34,7 @@ public static partial class DocumentChunker
                 var chunkStartOffset = lines[start].Offset;
                 var end = start;
                 var length = 0;
+                var endedAtHeading = false;
                 string? chunkHeading = heading;
 
                 while (end < lines.Count)
@@ -42,7 +43,12 @@ public static partial class DocumentChunker
                     if (IsHeading(line.Text))
                     {
                         // Start a new chunk at a heading if the current one already has content.
-                        if (length >= TargetChars / 3 && end > start) break;
+                        if (length >= TargetChars / 3 && end > start)
+                        {
+                            endedAtHeading = true;
+                            break;
+                        }
+
                         heading = Text.Truncate(line.Text.Trim(), 200);
                         chunkHeading ??= heading;
                         if (end == start) chunkHeading = heading;
@@ -74,6 +80,14 @@ public static partial class DocumentChunker
                 if (end >= lines.Count) break;
 
                 // Overlap: back up to the first line that starts within OverlapChars of the end.
+                // A chunk that ended at a section heading does not overlap, so the next chunk starts
+                // exactly at the heading and is labeled with it rather than the previous section's.
+                if (endedAtHeading)
+                {
+                    start = end;
+                    continue;
+                }
+
                 var next = end;
                 while (next - 1 > start && chunkEndOffset - lines[next - 1].Offset < OverlapChars) next--;
                 start = next <= start ? end : next;
