@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="MechanicAI.Desktop.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:h="using:MechanicAI.Desktop.Helpers"
+    xmlns:models="using:MechanicAI.Presentation.Models"
+    xmlns:toolkit="using:CommunityToolkit.WinUI.Controls"
+    NavigationCacheMode="Required">
+
+    <Grid RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Padding="24,16,24,0" Spacing="8">
+            <TextBlock Text="Settings" Style="{StaticResource PageTitleStyle}" />
+            <ProgressBar IsIndeterminate="True" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsBusy), Mode=OneWay}" />
+            <InfoBar
+                IsOpen="{x:Bind ViewModel.IsNoticeOpen, Mode=TwoWay}"
+                Title="{x:Bind ViewModel.NoticeTitle, Mode=OneWay}"
+                Message="{x:Bind ViewModel.NoticeMessage, Mode=OneWay}"
+                Severity="{x:Bind h:Ui.Severity(ViewModel.NoticeSeverity), Mode=OneWay}" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Padding="24,0,24,24" Spacing="4" MaxWidth="1000" HorizontalAlignment="Stretch">
+
+                <!-- AI -->
+                <TextBlock Text="AI providers" Style="{StaticResource SectionHeaderStyle}" Margin="0,8,0,4" />
+                <toolkit:SettingsCard Header="AI mode" Description="Local keeps everything on this workstation. Hybrid uses local models for private documents and photos, and the cloud for advanced reasoning.">
+                    <toolkit:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE99A;" />
+                    </toolkit:SettingsCard.HeaderIcon>
+                    <ComboBox MinWidth="260" ItemsSource="{x:Bind ViewModel.AiModes}" SelectedIndex="{x:Bind ViewModel.AiModeIndex, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+
+                <toolkit:SettingsExpander Header="Ollama (local models)" Description="Runs models on this computer. Install Ollama from ollama.com." Visibility="{x:Bind h:Ui.Visible(ViewModel.UsesLocal), Mode=OneWay}">
+                    <toolkit:SettingsExpander.HeaderIcon>
+                        <FontIcon Glyph="&#xE977;" />
+                    </toolkit:SettingsExpander.HeaderIcon>
+                    <toolkit:SettingsExpander.Items>
+                        <toolkit:SettingsCard Header="Server URL">
+                            <TextBox MinWidth="320" Text="{x:Bind ViewModel.OllamaBaseUrl, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Chat model" Description="Empty = choose automatically from installed models.">
+                            <TextBox MinWidth="320" PlaceholderText="auto" Text="{x:Bind ViewModel.OllamaChatModel, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Vision model" Description="Used for photos and wiring diagrams.">
+                            <TextBox MinWidth="320" PlaceholderText="auto" Text="{x:Bind ViewModel.OllamaVisionModel, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Embedding model" Description="Used for semantic search in the knowledge base.">
+                            <TextBox MinWidth="320" Text="{x:Bind ViewModel.OllamaEmbeddingModel, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Installed models">
+                            <StackPanel Spacing="8" HorizontalAlignment="Right">
+                                <Button Content="List installed models" HorizontalAlignment="Right" Command="{x:Bind ViewModel.ListModelsCommand}" />
+                                <ItemsControl ItemsSource="{x:Bind ViewModel.LocalModels}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="models:ModelItem">
+                                            <TextBlock HorizontalAlignment="Right"><Run Text="{x:Bind Name}" FontWeight="SemiBold" /><Run Text="  " /><Run Text="{x:Bind Details}" /></TextBlock>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Download a model" Description="{x:Bind ViewModel.PullProgress, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBox MinWidth="220" PlaceholderText="e.g. qwen3:8b" Text="{x:Bind ViewModel.PullModelName, Mode=TwoWay}" />
+                                <Button Content="Download" Command="{x:Bind ViewModel.PullModelCommand}" />
+                            </StackPanel>
+                        </toolkit:SettingsCard>
+                    </toolkit:SettingsExpander.Items>
+                </toolkit:SettingsExpander>
+
+                <toolkit:SettingsExpander Header="Cloud provider" Description="API keys are encrypted with Windows DPAPI and never shown again after saving." Visibility="{x:Bind h:Ui.Visible(ViewModel.UsesCloud), Mode=OneWay}">
+                    <toolkit:SettingsExpander.HeaderIcon>
+                        <FontIcon Glyph="&#xE753;" />
+                    </toolkit:SettingsExpander.HeaderIcon>
+                    <ComboBox MinWidth="220" ItemsSource="{x:Bind ViewModel.CloudProviders}" SelectedIndex="{x:Bind ViewModel.CloudProviderIndex, Mode=TwoWay}" />
+                    <toolkit:SettingsExpander.Items>
+                        <!-- Anthropic -->
+                        <toolkit:SettingsCard Header="Anthropic API key" Description="{x:Bind ViewModel.AnthropicKeyStatus, Mode=OneWay}" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsAnthropic), Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <PasswordBox MinWidth="280" PlaceholderText="Enter a new key to replace" Password="{x:Bind ViewModel.AnthropicApiKey, Mode=TwoWay}" />
+                                <Button Content="Remove" Click="OnClearAnthropicKey" />
+                            </StackPanel>
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Claude model" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsAnthropic), Mode=OneWay}">
+                            <TextBox MinWidth="280" Text="{x:Bind ViewModel.AnthropicModel, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Effort" Description="Higher effort reasons more thoroughly and takes longer." Visibility="{x:Bind h:Ui.Visible(ViewModel.IsAnthropic), Mode=OneWay}">
+                            <ComboBox MinWidth="200" ItemsSource="{x:Bind ViewModel.EffortLevels}" SelectedIndex="{x:Bind ViewModel.AnthropicEffortIndex, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Anthropic base URL" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsAnthropic), Mode=OneWay}">
+                            <TextBox MinWidth="320" Text="{x:Bind ViewModel.AnthropicBaseUrl, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <!-- OpenAI-compatible -->
+                        <toolkit:SettingsCard Header="API key" Description="{x:Bind ViewModel.OpenAiKeyStatus, Mode=OneWay}" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsOpenAi), Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <PasswordBox MinWidth="280" PlaceholderText="Enter a new key to replace" Password="{x:Bind ViewModel.OpenAiApiKey, Mode=TwoWay}" />
+                                <Button Content="Remove" Click="OnClearOpenAiKey" />
+                            </StackPanel>
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Base URL" Description="Any OpenAI-compatible endpoint (OpenAI, Azure OpenAI, LM Studio, vLLM…)." Visibility="{x:Bind h:Ui.Visible(ViewModel.IsOpenAi), Mode=OneWay}">
+                            <TextBox MinWidth="320" Text="{x:Bind ViewModel.OpenAiBaseUrl, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Chat model" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsOpenAi), Mode=OneWay}">
+                            <TextBox MinWidth="280" Text="{x:Bind ViewModel.OpenAiModel, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Embedding model" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsOpenAi), Mode=OneWay}">
+                            <TextBox MinWidth="280" Text="{x:Bind ViewModel.OpenAiEmbeddingModel, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Compute embeddings in the cloud" Description="Off keeps document text on this workstation.">
+                            <ToggleSwitch IsOn="{x:Bind ViewModel.UseCloudEmbeddings, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                    </toolkit:SettingsExpander.Items>
+                </toolkit:SettingsExpander>
+
+                <toolkit:SettingsCard Header="Temperature" Description="Lower is more consistent. 0.2 is recommended for diagnostics.">
+                    <NumberBox Minimum="0" Maximum="2" SmallChange="0.1" LargeChange="0.5" SpinButtonPlacementMode="Compact" Value="{x:Bind ViewModel.Temperature, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+
+                <toolkit:SettingsCard Header="Test AI configuration" Description="Uses the saved settings. Save first after making changes.">
+                    <Button Content="Test" Command="{x:Bind ViewModel.TestAiCommand}" />
+                </toolkit:SettingsCard>
+                <ItemsControl ItemsSource="{x:Bind ViewModel.AiStatusLines}" Margin="16,0,0,8">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="x:String">
+                            <TextBlock Text="{x:Bind}" Style="{StaticResource MutedTextStyle}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <!-- Privacy -->
+                <TextBlock Text="Privacy" Style="{StaticResource SectionHeaderStyle}" Margin="0,16,0,4" />
+                <toolkit:SettingsCard Header="Allow sending data to cloud AI" Description="Master switch. Vehicle data and your questions may be sent to the cloud provider.">
+                    <toolkit:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE72E;" />
+                    </toolkit:SettingsCard.HeaderIcon>
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.AllowCloudAi, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Include private document passages" Description="Knowledge-base excerpts in cloud prompts." IsEnabled="{x:Bind ViewModel.AllowCloudAi, Mode=OneWay}">
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.AllowDocumentsInCloud, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Include photos" Description="Photos for cloud image analysis." IsEnabled="{x:Bind ViewModel.AllowCloudAi, Mode=OneWay}">
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.AllowImagesInCloud, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Include customer names and contacts" Description="Vehicle details are always allowed; customer details only with this on." IsEnabled="{x:Bind ViewModel.AllowCloudAi, Mode=OneWay}">
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.IncludeCustomerInfoInAi, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+
+                <!-- Web search -->
+                <TextBlock Text="Web research" Style="{StaticResource SectionHeaderStyle}" Margin="0,16,0,4" />
+                <toolkit:SettingsCard Header="Search provider">
+                    <toolkit:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE774;" />
+                    </toolkit:SettingsCard.HeaderIcon>
+                    <ComboBox MinWidth="240" ItemsSource="{x:Bind ViewModel.SearchProviders}" SelectedIndex="{x:Bind ViewModel.SearchProviderIndex, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Search API key" Description="{x:Bind ViewModel.SearchKeyStatus, Mode=OneWay}" Visibility="{x:Bind h:Ui.Visible(ViewModel.UsesWebSearch), Mode=OneWay}">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <PasswordBox MinWidth="280" PlaceholderText="Enter a new key to replace" Password="{x:Bind ViewModel.SearchApiKey, Mode=TwoWay}" />
+                        <Button Content="Remove" Click="OnClearSearchKey" />
+                    </StackPanel>
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="SearXNG URL" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsSearxng), Mode=OneWay}">
+                    <TextBox MinWidth="320" Text="{x:Bind ViewModel.SearxngBaseUrl, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Include forums" Description="Forum posts are ranked below manufacturer, government and professional sources.">
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.IncludeForums, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+
+                <!-- Workstation -->
+                <TextBlock Text="Workstation" Style="{StaticResource SectionHeaderStyle}" Margin="0,16,0,4" />
+                <toolkit:SettingsCard Header="Technician name" Description="Recorded on diagnostic steps and reports.">
+                    <toolkit:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE77B;" />
+                    </toolkit:SettingsCard.HeaderIcon>
+                    <TextBox MinWidth="260" Text="{x:Bind ViewModel.TechnicianName, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Shop name" Description="Shown on reports and estimates.">
+                    <TextBox MinWidth="260" Text="{x:Bind ViewModel.ShopName, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="High-voltage certified" Description="Enables hybrid/EV high-voltage procedures (safety warnings always apply).">
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.HighVoltageCertified, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Units">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <ComboBox ItemsSource="{x:Bind ViewModel.UnitSystems}" SelectedIndex="{x:Bind ViewModel.UnitSystemIndex, Mode=TwoWay}" />
+                        <ComboBox ItemsSource="{x:Bind ViewModel.PressureUnits}" SelectedIndex="{x:Bind ViewModel.PressureUnitIndex, Mode=TwoWay}" />
+                        <ComboBox ItemsSource="{x:Bind ViewModel.TemperatureUnits}" SelectedIndex="{x:Bind ViewModel.TemperatureUnitIndex, Mode=TwoWay}" />
+                    </StackPanel>
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Show cause probabilities">
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.ShowProbabilities, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Live-data poll interval (ms)">
+                    <NumberBox Minimum="50" Maximum="5000" SmallChange="50" LargeChange="250" SpinButtonPlacementMode="Compact" Value="{x:Bind ViewModel.PollIntervalMs, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+
+                <!-- Appearance -->
+                <TextBlock Text="Appearance" Style="{StaticResource SectionHeaderStyle}" Margin="0,16,0,4" />
+                <toolkit:SettingsCard Header="Theme">
+                    <toolkit:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE790;" />
+                    </toolkit:SettingsCard.HeaderIcon>
+                    <toolkit:Segmented SelectedIndex="{x:Bind ViewModel.ThemeIndex, Mode=TwoWay}">
+                        <toolkit:SegmentedItem Content="System" />
+                        <toolkit:SegmentedItem Content="Dark" />
+                        <toolkit:SegmentedItem Content="Light" />
+                    </toolkit:Segmented>
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Reduce motion" Description="Turns off page transition animations.">
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.ReduceMotion, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+
+                <!-- Security -->
+                <TextBlock Text="Security" Style="{StaticResource SectionHeaderStyle}" Margin="0,16,0,4" />
+                <toolkit:SettingsExpander Header="Workstation password" Description="Protects this workstation's data when sign-in is required.">
+                    <toolkit:SettingsExpander.HeaderIcon>
+                        <FontIcon Glyph="&#xE8D7;" />
+                    </toolkit:SettingsExpander.HeaderIcon>
+                    <toolkit:SettingsExpander.Items>
+                        <toolkit:SettingsCard Header="Current password" Visibility="{x:Bind h:Ui.Visible(ViewModel.HasPassword), Mode=OneWay}">
+                            <PasswordBox MinWidth="260" Password="{x:Bind ViewModel.CurrentPassword, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="New password" Description="At least 8 characters.">
+                            <PasswordBox MinWidth="260" Password="{x:Bind ViewModel.NewPassword, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard Header="Confirm new password">
+                            <PasswordBox MinWidth="260" Password="{x:Bind ViewModel.ConfirmPassword, Mode=TwoWay}" />
+                        </toolkit:SettingsCard>
+                        <toolkit:SettingsCard>
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Button Content="Set password" Command="{x:Bind ViewModel.SetPasswordCommand}" />
+                                <Button Content="Remove password" Command="{x:Bind ViewModel.RemovePasswordCommand}" Visibility="{x:Bind h:Ui.Visible(ViewModel.HasPassword), Mode=OneWay}" />
+                            </StackPanel>
+                        </toolkit:SettingsCard>
+                    </toolkit:SettingsExpander.Items>
+                </toolkit:SettingsExpander>
+                <toolkit:SettingsCard Header="Require sign-in at startup" Description="Needs a workstation password.">
+                    <ToggleSwitch IsOn="{x:Bind ViewModel.RequireSignIn, Mode=TwoWay}" />
+                </toolkit:SettingsCard>
+
+                <!-- Data -->
+                <TextBlock Text="Data" Style="{StaticResource SectionHeaderStyle}" Margin="0,16,0,4" />
+                <toolkit:SettingsCard Header="Data folder" Description="{x:Bind ViewModel.DataFolder}">
+                    <toolkit:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE8B7;" />
+                    </toolkit:SettingsCard.HeaderIcon>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="Open data folder" Command="{x:Bind ViewModel.OpenDataFolderCommand}" />
+                        <Button Content="Open logs" Command="{x:Bind ViewModel.OpenLogsFolderCommand}" />
+                    </StackPanel>
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="Sample data" Description="Fictional vehicles, customers and sessions for exploring the app. Always labeled &quot;Sample&quot;.">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="Install" Command="{x:Bind ViewModel.InstallSampleDataCommand}" />
+                        <Button Content="Remove" Command="{x:Bind ViewModel.RemoveSampleDataCommand}" />
+                    </StackPanel>
+                </toolkit:SettingsCard>
+                <toolkit:SettingsCard Header="About" Description="Mechanic AI — offline-first diagnostic workstation. AI output is labeled and must be verified against OEM service information.">
+                    <TextBlock Text="{x:Bind ViewModel.AppVersion}" Style="{StaticResource MutedTextStyle}" />
+                </toolkit:SettingsCard>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Save bar -->
+        <Border Grid.Row="2" Padding="24,12" Background="{ThemeResource LayerFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="0,1,0,0">
+            <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                <Button Content="Revert" Command="{x:Bind ViewModel.RevertCommand}" />
+                <Button Content="Save settings" Style="{StaticResource AccentButtonStyle}" Command="{x:Bind ViewModel.SaveCommand}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

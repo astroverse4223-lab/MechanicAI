@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "MechanicAI.Desktop (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MechanicAI.Desktop (Unpackaged)": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "MECHANICAI_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

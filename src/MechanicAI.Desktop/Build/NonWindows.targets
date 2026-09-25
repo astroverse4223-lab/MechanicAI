@@ -1,0 +1,23 @@
+<Project>
+
+  <!--
+    Imported only when building on a non-Windows OS. The WinUI 3 XAML compiler and MSIX tooling
+    require Windows, so the standard targets are replaced with no-ops. The shared view models
+    (src/MechanicAI.Presentation) and their tests still build and run everywhere.
+  -->
+
+  <Target Name="Build">
+    <Message Importance="high" Text="MechanicAI.Desktop: skipped (WinUI 3 builds require Windows). Use -p:ForceDesktopBuild=true to try anyway." />
+  </Target>
+
+  <Target Name="Rebuild" DependsOnTargets="Build" />
+
+  <Target Name="Publish">
+    <Message Importance="high" Text="MechanicAI.Desktop: publish skipped (requires Windows)." />
+  </Target>
+
+  <Target Name="Pack" />
+
+  <Target Name="VSTest" />
+
+</Project>

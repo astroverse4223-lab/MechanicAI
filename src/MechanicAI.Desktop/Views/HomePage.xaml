@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="MechanicAI.Desktop.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:h="using:MechanicAI.Desktop.Helpers"
+    xmlns:models="using:MechanicAI.Presentation.Models"
+    NavigationCacheMode="Required">
+
+    <ScrollViewer>
+        <StackPanel Padding="{StaticResource PageMargin}" Spacing="16" MaxWidth="1280" HorizontalAlignment="Stretch">
+            <StackPanel>
+                <TextBlock Text="{x:Bind ViewModel.Greeting, Mode=OneWay}" Style="{StaticResource PageTitleStyle}" />
+                <TextBlock Text="Describe the problem, enter codes, or pick up where you left off." Style="{StaticResource MutedTextStyle}" />
+            </StackPanel>
+
+            <ProgressBar IsIndeterminate="True" Visibility="{x:Bind h:Ui.Visible(ViewModel.IsBusy), Mode=OneWay}" />
+
+            <InfoBar
+                IsOpen="{x:Bind ViewModel.IsNoticeOpen, Mode=TwoWay}"
+                Title="{x:Bind ViewModel.NoticeTitle, Mode=OneWay}"
+                Message="{x:Bind ViewModel.NoticeMessage, Mode=OneWay}"
+                Severity="{x:Bind h:Ui.Severity(ViewModel.NoticeSeverity), Mode=OneWay}" />
+
+            <!-- First run -->
+            <InfoBar
+                IsOpen="{x:Bind ViewModel.ShowWelcome, Mode=OneWay}"
+                IsClosable="False"
+                Severity="Informational"
+                Title="Welcome to Mechanic AI"
+                Message="Everything works offline: the DTC database, diagnostic playbooks, your documents and history. Configure an AI model in Settings for AI features, or install sample data to explore.">
+                <InfoBar.Content>
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,12">
+                        <Button Content="Install sample data" Command="{x:Bind ViewModel.InstallSampleDataCommand}" />
+                        <Button Content="Dismiss" Command="{x:Bind ViewModel.DismissWelcomeCommand}" />
+                    </StackPanel>
+                </InfoBar.Content>
+            </InfoBar>
+
+            <!-- Quick diagnosis -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Start a diagnosis" Style="{StaticResource SectionHeaderStyle}" />
+                    <Grid ColumnSpacing="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox
+                            PlaceholderText="e.g. 2017 Silverado 5.3 P0171 P0174, rough idle when cold"
+                            Text="{x:Bind ViewModel.QuickText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            KeyDown="OnQuickTextKeyDown" />
+                        <Button Grid.Column="1" Content="Diagnose" Style="{StaticResource AccentButtonStyle}" Command="{x:Bind ViewModel.StartDiagnosisCommand}" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Grid ColumnSpacing="16" RowSpacing="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Open sessions -->
+                <Border Style="{StaticResource CardStyle}">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Open diagnostic sessions" Style="{StaticResource SectionHeaderStyle}" />
+                        <TextBlock Text="No open sessions." Style="{StaticResource MutedTextStyle}" Visibility="{x:Bind h:Ui.Collapsed(ViewModel.HasOpenSessions), Mode=OneWay}" />
+                        <ListView ItemsSource="{x:Bind ViewModel.OpenSessions}" IsItemClickEnabled="True" SelectionMode="None" ItemClick="OnSessionClick">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="models:SessionItem">
+                                    <StackPanel Padding="0,6">
+                                        <TextBlock Text="{x:Bind Title}" TextTrimming="CharacterEllipsis" />
+                                        <TextBlock Text="{x:Bind Vehicle}" Style="{StaticResource MutedTextStyle}" />
+                                        <TextBlock Style="{StaticResource MutedTextStyle}">
+                                            <Run Text="{x:Bind StatusText}" /><Run Text=" · " /><Run Text="{x:Bind LeadingCause}" /><Run Text=" · " /><Run Text="{x:Bind Updated}" />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+
+                <!-- Recent vehicles -->
+                <Border Grid.Column="1" Style="{StaticResource CardStyle}">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Recent vehicles" Style="{StaticResource SectionHeaderStyle}" />
+                        <TextBlock Text="No vehicles yet. Decode a VIN on the Vehicles page." Style="{StaticResource MutedTextStyle}" Visibility="{x:Bind h:Ui.Collapsed(ViewModel.HasRecentVehicles), Mode=OneWay}" />
+                        <ListView ItemsSource="{x:Bind ViewModel.RecentVehicles}" IsItemClickEnabled="True" SelectionMode="None" ItemClick="OnVehicleClick">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="models:VehicleItem">
+                                    <StackPanel Padding="0,6">
+                                        <TextBlock Text="{x:Bind DisplayName}" />
+                                        <TextBlock Text="{x:Bind Subtitle}" Style="{StaticResource MutedTextStyle}" />
+                                        <TextBlock Text="{x:Bind RecallText}" Foreground="{ThemeResource SystemFillColorCautionBrush}" Style="{StaticResource CaptionTextBlockStyle}" Visibility="{x:Bind h:Ui.Visible(HasOpenRecalls)}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- System status -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="System status" Style="{StaticResource SectionHeaderStyle}" />
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE99A;" FontSize="16" />
+                        <TextBlock Text="{x:Bind ViewModel.AiStatusText, Mode=OneWay}" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <ItemsControl ItemsSource="{x:Bind ViewModel.AiNotes}" Margin="24,0,0,0">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <TextBlock Text="{x:Bind}" Style="{StaticResource MutedTextStyle}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE7BA;" FontSize="16" />
+                        <TextBlock Text="{x:Bind ViewModel.DtcDatabaseText, Mode=OneWay}" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE8F1;" FontSize="16" />
+                        <TextBlock Text="{x:Bind ViewModel.KnowledgeBaseText, Mode=OneWay}" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE774;" FontSize="16" />
+                        <TextBlock Text="{x:Bind ViewModel.ConnectivityText, Mode=OneWay}" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+                        <Button Content="Refresh" Command="{x:Bind ViewModel.LoadCommand}" />
+                        <Button Content="Settings" Click="OnSettingsClick" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
