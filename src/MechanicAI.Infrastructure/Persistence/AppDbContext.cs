@@ -530,6 +530,15 @@ public abstract class AppDbContext(DbContextOptions options) : DbContext(options
             e.HasOne<LiveDataSession>().WithMany().HasForeignKey(x => x.SessionId).OnDelete(DeleteBehavior.Cascade);
         });
 
+        // Ids are UUIDv7 values assigned by the domain (Entity constructor), never by the store.
+        // Without this, EF treats a new child added to a loaded aggregate's collection (e.g. a
+        // DiagnosticStep appended to a tracked session) as an existing row and issues an UPDATE
+        // that affects 0 rows (DbUpdateConcurrencyException).
+        foreach (var entityType in b.Model.GetEntityTypes().Where(t => typeof(Entity).IsAssignableFrom(t.ClrType)).ToList())
+        {
+            b.Entity(entityType.ClrType).Property(nameof(Entity.Id)).ValueGeneratedNever();
+        }
+
         ConfigureProvider(b);
     }
 

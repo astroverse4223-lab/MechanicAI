@@ -157,7 +157,9 @@ public sealed class VehicleService(
         Vehicle vehicle;
         if (input.Id is { } id)
         {
-            vehicle = await db.Vehicles.FirstOrDefaultAsync(v => v.Id == id, ct) ?? throw new InvalidOperationException("Vehicle not found.");
+            var existing = await db.Vehicles.FirstOrDefaultAsync(v => v.Id == id, ct);
+            if (existing is null) return Error.NotFound("Vehicle");
+            vehicle = existing;
         }
         else
         {

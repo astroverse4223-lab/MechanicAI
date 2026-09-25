@@ -1,0 +1,63 @@
+# Mechanic AI shop server stack.
+#
+#   cd src/MechanicAI.Server
+#   cp .env.example .env        # then fill in the secrets
+#   docker compose up -d --build
+#   docker compose --profile redis up -d --build   # also start Redis (set REDIS_CONNECTION=redis:6379)
+#
+# Secrets come only from .env / the environment (never from this file or appsettings.json).
+name: mechanicai
+
+services:
+  server:
+    build:
+      context: ../..
+      dockerfile: src/MechanicAI.Server/Dockerfile
+    image: mechanicai-server:latest
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      Database__Provider: Postgres
+      ConnectionStrings__MechanicAI: "Host=postgres;Port=5432;Database=mechanicai;Username=mechanicai;Password=${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}"
+      ConnectionStrings__Redis: ${REDIS_CONNECTION:-}
+      Jwt__SigningKey: ${JWT_SIGNING_KEY:?Set JWT_SIGNING_KEY in .env (at least 32 random bytes)}
+      # First-run only: creates the owner account when no users exist. Remove after first start.
+      Bootstrap__AdminEmail: ${BOOTSTRAP_ADMIN_EMAIL:-}
+      Bootstrap__AdminPassword: ${BOOTSTRAP_ADMIN_PASSWORD:-}
+      # Optional server-side AI / web search (see README): App__Ai__Mode, App__Search__Provider, Secrets__BraveApiKey, ...
+      App__Ai__Mode: ${AI_MODE:-Disabled}
+      App__Ai__OllamaBaseUrl: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "${SERVER_PORT:-8080}:8080"
+    volumes:
+      - server-data:/data
+    restart: unless-stopped
+
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: mechanicai
+      POSTGRES_USER: mechanicai
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mechanicai -d mechanicai"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    profiles: ["redis"]
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    restart: unless-stopped
+
+volumes:
+  server-data:
+  postgres-data:

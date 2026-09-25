@@ -52,6 +52,8 @@ public static partial class DependencyInjection
             {
                 o.AttemptTimeout.Timeout = TimeSpan.FromSeconds(20);
                 o.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(45);
+                // Must be at least twice the attempt timeout, or options validation fails at host start.
+                o.CircuitBreaker.SamplingDuration = TimeSpan.FromSeconds(60);
                 o.Retry.MaxRetryAttempts = 1;
             });
         services.TryAddSingleton<IWebSearchProviderFactory, WebSearchProviderFactory>();
